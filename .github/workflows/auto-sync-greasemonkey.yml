@@ -1,4 +1,4 @@
-name: Sync greasemonkey to adamlui/userscripts/chatgpt/chatgpt-widescreen
+name: Sync greasemonkey to adamlui/userscripts/chatgpt/chatgpt-widescreen-mode
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync adamlui/chatgpt-widescreen/greasemonkey to adamlui/userscripts/chatgpt/chatgpt-widescreen
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+      - name: Sync adamlui/chatgpt-widescreen/greasemonkey to adamlui/userscripts/chatgpt/chatgpt-widescreen-mode
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen-mode/
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -37,5 +37,5 @@ jobs:
           add_options: '--all'
           commit_user_name: 'auto-sync[bot]'
           commit_message: '${{ github.event.head_commit.message }} ← `adamlui/chatgpt-widescreen` auto-sync'
-          file_pattern: 'chatgpt/chatgpt-widescreen/*'
+          file_pattern: 'chatgpt/chatgpt-widescreen-mode/*'
           repository: adamlui/userscripts

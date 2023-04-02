@@ -3,6 +3,8 @@
 ![usercount](https://img.shields.io/greasyfork/dt/461473?label=Users&color=)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
+[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
+[![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 ### Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling.
 

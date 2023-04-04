@@ -16,7 +16,7 @@
 
 ##
 
-[![Full-Window mode](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/widescreen-mode-video-thumbnail.png)](https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1)
+[![Full-Window mode](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png)](https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1)
 
 ## Installation
 
@@ -35,6 +35,17 @@
 </div>
 
 ## Dependencies
+
+<h6>
+<div align="center">
+<br />
+
+<a href="https://github.com/chatgptjs/chatgpt.js">
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x614.png">
+    <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x614.png">
+</picture></a>
+<br /><br />
 
 <h6>
 <div align="center">

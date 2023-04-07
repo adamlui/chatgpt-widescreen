@@ -8,10 +8,6 @@ var matches = chrome.runtime.getManifest().content_scripts.map(
 // Add listener
 chrome.tabs.onActivated.addListener((activeInfo) => {
     chrome.tabs.get(activeInfo.tabId, (tab) => {
-        if (matches.some((url) => tab.url.includes(url))) toggleExtension()
-})})
-
-function toggleExtension() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { type: 'toggleExtension' }
-)})}
+        if (matches.some((url) => tab.url.includes(url))) {
+            chrome.tabs.sendMessage(tab.id, { type: 'toggleExtension' })
+}})})

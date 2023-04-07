@@ -76,9 +76,12 @@
     function updateGreyness() {
 
         chrome.action.setIcon({ path: { // update toolbar icon
-            "16": `../icons/${ config.extensionDisabled ? 'grey-faded/' : '' }icon16.png`,
-            "48": `../icons/${ config.extensionDisabled ? 'grey-faded/' : '' }icon48.png`,
-            "128": `../icons/${ config.extensionDisabled ? 'grey-faded/' : '' }icon128.png`
+            "16": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon16.png`,
+            "32": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon32.png`,
+            "48": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon48.png`,
+            "64": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon64.png`,
+            "128": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon128.png`,
+            "223": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon223.png`
         }})
 
         // Update menu contents

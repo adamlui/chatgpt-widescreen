@@ -1,6 +1,6 @@
 (async function() {
 
-    // Import utils.js
+    // Import settings-utils.js
     var { config, settings } = await import(chrome.runtime.getURL("lib/settings-utils.js"))
 
     // Initialize popup
@@ -75,20 +75,21 @@
 
     function updateGreyness() {
 
-        chrome.action.setIcon({ path: { // update toolbar icon
-            "16": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon16.png`,
-            "32": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon32.png`,
-            "48": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon48.png`,
-            "64": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon64.png`,
-            "128": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon128.png`,
-            "223": `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon223.png`
-        }})
+        // Updated toolbar icon
+        var dimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+        dimensions.forEach((dimension) => {
+            iconPaths[dimension] = '../icons/'
+                + (config.extensionDisabled ? 'faded/' : '')
+                + 'icon' + dimension + '.png'
+        })
+        chrome.action.setIcon({ path: iconPaths })
 
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach((elem) => { elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
-                                 elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled') })
+            .forEach((elem) => {
+                elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled')
+            })
     }
-
 
 })()

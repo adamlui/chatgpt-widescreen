@@ -1,5 +1,5 @@
-// This library is a condensed version of chatgpt.js (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
-// https://chatgptjs.org
+/* NOTE: This library is a condensed version of chatgpt.js (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+Website: https://chatgptjs.org */
 
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyProps = JSON.stringify(notifyProps);

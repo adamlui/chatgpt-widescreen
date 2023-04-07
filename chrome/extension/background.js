@@ -1,4 +1,4 @@
-// Monitor active tab URL to toggle extension on matches
+/* Monitor active tab URL to toggle extension on matches */
 
 // Extract content script matches from manifest
 var matches = chrome.runtime.getManifest().content_scripts.map(

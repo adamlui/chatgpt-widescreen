@@ -1,4 +1,4 @@
-/* This library is a condensed version of chatgpt.js
+/* This library is a condensed version of chatgpt.js */
 /* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license. */
 /* Source: https://github.com/chatgptjs/chatgpt.js */
 

@@ -1,4 +1,5 @@
-/* NOTE: This library is a condensed version of chatgpt.js (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+/* This library is a condensed version of chatgpt.js
+/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license. */
 /* Source: https://github.com/chatgptjs/chatgpt.js */
 
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};

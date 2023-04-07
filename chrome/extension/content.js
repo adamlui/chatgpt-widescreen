@@ -1,4 +1,5 @@
-/* NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license. */
+/* NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org */
+/* (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license. */
 
 (async function() {
 

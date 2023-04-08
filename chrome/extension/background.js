@@ -1,7 +1,7 @@
 /* Monitor active tab URL to toggle extension on matches */
 
 // Auto-enable on install/update
-chrome.runtime.onInstalled.addListener(function(details) {
+chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.local.set({ 'chatGPTws_extensionDisabled': false })
 })
 

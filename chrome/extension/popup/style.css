@@ -97,3 +97,5 @@ footer > .menu-icon { position: absolute ; bottom: 4px ; opacity: 0.7 }
 
 .disabled { opacity: 0.3 ; pointer-events: none }
 .enabled { opacity: 1 }
+
+.chatgpt-js { position: absolute ; bottom: 0.65rem ; left: 0.7rem }

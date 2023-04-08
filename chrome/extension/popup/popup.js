@@ -12,7 +12,7 @@
             updateGreyness()
         })    
 
-    // Add main toggle listener
+    // Add main toggle click-listener
     var toggles = document.querySelectorAll('input')
     var mainToggle = toggles[0]
     mainToggle.addEventListener('change', function() {    
@@ -20,7 +20,7 @@
         toggleExtension() ; updateGreyness()
     })
 
-    // Add Fuller Windows toggle label listeners
+    // Add Fuller Windows toggle label click-listeners
     var fullerWinToggle = toggles[1]
     var fullerWinLabel = fullerWinToggle.parentNode.parentNode
     fullerWinToggle.addEventListener('change', function toggleFullerWin() {
@@ -35,7 +35,7 @@
         if (event.target == fullerWinLabel) fullerWinToggle.click() // to avoid double-toggle
     })
 
-    // Add notifications toggle label listeners
+    // Add notifications toggle label click-listeners
     var notificationsToggle = toggles[2]
     var notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
@@ -46,19 +46,27 @@
         if (event.target == notificationsLabel) notificationsToggle.click() // to avoid double-toggle
     })
 
-    // Add Support span listener
+    // Add Support span click-listener
     var supportLink = document.querySelector('a[title*="support" i]')
     var supportSpan = supportLink.parentNode 
     supportSpan.addEventListener('click', (event) => {
         if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
     })
 
-    // Add More Add-ons span listener
+    // Add More Add-ons span click-listener
     var moreAddOnsLink = document.querySelector('a[title*="more" i]')
     var moreAddOnsSpan = moreAddOnsLink.parentNode 
     moreAddOnsSpan.addEventListener('click', (event) => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
+
+    // Add Powered by chatgpt.js hover-listener
+    var chatGPTjsHostPath = 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/badges/'
+    var chatGPTjsImg = document.querySelector('.chatgpt-js img')
+    chatGPTjsImg.addEventListener('mouseover', function() {
+        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
+    chatGPTjsImg.addEventListener('mouseout', function() {
+      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
     // Define script functions
 

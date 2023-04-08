@@ -24,14 +24,9 @@
     var sendButtonColor = 'currentColor' // changes w/ scheme
     var sendButtonClasses = document.querySelector('form button[class*="bottom"]').classList
     var sendSVGclasses = document.querySelector('form button[class*="bottom"] > svg').classList
-    if (location.host === 'freegpt.one') { // remove rotation effect
-        [...sendSVGclasses].forEach(sendSVGclass => {
-            if (sendSVGclass.includes('rotate')) sendSVGclasses.remove(sendSVGclass)
-    })}
     var inputTextAreaClasses = document.querySelector("form button[class*='bottom']").previousSibling.classList
     var sidepadClasses = document.querySelector('#__next > div > div').classList
-    var sidebarClasses = document.querySelector(`#__next > div > div.${
-        location.host === 'freegpt.one' ? 'hidden' : 'dark' }`).classList
+    var sidebarClasses = document.querySelector('#__next > div > div.dark').classList
     var mainDivClasses = document.querySelector('#__next > div > div.flex').classList
 
     // Create/stylize tooltip div

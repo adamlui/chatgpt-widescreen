@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.04.08.3
+// @version             2023.04.09
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -58,7 +58,7 @@
     
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
-    var navLinkLabels = { 'New chat' };
+    var navLinkLabels = { newChat: 'New chat' };
     var chatgpt = {
         
         isDarkMode: function() { return document.documentElement.classList.contains('dark'); },

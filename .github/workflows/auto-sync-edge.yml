@@ -1,10 +1,10 @@
-name: Sync /chrome/extension/ to /(edge|opera)/extension/, then / to adamlui/chatgpt-addons/chatgpt-widescreen/
+name: Sync /edge/extension/ to /(chrome|opera)/extension/, then / to adamlui/chatgpt-addons/chatgpt-widescreen/
 
 on:
   push:
     branches: [ master, main ]
     paths:
-      - 'chrome/**'
+      - 'edge/**'
 
 jobs:
   build:
@@ -26,14 +26,14 @@ jobs:
           repository: adamlui/chatgpt-addons
           path: adamlui/chatgpt-addons
 
-      - name: Sync /chrome/extension/ to /edge/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/
+      - name: Sync /edge/extension/ to /chrome/extension/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/
 
-      - name: Sync /chrome/extension/ to /opera/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/opera/extension/
+      - name: Sync /edge/extension/ to /opera/extension/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/opera/extension/
 
       - name: Sync / to adamlui/chatgpt-addons/chatgpt-widescreen/
-        run: rsync -avhr --delete --exclude={'.git','.github'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/
+        run: rsync -avh --delete --exclude={'.git','.github'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4

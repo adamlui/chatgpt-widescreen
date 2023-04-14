@@ -5,6 +5,7 @@ on:
     branches: [ master, main ]
     paths:
       - '*'
+      - 'media/**'
 
 jobs:
   build:

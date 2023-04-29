@@ -161,4 +161,4 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 #
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> / 
-<a href="README.md#">回到顶部 ↑</a>
+<a href="#">回到顶部 ↑</a>

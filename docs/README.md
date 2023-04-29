@@ -66,9 +66,9 @@
 
 ### <img style="margin: 0 3px 0 0" height=17 src="https://i.imgur.com/huwclJK.png"> Greasemonkey userscript:
 
-1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
+1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
+2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
 3. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
 
@@ -102,20 +102,20 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
-- **Google Chrome** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **Mozilla Firefox** (via [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **Microsoft Edge** (via [Edge add-on](https://chatgptevo.com/widescreen/edge) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **Opera** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **Brave** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **Vivaldi** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **LibreWolf** (via [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
-- **QQ** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode))
+- **Google Chrome** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Mozilla Firefox** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Microsoft Edge** (via [Edge add-on](https://chatgptevo.com/widescreen/edge) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Opera** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Brave** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Vivaldi** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **LibreWolf** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **QQ** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 
 If you've tested the userscript to work in a browser not listed above, simply create a [pull request](https://github.com/adamlui/chatgpt-widescreen/pulls) to become a contributor!
 
 <div align="center">
 
-<a href="https://chatgptevo.com/widescreen/chrome"><img height=65 alt="Add to Chrome" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptevo.com/widescreen/edge"><img height=65 alt="Add to Edge" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode"><img height=65 alt="Add Userscript" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
+<a href="https://chatgptevo.com/widescreen/chrome"><img height=65 alt="Add to Chrome" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptevo.com/widescreen/edge"><img height=65 alt="Add to Edge" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=65 alt="Add Userscript" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
@@ -140,14 +140,14 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
-<br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
+<br>[Install](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案。
-<br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
+<br>[Install](https://greasyfork.org/scripts/462440-bravegpt) / 
 [Readme](https://github.bravegpt.com/blob/main/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 

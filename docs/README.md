@@ -117,7 +117,7 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 
 <a href="https://chatgptevo.com/widescreen/chrome"><img height=65 alt="Add to Chrome" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptevo.com/widescreen/edge"><img height=65 alt="Add to Edge" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=65 alt="Add Userscript" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
 <br>
-[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
+[Discuss](https://chatgptevo.com/widescreen/discussions) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
 </div>
@@ -142,7 +142,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[Install](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/README.md) / 
-[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
+[Discuss](https://chatgptevo.com/autorefresh/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 

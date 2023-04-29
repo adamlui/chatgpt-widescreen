@@ -163,4 +163,4 @@ Generate endless answers from all-knowing ChatGPT (in any language!)
 #
 
 <a href="https://github.com/adamlui/chatgpt-addons">**More ChatGPT add-ons**</a> / 
-<a href="https://github.com/adamlui/chatgpt-widescreen#readme">Back to top ↑</a>
+<a href="#">Back to top ↑</a>

@@ -1,10 +1,11 @@
-name: Sync /* to adamlui/chatgpt-apps/chatgpt-widescreen/*
+name: Sync /*, /docs & /media to adamlui/chatgpt-apps/chatgpt-widescreen/*
 
 on:
   push:
     branches: [ master, main ]
     paths:
       - '*'
+      - 'docs/**'
       - 'media/**'
 
 jobs:

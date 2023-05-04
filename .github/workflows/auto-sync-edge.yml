@@ -27,13 +27,13 @@ jobs:
           path: adamlui/chatgpt-addons
 
       - name: Sync /edge/extension/ to /chrome/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/
 
       - name: Sync /edge/extension/ to /opera/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/opera/extension/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/opera/extension/
 
       - name: Sync / to adamlui/chatgpt-addons/chatgpt-widescreen/
-        run: rsync -avh --delete --exclude={'.git','.github'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/
+        run: rsync -avhr --delete --exclude={'.git','.github'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -42,7 +42,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
-          file_pattern: '*'
+          file_pattern: '**'
           repository: adamlui/chatgpt-widescreen
 
       - name: Push to adamlui/chatgpt-addons
@@ -52,5 +52,5 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
-          file_pattern: 'chatgpt-widescreen/*'
+          file_pattern: 'chatgpt-widescreen/**'
           repository: adamlui/chatgpt-addons

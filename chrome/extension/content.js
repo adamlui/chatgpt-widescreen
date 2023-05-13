@@ -4,6 +4,8 @@
 
 (async () => {
 
+    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
+
     // Import libs
     var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
     var { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))

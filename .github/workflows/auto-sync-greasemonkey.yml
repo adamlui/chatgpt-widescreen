@@ -34,11 +34,11 @@ jobs:
           path: adamlui/chatgpt-apps
 
       - name: Sync /greasemonkey/_locales/ to /(chrome|edge|opera)/extension/_locales/
-          run: |
-            for extdir in chrome/extension/_locales/ edge/extension/_locales/ opera/extension/_locales/
-            do
-              rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/${extdir}
-            done
+        run: |
+          for extdir in chrome/extension/_locales/ edge/extension/_locales/ opera/extension/_locales/
+          do
+            rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/"$extdir"
+          done
 
       - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
         run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/

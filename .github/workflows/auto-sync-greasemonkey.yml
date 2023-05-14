@@ -37,7 +37,7 @@ jobs:
         run: |
           for extdir in chrome/extension/_locales/ edge/extension/_locales/ opera/extension/_locales/
           do
-            rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/"$extdir"
+            rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$extdir"
           done
 
       - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/

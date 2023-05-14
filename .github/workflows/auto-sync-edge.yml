@@ -1,4 +1,4 @@
-name: Sync /edge/extension/_locales/ to /greasemonkey/_locales/, then /edge/extension/ to /(chrome|opera)/extension/, then / to adamlui/chatgpt-apps/chatgpt-widescreen/
+name: Sync /edge/extension/ to /(chrome|opera)/extension/, then /edge/extension/_locales/ to /greasemonkey/_locales/, then / to adamlui/chatgpt-apps/chatgpt-widescreen/, then /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
 on:
   push:
@@ -19,13 +19,6 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
-
       - name: Checkout adamlui/chatgpt-apps
         uses: actions/checkout@v2
         with:
@@ -33,8 +26,12 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
-      - name: Sync /edge/extension/_locales/ to /greasemonkey/_locales/
-        run: rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/_locales/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales"
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
 
       - name: Sync /edge/extension/ to /(chrome|opera)/extension/
         run: |
@@ -43,8 +40,14 @@ jobs:
             rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$browser/extension/"
           done
 
+      - name: Sync /edge/extension/_locales/ to /greasemonkey/_locales/
+        run: rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/edge/extension/_locales/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales"
+
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
         run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
+
+      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -56,16 +59,6 @@ jobs:
           file_pattern: '**'
           repository: adamlui/chatgpt-widescreen
 
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
-          file_pattern: 'chatgpt/chatgpt-widescreen/**'
-          repository: adamlui/userscripts
-
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -75,3 +68,13 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
           file_pattern: 'chatgpt-widescreen/**'
           repository: adamlui/chatgpt-apps
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: 'chatgpt/chatgpt-widescreen/**'
+          repository: adamlui/userscripts

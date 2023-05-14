@@ -33,15 +33,15 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
+      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+
       - name: Sync /greasemonkey/_locales/ to /(chrome|edge|opera)/extension/_locales/
         run: |
           for browser in chrome edge opera
           do
             rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$browser/extension/_locales/"
           done
-
-      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
         run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/

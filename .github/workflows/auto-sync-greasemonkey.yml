@@ -1,4 +1,4 @@
-name: Sync /greasemonkey/ to (adamlui/userscripts/chatgpt/chatgpt-widescreen/ && adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/)
+name: Sync /greasemonkey/_locales/ to /(chrome|edge|opera)/extension/_locales/, then /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen, then / to adamlui/chatgpt-apps/chatgpt-widescreen/
 
 on:
   push:
@@ -56,16 +56,6 @@ jobs:
           file_pattern: '**'
           repository: adamlui/chatgpt-widescreen
 
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
-          file_pattern: 'chatgpt/chatgpt-widescreen/**'
-          repository: adamlui/userscripts
-
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -75,3 +65,13 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
           file_pattern: 'chatgpt-widescreen/**'
           repository: adamlui/chatgpt-apps
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: 'chatgpt/chatgpt-widescreen/**'
+          repository: adamlui/userscripts

@@ -40,7 +40,9 @@ jobs:
         run: |
           for browser in chrome edge opera
           do
-            rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/" "${{ github.workspace }}/adamlui/chatgpt-widescreen/${ browser }/extension/_locales/"
+            cmd="${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/$browser/extension/_locales/"
+            echo "Running command: rsync -avhr --delete $cmd"
+            rsync -avhr --delete $cmd
           done
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/

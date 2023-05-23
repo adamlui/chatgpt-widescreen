@@ -6,8 +6,8 @@ body, button, input, select, textarea {
     font-size: .905rem ; user-select: none
 }
 
-a { color: #999 ; text-decoration: none }
-a:focus, a:hover { text-decoration: underline ; color: inherit }
+a { color: #999 ; text-decoration: underline; }
+a:focus, a:hover { color: inherit; }
 
 .menu-header {
     align-items: center;

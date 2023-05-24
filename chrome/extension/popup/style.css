@@ -6,8 +6,8 @@ body, button, input, select, textarea {
     font-size: .905rem ; user-select: none
 }
 
-a { color: #999 ; text-decoration: underline; }
-a:focus, a:hover { color: inherit; }
+a { color: #999 ; text-decoration: none }
+a:focus, a:hover { text-decoration: underline ; color: inherit }
 
 .menu-header {
     border-bottom: solid 1px lightgrey;

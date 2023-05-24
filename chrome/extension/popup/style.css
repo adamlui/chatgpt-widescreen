@@ -52,10 +52,9 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 
 /* Style the slider circle */
 .toggle-switch .slider::before {
-    position: absolute; height: 0.625rem; width: 0.625; left: -0.04rem; top: -0.05rem;
-    border: 1px solid black; border-radius: 50%;
-    background-color: white;
-    content: "";
+    position: absolute ; height: 0.625rem ; width: 0.625rem ; left: -0.04rem ; top: -0.05rem ;
+    border: 1px solid black ; border-radius: 50% ;
+    background-color: white ; content: ""
 }
 
 /* Style the slider when it's active */

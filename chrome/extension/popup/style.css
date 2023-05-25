@@ -10,10 +10,10 @@ a { color: #999 ; text-decoration: none }
 a:focus, a:hover { text-decoration: underline ; color: inherit }
 
 .menu-header {
-    border-bottom: solid 1px lightgrey;
-    padding: 5px 5px 5px 0; margin: 0;
-    display: flex; background: white;
-    align-items: center;
+    border-bottom: solid 1px lightgrey ;
+    padding: 5px 5px 5px 0; margin: 0 ;
+    display: flex; background: white ;
+    align-items: center ;
 }
 
 .logo { margin: 4px 10px 4px 12px }

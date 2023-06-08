@@ -44,22 +44,23 @@ jobs:
         run: |
           latest_file=""
           platforms=("greasemonkey" "chrome" "edge" "opera")
+          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
 
           # Get the latest file
           for platform in "${platforms[@]}"; do
-            file="adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
-            changes=$(git diff --name-only HEAD^ -- "$file")
+            file="$platform/utils/translate-en-messages.py"
+            changes=$(git log -1 --format="%h" -- "$file")
             if [[ -n $changes ]]; then
               latest_file=$file
               break
             fi
           done
 
+          # Copy the latest file to other dirs
           if [[ -n $latest_file ]]; then
-            # Copy the latest version to the other directories
             for platform in "${platforms[@]}"; do
-              file="adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
-              cp -f -v "${{ github.workspace }}/$latest_file" "${{ github.workspace }}/$file"
+              file="$platform/utils/translate-en-messages.py"
+              cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file"
             done
           fi
 

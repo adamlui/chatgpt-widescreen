@@ -2,7 +2,7 @@ name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/uti
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
     paths: '**/translate-en-messages.py'
 
 jobs:
@@ -40,7 +40,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
+      - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py && to adamlui/python-utils/translate-messages/
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           files=$(find . -name "translate-en-messages.py" -type f)
@@ -64,17 +64,12 @@ jobs:
               fi
             done
 
-            # Save the newest_file value to an environment file
-            echo "NEWEST_FILE=$newest_file" >> ${{ github.workspace }}/env.properties
+            # Copy the newest_file to adamlui/python-utils/translate-messages/translate-en-messages.py
+            cp -f -v "$newest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
           fi
-        env:
-          NEWEST_FILE: ${{ steps['Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py'].outputs.newest_file }}
-
-      - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
-        run: cp -f -v "${{ github.workspace }}/$NEWEST_FILE" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
-        run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
+        run: rsync -avhr --delete --exclude={'.*', 'package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
 
       - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
         run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/

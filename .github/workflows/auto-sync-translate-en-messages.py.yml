@@ -40,27 +40,6 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-jobs:
-  build:
-    if: github.event.commits[0].committer.username != 'auto-sync-bot'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout adamlui/chatgpt-widescreen
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-widescreen
-          path: adamlui/chatgpt-widescreen
-          fetch-depth: 2
-
-      - name: Checkout adamlui/python-utils
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/python-utils
-          path: adamlui/python-utils
-
       - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
         run: |
           cd ${{ github.workspace }}

@@ -35,6 +35,16 @@ jobs:
       - name: Sync greasemonkey/utils/translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
         run: cp -f -v ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/utils/translate-en-messages.py ${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py
 
+      - name: Push to adamlui/chatgpt-widescreen
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: '**/translate-en-messages.py'
+          repository: adamlui/chatgpt-widescreen
+
       - name: Push to adamlui/python-utils
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

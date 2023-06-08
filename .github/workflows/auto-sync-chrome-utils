@@ -1,4 +1,4 @@
-name: Sync chrome/utils/* to source repos
+name: Sync chrome/utils to (greasemonkey|edge|opera)/utils && adamlui/python-utils
 
 on:
   push:

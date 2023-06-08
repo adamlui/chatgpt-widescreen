@@ -43,16 +43,15 @@ jobs:
       - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
         run: |
           latest_file=""
-          latest_timestamp=0
           platforms=("greasemonkey" "chrome" "edge" "opera")
 
-          # Get the latest file and its timestamp
+          # Get the latest file
           for platform in "${platforms[@]}"; do
             file="adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
-            timestamp=$(git log -1 --format="%ct" -- "$file")
-            if (( timestamp > latest_timestamp )); then
+            changes=$(git diff --name-only HEAD^ -- "$file")
+            if [[ -n $changes ]]; then
               latest_file=$file
-              latest_timestamp=$timestamp
+              break
             fi
           done
 
@@ -66,6 +65,12 @@ jobs:
 
       - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
         run: cp -f -v "${{ github.workspace }}/$latest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
+
+      - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
+        run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
+
+      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4

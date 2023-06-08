@@ -42,7 +42,7 @@ jobs:
 
       - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
         run: |
-          cd ${{ github.workspace }}
+          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           files=$(find . -name "translate-en-messages.py" -type f)
           newest_file=""
           newest_timestamp=0

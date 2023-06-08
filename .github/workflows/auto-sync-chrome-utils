@@ -29,7 +29,7 @@ jobs:
         run: |
           for platform in greasemonkey edge opera
           do
-            rsync -avhr "${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/utils/translate-en-messages.py" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
+            cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/utils/translate-en-messages.py" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
           done
 
       - name: Sync chrome/utils/translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py

@@ -1,0 +1,108 @@
+name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py && to adamlui/python-utils/translate-messages/, then / to adamlui/chatgpt-apps/chatgpt-widescreen/, then /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+
+on:
+  push:
+    branches: [ master, main ]
+    paths: '**/translate-en-messages.py'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'auto-sync-bot'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout adamlui/chatgpt-widescreen
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-widescreen
+          path: adamlui/chatgpt-widescreen
+          fetch-depth: 2
+
+      - name: Checkout adamlui/python-utils
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/python-utils
+          path: adamlui/python-utils
+        
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
+        run: |
+          latest_file=""
+          latest_timestamp=0
+          platforms=("greasemonkey" "chrome" "edge" "opera")
+
+          # Get the latest file and its timestamp
+          for platform in "${platforms[@]}"; do
+            file="adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
+            timestamp=$(git log -1 --format="%ct" -- "$file")
+            if (( timestamp > latest_timestamp )); then
+              latest_file=$file
+              latest_timestamp=$timestamp
+            fi
+          done
+
+          if [[ -n $latest_file ]]; then
+            # Copy the latest version to the other directories
+            for platform in "${platforms[@]}"; do
+              file="adamlui/chatgpt-widescreen/$platform/utils/translate-en-messages.py"
+              cp -f -v "${{ github.workspace }}/$latest_file" "${{ github.workspace }}/$file"
+            done
+          fi
+
+      - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
+        run: cp -f -v "${{ github.workspace }}/$latest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
+
+      - name: Push to adamlui/chatgpt-widescreen
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: '**/translate-en-messages.py'
+          repository: adamlui/chatgpt-widescreen
+
+      - name: Push to adamlui/python-utils
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: '**/translate-en-messages.py'
+          repository: adamlui/python-utils
+
+      - name: Push to adamlui/chatgpt-apps
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: 'chatgpt-widescreen/**'
+          repository: adamlui/chatgpt-apps
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: 'chatgpt/chatgpt-widescreen/**'
+          repository: adamlui/userscripts

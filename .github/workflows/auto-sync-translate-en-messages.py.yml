@@ -40,32 +40,57 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'auto-sync-bot'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout adamlui/chatgpt-widescreen
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-widescreen
+          path: adamlui/chatgpt-widescreen
+          fetch-depth: 2
+
+      - name: Checkout adamlui/python-utils
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/python-utils
+          path: adamlui/python-utils
+
       - name: Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py
         run: |
-          latest_file=""
-          platforms=("greasemonkey" "chrome" "edge" "opera")
-          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
+          cd ${{ github.workspace }}
+          files=$(find . -name "translate-en-messages.py" -type f)
+          newest_file=""
+          newest_timestamp=0
 
-          # Get the latest file
-          for platform in "${platforms[@]}"; do
-            file="$platform/utils/translate-en-messages.py"
-            changes=$(git log -1 --format="%ct" -- "$file")
-            if [[ -n $changes ]]; then
-              latest_file=$file
-              break
+          # Find the newest translate-en-messages.py file
+          for file in $files; do
+            timestamp=$(git log -1 --format="%ct" -- "$file")
+            if [[ $timestamp -gt $newest_timestamp ]]; then
+              newest_file=$file
+              newest_timestamp=$timestamp
             fi
           done
 
-          # Copy the latest file to other dirs
-          if [[ -n $latest_file ]]; then
-            for platform in "${platforms[@]}"; do
-              file="$platform/utils/translate-en-messages.py"
-              cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file" "${{ github.workspace }}/adamlui/greasemonkey/$file"
+          if [[ -n $newest_file ]]; then
+            # Copy and replace all other translate-en-messages.py files
+            for file in $files; do
+              if [[ $file != $newest_file ]]; then
+                cp -f "$newest_file" "$file"
+              fi
             done
+
+            # Set the output variable for the next step
+            echo "::set-output name=newest_file::$newest_file"
           fi
 
       - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
-        run: cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$latest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
+        run: cp -f -v "${{ github.workspace }}/${{ steps['Sync translate-en-messages.py between (greasemonkey|chrome|edge|opera)/utils/translate-en-messages.py'].outputs.newest_file }}" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
         run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/

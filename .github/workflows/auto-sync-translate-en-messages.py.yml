@@ -60,12 +60,12 @@ jobs:
           if [[ -n $latest_file ]]; then
             for platform in "${platforms[@]}"; do
               file="$platform/utils/translate-en-messages.py"
-              cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file" "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file"
+              cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$file" "${{ github.workspace }}/adamlui/$platform/utils/translate-en-messages.py"
             done
           fi
 
       - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/translate-en-messages.py
-        run: cp -f -v "${{ github.workspace }}/$latest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
+        run: cp -f -v "${{ github.workspace }}/adamlui/chatgpt-widescreen/$latest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
         run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/

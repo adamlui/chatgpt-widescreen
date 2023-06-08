@@ -69,7 +69,7 @@ jobs:
           fi
 
       - name: Sync / to adamlui/chatgpt-apps/chatgpt-widescreen/
-        run: rsync -avhr --delete --exclude={'.*', 'package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
+        run: rsync -avhr --delete --exclude={'.*','package*json'} ${{ github.workspace }}/adamlui/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
 
       - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
         run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/

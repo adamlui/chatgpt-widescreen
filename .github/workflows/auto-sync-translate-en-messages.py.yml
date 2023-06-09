@@ -84,16 +84,6 @@ jobs:
           file_pattern: '**/translate-en-messages.py'
           repository: adamlui/chatgpt-widescreen
 
-      - name: Push to adamlui/python-utils
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
-          file_pattern: '**/translate-en-messages.py'
-          repository: adamlui/python-utils
-
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -113,3 +103,13 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
           file_pattern: 'chatgpt/chatgpt-widescreen/**'
           repository: adamlui/userscripts
+
+      - name: Push to adamlui/python-utils
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]'
+          file_pattern: '**/translate-en-messages.py'
+          repository: adamlui/python-utils

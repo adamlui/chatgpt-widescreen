@@ -1,4 +1,4 @@
-const config = { prefix: 'chatGPTws' }
+const config = { prefix: 'chatGPTws', appSymbol: '🖥️' }
 const settings = {
 
     load: function() {

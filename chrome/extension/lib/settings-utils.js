@@ -1,5 +1,6 @@
 const config = {
     prefix: 'chatgptWidescreen', appSymbol: '🖥️',
+    chromeURL: 'https://chatgptWidescreen.com/chrome',
     githubURL: 'https://github.com/adamlui/chatgpt-widescreen' }
 
 const settings = {

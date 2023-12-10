@@ -3,8 +3,7 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
-(async () => {
-    /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
+(async () => { /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
@@ -64,7 +63,7 @@
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-    document.head.appendChild(tooltipStyle)
+    document.head.append(tooltipStyle)
 
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
@@ -74,7 +73,7 @@
           hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
                                    + '  padding: .1rem 0 0 !important }' // reduce v-padding
 
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create widescreen style
     const wideScreenStyle = document.createElement('style')
@@ -293,10 +292,10 @@
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
         const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-        svgElems.forEach(elem => buttonSVG.appendChild(elem))
+        svgElems.forEach(elem => buttonSVG.append(elem))
 
         // Update SVG
-        if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
+        if (!button.contains(buttonSVG)) button.append(buttonSVG)
     }
 
     function createSVGelem(tagName, attributes) {
@@ -332,9 +331,9 @@
     // Define TOGGLE functions
 
     function activateMode(mode) {
-        if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
+        if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
-            document.head.appendChild(fullWindowStyle)
+            document.head.append(fullWindowStyle)
             if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
@@ -378,7 +377,7 @@
 
     function syncFullerWindows(fullWindowState) {
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
-            document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+            document.head.append(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
         } else if (!fullWindowState) { // de-activate fuller windows
             try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window

@@ -16,9 +16,7 @@ module.exports = {
     'overrides': [
         { 'files': ['**/lib*/*.js'], 'parserOptions': { 'sourceType': 'module' }},
         { 'files': ['**/*.json'], 'extends': ['plugin:json-schema-validator/recommended']},
-        {
-            'files': ['**/*.user.js'],
-            'extends': ['plugin:userscripts/recommended'],
+        { 'files': ['**/*.user.js'], 'extends': ['plugin:userscripts/recommended'],
             'rules': {
                 'userscripts/use-homepage-and-url': 'off',
                 'userscripts/align-attributes': ['error', 3]

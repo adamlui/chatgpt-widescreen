@@ -13,7 +13,7 @@ module.exports = {
     'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [
-        { 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }},
+        { 'files': ['**/lib*/*.js'], 'parserOptions': { 'sourceType': 'module' }},
         {
             'files': ['**/*.user.js'],
             'extends': ['plugin:userscripts/recommended'],

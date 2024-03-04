@@ -89,7 +89,7 @@ jobs:
 
           # Store for update step next
           echo "total_users=$formatted_total" >> $GITHUB_OUTPUT
-      
+
       - name: Update README shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen

@@ -17,7 +17,7 @@ jobs:
           path: adamlui/chatgpt-widescreen
 
       - name: Fetch/sum user counts
-        id: get-users
+        id: get-usercounts
         run: |
           expand_num() { # expand nums abbreviated w/ 'k' or 'm' suffix to integers
             local num=$(echo "$1" | tr '[:upper:]' '[:lower:]') # Convert to lowercase
@@ -87,7 +87,7 @@ jobs:
       - name: Update README shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          total_users=$(echo ${{ steps.get-users.outputs.total_users }})
+          total_users=$(echo ${{ steps.get-usercounts.outputs.total_users }})
           sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/g" $(find docs/ -name "README.md")
           if [ $? -eq 0 ] ; then echo "Usercount shields updated to $total_users"
           else echo "Usercount shields up-to-date already" ; fi

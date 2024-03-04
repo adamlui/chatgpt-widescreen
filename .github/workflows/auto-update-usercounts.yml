@@ -78,8 +78,9 @@ jobs:
 
           # Sum/format user counts
           total_users=$((chrome_users + edge_users + gf_users))
+          echo "Total users: $total_users"
           formatted_total=$(abbreviate_num "$total_users")
-          echo "Total users: $formatted_total"
+          echo "Formatted total: $formatted_total"
 
           # Store for update step next
           echo "total_users=$formatted_total" >> $GITHUB_OUTPUT

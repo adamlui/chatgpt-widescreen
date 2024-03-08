@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from ./* to <platform>/*, then ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*
+name: Sync LICENSE.md from ./* to <platform>/*, then ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
 
 on:
   push:

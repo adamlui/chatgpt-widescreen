@@ -249,7 +249,6 @@
     }
 
     function removeBtns() {
-        const chatbar = document.querySelector(chatbarSelector)
         if (!chatbar.contains(fullWindowBtn)) return // if buttons are missing, exit
         else { // remove chat toggles
             const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]

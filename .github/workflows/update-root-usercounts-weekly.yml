@@ -99,7 +99,7 @@ jobs:
           else # perform update
             for readme in $(find docs/ -name "README.md") ; do
               old_readme=$(<"$readme")
-              sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme")
+              sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme"
               new_readme=$(<"$readme")
               if [ "$old_readme" != "$new_readme" ] ; then shield_updated=true ; fi
             done          

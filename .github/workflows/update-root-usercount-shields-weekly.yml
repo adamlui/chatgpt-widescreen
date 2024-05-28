@@ -108,12 +108,10 @@ jobs:
           fi
 
       - name: Push to adamlui/chatgpt-widescreen
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_author: kudo-sync-bot <auto-sync@kudoai.com>
-          commit_message: Updated usercount shield counters
-          file_pattern: "**/README.md"
-          repository: adamlui/chatgpt-widescreen
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "Updated usercount shield counters" || true
+          git push

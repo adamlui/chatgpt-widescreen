@@ -13,7 +13,7 @@
 [![](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=评分&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fobnaaalnokmchdoagnhmllakaclaaooa&style=for-the-badge)](https://edge.chatgptwidescreen.com)
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptwidescreen.com/commits)
-![](https://img.shields.io/badge/%E5%85%8B%E9%9A%86-1.9K/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/%E5%85%8B%E9%9A%86-1.5K/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
@@ -224,7 +224,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
-> 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 提供支持!)
+> 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4o 提供支持!)
 <br>[安装](https://docs.bravegpt.com/#-installation) /
 [自述文件](https://docs.bravegpt.com/#readme) /
 [讨论](https://github.bravegpt.com/discussions)

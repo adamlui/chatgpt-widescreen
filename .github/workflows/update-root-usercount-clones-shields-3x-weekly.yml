@@ -5,7 +5,7 @@ on:
     - cron: "28 3 * * 2,4,6" # every Tue/Thu/Sat @ 3:28 AM
 
 jobs:
-  update-usercount-shields:
+  update-root-usercount-clones-jsd-shields:
     runs-on: ubuntu-latest
 
     steps:

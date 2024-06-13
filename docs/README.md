@@ -13,7 +13,7 @@
 [![\[Microsoft Edge\]](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=rating&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fobnaaalnokmchdoagnhmllakaclaaooa&style=for-the-badge)](https://edge.chatgptwidescreen.com)
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![\[GitHub commits\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptwidescreen.com/commits)
-![](https://img.shields.io/badge/Clones-1.8K/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/Clones-1.7K/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 [![\[Powered by chatgpt.js\]](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
 [![\[SonarCloud vulnerabilities\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
@@ -98,7 +98,7 @@
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png?latest"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png?latest"> Greasemonkey userscript:
 
-1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
+1. Install Tampermonkey ([Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
 2. Install [ChatGPT Widescreen Mode](https://greasyfork.chatgptwidescreen.com) userscript (will load in userscript manager installed above)
 

@@ -1,0 +1,116 @@
+name: Sync LICENSE.md from chrome/* to <platform>/*, then chrome/extension/* to (edge|opera)/extension/*, then chrome/extension/_locales/* to greasemonkey/_locales/*, then ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+
+on:
+  push:
+    branches: [main]
+    paths: [chrome/**]
+
+jobs:
+  build:
+    if: (github.repository == 'adamlui/chatgpt-widescreen') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-widescreen
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-widescreen
+          path: adamlui/chatgpt-widescreen
+          fetch-depth: 2
+
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync LICENSE.md from chrome/* to <platform>/*
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
+          platforms=($(find . -type d -name "docs" | # paths to docs/
+            awk -F'/' '{print $(NF-1)}' | # filter to parents
+            grep -v "^chrome$")) # exclude chrome
+          echo "Platforms: ${platforms[@]}"
+          languages=($(ls docs/*/LICENSE.md | # paths to LICENSEs
+            awk -F'/' '{print $(NF-1)}') # filter to parents
+            "en") # include English
+          echo -e "Languages: ${languages[@]}\n"
+          for lang in "${languages[@]}"; do
+            chrome_license=./chrome$([[ "$lang" != "en" ]] && echo "/docs/$lang/" || echo "/")LICENSE.md
+            chrome_license_content=$(git show HEAD:"$chrome_license")
+            chrome_license_modified=$(git log -1 --format="%ct" -- "$chrome_license")
+            for platform in "${platforms[@]}"; do
+              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
+              platform_license_content=$(git show HEAD:"$platform_license")
+              platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
+              if [[ $chrome_license_modified -gt $platform_license_modified ]] ; then
+                if [[ "$chrome_license_content" != "$platform_license_content" ]] ; then
+                  cp -f "$chrome_license" "$platform_license"
+                  echo "Copied $chrome_license to $platform_license"
+          fi ; fi ; done; done
+
+      - name: Sync chrome/extension/* to (edge|opera)/extension/*
+        run: |
+          for browser in edge opera
+          do
+            rsync -avhr --delete \
+              "${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/" \
+              "${{ github.workspace }}/adamlui/chatgpt-widescreen/$browser/extension"
+          done
+
+      - name: Sync chrome/extension/_locales/* to greasemonkey/_locales/*
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/_locales"
+
+      - name: Sync ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*
+        run: |
+          rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
+            ${{ github.workspace }}/adamlui/chatgpt-widescreen/ \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/
+
+      - name: Sync greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+
+      - name: Push to adamlui/chatgpt-widescreen
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `chrome`]"
+          file_pattern: "**"
+          repository: adamlui/chatgpt-widescreen
+
+      - name: Push to adamlui/chatgpt-apps
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen/chrome`]"
+          file_pattern: "chatgpt-widescreen/**"
+          repository: adamlui/chatgpt-apps
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-widescreen`]"
+          file_pattern: "chatgpt/chatgpt-widescreen/**"
+          repository: adamlui/userscripts

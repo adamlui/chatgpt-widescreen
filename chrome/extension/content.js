@@ -119,7 +119,7 @@
 
         insert() {
 
-            // Create buttons if missing
+            // Create buttons if not created yet
             if (!btns.wideScreen) {
                 const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                     .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))

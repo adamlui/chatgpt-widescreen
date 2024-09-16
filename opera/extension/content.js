@@ -490,7 +490,7 @@
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type == 'attributes' && mutation.attributeName == 'class') // potential scheme toggled
-                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)// temp chat toggled
+                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat) // temp chat toggled
                 ) { btns.setColor() ; isTempChat = !isTempChat }
         }}
     })

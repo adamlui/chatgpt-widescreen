@@ -73,6 +73,7 @@
     // Define CHATBAR functions
     
     const chatbar = {
+
         get() {
             let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
@@ -80,13 +81,33 @@
             return chatbar
         },
 
+        async isLoaded(timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+            const isLoadedPromise = new Promise(resolve => {
+                if (document.querySelector(sites[site].selectors.input)) resolve(true)
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(sites[site].selectors.input)) {
+                        obs.disconnect() ; resolve(true) }
+                }).observe(document.body, { childList: true, subtree: true })
+            })
+            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
+        },
+
         tweak() {
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
             if (/chatgpt|openai/.test(site)) {
                 const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
                 if (inputArea) {
+                    const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                    const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat', 'send']
+                        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar)
+                                     && !(type == 'newChat' && config.ncbDisabled))
+                    visibleBtnTypes.forEach(btnType =>
+                        widths[btnType] = btns[btnType]?.getBoundingClientRect().width
+                                       || document.querySelector(sites[site].selectors.sendBtn)?.getBoundingClientRect().width)
+                    const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
-                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
                 }
             } else if (site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
@@ -153,9 +174,11 @@
                     if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                     if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
                         const sendBtn = await new Promise(resolve => {
-                            const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
+                            const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                            if (sendBtn) resolve(sendBtn)
                             else new MutationObserver((_, obs) => {
-                                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                                const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                                if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
                             }).observe(document.body, { childList: true, subtree: true })
                         })
                         btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
@@ -186,9 +209,9 @@
             const elemToInsertBefore =  /chatgpt|openai/.test(site) ? chatbarDiv.lastChild : chatbarDiv.children[1]
             btnsToInsert.forEach(btn => chatbarDiv.insertBefore(btn, elemToInsertBefore))
 
-            chatbar.tweak()
+            setTimeout(() => chatbar.tweak(), 1)
         },
-    
+
         remove() {
             const chatbarDiv = chatbar.get()
             if (chatbarDiv?.contains(btns.wideScreen)) { // remove all buttons
@@ -345,6 +368,7 @@
                     update.style.tweaks() // restore removed tweaks
                     update.style.wideScreen() // sync wider chatbox
                     btns.insert()
+                    if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
         }})},
 
         fullerWin(fullWinState) {
@@ -362,6 +386,7 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            if (mode == 'wideScreen' && /openai|chatgpt/.test(site)) chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
             settings.load('notifDisabled').then(() => {
                 if (!config.notifDisabled) // notify synced state
@@ -457,7 +482,8 @@
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Insert BUTTONS
-    settings.load('extensionDisabled').then(() => { if (!config.extensionDisabled) btns.insert() })
+    settings.load('extensionDisabled').then(async () => {
+        if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }})
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false

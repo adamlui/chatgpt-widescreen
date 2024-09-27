@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from firefox/* to <platform>/*, then firefox/extension/_locales/* to <(chrome|edge|opera)/extension|greasemonkey>/_locales/*, then ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+name: Sync firefox/extension/_locales/* to <(chrome|edge|opera)/extension|greasemonkey>/_locales/*, then ./* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
 
 on:
   push:
@@ -38,31 +38,6 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/userscripts
           path: adamlui/userscripts
-
-      - name: Sync LICENSE.md from firefox/* to <platform>/*
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          platforms=($(find . -type d -name "docs" | # paths to docs/
-            awk -F'/' '{print $(NF-1)}' | # filter to parents
-            grep -v "^firefox$")) # exclude firefox
-          echo "Platforms: ${platforms[@]}"
-          languages=($(ls docs/*/LICENSE.md | # paths to LICENSEs
-            awk -F'/' '{print $(NF-1)}') # filter to parents
-            "en") # include English
-          echo -e "Languages: ${languages[@]}\n"
-          for lang in "${languages[@]}"; do
-            firefox_license=./firefox$([[ "$lang" != "en" ]] && echo "/docs/$lang/" || echo "/")LICENSE.md
-            firefox_license_content=$(git show HEAD:"$firefox_license")
-            firefox_license_modified=$(git log -1 --format="%ct" -- "$firefox_license")
-            for platform in "${platforms[@]}"; do
-              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
-              platform_license_content=$(git show HEAD:"$platform_license")
-              platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
-              if [[ $firefox_license_modified -gt $platform_license_modified ]] ; then
-                if [[ "$firefox_license_content" != "$platform_license_content" ]] ; then
-                  cp -f "$firefox_license" "$platform_license"
-                  echo "Copied $firefox_license to $platform_license"
-          fi ; fi ; done; done
 
       - name: Sync firefox/extension/_locales/* to <chrome|edge|greasemonkey|opera>/extension/_locales/*
         run: |

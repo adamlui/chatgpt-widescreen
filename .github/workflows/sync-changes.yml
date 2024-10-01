@@ -3,7 +3,7 @@ name: Sync LICENSE.md from ./* to <platform>/*, then ./* to adamlui/chatgpt-apps
 on:
   push:
     branches: [main]
-    paths: ["*", "data/**",  "docs/**", "media/**", "!.*", "!package*json", "!eslint.config*"]
+    paths: ["*", "data/**", "docs/**", "media/**", "!.*", "!package*json", "!eslint.config*"]
 
 jobs:
   build:

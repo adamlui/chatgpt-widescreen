@@ -21,6 +21,6 @@ export default [
             globals: { ...globals.browser, ...globals.greasemonkey, chatgpt: 'readonly', chrome: 'readonly', dom: 'readonly' }
         }
     },
-    { files: ['**/*.mjs', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
+    { files: ['**/*.mjs', '**/components/*.js', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ...json.configs['recommended'] }
 ];

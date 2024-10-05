@@ -135,5 +135,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
           git add .
-          git commit -n -m "Updated usercount shields in ChatGPT Widescreen root READMEs" || true
+          git commit -n -m "Updated usercount shield counters in ChatGPT Widescreen root READMEs" || true
           git push

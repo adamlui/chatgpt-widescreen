@@ -124,7 +124,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
 
-      - name: Push to adamlui/chatgpt-widescreen
+      - name: Push changes to adamlui/chatgpt-widescreen
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           git add .

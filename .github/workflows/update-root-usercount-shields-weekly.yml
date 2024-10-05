@@ -2,7 +2,7 @@ name: Update usercount shields in root READMEs, sync to adamlui/chatgpt-apps
 
 on:
   schedule:
-    - cron: "28 3 * * 2,4,6" # every Tue/Thu/Sat @ 3:28 AM
+    - cron: "28 3 * * 2" # every Tue @ 3:28 AM
 
 jobs:
   update-root-usercount-shields:

@@ -1,4 +1,4 @@
-name: Sync _locales/* between <chrome|firefox>/extension/, then * to adamlui/ai-apps/chatgpt-widescreen/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+name: Sync _locales/ between <chrome|firefox>/extension/, then ** to adamlui/ai-apps/chatgpt-widescreen/, then greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync _locales/* between <chrome|firefox>/extension/
+      - name: Sync _locales/ between <chrome|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           ff_dir="firefox/extension/_locales"
@@ -61,13 +61,13 @@ jobs:
               fi
           done
 
-      - name: Sync * to adamlui/ai-apps/chatgpt-widescreen/*
+      - name: Sync ** to adamlui/ai-apps/chatgpt-widescreen/
         run: |
           rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
             ${{ github.workspace }}/adamlui/chatgpt-widescreen/ \
             ${{ github.workspace }}/adamlui/ai-apps/chatgpt-widescreen/
 
-      - name: Sync greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+      - name: Sync greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/ \

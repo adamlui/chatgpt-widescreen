@@ -101,7 +101,7 @@ jobs:
           formatted_total_users=$(format_total "$total_users")
           echo "Formatted total users: $formatted_total_users"
 
-          # Expose as outputs for update step next
+          # Expose as env var for update step next
           echo "total_users=$formatted_total_users" >> $GITHUB_ENV
 
       - name: Update README shields
@@ -115,7 +115,7 @@ jobs:
               sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme"
               new_readme=$(<"$readme")
               if [ "$old_readme" != "$new_readme" ] ; then users_updated=true ; fi
-            done          
+            done
             if [ "$users_updated" = true ] ; then echo "Usercount shields updated to $total_users"
             else echo "Usercount shields already up-to-date" ; fi
           fi

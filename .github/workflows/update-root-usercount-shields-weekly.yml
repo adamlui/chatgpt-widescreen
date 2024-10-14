@@ -119,7 +119,7 @@ jobs:
             if [ "$users_updated" = true ] ; then echo "Usercount shields updated to $total_users"
             else echo "Usercount shields already up-to-date" ; fi
           fi
-          if [ "$users_updated" == true ] ; then echo "users_updated=true" >> $GITHUB_ENV ; fi
+          if [ "$users_updated" = true ] ; then echo "users_updated=true" >> $GITHUB_ENV ; fi
 
       - name: Sync ** to adamlui/ai-apps/chatgpt-widescreen/
         if: env.users_updated == 'true'

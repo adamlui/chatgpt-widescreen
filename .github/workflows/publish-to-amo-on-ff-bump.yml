@@ -36,9 +36,9 @@ jobs:
 
       - name: Publish to AMO
         if: env.version_changed == 'true'
-        uses: yayuyokitano/firefox-addon@v0.0.6-alpha
+        uses: cardinalby/webext-buildtools-firefox-addons-action@v1
         with:
-          api_key: ${{ secrets.AMO_ISSUER }}
-          api_secret: ${{ secrets.AMO_SECRET }}
-          guid: "chatgpt.widescreen@chatgptevo.com"
-          xpi_path: ${{ github.workspace }}/adamlui/chatgpt-widescreen/extension.zip
+          zipFilePath: "${{ github.workspace }}/adamlui/chatgpt-widescreen/extension.zip"
+          extensionId: 'chatgpt.widescreen@chatgptevo.com'
+          jwtIssuer: ${{ secrets.AMO_ISSUER }}
+          jwtSecret: ${{ secrets.AMO_SECRET }}

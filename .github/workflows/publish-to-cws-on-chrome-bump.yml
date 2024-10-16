@@ -25,17 +25,17 @@ jobs:
           PREV_VER=$(git show HEAD^:chrome/extension/manifest.json | grep '"version"' | sed -E 's/.*"version": "(.*)".*/\1/')
           if [ "$(printf '%s\n' "$PREV_VER" "$CURRENT_VER" | sort -V | head -n 1)" != "$CURRENT_VER" ] ; then
                echo "Extension updated from $PREV_VER to $CURRENT_VER"
-               echo "version_changed=true" >> $GITHUB_ENV
-          else echo "version_changed=false" >> $GITHUB_ENV ; fi
+               echo "VERSION_CHANGED=true" >> $GITHUB_ENV
+          else echo "VERSION_CHANGED=false" >> $GITHUB_ENV ; fi
 
       - name: Create zipball
-        if: env.version_changed == 'true'
+        if: env.VERSION_CHANGED == 'true'
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen/chrome/extension
           zip -r ../../extension.zip .
 
       - name: Publish to CWS
-        if: env.version_changed == 'true'
+        if: env.VERSION_CHANGED == 'true'
         uses: trmcnvn/chrome-addon@v2
         with:
           extension: jgnjpnmofkalfliddjelaciggjgnphgm

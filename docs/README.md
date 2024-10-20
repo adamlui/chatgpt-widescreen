@@ -27,7 +27,7 @@
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
-<a href="https://greasyfork.chatgptwidescreen.com">
+<a href="https://gf.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
@@ -66,9 +66,9 @@
 
 ## 🗨️ User feedback
 
-#### <a href="https://greasyfork.chatgptwidescreen.com/feedback"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon25.png"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></picture></a> Greasy Fork:
+#### <a href="https://gf.chatgptwidescreen.com/feedback"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon25.png"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></picture></a> Greasy Fork:
 
-<a href="https://greasyfork.chatgptwidescreen.com/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
+<a href="https://gf.chatgptwidescreen.com/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
 #### <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=14 src="https://media.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon16.png"></a> Chrome Web Store:
 
@@ -103,7 +103,7 @@
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
     - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. Install [ChatGPT Widescreen Mode](https://greasyfork.chatgptwidescreen.com) userscript (will load in manager installed above)
+2. Install [ChatGPT Widescreen Mode](https://gf.chatgptwidescreen.com) userscript (will load in manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
@@ -145,15 +145,15 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
-- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Mozilla Firefox](https://www.firefox.com)** (via [Firefox add-on](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[LibreWolf](https://librewolf.net)** (via [Firefox add-on](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Ghost](https://ghostbrowser.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[QQ](https://browser.qq.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Firefox add-on](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[LibreWolf](https://librewolf.net)** (via [Firefox add-on](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[Ghost](https://ghostbrowser.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
+- **[QQ](https://browser.qq.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://gf.chatgptwidescreen.com))
 
 <div align="center">
 
@@ -165,7 +165,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
-<a href="https://greasyfork.chatgptwidescreen.com">
+<a href="https://gf.chatgptwidescreen.com">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>

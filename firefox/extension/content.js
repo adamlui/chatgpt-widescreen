@@ -258,7 +258,7 @@
                 btnSVG.style.height = btnSVG.style.width = '1.3rem'
     
             // Update SVG elements
-            while (btnSVG.firstChild) btnSVG.firstChild.remove()
+            btnSVG.textContent = ''
             const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
     

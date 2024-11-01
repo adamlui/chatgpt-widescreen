@@ -72,7 +72,8 @@
                 const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
                 if (inputArea) {
                     if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
-                    else { // narrow it to not clash w/ buttons
+                    else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
+                        console.log('tweaking')
                         const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
                         const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
                             !(type == 'fullWindow' && !sites[env.site].hasSidebar)
@@ -501,12 +502,12 @@
     const tweaksStyle = dom.create.style(),
           tcbStyle = ( // heighten chatbox
               env.site == 'chatgpt' ? `div[class*="prose"]:has(${sites.chatgpt.selectors.input})`
-                                : sites[env.site].selectors.input )
+                                    : sites[env.site].selectors.input )
                   + '{ max-height: 68vh }',
           hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
                   + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = sites[env.site].selectors.footer + '{ visibility: hidden ;' // hide footer text
-                                                 + '  height: 3px ; overflow: clip }' // reduce height
+                                                     + '  height: 3px ; overflow: clip }' // reduce height
 
     update.style.tweaks() ; document.head.append(tweaksStyle)
 

@@ -73,7 +73,6 @@
                 if (inputArea) {
                     if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
                     else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
-                        console.log('tweaking')
                         const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
                         const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
                             !(type == 'fullWindow' && !sites[env.site].hasSidebar)

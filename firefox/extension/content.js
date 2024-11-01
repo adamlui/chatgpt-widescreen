@@ -147,14 +147,18 @@
         },
 
         create() {
+            if (env.site == 'chatgpt' && chatbar.get().nextElementSibling && !env.tallChatbar)
+                env.tallChatbar = true
             const validBtnTypes = btns.types.filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
-            const bOffset = env.site == 'poe' ? -1.5 : env.site == 'perplexity' ? -13 : -8.85,
-                  rOffset = env.site == 'poe' ? -6   : env.site == 'perplexity' ? -4  : -0.25
+            const bOffset = env.site == 'poe' ? -1.5 : env.site == 'perplexity' ? -13 : env.tallChatbar ? 31 : -8.85,
+                  rOffset = env.site == 'poe' ? -6   : env.site == 'perplexity' ? -4  : env.tallChatbar ? 47 : -0.25
             validBtnTypes.forEach(async (btnType, idx) => {
                 btns[btnType] = document.createElement('div')
                 btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
-                btns[btnType].style.cssText = `position: relative ; top: ${ env.site == 'chatgpt' ? -3.25 : 0 }px ;`
-                                            + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
+                btns[btnType].style.position = env.tallChatbar ? 'absolute' : 'relative'
+                if (env.tallChatbar) btns[btnType].style.bottom = '8.85px'
+                else btns[btnType].style.top = env.site == 'chatgpt' ? '-3.25px' : 0
+                btns[btnType].style.right = `${ rOffset + idx * bOffset }px` // position left of prev button
                 btns[btnType].style.cursor = 'pointer' // add finger cursor
                 if (env.site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                 if (/chatgpt|perplexity/.test(env.site)) { // assign classes + tweak styles
@@ -185,7 +189,8 @@
         },
 
         insert() {
-            if (!btns.wideScreen) btns.create()
+            if (/insert(?:ing|ed)/.test(btns.status) || document.getElementById('#wideScreen-btn')) return
+            btns.status = 'inserting' ; if (!btns.wideScreen) btns.create()
 
             // Init chatbar
             const chatbarDiv = chatbar.get()
@@ -194,11 +199,12 @@
             // Insert buttons
             const btnTypesToInsert = btns.types.slice().reverse() // to left-to-right for insertion order
                 .filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
-            const parentToInsertInto = env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
-                                     : chatbarDiv,
-                  elemToInsertBefore = env.site == 'chatgpt' ? chatbarDiv.lastChild
-                                     : env.site == 'perplexity' ? parentToInsertInto.firstChild // Pro spam toggle
-                                     : chatbarDiv.children[1]
+                const parentToInsertInto = env.site == 'chatgpt' ? chatbarDiv.nextSibling || chatbarDiv
+                                         : env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
+                                         : chatbarDiv,
+                      elemToInsertBefore = env.site == 'chatgpt' ? parentToInsertInto.lastChild
+                                         : env.site == 'perplexity' ? parentToInsertInto.firstChild // Pro spam toggle
+                                         : chatbarDiv.children[1]
             btnTypesToInsert.forEach(btnType => {
                 btns.updateSVG(btnType) // update icon
                 parentToInsertInto.insertBefore(btns[btnType], elemToInsertBefore)
@@ -206,6 +212,7 @@
             parentToInsertInto.insertBefore(tooltipDiv, elemToInsertBefore) // add tooltips
 
             setTimeout(() => chatbar.tweak(), 1)
+            btns.status = 'inserted'
         },
 
         remove() {
@@ -299,7 +306,7 @@
                       + 'transform: scale(1.055) ;'
                       + ( chatgpt.isDarkMode() ? 'background-color: #2cff00 !important ; box-shadow: 2px 1px 54px #38ff00 !important ; color: black !important'
                                                : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
-                  + ( /chatgpt|openai/.test(env.site) ? (
+                  + ( env.site == 'chatgpt' ? (
                           ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : env.site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
@@ -333,6 +340,7 @@
                               : env.site == 'poe' ? 45 : 13 ) +25,
                   spreadFactor = env.site == 'perplexity' ? 26.85 : env.site == 'poe' ? 34 : 30.55,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+                             + ( env.tallChatbar ? -3 : 0 ) // nudge right
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // x-pos
@@ -340,7 +348,7 @@
             tooltipDiv.style.bottom = ( // y-pos
                 env.site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
                     ( !document.querySelector(sites.perplexity.selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
-                                     : '50px' )
+                                         : '50px' )
         }
     }
 
@@ -542,12 +550,12 @@
             } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
                 btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
         }
-        btns.insert()
+        if (!document.getElementById('wideScreen-btn')) { btns.status = 'missing' ; btns.insert() }
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled
                 || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
-                    btns.updateColor() ; isTempChat = chatbarIsBlack }            
+                    btns.updateColor() ; isTempChat = chatbarIsBlack }
         }
     })
     nodeObserver.observe(

@@ -553,10 +553,7 @@
                     btns.updateColor() ; isTempChat = chatbarIsBlack }
         }
     })
-    nodeObserver.observe(
-        document.querySelector(env.site == 'poe' ? 'head' : 'body'),
-        { attributes: true, subtree: true }
-    )
+    nodeObserver.observe(document.querySelector(env.site == 'poe' ? 'head' : 'body'), { attributes: true, subtree: true })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebarToggle && !!sites[env.site].hasSidebar) {

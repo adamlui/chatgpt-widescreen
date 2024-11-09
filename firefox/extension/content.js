@@ -544,7 +544,8 @@
             } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
                 btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
         }
-        if (!document.getElementById('wideScreen-btn')) { btns.status = 'missing' ; btns.insert() }
+        if (!document.getElementById('wideScreen-btn') && !btns.status?.startsWith('insert')) {
+            btns.status = 'missing' ; btns.insert() }
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled

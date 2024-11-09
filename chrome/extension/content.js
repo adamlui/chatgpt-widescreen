@@ -196,7 +196,7 @@
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
             const btnTypesToInsert = btns.types.slice().reverse() // to left-to-right for insertion order
                 .filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
-            const parentToInsertInto = env.site == 'chatgpt' ? chatbarDiv.nextSibling || chatbarDiv
+            const parentToInsertInto = env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
                                      : env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
                                      : chatbarDiv
             const elemToInsertBefore = env.site == 'chatgpt' ? parentToInsertInto.lastChild

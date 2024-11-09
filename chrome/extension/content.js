@@ -189,7 +189,7 @@
         },
 
         insert() {
-            if (btns.status?.startsWith('insert') || document.getElementById('#wideScreen-btn')) return
+            if (btns.status?.startsWith('insert') || document.getElementById('wideScreen-btn')) return
             btns.status = 'inserting' ; if (!btns.wideScreen) btns.create()
 
             // Init elems

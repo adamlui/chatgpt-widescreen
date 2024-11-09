@@ -214,8 +214,7 @@
 
         remove() {
             if (!chatbar.get() || !document.getElementById('wideScreen-btn')) return
-            btns.types.forEach(type => btns[type]?.remove())
-            tooltipDiv?.remove()
+            btns.types.forEach(type => btns[type]?.remove()) ; tooltipDiv?.remove()
         },
 
         updateColor() {

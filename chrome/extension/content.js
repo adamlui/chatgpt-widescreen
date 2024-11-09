@@ -492,14 +492,14 @@
     ))
 
     // Create/apply general style TWEAKS
-    const tweaksStyle = dom.create.style(),
-          tcbStyle = ( // heighten chatbox
+    const tweaksStyle = dom.create.style()
+    const tcbStyle = ( // heighten chatbox
               env.site == 'chatgpt' ? `div[class*="prose"]:has(${sites.chatgpt.selectors.input})`
                                     : sites[env.site].selectors.input )
-                  + '{ max-height: 68vh }',
-          hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
-                  + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ), // increase top-padding
-          hfStyle = sites[env.site].selectors.footer + '{ visibility: hidden ;' // hide footer text
+                   + '{ max-height: 68vh }'
+    const hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
+                  + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ) // increase top-padding
+    const hfStyle = sites[env.site].selectors.footer + '{ visibility: hidden ;' // hide footer text
                                                      + '  height: 3px ; overflow: clip }' // reduce height
 
     update.style.tweaks() ; document.head.append(tweaksStyle)

@@ -189,28 +189,25 @@
         },
 
         insert() {
-            if (/insert(?:ing|ed)/.test(btns.status) || document.getElementById('#wideScreen-btn')) return
+            if (btns.status?.startsWith('insert') || document.getElementById('#wideScreen-btn')) return
             btns.status = 'inserting' ; if (!btns.wideScreen) btns.create()
 
-            // Init chatbar
-            const chatbarDiv = chatbar.get()
-            if (!chatbarDiv || chatbarDiv.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
-    
-            // Insert buttons
+            // Init elems
+            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
             const btnTypesToInsert = btns.types.slice().reverse() // to left-to-right for insertion order
                 .filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
-                const parentToInsertInto = env.site == 'chatgpt' ? chatbarDiv.nextSibling || chatbarDiv
-                                         : env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
-                                         : chatbarDiv,
-                      elemToInsertBefore = env.site == 'chatgpt' ? parentToInsertInto.lastChild
-                                         : env.site == 'perplexity' ? parentToInsertInto.firstChild // Pro spam toggle
-                                         : chatbarDiv.children[1]
+            const parentToInsertInto = env.site == 'chatgpt' ? chatbarDiv.nextSibling || chatbarDiv
+                                     : env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
+                                     : chatbarDiv
+            const elemToInsertBefore = env.site == 'chatgpt' ? parentToInsertInto.lastChild
+                                     : env.site == 'perplexity' ? parentToInsertInto.firstChild // Pro spam toggle
+                                     : chatbarDiv.children[1]
+            // Insert buttons
             btnTypesToInsert.forEach(btnType => {
                 btns.updateSVG(btnType) // update icon
                 parentToInsertInto.insertBefore(btns[btnType], elemToInsertBefore)
             })
             parentToInsertInto.insertBefore(tooltipDiv, elemToInsertBefore) // add tooltips
-
             setTimeout(() => chatbar.tweak(), 1)
             btns.status = 'inserted'
         },

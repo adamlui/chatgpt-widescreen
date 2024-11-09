@@ -213,12 +213,13 @@
         },
 
         remove() {
-            const chatbarDiv = chatbar.get(),
-                  parentToRemoveFrom = env.site == 'perplexity' ? chatbarDiv?.lastChild : chatbarDiv
-            if (parentToRemoveFrom?.contains(btns.wideScreen)) { // remove all buttons
-                const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
-                if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
-                btnsToRemove.forEach(btn => btn.remove())
+            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
+            const parentToRemoveFrom = /chatgpt|openai/.test(env.site) ? chatbarDiv.nextSibling || chatbarDiv
+                                     : env.site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
+                                     : chatbarDiv
+            if (parentToRemoveFrom?.contains(btns.wideScreen)) {
+                btns.types.forEach(type => btns[type]?.remove())
+                tooltipDiv?.remove()
             }
         },
 

@@ -246,6 +246,8 @@
               : mode == 'fullWindow' ? [btns.fullWindow, btns.svgElems.fullWin, btns.svgElems.fullWin]
               : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
                                      : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
+            if (!btn) return
+
             // Set SVG attributes
             const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg', { height: 18 })
             btnSVG.setAttribute('height', 18) // prevent shrinking

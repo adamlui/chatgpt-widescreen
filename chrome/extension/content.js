@@ -523,7 +523,7 @@
 
     // Insert BUTTONS
     if (!config.extensionDisabled) {
-        btns.insert() 
+        btns.insert()
 
     // Restore PREV SESSION's state
         if (config.wideScreen) toggle.mode('wideScreen', 'ON')
@@ -544,7 +544,7 @@
             } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
                 btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
         }
-        if (!document.getElementById('wideScreen-btn') && !btns.status?.startsWith('insert')) {
+        if (!document.getElementById('wideScreen-btn') && btns.status != 'inserting') {
             btns.status = 'missing' ; btns.insert() }
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')

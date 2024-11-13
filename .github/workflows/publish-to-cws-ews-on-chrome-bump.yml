@@ -36,10 +36,10 @@ jobs:
         uses: mobilefirstllc/cws-publish@latest
         with:
           action: publish
+          extension_id: jgnjpnmofkalfliddjelaciggjgnphgm
           client_id: ${{ secrets.CWS_CLIENT_ID }}
           client_secret: ${{ secrets.CWS_CLIENT_SECRET }}
           refresh_token: ${{ secrets.CWS_REFRESH_TOKEN }}
-          extension_id: jgnjpnmofkalfliddjelaciggjgnphgm
           zip_file: extension.zip
         continue-on-error: true
 
@@ -48,7 +48,7 @@ jobs:
         uses: wdzeng/edge-addon@v2
         with:
           product-id: ${{ secrets.EWS_PRODUCT_ID }}
-          zip-path: extension.zip
           client-id: ${{ secrets.EWS_CLIENT_ID }}
           api-key: ${{ secrets.EWS_CLIENT_SECRET }}
+          zip-path: extension.zip
         continue-on-error: true

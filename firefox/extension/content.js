@@ -556,7 +556,7 @@
     nodeObserver.observe(document.querySelector(env.site == 'poe' ? 'head' : 'body'), { attributes: true, subtree: true })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
-    if (sites[env.site].selectors.btns.sidebarToggle && !!sites[env.site].hasSidebar) {
+    if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await new Promise(resolve => setTimeout(resolve, env.site == 'perplexity' ? 500 : 0))
             if ((config.fullWindow ^ isFullWin()) && !config.modeSynced) sync.mode('fullWindow')

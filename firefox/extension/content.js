@@ -392,7 +392,7 @@
 
     const sync = {
         
-        async storageToUI() { // from popup.js toggle + service worker actve-tab listeners
+        async storageToUI() { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns

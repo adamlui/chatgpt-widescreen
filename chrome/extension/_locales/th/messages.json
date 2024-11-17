@@ -1,7 +1,7 @@
 {
   "appName": { "message": "โหมดหน้าจอกว้าง ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "เพิ่มหน้าจอกว้าง + โหมดเต็มหน้าจอเพื่อ ChatGPT สำหรับการดูที่ดีขึ้น + ลดการเลื่อน" },
+  "appDesc": { "message": "เพิ่มโหมดจอกว้าง + เต็มหน้าจอใน chatgpt.com + perplexity.ai + poe.com เพื่อการรับชมที่ดียิ่งขึ้น" },
   "menuLabel_fullerWins": { "message": "ฟูลเลอร์วินโดวส์" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "แชทบ็อกซ์ที่กว้างขึ้น" },

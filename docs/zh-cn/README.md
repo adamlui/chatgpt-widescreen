@@ -34,7 +34,7 @@
 
 ## 💡 關於
 
-**ChatGPT 宽屏模式** 向 ChatGPT 添加了宽屏 + 全屏模式，通过减少滚动并创造更身临其境的观看体验来增强您的聊天会话。
+**ChatGPT 宽屏模式** 向 chatgpt.com + perplexity.ai + poe.com 添加了宽屏 + 全屏模式，通过减少滚动并创造更身临其境的观看体验来增强您的聊天会话。
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 

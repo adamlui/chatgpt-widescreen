@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Hali ya Kuenea ya ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Inaongeza Widescreen + Njia kamili za skrini kwa ChatGPT kwa ajili ya kutazama kuimarishwa + kupunguzwa kwa scrolling" },
+  "appDesc": { "message": "Inaongeza modi za Widescreen + Fullscreen kwenye chatgpt.com + perplexity.ai + poe.com kwa ajili ya kutazama kwa kina" },
   "menuLabel_fullerWins": { "message": "Madirisha Fuller" },
   "menuLabel_tallerChatbox": { "message": "Kikasha cha Kuchati cha Muda Mrefu" },
   "menuLabel_widerChatbox": { "message": "Sanduku pana la Gumzo" },

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Aratau Matawhānui" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ka taapirihia nga momo mata whanui + mata-katoa ki te ChatGPT mo te tirohanga pai ake + te whakaheke haere" },
+  "appDesc": { "message": "Tāpiri Widescreen + Fullscreen tikanga ki chatgpt.com + perplexity.ai + poe.com mō te tirohanga whakapai ake" },
   "menuLabel_fullerWins": { "message": "Matapihi tonu" },
   "menuLabel_tallerChatbox": { "message": "Pouaka Kōrerorero Taller" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },

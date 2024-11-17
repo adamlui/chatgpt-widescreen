@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Pantaila zabaleko modua" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Pantaila zabaleko + Pantaila osoko moduak gehitzen ditu ChatGPT-i, ikusteko + korritze murrizteko" },
+  "appDesc": { "message": "Pantaila zabaleko + pantaila osoko moduak gehitzen ditu chatgpt.com + perplexity.ai + poe.com-en ikusteko" },
   "menuLabel_fullerWins": { "message": "Windows osoagoak" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Chatbox zabalagoa" },

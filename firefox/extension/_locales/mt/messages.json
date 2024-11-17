@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Modalità Widescreen ta' ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Żid Widescreen + modalitajiet Fullscreen biex ChatGPT għall-wiri mtejba + scrolling mnaqqsa" },
+  "appDesc": { "message": "Żid Widescreen + Fullscreen modes għal chatgpt.com + perplexity.ai + poe.com għal viżjoni mtejba" },
   "menuLabel_fullerWins": { "message": "Windows aktar sħaħ" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kaxxa taċ-chat usa'" },

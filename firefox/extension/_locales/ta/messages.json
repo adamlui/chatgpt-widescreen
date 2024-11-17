@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT பரந்த திரை பயன்முறை" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "மேம்பட்ட காட்சி + குறைக்கப்பட்ட ஸ்க்ரோலிங்கிற்காக ChatGPT க்கு Widescreen + Fullscreen முறைகளை சேர்க்கிறது" },
+  "appDesc": { "message": "மேம்பட்ட பார்வைக்கு, அகலத்திரை + முழுத்திரை பயன்முறைகளை chatgpt.com + perplexity.ai + poe.com இல் சேர்க்கிறது" },
   "menuLabel_fullerWins": { "message": "முழு சாளரங்கள்" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "பரந்த அரட்டைப்பெட்டி" },

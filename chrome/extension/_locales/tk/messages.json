@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Giň Ekran Tertibi" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Gowy görkezilen görkezme üçin Widecreen + Fullscreen rejimlerini ChatGPT 'ye ekle" },
+  "appDesc": { "message": "Gowy seretmek üçin chatgpt.com + perplexity.ai + poe.com-a giň ekran + doly ekran modlaryny goşyň" },
   "menuLabel_fullerWins": { "message": "Doly Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzyn söhbetdeşlik gutusy" },
   "menuLabel_widerChatbox": { "message": "Beýik Çat kutusu" },

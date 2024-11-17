@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Λειτουργία ευρείας οθόνης ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Προσθέτει λειτουργίες ευρείας οθόνης + πλήρους οθόνης στο ChatGPT για βελτιωμένη προβολή + μειωμένη κύλιση" },
+  "appDesc": { "message": "Προσθέτει λειτουργίες ευρείας οθόνης + πλήρους οθόνης στο chatgpt.com + perplexity.ai + poe.com για βελτιωμένη προβολή" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Ευρύτερο πλαίσιο συνομιλίας" },

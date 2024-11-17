@@ -1,7 +1,7 @@
 {
   "appName": { "message": "מצב מסך רחב של ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "מוסיף מסך רחב + תצורות מסך מלא כדי ChatGPT לצפייה משופרת + גלילה מופחתת" },
+  "appDesc": { "message": "מוסיף מצבי מסך רחב + מסך מלא ל - chatgpt.com + perplexity.ai + poe.com לצפייה משופרת" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "צ'טבוקס גבוה יותר" },
   "menuLabel_widerChatbox": { "message": "תיבת צ'אט רחבה יותר" },

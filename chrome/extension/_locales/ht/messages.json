@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widecreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ajoute Widescreen + Fullscreen mòd nan ChatGPT pou ranfòse gade + redwi woulo liv" },
+  "appDesc": { "message": "Ajoute Widescreen + Fullscreen modes to chatgpt.com + perplexity.ai + poe.com pou amelyore gade" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Pi laj Chatbox" },

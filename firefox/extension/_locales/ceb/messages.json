@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Nagdugang sa Widescreen + Fullscreen mode sa ChatGPT alang sa gipaayo nga pagtan-aw + pagkunhod sa pag-scroll" },
+  "appDesc": { "message": "Nagdugang Widescreen + Mga mode sa Fullscreen sa chatgpt.com + perplexity.ai + poe.com alang sa gipaayo nga pagtan-aw" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Mas lapad nga Chatbox" },

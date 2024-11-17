@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Ҳолати экрани васеъ ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ба ChatGPT экрани васеъ + режимҳои пурраи экранро барои тамошои беҳтар + ҳаракати кам илова мекунад" },
+  "appDesc": { "message": "Илова Widescreen + Ҳолати Fullscreen ба chatgpt.com + perplexity.ai + poe.com барои тамошои беҳтар" },
   "menuLabel_fullerWins": { "message": "Тирезаҳои пурра" },
   "menuLabel_tallerChatbox": { "message": "Чат қуттии баландтар" },
   "menuLabel_widerChatbox": { "message": "Блоки чати васеътар" },

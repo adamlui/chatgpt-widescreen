@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT वाइडस्क्रिन मोड" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "परिष्कृत अवलोकन + कम स्क्रोलिङको लागि ChatGPT मा वाइडस्क्रिन + फुलस्क्रिन मोडहरू थप्छ" },
+  "appDesc": { "message": "उन्नत अवलोकनको लागि chatgpt.com + perplexity.ai + poe.com मा वाइडस्क्रीन + फुलस्क्रीन मोडहरू थप्दछ" },
   "menuLabel_fullerWins": { "message": "फुलर सञ्झ्याल" },
   "menuLabel_tallerChatbox": { "message": "टालर कुराकानी बाकस" },
   "menuLabel_widerChatbox": { "message": "फराकिलो च्याटबक्स" },

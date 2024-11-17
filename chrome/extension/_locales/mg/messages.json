@@ -1,7 +1,7 @@
 {
   "appName": { "message": "WTTT Chat" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Tadiavo ny fomba hamoronana ny gtcc" },
+  "appDesc": { "message": "Adds Widescreen + Fullscreen fomba ny chatgpt.com + perplexity.ai + poe.com kokoa ho an'ny fijerena" },
   "menuLabel_fullerWins": { "message": "Full Windows" },
   "menuLabel_tallerChatbox": { "message": "Tamy_ts's chat" },
   "menuLabel_widerChatbox": { "message": "Tamy_tss Chatbox" },

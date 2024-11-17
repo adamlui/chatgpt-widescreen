@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT 와이드스크린 모드" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ChatGPT에 와이드스크린 및 풀스크린 모드를 추가하여 시청 경험을 향상시키고 스크롤을 줄입니다" },
+  "appDesc": { "message": "와이드스크린 + 전체화면 모드를 chatgpt.com + perplexity.ai + poe.com에 추가하여 시청률 향상" },
   "menuLabel_fullerWins": { "message": "더 큰 창" },
   "menuLabel_tallerChatbox": { "message": "더 높은 채팅 상자" },
   "menuLabel_widerChatbox": { "message": "더 넓은 채팅 상자" },

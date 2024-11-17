@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Режим на широк екран на ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Додава широк екран + режими на цел екран на ChatGPT за подобрено гледање + намалено лизгање" },
+  "appDesc": { "message": "Додава режими за широк екран + цел екран на chatgpt.com + perplexity.ai + poe.com за подобрено гледање" },
   "menuLabel_fullerWins": { "message": "Фулер Виндоус" },
   "menuLabel_tallerChatbox": { "message": "Повисоки Chatbox" },
   "menuLabel_widerChatbox": { "message": "Пошироко поле за разговор" },

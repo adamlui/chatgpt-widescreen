@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Mod ecran lat ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Adaugă moduri Widescreen + Fullscreen la ChatGPT pentru vizualizare îmbunătățită + derulare redusă" },
+  "appDesc": { "message": "Adaugă moduri Widescreen + Fullscreen la chatgpt.com + perplexity.ai + poe.com pentru o vizualizare îmbunătățită" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Cutie de chat mai înaltă" },
   "menuLabel_widerChatbox": { "message": "Casetă de chat mai largă" },

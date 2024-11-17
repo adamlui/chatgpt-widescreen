@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widecreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Faʻaopopo le Widescreen + Fullscreen mode i le ChatGPT mo le faʻaleleia atili o le maimoaina + faʻaititia o tusi" },
+  "appDesc": { "message": "Faaopoopo Widescreen + Fullscreen auala i chatgpt.com + perplexity.ai + poe.com mo le faaleleia o le matamata" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },

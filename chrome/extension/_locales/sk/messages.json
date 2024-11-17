@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Režim širokouhlej obrazovky ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Pridáva režimy Širokouhlý + Celá obrazovka do ChatGPT pre lepšie zobrazenie + znížené rolovanie" },
+  "appDesc": { "message": "Pridáva režimy Widescreen + Fullscreen na chatgpt.com + perplexity.ai + poe.com pre lepšie prezeranie" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Širší chatbox" },

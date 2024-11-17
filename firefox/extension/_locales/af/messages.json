@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Wydskerm Modus" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Voeg Widescreen + Volskermmodusse by ChatGPT vir verbeterde besigtiging + verminderde blaai" },
+  "appDesc": { "message": "Voeg Widescreen + Volskerm modusse aan chatgpt.com + perplexity.ai + poe.com vir verbeterde besigtiging" },
   "menuLabel_fullerWins": { "message": "Voller Vensters" },
   "menuLabel_tallerChatbox": { "message": "Langer Chatbox" },
   "menuLabel_widerChatbox": { "message": "Wyer Chatbox" },

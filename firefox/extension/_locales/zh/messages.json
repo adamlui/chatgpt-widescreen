@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT 宽屏模式" },
   "appAuthor": { "message": "刘展鹏 (Adam Lui)" },
-  "appDesc": { "message": "为 ChatGPT 添加宽屏和全屏模式，提供增强的视觉体验和减少滚动操作" },
+  "appDesc": { "message": "将宽屏+全屏模式添加到 chatgpt.com + perplexity.ai + poe.com 以增强查看" },
   "menuLabel_fullerWins": { "message": "更宽的窗口" },
   "menuLabel_tallerChatbox": { "message": "更高的聊天框" },
   "menuLabel_widerChatbox": { "message": "更宽的聊天室" },

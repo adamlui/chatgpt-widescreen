@@ -1,7 +1,7 @@
 {
   "appName": { "message": "સંવાદGPT વાઇડસ્ક્રીન સ્થિતિ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "વધારેલ જોવા માટે + ઘટાડેલ સ્ક્રોલિંગ માટે ChatGPT માં વાઇડસ્ક્રીન + પૂર્ણસ્ક્રીન સ્થિતિઓને ઉમેરે છે" },
+  "appDesc": { "message": "ઉન્નત જોવા માટે chatgpt.com + perplexity.ai + poe.com પર વાઇડસ્ક્રીન + ફુલસ્ક્રીન મોડ્સ ઉમેરે છે" },
   "menuLabel_fullerWins": { "message": "ફુલર વિન્ડો" },
   "menuLabel_tallerChatbox": { "message": "ઊંચા ચેટબોક્સ" },
   "menuLabel_widerChatbox": { "message": "વિશાળ ચેટબોક્સ" },

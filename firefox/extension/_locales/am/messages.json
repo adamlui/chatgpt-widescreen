@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT ሰፊ ማያ ገጽ ሁነታ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ለተሻሻለ እይታ ወደ ChatGPT Widescreen + Fullscreen ሁነታዎች ያክላል + መቀነስ ማንከባለል" },
+  "appDesc": { "message": "ለተሻሻለው እይታ Widescreen + Fullscreen ሁነታዎች ወደ chatgpt.com + perplexity.ai + poe.com ያክሉ" },
   "menuLabel_fullerWins": { "message": "ሙሉ ዊንዶውስ" },
   "menuLabel_tallerChatbox": { "message": "ታለር ቻትቦክስ" },
   "menuLabel_widerChatbox": { "message": "ሰፋ ያለ የውይይት ሳጥን" },

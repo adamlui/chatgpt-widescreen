@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Breitbildmodus" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Fügt ChatGPT den Breitbild- und Vollbildmodus hinzu, um die Ansicht zu verbessern und das Scrollen zu reduzieren" },
+  "appDesc": { "message": "Fügt Widescreen + Vollbild-Modi zu chatgpt.com + perplexity.ai + poe.com für eine verbesserte Anzeige hinzu" },
   "menuLabel_fullerWins": { "message": "Breitere Fenster" },
   "menuLabel_tallerChatbox": { "message": "Höhere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Breitere Chatbox" },

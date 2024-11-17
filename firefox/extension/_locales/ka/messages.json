@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT ფართო ეკრანის რეჟიმი" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Დაამატებს Widescreen + Fullscreen რეჟიმები ChatGPT გაძლიერებული ნახვის + შემცირებული scrolling" },
+  "appDesc": { "message": "Ამატებს Widescreen + Fullscreen რეჟიმებს chatgpt.com-ზე + perplexity.ai + poe.com-ზე გაძლიერებული ნახვისთვის" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Უფრო ფართო ჩატბოქსი" },

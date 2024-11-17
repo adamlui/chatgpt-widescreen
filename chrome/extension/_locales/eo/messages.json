@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BabilejoGPT Larĝekrana reĝimo" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Aldonas larĝekranajn + plenekranajn modojn al ChatGPT por plibonigita spektado + reduktita rulumado" },
+  "appDesc": { "message": "Aldonas Widescreen + Fullscreen-reĝimojn al chatgpt.com + perplexity.ai + poe.com por plibonigita spektado" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Pli larĝa retbabilejo" },

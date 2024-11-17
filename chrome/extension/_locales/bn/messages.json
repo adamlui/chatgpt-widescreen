@@ -1,7 +1,7 @@
 {
   "appName": { "message": "চ্যাটজিপিটি ওয়াইডস্ক্রিন মোড" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "বর্ধিত দেখার জন্য ChatGPT এ ওয়াইডস্ক্রিন + পূর্ণ পর্দা মোড যোগ করে + স্ক্রোলিং হ্রাস" },
+  "appDesc": { "message": "বর্ধিত দেখার জন্য chatgpt.com + perplexity.ai + poe.com-এ ওয়াইডস্ক্রিন + ফুলস্ক্রিন মোড যোগ করে" },
   "menuLabel_fullerWins": { "message": "ফুলার উইন্ডোজ" },
   "menuLabel_tallerChatbox": { "message": "লম্বা চ্যাটবক্স" },
   "menuLabel_widerChatbox": { "message": "চওড়া চ্যাটবক্স" },

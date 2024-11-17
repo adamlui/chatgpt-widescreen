@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ម៉ូដអេក្រង់ធំទូលាយ ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "បន្ថែមម៉ូដ Widescreen + Fullscreen ទៅ ChatGPT សម្រាប់ការមើលកាន់តែប្រសើរឡើង + កាត់បន្ថយការរមូរ" },
+  "appDesc": { "message": "បន្ថែមរបៀប Widescreen + Fullscreen ទៅ chatgpt.com + perplexity.ai + poe.com សម្រាប់ការមើលកាន់តែប្រសើរ" },
   "menuLabel_fullerWins": { "message": "បង្អួច ពេញ" },
   "menuLabel_tallerChatbox": { "message": "ប្រអប់ជជែកកំសាន្តដែលមានកម្ពស់ខ្ពស់" },
   "menuLabel_widerChatbox": { "message": "ប្រអប់ជជែកទូលំទូលាយ" },

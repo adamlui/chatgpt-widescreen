@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widecreen режими" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Көбүрөөк көрүү үчүн ChatGPT үчүн Widecreen + Full Screen режимдерин кошот + кыскартылган жылдыруу" },
+  "appDesc": { "message": "Кошуу Widescreen + толук экран режимдери жакшыртылган көрүү үчүн chatgpt.com + perplexity.ai + poe.com" },
   "menuLabel_fullerWins": { "message": "Толтурулган Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Кеңирирээк баарлашуу кутучасы" },

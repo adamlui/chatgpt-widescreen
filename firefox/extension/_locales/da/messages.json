@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen-tilstand" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Tilføjer Widescreen + Fullscreen tilstande til ChatGPT for forbedret visning + reduceret rulning" },
+  "appDesc": { "message": "Tilføjer widescreen + fuldskærmstilstande til chatgpt.com + perplexity.ai + poe.com for forbedret visning" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Højere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatboks" },

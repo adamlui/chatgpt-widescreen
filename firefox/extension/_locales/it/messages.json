@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Modalità Schermo Intero di ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Aggiunge le modalità Schermo Largo e Schermo Intero a ChatGPT per una visualizzazione ottimizzata e una riduzione dello scrolling" },
+  "appDesc": { "message": "Aggiunge le modalità Widescreen + Schermo intero a chatgpt.com + perplexity.ai + poe.com per una visualizzazione migliorata" },
   "menuLabel_fullerWins": { "message": "Finestre più ampie" },
   "menuLabel_tallerChatbox": { "message": "Chatbox più alta" },
   "menuLabel_widerChatbox": { "message": "Chatbox più ampia" },

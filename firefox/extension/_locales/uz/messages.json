@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT keng ekran rejimi" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Keng ekran + Toʻliq ekran rejimlarini ChatGPT-ga kengaytirilgan koʻrish + qisqartirilgan aylantirish uchun qoʻshadi" },
+  "appDesc": { "message": "Keng ekran + Toʻliq ekran rejimlarini chatgpt.com + perplexity.ai + poe.com ga yaxshi koʻrish uchun qoʻshadi" },
   "menuLabel_fullerWins": { "message": "To'liq Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzunroq suhbat qutisi" },
   "menuLabel_widerChatbox": { "message": "Kengroq chat qutisi" },

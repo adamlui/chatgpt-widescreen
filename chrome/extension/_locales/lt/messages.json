@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT plačiaekranis režimas" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Įtraukia plačiaekranius + viso ekrano režimus į ChatGPT, kad būtų galima geriau peržiūrėti ir sumažinti slinkimą" },
+  "appDesc": { "message": "Prideda plačiaekranius + viso ekrano režimus chatgpt.com + perplexity.ai + poe.com, kad galėtumėte patobulinti peržiūrą" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Aukštesnė pokalbių dėžutė" },
   "menuLabel_widerChatbox": { "message": "Platesnė pokalbių dėžutė" },

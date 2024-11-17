@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Modo de pantalla ancha de ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Engade pantalla ancha + modos de pantalla completa a ChatGPT para unha visualización mellorada + desprazamento reducido" },
+  "appDesc": { "message": "Agrega Widescreen + Modos de pantalla completa a chatgpt.com + perplexity.ai + poe.com para visualización mejorada" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Caixa de chat máis alta" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },

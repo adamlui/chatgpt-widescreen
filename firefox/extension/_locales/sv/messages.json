@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT bredbildsläge" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Lägger till Widescreen + helskärmslägen till ChatGPT för förbättrad visning + minskad rullning" },
+  "appDesc": { "message": "Lägger till Widescreen + Fullscreen-lägen till chatgpt.com + perplexity.ai + poe.com för förbättrad visning" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Större chattlåda" },
   "menuLabel_widerChatbox": { "message": "Bredare chattruta" },

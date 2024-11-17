@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT-breedbeeldmodus" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Voegt Breedbeeld + Volledig scherm-modi toe aan ChatGPT voor verbeterd bekijken + minder scrollen" },
+  "appDesc": { "message": "Voegt Breedbeeld + Volledig scherm-modi toe aan chatgpt.com + perplexity.ai + poe.com voor verbeterde weergave" },
   "menuLabel_fullerWins": { "message": "Vollere vensters" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatbox" },

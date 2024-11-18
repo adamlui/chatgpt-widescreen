@@ -24,7 +24,7 @@
     chrome.runtime.onMessage.addListener(req => {
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'sync.storageToUI') sync.storageToUI()
+        else if (req.action == 'syncStorageToUI') sync.storageToUI()
     })
 
     // Define FEEDBACK functions

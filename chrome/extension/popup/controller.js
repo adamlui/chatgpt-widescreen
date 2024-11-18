@@ -45,7 +45,7 @@
                 })
         },
 
-        storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
+        storageToUI() { sendMsgToActiveTab({ action: 'syncStorageToUI' })}
     }
 
     // Run MAIN routine

@@ -334,7 +334,7 @@
                               : env.site == 'poe' ? 45 : 13 ) +25,
                   spreadFactor = env.site == 'perplexity' ? 26.85 : env.site == 'poe' ? 34 : 30.55,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
-                             + ( env.tallChatbar ? -3 : 0 ) // nudge right
+                             + ( env.tallChatbar ? -3 : 4 )
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // x-pos

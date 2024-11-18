@@ -52,7 +52,7 @@
   "alert_author": { "message": "Autor" },
   "alert_pressF11": { "message": "Täisekraanilt väljumiseks vajutage klahvi F11" },
   "alert_f11reason": { "message": "F11 kasutati täisekraanile sisenemiseks ja brauseri turvalisuse huvides tuleb selle väljumiseks kasutada sama võtit" },
-  "btnLabel_moreApps": { "message": "Veel ChatGPT rakendusi" },
+  "btnLabel_moreAIextensions": { "message": "Veel tehisintellekti laiendusi" },
   "btnLabel_leaveReview": { "message": "Jäta tagasiside" },
   "btnLabel_rateUs": { "message": "Hinda meid" },
   "btnLabel_getSupport": { "message": "Saage tuge" },

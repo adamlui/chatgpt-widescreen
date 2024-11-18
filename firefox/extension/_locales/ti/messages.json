@@ -52,7 +52,7 @@
   "alert_author": { "message": "ደራሲ" },
   "alert_pressF11": { "message": "ምሉእ ስክሪን ንምውጻእ F11 ጸቕጢ ግበር" },
   "alert_f11reason": { "message": "F11 ምሉእ ስክሪን ንምእታው ተጠቒሙ ነይሩ ፣ ብሰንኪ ናይ ኣሳሽ ውሕስነት ምኽንያታት ድማ ሓደ ዓይነት መፍትሕ ንምውጻእ ኣብ ጥቕሚ ክውዕል ኣለዎ" },
-  "btnLabel_moreApps": { "message": "ዝያዳ ናይ ChatGPT መተግበሪታት" },
+  "btnLabel_moreAIextensions": { "message": "ዝያዳ ናይ AI ምስፍሕፋሕ" },
   "btnLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
   "btnLabel_rateUs": { "message": "ተመዝገብና" },
   "btnLabel_getSupport": { "message": "ደገፍ ርኸቡ" },

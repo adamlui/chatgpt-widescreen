@@ -52,7 +52,7 @@
   "alert_author": { "message": "författare" },
   "alert_pressF11": { "message": "Tryck på F11 för att avsluta helskärmsläge" },
   "alert_f11reason": { "message": "F11 användes för att komma in i helskärm, och på grund av webbläsarens säkerhetsskäl måste samma nyckel användas för att avsluta den" },
-  "btnLabel_moreApps": { "message": "Fler ChatGPT-appar" },
+  "btnLabel_moreAIextensions": { "message": "Fler AI-tillägg" },
   "btnLabel_leaveReview": { "message": "Lämna recension" },
   "btnLabel_rateUs": { "message": "betygsätt oss" },
   "btnLabel_getSupport": { "message": "Få support" },

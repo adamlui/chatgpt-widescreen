@@ -52,7 +52,7 @@
   "alert_author": { "message": "Автору: " },
   "alert_pressF11": { "message": "Толук экрандан чыгуу үчүн F11 баскычын басыңыз" },
   "alert_f11reason": { "message": "F11 толук экранды киргизүү үчүн колдонулган жана браузердин коопсуздугуна байланыштуу ошол эле ачкыч аны чыгаруу үчүн колдонулушу керек" },
-  "btnLabel_moreApps": { "message": "Көбүрөөк ChatGPT колдонмолору" },
+  "btnLabel_moreAIextensions": { "message": "Көбүрөөк AI кеңейтүүлөрү" },
   "btnLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
   "btnLabel_rateUs": { "message": "Бизди баалоо" },
   "btnLabel_getSupport": { "message": "Колдоо алуу" },

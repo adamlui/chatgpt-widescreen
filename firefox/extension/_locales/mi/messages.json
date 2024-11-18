@@ -52,7 +52,7 @@
   "alert_author": { "message": "Kaitito" },
   "alert_pressF11": { "message": "Patohia te F11 ki te puta mata tonu" },
   "alert_f11reason": { "message": "I whakamahia te F11 ki te whakauru i te mata katoa, na te take o te haumarutanga o te tirotiro, me whakamahi te ki ano ki te puta atu" },
-  "btnLabel_moreApps": { "message": "Ētahi atu ChatGPT Apps" },
+  "btnLabel_moreAIextensions": { "message": "Ētahi atu whakawhitinga AI" },
   "btnLabel_leaveReview": { "message": "Waiho i te arotake" },
   "btnLabel_rateUs": { "message": "Te utu ki a tatou" },
   "btnLabel_getSupport": { "message": "Tautoko" },

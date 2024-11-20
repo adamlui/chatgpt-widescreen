@@ -70,17 +70,17 @@
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
 
         // Create/inesrt individual toggles
-        Object.keys(settings.props).forEach(key => {
+        Object.keys(settings.controls).forEach(key => {
             if (sites[env.site].availFeatures.includes(key)) {
 
                 // Init elems
                 const menuItemDiv = dom.create.elem('div', {
-                    class: 'menu-item menu-area', title: settings.props[key].helptip })
+                    class: 'menu-item menu-area', title: settings.controls[key].helptip })
                 const menuLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
                       menuInput = dom.create.elem('input', { type: 'checkbox' }),
                       menuSlider = dom.create.elem('span', { class: 'slider' }),
                       menuLabelSpan = document.createElement('span')
-                menuLabelSpan.textContent = settings.props[key].label
+                menuLabelSpan.textContent = settings.controls[key].label
                 menuInput.checked = /disabled/i.test(key) ^ config[key]
 
                 // Assemble/append elems
@@ -94,7 +94,7 @@
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.storageToUI()
-                    notify(`${settings.props[key].label} ${chrome.i18n.getMessage(`state_${
+                    notify(`${settings.controls[key].label} ${chrome.i18n.getMessage(`state_${
                         /disabled/i.test(key) != config[key] ? 'on' : 'off' }`).toUpperCase()}`)
                 }
             }

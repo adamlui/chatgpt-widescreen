@@ -1,9 +1,12 @@
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: 'a7889f6' },
-          assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
-    Object.assign(app, await (await fetch(`${assetHostURL}/data/app.json`)).json())
+    const app = { latestAssetCommitHash: 'a7889f6', urls: {} }
+    app.urls.assetHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
+    const appData = await (await fetch(`${app.urls.assetHost}/data/app.json`)).json()
+    Object.assign(app, { ...appData, urls: { ...app.urls, ...appData.urls }})
+
+    // Init SETTINGS props
     Object.assign(app, { settings: {
         fullerWindows: { type: 'toggle',
             label: chrome.i18n.getMessage('menuLabel_fullerWins'),
@@ -27,10 +30,11 @@
             label: chrome.i18n.getMessage('menuLabel_modeNotifs'),
             helptip: chrome.i18n.getMessage('helptip_modeNotifs') }
     }})
-    chrome.storage.sync.set({ app })
+
+    chrome.storage.sync.set({ app }) // save to browser storage
 
     // Init SITES data
-    const sites = Object.assign(Object.create(null), await (await fetch(`${assetHostURL}/data/sites.json`)).json())
+    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
 
     // Launch ChatGPT on install

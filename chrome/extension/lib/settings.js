@@ -1,6 +1,30 @@
 const config = {}, settings = {
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
+    props: {
+        fullerWindows: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_fullerWins'),
+            helptip: chrome.i18n.getMessage('helptip_fullerWins') },
+        tcbDisabled: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_tallerChatbox'),
+            helptip: chrome.i18n.getMessage('helptip_tallerChatbox') },
+        widerChatbox: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_widerChatbox'),
+            helptip: chrome.i18n.getMessage('helptip_widerChatbox') },
+        ncbDisabled: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_newChatBtn'),
+            helptip: chrome.i18n.getMessage('helptip_newChatBtn') },
+        hiddenHeader: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_hiddenHeader'),
+            helptip: chrome.i18n.getMessage('helptip_hiddenHeader') },
+        hiddenFooter: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_hiddenFooter'),
+            helptip: chrome.i18n.getMessage('helptip_hiddenFooter') },
+        notifDisabled: { type: 'toggle',
+            label: chrome.i18n.getMessage('menuLabel_modeNotifs'),
+            helptip: chrome.i18n.getMessage('helptip_modeNotifs') }
+    },
+
     load() {
         const keys = ( // original array if array, else new array from multiple args
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))

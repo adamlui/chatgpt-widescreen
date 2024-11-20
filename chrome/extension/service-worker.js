@@ -5,32 +5,6 @@
     app.urls.assetHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
     const appData = await (await fetch(`${app.urls.assetHost}/data/app.json`)).json()
     Object.assign(app, { ...appData, urls: { ...app.urls, ...appData.urls }})
-
-    // Init SETTINGS props
-    Object.assign(app, { settings: {
-        fullerWindows: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_fullerWins'),
-            helptip: chrome.i18n.getMessage('helptip_fullerWins') },
-        tcbDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_tallerChatbox'),
-            helptip: chrome.i18n.getMessage('helptip_tallerChatbox') },
-        widerChatbox: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_widerChatbox'),
-            helptip: chrome.i18n.getMessage('helptip_widerChatbox') },
-        ncbDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_newChatBtn'),
-            helptip: chrome.i18n.getMessage('helptip_newChatBtn') },
-        hiddenHeader: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_hiddenHeader'),
-            helptip: chrome.i18n.getMessage('helptip_hiddenHeader') },
-        hiddenFooter: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_hiddenFooter'),
-            helptip: chrome.i18n.getMessage('helptip_hiddenFooter') },
-        notifDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_modeNotifs'),
-            helptip: chrome.i18n.getMessage('helptip_modeNotifs') }
-    }})
-
     chrome.storage.sync.set({ app }) // save to browser storage
 
     // Init SITES data

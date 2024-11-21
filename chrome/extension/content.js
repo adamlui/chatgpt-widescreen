@@ -54,9 +54,9 @@
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
-    
+
     // Define CHATBAR functions
-    
+
     const chatbar = {
 
         get() {
@@ -233,7 +233,7 @@
 
         updateSVG(mode, state = '') {
             if (!btns.wideScreen) btns.create()
-    
+
             // Pick appropriate button/elements
             const [btn, ONelems, OFFelems] = (
                 mode == 'fullScreen' ? [btns.fullScreen, btns.svgElems.fullScreen.on, btns.svgElems.fullScreen.off]
@@ -257,12 +257,12 @@
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             if (env.site == 'chatgpt') // override button resizing
                 btnSVG.style.height = btnSVG.style.width = '1.3rem'
-    
+
             // Update SVG elements
             btnSVG.textContent = ''
             const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
-    
+
             // Update SVG
             if (!btn.contains(btnSVG)) btn.append(btnSVG)
         }
@@ -367,7 +367,7 @@
                     else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
             }
-        
+
             function deactivateMode(mode) {
                 if (mode == 'wideScreen') {
                     wideScreenStyle.remove() ; sync.mode('wideScreen')
@@ -391,7 +391,7 @@
     // Define SYNC functions
 
     const sync = {
-        
+
         async storageToUI() { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -409,7 +409,7 @@
             }
 
             function supressNotifs() {
-                if (!config.notifDisabled) { 
+                if (!config.notifDisabled) {
                     settings.save('notifDisabled', true) // suppress notifs for cleaner UI
                     setTimeout(() => settings.save('notifDisabled', false), 55) // ...temporarily
                 }
@@ -452,7 +452,7 @@
     }
 
     chatgpt.canvasIsOpen = function() { return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
-    
+
     // Run MAIN routine
 
     // Init UI props

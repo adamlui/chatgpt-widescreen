@@ -36,7 +36,7 @@
                     + 'icon' + dimension + '.png'
             )
             chrome.action.setIcon({ path: iconPaths })
-    
+
             // Update menu contents
             document.querySelectorAll('div.logo, div.menu-title, div.menu')
                 .forEach(elem => {
@@ -54,11 +54,11 @@
     const masterToggle = document.querySelector('.main-toggle input')
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
-    masterToggle.onchange = () => {    
+    masterToggle.onchange = () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
     }
-    
+
     // Create CHILD TOGGLES for matched pages
     const matchHosts = chrome.runtime.getManifest().content_scripts[0].matches
         .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))

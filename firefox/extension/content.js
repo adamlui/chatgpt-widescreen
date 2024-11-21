@@ -18,7 +18,7 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Init CONFIG
-    await settings.load('extensionDisabled', sites[env.site].availFeatures)
+    await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(req => {
@@ -394,7 +394,7 @@
         
         async storageToUI() { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled
-            await settings.load('extensionDisabled', sites[env.site].availFeatures)
+            await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; btns.remove() ; chatbar.reset()

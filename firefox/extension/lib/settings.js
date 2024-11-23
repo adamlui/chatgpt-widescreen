@@ -1,4 +1,5 @@
-const config = {}, settings = {
+const config = {}
+const settings = {
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
     controls: {

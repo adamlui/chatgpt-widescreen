@@ -17,7 +17,7 @@
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
 
-    // Init CONFIG
+    // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings

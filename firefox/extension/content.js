@@ -1,5 +1,5 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
-// © 2023–2024 KudoAI & contributors under the MIT license
+//  © 2023–2024 KudoAI & contributors under the MIT license
 
 (async () => {
 
@@ -77,12 +77,13 @@
                         const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
                             !(type == 'fullWindow' && !sites[env.site].hasSidebar)
                             && !(type == 'newChat' && config.ncbDisabled))
-                        visibleBtnTypes.forEach(btnType =>
-                            widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                        || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
-                                                                        sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
+                        visibleBtnTypes.forEach(type =>
+                            widths[type] = btns[type]?.getBoundingClientRect().width
+                                 || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
+                                        sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
                         const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                        inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -60 }px` // expand to close gap w/ buttons
+                        inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
+                            widths.chatbar - totalBtnWidths -60 }px`
                         inputArea.style.width = '100%' // rid h-scrollbar
                     }
                 }
@@ -91,7 +92,8 @@
                       clearBtn = document.querySelector(sites.poe.selectors.btns.clear)
                 if (attachFileBtn && !attachFileBtn.style.cssText) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                    document.querySelector(sites.poe.selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                    document.querySelector(sites.poe.selectors.input) // accommodate new btn pos
+                        .style.padding = '0 13px 0 40px'
                 }
                 btns.newChat.style.top = clearBtn ? '-1px' : 0
                 btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
@@ -121,7 +123,8 @@
                     dom.create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
                     dom.create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
                     dom.create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    dom.create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                    dom.create.svgElem('path',
+                        { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
                 on: [
                     dom.create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
                     dom.create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
@@ -130,7 +133,8 @@
             },
 
             fullWin: [
-                dom.create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                dom.create.svgElem('rect',
+                    { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
                 dom.create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
             ],
 
@@ -222,8 +226,9 @@
                 env.site == 'chatgpt' ? (
                     document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
               : env.site == 'perplexity' ? (
-                    document.documentElement.dataset.colorScheme == 'dark' ? 'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
-                                                                           : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
+                    document.documentElement.dataset.colorScheme == 'dark' ?
+                        'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
+                      : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
               : 'currentColor' )
 
             if (btns.wideScreen?.style.fill != btns.color)
@@ -251,8 +256,8 @@
                 btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
             }
             btnSVG.setAttribute('viewBox', (
-                mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
-            + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size) // set pre-tweaked viewbox
+                mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' )
+            + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' )
             )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             if (env.site == 'chatgpt') // override button resizing
@@ -292,18 +297,23 @@
                   + '[class*="-modal"] p { font-size: 16px }'
                   + '[class*="-modal"] button {'
                       + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
-                      + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
+                      + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ;` // dash borders
+                      + 'border-radius: 0 !important ;' // square borders
                       + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
                       + 'cursor: pointer !important ;' // add finger cursor
                       + 'padding: 5px !important ; min-width: 102px }' // resize
-                  + '[class*="-modal"] button:hover {' // add zoom, re-scheme
+                  + '.chatgpt-modal button:hover {' // add zoom, re-scheme
                       + 'transform: scale(1.055) ;'
-                      + ( chatgpt.isDarkMode() ? 'background-color: #2cff00 !important ; box-shadow: 2px 1px 54px #38ff00 !important ; color: black !important'
-                                               : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
+                      + ( chatgpt.isDarkMode() ? ( 'background-color: #2cff00 !important ; color: black !important ;'
+                                                     + 'box-shadow: 2px 1px 54px #38ff00 !important ;' )
+                                               : ( 'background-color: #c7ff006b !important ;'
+                                                     + 'box-shadow: 2px 1px 30px #97ff006b !important' )) + '}'
                   + ( env.site == 'chatgpt' ? (
                           ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
-                          + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
-                    ) : env.site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
+                          + 'main { overflow: clip !important }' // prevent h-scrollbar...
+                                // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
+                    ) : env.site == 'poe' ? // h-pad mic btn for even spread
+                        'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' ))
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                   + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
@@ -376,8 +386,10 @@
                     if (sidebarToggle) sidebarToggle.click()
                     else { fullWinStyle.remove() ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') {
-                    if (config.f11) siteAlert(chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
-                    else document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
+                    if (config.f11) siteAlert(
+                        chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
+                    else document.exitFullscreen().catch(
+                        err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
                 }
             }
         },
@@ -399,8 +411,10 @@
                 wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; btns.remove() ; chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
-                if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
-                if ((config.fullWindow && sites[env.site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
+                if (config.wideScreen ^ document.head.contains(wideScreenStyle)) {
+                    supressNotifs() ; toggle.mode('wideScreen') }
+                if ((config.fullWindow && sites[env.site].hasSidebar) ^ isFullWin()) {
+                    supressNotifs() ; toggle.mode('fullWindow') }
                 sync.fullerWin() // sync Fuller Windows
                 update.style.tweaks() // sync TCB/NCB/HH/HF
                 update.style.chatbar() // sync WCB
@@ -435,7 +449,7 @@
                 if (mode == 'fullWindow') sync.fullerWin()
                 if (env.site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                     mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
-                        && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
+                        && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid wrong width
                 notify(`${chrome.i18n.getMessage('mode_' + mode)} ${
                           chrome.i18n.getMessage(`state_${ state ? 'on' : 'off' }`).toUpperCase()}`)
             }
@@ -448,10 +462,12 @@
     function isFullWin() {
         return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[env.site].hasSidebar // false if sidebar non-existent
-           || /\d+/.exec(getComputedStyle(document.querySelector(sites[env.site].selectors.sidebar))?.width || '')[0] < 100
+           || /\d+/.exec(getComputedStyle(document.querySelector(
+                  sites[env.site].selectors.sidebar))?.width || '')[0] < 100
     }
 
-    chatgpt.canvasIsOpen = function() { return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
+    chatgpt.canvasIsOpen = function() {
+        return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
 
     // Run MAIN routine
 
@@ -484,11 +500,11 @@
     // Create/stylize TOOLTIP div
     const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' })
     document.head.append(dom.create.style('.cwm-tooltip {'
-        + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;'
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'box-shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;' // drop shadow
         + 'position: absolute ; bottom: 58px ; opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ;' // visibility
-        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
+        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
     ))
 
     // Create/apply general style TWEAKS
@@ -571,8 +587,10 @@
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
     window.addEventListener('resize', () => {
         const fullScreenState = chatgpt.isFullScreen()
-        if (config.fullScreen && !fullScreenState) { sync.mode('fullScreen') ; config.f11 = false } // exiting full screen
-        else if (!config.fullScreen && fullScreenState) sync.mode('fullScreen') // entering full screen
+        if (config.fullScreen && !fullScreenState) { // exiting full screen
+            sync.mode('fullScreen') ; config.f11 = false }
+        else if (!config.fullScreen && fullScreenState) // entering full screen
+            sync.mode('fullScreen')
         if (env.site == 'chatgpt') chatbar.tweak() // update chatgpt.com chatbar inner width
     })
 

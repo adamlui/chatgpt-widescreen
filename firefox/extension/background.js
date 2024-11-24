@@ -8,7 +8,8 @@
     chrome.storage.sync.set({ app }) // save to browser storage
 
     // Init SITES data
-    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
+    const sites = Object.assign(Object.create(null),
+        await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
 
     // Launch ChatGPT on install

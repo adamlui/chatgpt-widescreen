@@ -2,7 +2,7 @@ const config = {}
 const settings = {
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
-    controls: {
+    controls: { // displays top-to-bottom in toolbar menu
         fullerWindows: { type: 'toggle',
             label: chrome.i18n.getMessage('menuLabel_fullerWins'),
             helptip: chrome.i18n.getMessage('helptip_fullerWins') },

@@ -79,7 +79,7 @@
                 const menuLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
                       menuInput = dom.create.elem('input', { type: 'checkbox' }),
                       menuSlider = dom.create.elem('span', { class: 'slider' }),
-                      menuLabelSpan = document.createElement('span')
+                      menuLabelSpan = dom.elem.create('span')
                 menuLabelSpan.textContent = settings.controls[key].label
                 menuInput.checked = /disabled/i.test(key) ^ config[key]
 
@@ -115,7 +115,7 @@
         document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
     // Create/append FOOTER container
-    const footer = document.createElement('footer')
+    const footer = dom.elem.create('footer')
     document.body.append(footer)
 
     // Create/append CHATGPT.JS footer logo

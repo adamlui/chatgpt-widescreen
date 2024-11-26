@@ -44,7 +44,7 @@
 
         // Append styled state word
         if (foundState) {
-            const styledStateSpan = document.createElement('span')
+            const styledStateSpan = dom.elem.create('span')
             styledStateSpan.style.cssText = `color: ${
                 foundState == 'OFF' ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                     : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
@@ -157,7 +157,7 @@
             const bOffset = env.site == 'poe' ? -1.5 : env.site == 'perplexity' ? -13 : env.tallChatbar ? 31 : -8.85,
                   rOffset = env.site == 'poe' ? -6   : env.site == 'perplexity' ? -4  : env.tallChatbar ? 47 : -0.25
             validBtnTypes.forEach(async (btnType, idx) => {
-                btns[btnType] = document.createElement('div')
+                btns[btnType] = dom.elem.create('div')
                 btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
                 Object.assign(btns[btnType].style, {
                     position: env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',

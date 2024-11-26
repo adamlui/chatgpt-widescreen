@@ -36,6 +36,19 @@ const dom = {
             }).observe(document.body, { childList: true, subtree: true })
         })
         return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
+    },
+
+    fillStarryBG(targetNode) {
+        const starsDivsContainer = document.createElement('div')
+        starsDivsContainer.style.cssText = 'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
+          + 'height: 100% ; width: 100% ; border-radius: 15px ; overflow: clip ;' // bound innards exactly by targetNode
+          + 'z-index: -1'; // allow interactive elems to be clicked
+        ['sm', 'med', 'lg'].forEach(starSize => {
+            const starsDiv = document.createElement('div')
+            starsDiv.id = `${ chatgpt.isDarkMode() ? 'white' : 'black' }-stars-${starSize}`
+            starsDivsContainer.append(starsDiv)
+        })
+        targetNode.prepend(starsDivsContainer)
     }
 }
 

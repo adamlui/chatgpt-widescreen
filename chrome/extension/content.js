@@ -5,14 +5,15 @@
 
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    // Init ENV context
-    const env = {
-        browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
-
     // Import LIBS
     await import(chrome.runtime.getURL('lib/chatgpt.js'))
     await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+    const { modals } = await import(chrome.runtime.getURL('components/modals.js'))
+
+    // Init ENV context
+    const env = {
+        browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
     settings.site = env.site // to load/save active tab's settings
 
     // Import DATA
@@ -55,7 +56,11 @@
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(title, msg, btns, checkbox, width )}
+        const alertID = chatgpt.alert(title, msg, btns, checkbox, width ),
+              alert = document.getElementById(alertID).firstChild
+        modals.init(alert) // add class + starry BG + drag handlers
+        return alert
+    }
 
     // Define CHATBAR functions
 
@@ -293,6 +298,7 @@
             tweaks() {
                 tweaksStyle.innerText = (
                     '.chatgpt-notif, [class*="-modal"] { font-family: system-ui !important }'
+                  + '[class$="-modal"] { z-index: 13456 ; position: absolute }' // to be click-draggable
                   + `[class*="-modal"] { color: ${ chatgpt.isDarkMode() ? 'white' : 'black' }}`
                   + '[class*="modal-close-btn"] svg { height: 10px }'
                   + '[class*="-modal"] h2 { font-size: 24px ; font-weight: 600 }'
@@ -517,7 +523,13 @@
     const hfStyle = sites[env.site].selectors.footer + '{ visibility: hidden ;' // hide footer text
                                                      + '  height: 3px ; overflow: clip }' // reduce height
 
-    update.style.tweaks() ; document.head.append(tweaksStyle)
+    update.style.tweaks() ; document.head.append(tweaksStyle);
+
+    // Add STARS styles
+    ['black', 'white'].forEach(color => document.head.append(
+        dom.create.elem('link', { rel: 'stylesheet',
+            href: `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@1191df1/assets/styles/css/${color}-rising-stars.min.css`
+    })))
 
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style()

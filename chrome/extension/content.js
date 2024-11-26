@@ -297,12 +297,7 @@
 
             tweaks() {
                 tweaksStyle.innerText = (
-                    '.chatgpt-notif, [class*="-modal"] { font-family: system-ui !important }'
-                  + '[class$="-modal"] { z-index: 13456 ; position: absolute }' // to be click-draggable
-                  + `[class*="-modal"] { color: ${ chatgpt.isDarkMode() ? 'white' : 'black' }}`
-                  + '[class*="modal-close-btn"] svg { height: 10px }'
-                  + '[class*="-modal"] h2 { font-size: 24px ; font-weight: 600 }'
-                  + '[class*="-modal"] p { font-size: 16px }'
+                    '[class$="-modal"] { z-index: 13456 ; position: absolute }' // to be click-draggable
                   + '[class*="-modal"] button {'
                       + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
                       + 'border-radius: 0 !important ;' // square borders

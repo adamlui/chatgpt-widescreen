@@ -5,7 +5,9 @@
 
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    const env = { site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
+    // Init ENV context
+    const env = {
+        browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/chatgpt.js'))
@@ -304,6 +306,7 @@
                   + '.chatgpt-modal button:hover {' // add zoom, re-scheme
                       + 'transform: scale(1.055) ; color: black !important ;'
                       + `background-color: #${ chatgpt.isDarkMode() ? '00cfff' : '9cdaff' } !important }`
+                  + ( !env.browser.isMobile ? '.modal-buttons { margin-left: -13px !important }' : '' )
                   + ( env.site == 'chatgpt' ? (
                           ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...

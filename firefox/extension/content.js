@@ -528,7 +528,7 @@
     // Add STARS styles
     ['black', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
-            href: `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@1191df1/assets/styles/css/${color}-rising-stars.min.css`
+            href: `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@d751c80/assets/styles/css/${color}-rising-stars.min.css`
     })))
 
     // Create WIDESCREEN style

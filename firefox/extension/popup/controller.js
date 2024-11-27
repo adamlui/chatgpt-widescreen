@@ -5,7 +5,7 @@
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.mjs'))
     settings.site = env.site // to load/save active tab's settings
 
     // Import DATA
@@ -13,7 +13,7 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Import ICONS
-    const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
+    const { icons } = await import(chrome.runtime.getURL('components/icons.mjs'))
     icons.appProps = app // for src's using urls.mediaHost
 
     // Define FUNCTIONS

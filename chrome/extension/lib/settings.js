@@ -34,7 +34,7 @@ const settings = {
     load() {
         const keys = ( // original array if array, else new array from multiple args
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
-        if (!chrome.runtime) // synchronously load from userscript manager storage
+        if (typeof chrome != 'undefined' && !chrome.runtime) // synchronously load from userscript manager storage
             keys.forEach(key => config[key] = GM_getValue(settings.appProps.configKeyPrefix + '_' + key, false))
         else return Promise.all(keys.map(key => // resolve promise when all keys load from Chrome storage
             new Promise(resolve => // resolve promise when single key value loads
@@ -44,7 +44,7 @@ const settings = {
     ))))},
 
     save(key, val) {
-        if (!chrome.runtime) // save to userscript manager storage
+        if (typeof chrome != 'undefined' && !chrome.runtime) // save to userscript manager storage
             GM_setValue(settings.appProps.configKeyPrefix + '_' + key, val)
         else chrome.storage.sync.set({ // save to Chrome storage
             [ !settings.browserwideKeys.includes(key) ? `${settings.site}_${key}` : key ] : val })

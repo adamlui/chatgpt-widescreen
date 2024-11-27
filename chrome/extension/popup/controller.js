@@ -5,7 +5,7 @@
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.mjs'))
+    await import(chrome.runtime.getURL('lib/settings.js'))
     settings.site = env.site // to load/save active tab's settings
 
     // Import DATA

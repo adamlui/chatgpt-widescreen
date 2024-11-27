@@ -1,3 +1,9 @@
+// Launch ChatGPT on install
+chrome.runtime.onInstalled.addListener(details => {
+    if (details.reason == 'install') // to exclude updates
+        chrome.tabs.create({ url: 'https://chatgpt.com/' })
+});
+
 (async () => {
 
     // Init APP data
@@ -11,12 +17,6 @@
     const sites = Object.assign(Object.create(null),
         await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
-
-    // Launch ChatGPT on install
-    chrome.runtime.onInstalled.addListener(details => {
-        if (details.reason == 'install')
-            chrome.tabs.create({ url: 'https://chatgpt.com/' })
-    })
 
     // Sync modes/settings to activated tabs
     chrome.tabs.onActivated.addListener(activeInfo =>

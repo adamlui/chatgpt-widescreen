@@ -34,20 +34,21 @@ const settings = {
     load() {
         const keys = ( // original array if array, else new array from multiple args
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
-        if (typeof chrome != 'undefined' && !chrome.runtime) // synchronously load from userscript manager storage
+        if (typeof chrome != 'undefined' && chrome.runtime) // asynchronously load from Chrome storage
+            return Promise.all(keys.map(key => // resolve promise when all keys load
+                new Promise(resolve => // resolve promise when single key value loads
+                    chrome.storage.sync.get(!settings.browserwideKeys.includes(key) ? `${settings.site}_${key}` : key,
+                        result => { config[key] = result[`${settings.site}_${key}`] || result[key] || false ; resolve()
+        })))) ; else // synchronously load from userscript manager storage
             keys.forEach(key => config[key] = GM_getValue(settings.appProps.configKeyPrefix + '_' + key, false))
-        else return Promise.all(keys.map(key => // resolve promise when all keys load from Chrome storage
-            new Promise(resolve => // resolve promise when single key value loads
-                chrome.storage.sync.get( // load from Chrome
-                    !settings.browserwideKeys.includes(key) ? `${settings.site}_${key}` : key,
-                    result => { config[key] = result[`${settings.site}_${key}`] || result[key] || false ; resolve() }
-    ))))},
+    },
 
     save(key, val) {
-        if (typeof chrome != 'undefined' && !chrome.runtime) // save to userscript manager storage
+        if (typeof chrome != 'undefined' && chrome.runtime) // save to Chrome storage
+            chrome.storage.sync.set({
+                [ !settings.browserwideKeys.includes(key) ? `${settings.site}_${key}` : key ] : val })
+        else // save to userscript manager storage
             GM_setValue(settings.appProps.configKeyPrefix + '_' + key, val)
-        else chrome.storage.sync.set({ // save to Chrome storage
-            [ !settings.browserwideKeys.includes(key) ? `${settings.site}_${key}` : key ] : val })
         config[key] = val // save to memory
     }
 }

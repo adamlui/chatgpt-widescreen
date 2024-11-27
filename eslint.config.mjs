@@ -11,7 +11,10 @@ export default [
         files: ['**/*.js', '**/*.mjs'],
         languageOptions: {
             ecmaVersion: 'latest', sourceType: 'script',
-            globals: { ...globals.browser, ...globals.node, ...globals.greasemonkey, chatgpt: 'readonly', chrome: 'readonly', dom: 'readonly' }
+            globals: {
+                ...globals.browser, ...globals.node, ...globals.greasemonkey,
+                chatgpt: 'readonly', chrome: 'readonly', config: 'writable', dom: 'readonly', settings: 'writable'
+            }
         },
         plugins: { regexp, 'js-styles': stylisticJS },
         rules: {

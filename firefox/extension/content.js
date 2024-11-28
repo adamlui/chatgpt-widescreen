@@ -226,6 +226,7 @@
         remove() {
             if (!chatbar.get() || !document.getElementById('wideScreen-btn')) return
             btns.types.forEach(type => btns[type]?.remove()) ; tooltipDiv?.remove()
+            btns.status = 'missing' // ensure next btns.insert() doesn't return early
         },
 
         updateColor() {

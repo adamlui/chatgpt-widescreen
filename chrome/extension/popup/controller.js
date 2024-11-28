@@ -59,17 +59,17 @@
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
     }
 
-    // Create CHILD TOGGLES for matched pages
+    // Create CHILD menu entries on matched pages
     const matchHosts = chrome.runtime.getManifest().content_scripts[0].matches
         .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
     if (matchHosts.some(host => host.includes(env.site))) {
         await settings.load(sites[env.site].availFeatures)
 
-        // Create/insert toggles section
+        // Create/insert child section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
 
-        // Create/inesrt individual toggles
+        // Create/insert child entries
         Object.keys(settings.controls).forEach(key => {
             if (sites[env.site].availFeatures.includes(key)) {
 

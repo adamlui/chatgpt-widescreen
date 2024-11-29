@@ -1,5 +1,5 @@
-const config = {}
-const settings = {
+window.config = {}
+window.settings = {
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
     controls: { // displays top-to-bottom in toolbar menu
@@ -33,14 +33,12 @@ const settings = {
             new Promise(resolve => // resolve promise when single key value loads
                 chrome.storage.sync.get( // load from Chrome
                     !this.browserwideKeys.includes(key) ? `${this.site}_${key}` : key,
-                    result => { config[key] = result[`${this.site}_${key}`] || result[key] || false ; resolve() }
+                    result => { window.config[key] = result[`${this.site}_${key}`] || result[key] || false ; resolve() }
     ))))},
 
     save(key, val) {
         chrome.storage.sync.set({ // save to Chrome
             [ !this.browserwideKeys.includes(key) ? `${this.site}_${key}` : key ] : val })
-        config[key] = val // save to memory
+        window.config[key] = val // save to memory
     }
-}
-
-window.config = config ; window.settings = settings;
+};

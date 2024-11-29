@@ -1,4 +1,4 @@
-const dom = {
+window.dom = {
 
     create: {
         elem(elemType, attrs = {}) {
@@ -50,6 +50,4 @@ const dom = {
         })
         targetNode.prepend(starsDivsContainer)
     }
-}
-
-window.dom = dom;
+};

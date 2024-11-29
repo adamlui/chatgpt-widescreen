@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(details => {
 
 // Sync SETTINGS/MODES to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncStorageToUI' }));
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }));
 
 // Init DATA
 (async () => {

@@ -27,7 +27,7 @@
     chrome.runtime.onMessage.addListener(req => {
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'syncStorageToUI') sync.storageToUI()
+        else if (req.action == 'syncConfigToUI') sync.configToUI()
     })
 
     // Define FEEDBACK functions
@@ -405,7 +405,7 @@
 
     const sync = {
 
-        async storageToUI() { // on toolbar popup toggles + AI tab activations
+        async configToUI() { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns

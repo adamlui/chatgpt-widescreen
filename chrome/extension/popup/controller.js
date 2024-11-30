@@ -18,12 +18,12 @@
 
     // Define FUNCTIONS
 
-    async function sendMsgToActiveTab(req) {
+    async function sendMsgToActiveTab(action, options) {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, req)
+        return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
     }
 
-    function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
+    function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     const sync = {
         fade() {
@@ -45,7 +45,7 @@
                 })
         },
 
-        configToUI() { sendMsgToActiveTab({ action: 'syncConfigToUI' })}
+        configToUI() { return sendMsgToActiveTab('syncConfigToUI') }
     }
 
     // Run MAIN routine

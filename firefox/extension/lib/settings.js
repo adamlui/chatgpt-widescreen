@@ -5,25 +5,32 @@ window.settings = {
     controls: { // displays top-to-bottom in toolbar menu
         get fullerWindows() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_fullerWins'),
-            helptip: window.settings.getMsg('helptip_fullerWins') }},
+            helptip: window.settings.getMsg('helptip_fullerWins')
+        }},
         get tcbDisabled() { return { type: 'toggle', symbol: '↕️',
             label: window.settings.getMsg('menuLabel_tallerChatbox'),
-            helptip: window.settings.getMsg('helptip_tallerChatbox') }},
+            helptip: window.settings.getMsg('helptip_tallerChatbox')
+        }},
         get widerChatbox() { return { type: 'toggle', symbol: '↔️',
             label: window.settings.getMsg('menuLabel_widerChatbox'),
-            helptip: window.settings.getMsg('helptip_widerChatbox') }},
+            helptip: window.settings.getMsg('helptip_widerChatbox')
+        }},
         get ncbDisabled() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_newChatBtn'),
-            helptip: window.settings.getMsg('helptip_newChatBtn') }},
+            helptip: window.settings.getMsg('helptip_newChatBtn')
+        }},
         get hiddenHeader() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_hiddenHeader'),
-            helptip: window.settings.getMsg('helptip_hiddenHeader') }},
+            helptip: window.settings.getMsg('helptip_hiddenHeader')
+        }},
         get hiddenFooter() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_hiddenFooter'),
-            helptip: window.settings.getMsg('helptip_hiddenFooter') }},
+            helptip: window.settings.getMsg('helptip_hiddenFooter')
+        }},
         get notifDisabled() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_modeNotifs'),
-            helptip: window.settings.getMsg('helptip_modeNotifs') }}
+            helptip: window.settings.getMsg('helptip_modeNotifs')
+        }}
     },
 
     getMsg(key) {

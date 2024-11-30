@@ -3,7 +3,7 @@
 
 (async () => {
 
-    document.head.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
+    document.head.setAttribute('chatgpt-widescreen-extension-installed', true) // for userscript auto-disable
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/chatgpt.js'))

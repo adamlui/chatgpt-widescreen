@@ -6,10 +6,8 @@
     document.documentElement.setAttribute('chatgpt-widescreen-extension-installed', true) // for userscript auto-disable
 
     // Import JS resources
-    await import(chrome.runtime.getURL('components/modals.js'))
-    await import(chrome.runtime.getURL('lib/chatgpt.js'))
-    await import(chrome.runtime.getURL('lib/dom.js'))
-    await import(chrome.runtime.getURL('lib/settings.js'))
+    for (const resource of ['components/modals.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js'])
+        await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
     const env = {

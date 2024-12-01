@@ -12,7 +12,7 @@ chrome.tabs.onActivated.addListener(activeInfo =>
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: 'a7889f6', urls: {} }
+    const app = { latestAssetCommitHash: '861a313', urls: {} }
     app.urls.assetHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
     const appData = await (await fetch(`${app.urls.assetHost}/data/app.json`)).json()
     Object.assign(app, { ...appData, urls: { ...app.urls, ...appData.urls }})

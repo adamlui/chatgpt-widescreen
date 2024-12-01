@@ -1,20 +1,21 @@
 (async () => {
 
-    const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
-        { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
-
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
     await import(chrome.runtime.getURL('lib/settings.js'))
-    settings.site = env.site // to load/save active tab's settings
+
+    // Import ICONS
+    const { icons } = await import(chrome.runtime.getURL('components/icons.mjs'))
+
+    // Init ENV context
+    const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
+        { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
+    settings.import({ env }) // to load/save active tab's settings using env.site
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-
-    // Import ICONS
-    const { icons } = await import(chrome.runtime.getURL('components/icons.mjs'))
-    icons.appProps = app // for src's using urls.mediaHost
+    icons.import({ app }) // for src's using app.urls.mediaHost
 
     // Define FUNCTIONS
 

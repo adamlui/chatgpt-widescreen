@@ -14,7 +14,7 @@
     // Init ENV context
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
-    settings.site = env.site // to load/save active tab's settings
+    settings.import({ env }) // to load/save active tab's settings using env.site
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),

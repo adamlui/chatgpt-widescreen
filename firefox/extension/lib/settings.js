@@ -1,5 +1,9 @@
 window.config = {}
 window.settings = {
+
+    import(dependencies) { // { app, env }
+        Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) },
+
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
     controls: { // displays top-to-bottom in toolbar menu
@@ -35,10 +39,8 @@ window.settings = {
 
     getMsg(key) {
         return typeof chrome != 'undefined' && chrome.runtime ? chrome.i18n.getMessage(key)
-            : this.app.msgs[key] // assigned from app.msgs in userscript
+            : this.app.msgs[key] // assigned from this.import({ app }) in userscript
     },
-
-    import(dependencies) { Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) },
 
     load() {
         const keys = ( // original array if array, else new array from multiple args

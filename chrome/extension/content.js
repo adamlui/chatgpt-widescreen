@@ -17,6 +17,7 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
+    modals.import({ app, siteAlert })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -27,6 +28,7 @@
             notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
         else if (req.action == 'alert')
             siteAlert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
+        else if (req.action == 'showAbout') chatgpt.isLoaded().then(() => { modals.open('about') })
         else if (req.action == 'syncConfigToUI') sync.configToUI()
     })
 
@@ -56,10 +58,8 @@
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        const alertID = chatgpt.alert(title, msg, btns, checkbox, width ),
-              alert = document.getElementById(alertID).firstChild
-        modals.setup(alert) // add class + starry BG + drag handlers
-        return alert
+        const alertID = chatgpt.alert(title, msg, btns, checkbox, width)
+        return document.getElementById(alertID).firstChild
     }
 
     // Define CHATBAR functions

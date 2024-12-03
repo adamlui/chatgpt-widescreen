@@ -246,6 +246,18 @@ const chatgpt = {
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
+
+    async isLoaded(timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isLoadedPromise = new Promise(resolve => {
+            if (chatgpt.getNewChatBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
+    },
+
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
     async isIdle(timeout = null) {

@@ -6,13 +6,33 @@ chrome.runtime.onInstalled.addListener(details => {
 
 // Sync SETTINGS/MODES to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }));
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
+
+// Show ABOUT modal on ChatGPT when toolbar button clicked
+chrome.runtime.onMessage.addListener(async req => {
+    if (req.action == 'showAbout') {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        const chatgptTab = new URL(activeTab.url).hostname == 'chatgpt.com' ? activeTab
+            : await chrome.tabs.create({ url: 'https://chatgpt.com/' })
+        if (activeTab != chatgptTab) await new Promise(resolve => // after new tab loads
+            chrome.tabs.onUpdated.addListener(async function statusListener(tabId, info) {
+                if (tabId == chatgptTab.id && info.status == 'complete') {
+                    chrome.tabs.onUpdated.removeListener(statusListener)
+                    await new Promise(resolve => setTimeout(resolve, 2500))
+                    resolve()
+        }}))
+        chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout' })
+    }
+});
 
 // Init DATA
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: '0f34bab', urls: {} }
+    const app = {
+        version: chrome.runtime.getManifest().version, latestAssetCommitHash: '0f34bab', urls: {},
+        chatgptJSver: (await (await fetch(chrome.runtime.getURL('lib/chatgpt.js'))).text()).match(/v(\d+\.\d+\.\d+)/)[1]
+    }
     app.urls.assetHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
     const remoteAppData = await (await fetch(`${app.urls.assetHost}/data/app.json`)).json()
     Object.assign(app, { ...remoteAppData, urls: { ...app.urls, ...remoteAppData.urls }})

@@ -175,7 +175,6 @@
                 if (/chatgpt|perplexity/.test(env.site)) { // assign classes + tweak styles
                     const rightBtnSelector = `${sites[env.site].selectors.btns.send}, ${
                                                 sites[env.site].selectors.btns.voice}`
-                    console.log(rightBtnSelector)
                     const rightBtn = await new Promise(resolve => {
                         const rightBtn = document.querySelector(rightBtnSelector)
                         if (rightBtn) resolve(rightBtn)

@@ -7,7 +7,7 @@
         "login": "[data-testid*=\"login\"]",
         "newChat": "button[data-testid*=\"new-chat-button\"], button:has([d^=\"M15.6729\"])",
         "send": "button[data-testid=\"send-button\"]", "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
-        "stop": "button[data-testid=\"stop-button\"]"
+        "stop": "button[data-testid=\"stop-button\"]", "voice": "button[data-testid*=\"composer-speech-button\"]"
       },
       "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
     }

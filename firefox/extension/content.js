@@ -173,15 +173,17 @@
                 if (env.tallChatbar) btns[btnType].style.bottom = '8.85px'
                 else btns[btnType].style.top = /chatgpt|openai/.test(env.site) ? '-3.25px' : 0
                 if (/chatgpt|perplexity/.test(env.site)) { // assign classes + tweak styles
-                    const sendBtn = await new Promise(resolve => {
-                        const sendBtn = document.querySelector(sites[env.site].selectors.btns.send)
-                        if (sendBtn) resolve(sendBtn)
+                    const rightBtnSelector = `${sites[env.site].selectors.btns.send}, ${
+                                                sites[env.site].selectors.btns.voice}`
+                    const rightBtn = await new Promise(resolve => {
+                        const rightBtn = document.querySelector(rightBtnSelector)
+                        if (rightBtn) resolve(rightBtn)
                         else new MutationObserver((_, obs) => {
-                            const sendBtn = document.querySelector(sites[env.site].selectors.btns.send)
-                            if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                            const rightBtn = document.querySelector(rightBtnSelector)
+                            if (rightBtn) { obs.disconnect() ; resolve(rightBtn) }
                         }).observe(document.body, { childList: true, subtree: true })
                     })
-                    btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
+                    btns[btnType].setAttribute('class', rightBtn.classList.toString() || '')
                     Object.assign(btns[btnType].style, { // remove dark mode overlay
                         backgroundColor: 'transparent', borderColor: 'transparent' })
                 } else if (env.site == 'poe') // lift buttons slightly

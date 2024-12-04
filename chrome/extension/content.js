@@ -328,7 +328,7 @@
                 wideScreenStyle.innerText = (
                     env.site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
-                      + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
+                      + ( !env.tallChatbar ? '.text-base:nth-of-type(2) { max-width: 97% !important }' : '' )
                   ) : env.site == 'perplexity' ? (
                         `${sites.perplexity.selectors.header} ~ div,` // outer container
                       + `${sites.perplexity.selectors.header} ~ div > div` // inner container

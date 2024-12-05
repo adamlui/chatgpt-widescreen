@@ -312,7 +312,7 @@
                       + `background-color: #${ chatgpt.isDarkMode() ? '00cfff' : '9cdaff' } !important }`
                   + ( !env.browser.isMobile ? '.modal-buttons { margin-left: -13px !important }' : '' )
                   + ( env.site == 'chatgpt' ? (
-                          ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
+                          ( '[id$="-btn"]:hover { opacity: 65% !important }' ) // dim chatbar btns on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : env.site == 'poe' ? // h-pad mic btn for even spread

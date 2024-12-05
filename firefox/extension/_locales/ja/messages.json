@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "レビューを残す" },
   "btnLabel_rateUs": { "message": "評価してください" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },
-  "btnLabel_updateCheck": { "message": "アップデートの確認" },
+  "btnLabel_checkForUpdates": { "message": "アップデートの確認" },
   "btnLabel_update": { "message": "アップデート" },
   "btnLabel_dismiss": { "message": "解散" },
   "link_viewChanges": { "message": "ビューの変更" },

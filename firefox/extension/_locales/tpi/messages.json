@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Lusim toksave" },
   "btnLabel_rateUs": { "message": "Toksave long mipela" },
   "btnLabel_getSupport": { "message": "Kisim helpim" },
-  "btnLabel_updateCheck": { "message": "Lukim ol eleksen" },
+  "btnLabel_checkForUpdates": { "message": "Lukim ol eleksen" },
   "btnLabel_update": { "message": "Toksave" },
   "btnLabel_dismiss": { "message": "Rausim" },
   "link_viewChanges": { "message": "Lukim ol senis" },

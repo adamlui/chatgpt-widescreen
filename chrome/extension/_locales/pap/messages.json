@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Laga revision" },
   "btnLabel_rateUs": { "message": "Rate Nos" },
   "btnLabel_getSupport": { "message": "Recibí Apoyo" },
-  "btnLabel_updateCheck": { "message": "Revisá las actualizaciones" },
+  "btnLabel_checkForUpdates": { "message": "Revisá las actualizaciones" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Desaprobashon" },
   "link_viewChanges": { "message": "Wak kambio" },

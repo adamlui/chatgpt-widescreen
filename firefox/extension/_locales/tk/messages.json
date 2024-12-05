@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Seretmek" },
   "btnLabel_rateUs": { "message": "Bize habar beriň" },
   "btnLabel_getSupport": { "message": "Ýolbaşçylyk maslahaty" },
-  "btnLabel_updateCheck": { "message": "Täzelenmeleri barla" },
+  "btnLabel_checkForUpdates": { "message": "Täzelenmeleri barla" },
   "btnLabel_update": { "message": "Häzirleşdir" },
   "btnLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Ýygnaýyşy görkez" },

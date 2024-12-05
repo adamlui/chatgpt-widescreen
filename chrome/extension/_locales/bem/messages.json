@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
   "btnLabel_rateUs": { "message": "Rate Twine" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
-  "btnLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
+  "btnLabel_checkForUpdates": { "message": "Check Kuli Kuli Updates" },
   "btnLabel_update": { "message": "Ica Update" },
   "btnLabel_dismiss": { "message": "Dismiss Fela Kuti" },
   "link_viewChanges": { "message": "View ayaluka" },

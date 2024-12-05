@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },
   "btnLabel_rateUs": { "message": "Próximo Us" },
   "btnLabel_getSupport": { "message": "Supportum" },
-  "btnLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
+  "btnLabel_checkForUpdates": { "message": "Votre mail pour notre newsletter" },
   "btnLabel_update": { "message": "opus" },
   "btnLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" },

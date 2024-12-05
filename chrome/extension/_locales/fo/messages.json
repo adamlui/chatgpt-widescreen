@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Loyvi endurskoðan" },
   "btnLabel_rateUs": { "message": "Rætta okkum" },
   "btnLabel_getSupport": { "message": "Fá stuðul" },
-  "btnLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
+  "btnLabel_checkForUpdates": { "message": "Hygg eftir UPDATE" },
   "btnLabel_update": { "message": "Dagfør" },
   "btnLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sýn broytingar" },

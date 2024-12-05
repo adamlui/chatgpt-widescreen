@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "بررسی را ترک کنید" },
   "btnLabel_rateUs": { "message": "به طراح افشان رای دهید" },
   "btnLabel_getSupport": { "message": "پشتیبانی" },
-  "btnLabel_updateCheck": { "message": "بررسی به روز رسانی" },
+  "btnLabel_checkForUpdates": { "message": "بررسی به روز رسانی" },
   "btnLabel_update": { "message": "به روز رسانی" },
   "btnLabel_dismiss": { "message": "رد" },
   "link_viewChanges": { "message": "مشاهده تغییرات" },

@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Biyai ang Review" },
   "btnLabel_rateUs": { "message": "I-rate Kanato" },
   "btnLabel_getSupport": { "message": "Kuhaa ang Suporta" },
-  "btnLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
+  "btnLabel_checkForUpdates": { "message": "Susiha alang sa Mga Update" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Hapit nalukop sa kaumahan ang palibot sa" },
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },

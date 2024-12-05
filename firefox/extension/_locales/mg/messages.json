@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },
   "btnLabel_rateUs": { "message": "Omeo isa izahay" },
   "btnLabel_getSupport": { "message": "Mitadiava fanampiana" },
-  "btnLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
+  "btnLabel_checkForUpdates": { "message": "Jereo ny vaovao momba ny famerenana" },
   "btnLabel_update": { "message": "Vaovao farany" },
   "btnLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" },

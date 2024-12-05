@@ -56,7 +56,7 @@
   "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_rateUs": { "message": "Maemo a Rona" },
   "btnLabel_getSupport": { "message": "Bona Kemonokeng" },
-  "btnLabel_updateCheck": { "message": "Go Batla Diphetogo" },
+  "btnLabel_checkForUpdates": { "message": "Go Batla Diphetogo" },
   "btnLabel_update": { "message": "Ntshwafatso" },
   "btnLabel_dismiss": { "message": "Phimola" },
   "link_viewChanges": { "message": "LEBA DIPHETOGO" },

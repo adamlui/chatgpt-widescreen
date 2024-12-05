@@ -12,12 +12,12 @@
     // Init ENV context
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
-    settings.import({ env }) // to load/save active tab's settings using env.site
+    settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    modals.import({ app, siteAlert })
+    modals.dependencies.import({ app, siteAlert })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)

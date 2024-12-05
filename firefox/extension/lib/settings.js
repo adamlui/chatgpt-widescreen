@@ -1,8 +1,10 @@
 window.config = {}
 window.settings = {
 
-    import(dependencies) { // { app, env }
-        Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) },
+    dependencies: {
+        import(dependencies) { // { app (userscript only), env (extension only) }
+            Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) }
+    },
 
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
@@ -39,7 +41,7 @@ window.settings = {
 
     getMsg(key) {
         return typeof chrome != 'undefined' && chrome.runtime ? chrome.i18n.getMessage(key)
-            : this.app.msgs[key] // assigned from this.import({ app }) in userscript
+            : this.dependencies.app.msgs[key] // assigned from settings.dependencies.import({ app }) in userscript
     },
 
     load() {
@@ -48,19 +50,21 @@ window.settings = {
         if (typeof chrome != 'undefined' && chrome.runtime) // asynchronously load from browser extension storage
             return Promise.all(keys.map(key => // resolve promise when all keys load
                 new Promise(resolve => // resolve promise when single key value loads
-                    chrome.storage.sync.get(!this.browserwideKeys.includes(key) ? `${this.env.site}_${key}` : key,
-                        result => {
-                            window.config[key] = result[`${this.env.site}_${key}`] || result[key] || false ; resolve()
+                    chrome.storage.sync.get(
+                        !this.browserwideKeys.includes(key) ? `${this.dependencies.env.site}_${key}` : key,
+                        result => { window.config[key] = result[`${this.dependencies.env.site}_${key}`]
+                            || result[key] || false ; resolve()
         })))) ; else // synchronously load from userscript manager storage
-            keys.forEach(key => window.config[key] = GM_getValue(this.app.configKeyPrefix + '_' + key, false))
-    },
+            keys.forEach(key => window.config[key] = GM_getValue(
+                `${this.dependencies.app.configKeyPrefix}_${key}`, false))
+},
 
     save(key, val) {
         if (typeof chrome != 'undefined' && chrome.runtime) // save to browser extension storage
             chrome.storage.sync.set({
-                [ !this.browserwideKeys.includes(key) ? `${this.env.site}_${key}` : key ] : val })
+                [ !this.browserwideKeys.includes(key) ? `${this.dependencies.env.site}_${key}` : key ] : val })
         else // save to userscript manager storage
-            GM_setValue(this.app.configKeyPrefix + '_' + key, val)
+            GM_setValue(`${this.dependencies.app.configKeyPrefix}_${key}`, val)
         window.config[key] = val // save to memory
     }
 };

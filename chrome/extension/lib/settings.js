@@ -3,7 +3,7 @@ window.settings = {
 
     dependencies: {
         import(dependencies) { // { app (userscript only), env (extension only) }
-            Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) }
+            for (const name in dependencies) this[name] = dependencies[name] }
     },
 
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site

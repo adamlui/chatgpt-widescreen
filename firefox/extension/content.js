@@ -17,7 +17,7 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    modals.dependencies.import({ app, siteAlert })
+    modals.dependencies.import({ app })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -27,12 +27,12 @@
         if (req.action == 'notify')
             notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
         else if (req.action == 'alert')
-            siteAlert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
+            modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
         else if (req.action == 'showAbout') chatgpt.isLoaded().then(() => { modals.open('about') })
         else if (req.action == 'syncConfigToUI') sync.configToUI()
     })
 
-    // Define FEEDBACK functions
+    // Define FUNCTIONS
 
     function notify(msg, pos = '', notifDuration = '', shadow = '') {
         if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
@@ -56,13 +56,6 @@
             styledStateSpan.append(foundState) ; notif.append(styledStateSpan)
         }
     }
-
-    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        const alertID = chatgpt.alert(title, msg, btns, checkbox, width)
-        return document.getElementById(alertID).firstChild
-    }
-
-    // Define CHATBAR functions
 
     const chatbar = {
 
@@ -118,8 +111,6 @@
             }
         }
     }
-
-    // Define BUTTON props/functions
 
     const btns = {
         types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
@@ -283,8 +274,6 @@
         }
     }
 
-    // Define UPDATE functions
-
     const update = {
 
         style: {
@@ -359,8 +348,6 @@
         }
     }
 
-    // Define TOGGLE functions
-
     const toggle = {
 
         mode(mode, state = '') {
@@ -389,7 +376,7 @@
                     if (sidebarToggle) sidebarToggle.click()
                     else { fullWinStyle.remove() ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') {
-                    if (config.f11) siteAlert(
+                    if (config.f11) modals.alert(
                         chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
                     else document.exitFullscreen().catch(
                         err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
@@ -402,8 +389,6 @@
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
     }
-
-    // Define SYNC functions
 
     const sync = {
 
@@ -459,8 +444,6 @@
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }
-
-    // Define UI functions
 
     function isFullWin() {
         return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')

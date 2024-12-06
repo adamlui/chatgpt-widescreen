@@ -120,8 +120,7 @@ window.modals = {
             + `<span style="${headingStyle}"><b>📜 <i>${this.getMsg('about_sourceCode')}</i></b>:</span>\n`
                 + `<span style="${pBrStyle}"><a href="${this.dependencies.app.urls.gitHub}" target="_blank"`
                     + ` rel="noopener">${this.dependencies.app.urls.gitHub}</a></span>`,
-            modalBtns, '',
-            /Chromium|Firefox/.test(this.env.runtime) ? 600 : 546 // set width
+            modalBtns, '', 546
         )
 
         // Format text

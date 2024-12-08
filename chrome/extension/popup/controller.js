@@ -49,12 +49,13 @@
     const masterToggle = document.querySelector('.main-toggle input')
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
-    masterToggle.onchange = () => {
+    masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         if (!config.notifDisabled)
-            notify(`${chrome.i18n.getMessage('appName')} 🧩 ${chrome.i18n.getMessage(`state_${
-                config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
+            notify(`${ (await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ?
+                'ChatGPT Widescreen' : chrome.i18n.getMessage('appName')} 🧩 ${
+                    chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
     // Create CHILD menu entries on matched pages

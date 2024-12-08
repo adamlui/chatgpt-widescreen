@@ -149,7 +149,7 @@
         },
 
         create() {
-            if (env.site == 'chatgpt' && chatbar.get().nextElementSibling && !env.tallChatbar)
+            if (env.site == 'chatgpt' && chatbar.get()?.nextElementSibling && !env.tallChatbar)
                 env.tallChatbar = true
             const validBtnTypes = btns.types.filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
             const bOffset = env.site == 'poe' ? -1.5 : env.site == 'perplexity' ? -13 : env.tallChatbar ? 31 : -8.85,

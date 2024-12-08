@@ -5,12 +5,13 @@
 
 (async () => {
 
-    const repoName = 'chatgpt-widecsreen',
-          userJSfilePath = `./greasemonkey/${repoName}.user.js`
-
     // Import LIBS
     const fs = require('fs'), // to read/write files
           ssri = require('ssri') // to generate SHA-256 hashes
+
+    // Init REPO context
+    const repoName = 'chatgpt-widescreen',
+          userJSfilePath = `./greasemonkey/${repoName}-mode.user.js`
 
     // Init UI COLORS
     const nc = '\x1b[0m',    // no color

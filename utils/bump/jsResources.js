@@ -5,7 +5,7 @@
 
 (async () => {
 
-    const repoName = 'chatgpt-auto-continue',
+    const repoName = 'chatgpt-widecsreen',
           userJSfilePath = `./greasemonkey/${repoName}.user.js`
 
     // Import LIBS

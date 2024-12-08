@@ -29,7 +29,7 @@ chrome.runtime.onMessage.addListener(async req => {
 
     // Init APP data
     const app = {
-        version: chrome.runtime.getManifest().version, latestAssetCommitHash: 'cc9e061', urls: {},
+        version: chrome.runtime.getManifest().version, latestAssetCommitHash: '8d25884', urls: {},
         chatgptJSver: /v(\d+\.\d+\.\d+)/.exec(await (await fetch(chrome.runtime.getURL('lib/chatgpt.js'))).text())[1]
     }
     app.urls.assetHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`

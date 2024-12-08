@@ -464,17 +464,6 @@
             dom.elemIsLoaded(sites.chatgpt.selectors.btns.login).then(() => false), // false if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
-        sites.chatgpt.selectors.footer = await Promise.race([
-            new Promise(resolve => { // class of footer container
-                const footerDiv = chatgpt.getFooterDiv()
-                if (footerDiv) resolve(dom.cssSelectorize(footerDiv.classList))
-                else new MutationObserver((_, obs) => {
-                    const footerDiv = chatgpt.getFooterDiv()
-                    if (footerDiv) { obs.disconnect() ; resolve(dom.cssSelectorize(footerDiv.classList)) }
-                }).observe(document.body, { childList: true, subtree: true })
-            }),
-            new Promise(resolve => setTimeout(() => resolve(null), 500)) // null if 500ms passed
-        ])
     }
 
     // Init FULL-MODE states
@@ -501,8 +490,7 @@
                    + '{ max-height: 68vh }'
     const hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
                   + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ) // increase top-padding
-    const hfStyle = sites[env.site].selectors.footer + '{ visibility: hidden ;' // hide footer text
-                                                     + '  height: 3px ; overflow: clip }' // reduce height
+    const hfStyle = sites[env.site].selectors.footer + '{ display: none }' // hide footer
 
     update.style.tweaks() ; document.head.append(tweaksStyle);
 

@@ -338,9 +338,9 @@
 
         tooltip(btnType) { // text & position
             const visibleBtnTypes = btns.types.filter(type => !(type == 'fullWindow' && !sites[env.site].hasSidebar))
-            const ctrAddend = ( env.site == 'perplexity' ? ( location.pathname == '/' ? 100 : 106 )
+            const ctrAddend = ( env.site == 'perplexity' ? ( location.pathname == '/' ? 94 : 105 )
                               : env.site == 'poe' ? 45 : 13 ) +25,
-                  spreadFactor = env.site == 'perplexity' ? 26.85 : env.site == 'poe' ? 34 : 30.55,
+                  spreadFactor = env.site == 'perplexity' ? 26.5 : env.site == 'poe' ? 34 : 30.55,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                              + ( env.tallChatbar ? -3 : 4 )
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (

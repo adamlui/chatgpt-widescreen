@@ -180,7 +180,7 @@
                     Object.assign(btns[btnType].style, { // remove dark mode overlay
                         backgroundColor: 'transparent', borderColor: 'transparent' })
                 } else if (env.site == 'poe') // lift buttons slightly
-                    this[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
+                    this[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.455' : '0.2' ) + 'rem'
 
                 // Add hover/click listeners
                 this[btnType].onmouseover = this[btnType].onmouseout = toggle.tooltip

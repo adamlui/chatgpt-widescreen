@@ -349,7 +349,7 @@
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = ( // y-pos
                 env.site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
-                    ( !document.querySelector(sites.perplexity.selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                    ( document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' : '50.5vh' ))
                                          : '50px' )
         }
     }

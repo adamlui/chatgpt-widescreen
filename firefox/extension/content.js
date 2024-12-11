@@ -503,7 +503,7 @@
     // Add STARS styles
     ['black', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
-            href: `https://assets.aiwebextensions.com/styles/css/${color}-rising-stars.min.css?v=542104c`
+            href: `https://assets.aiwebextensions.com/styles/rising-stars/css/${color}.min.css?v=891df10`
     })))
 
     // Create WIDESCREEN style

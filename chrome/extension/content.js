@@ -17,7 +17,9 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    modals.dependencies.import({ app })
+    modals.dependencies.import({ app, isMobile: env.browser.isMobile })
+
+    console.log(modals.env)
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -298,18 +300,7 @@
 
             tweaks() {
                 tweaksStyle.innerText = (
-                    '[class$="-modal"] { z-index: 13456 ; position: absolute }' // to be click-draggable
-                  + '[class*="-modal"] button {'
-                      + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
-                      + 'border-radius: 0 !important ;' // square borders
-                      + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
-                      + 'cursor: pointer !important ;' // add finger cursor
-                      + 'padding: 5px !important ; min-width: 102px }' // resize
-                  + '.chatgpt-modal button:hover {' // add zoom, re-scheme
-                      + 'transform: scale(1.055) ; color: black !important ;'
-                      + `background-color: #${ chatgpt.isDarkMode() ? '00cfff' : '9cdaff' } !important }`
-                  + ( !env.browser.isMobile ? '.modal-buttons { margin-left: -13px !important }' : '' )
-                  + ( env.site == 'chatgpt' ? (
+                    ( env.site == 'chatgpt' ? (
                           ( '[id$="-btn"]:hover { opacity: 100% !important }' ) // prevent chatbar btn dim on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()

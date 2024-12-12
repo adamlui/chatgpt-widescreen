@@ -534,7 +534,7 @@
 
     // Monitor NODE CHANGES to maintain button visibility + update colors
     let isTempChat = false, canvasWasOpen = chatgpt.canvasIsOpen()
-    const nodeObserver = new MutationObserver(([mutation]) => {
+    const nodeObserver = new MutationObserver(() => {
 
         // Maintain button visibility on nav
         if (config.extensionDisabled) return
@@ -544,11 +544,9 @@
         // Maintain button colors + Widescreen button visibility on snowflake chatgpt.com
         if (env.site == 'chatgpt') {
 
-            // Update button colors on ChatGPT scheme or temp chat toggle
+            // Update button colors on temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
-            if (chatbarIsBlack != isTempChat // temp chat toggled
-                || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
-                    btns.updateColor() ; isTempChat = chatbarIsBlack }
+            if (chatbarIsBlack != isTempChat) { btns.updateColor() ; isTempChat = chatbarIsBlack }
 
             // Add/remove Widescreen button on Canvas mode toggle
             if (canvasWasOpen ^ chatgpt.canvasIsOpen()) {
@@ -558,6 +556,11 @@
         }
     })
     nodeObserver.observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
+
+    // Monitor SCHEME CHANGES on chatgpt.com to update button colors
+    if (env.site == 'chatgpt')
+        new MutationObserver(() => { if (!config.extensionDisabled) btns.updateColor() })
+            .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {

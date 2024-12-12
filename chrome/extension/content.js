@@ -533,7 +533,7 @@
 
     // Monitor NODE CHANGES to maintain button visibility + update colors
     let isTempChat = false, canvasWasOpen = chatgpt.canvasIsOpen()
-    const nodeObserver = new MutationObserver(() => {
+    new MutationObserver(() => {
 
         // Maintain button visibility on nav
         if (config.extensionDisabled) return
@@ -553,8 +553,7 @@
                 btns.insert() ; chatbar.tweak() ; canvasWasOpen = !canvasWasOpen
             }
         }
-    })
-    nodeObserver.observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
+    }).observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
 
     // Monitor SCHEME CHANGES on chatgpt.com to update button colors
     if (env.site == 'chatgpt')
@@ -567,7 +566,7 @@
             await new Promise(resolve => setTimeout(resolve, env.site == 'perplexity' ? 500 : 0))
             if ((config.fullWindow ^ isFullWin()) && !config.modeSynced) sync.mode('fullWindow')
         })
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from node observer
             let obsTarget = document.querySelector(sites[env.site].selectors.sidebar)
             if (env.site == 'perplexity') obsTarget = obsTarget.parentNode
             sidebarObserver.observe(obsTarget, { attributes: true })

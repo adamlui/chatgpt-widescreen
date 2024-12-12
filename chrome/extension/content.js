@@ -275,7 +275,7 @@
             if (!btn.contains(btnSVG)) btn.append(btnSVG)
         },
 
-        getVisibleTypes() { // used in update.tooltip() + chatbar.tweak()
+        getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
             return this.types.filter(type =>
                 !(type == 'fullWindow' && !sites[env.site].hasSidebar)
              && !(type == 'wideScreen' && chatgpt.canvasIsOpen())

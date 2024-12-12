@@ -74,10 +74,7 @@
                     if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
                     else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
                         const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                        const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
-                                !(type == 'fullWindow' && !sites[env.site].hasSidebar)
-                             && !(type == 'wideScreen' && chatgpt.canvasIsOpen())
-                             && !(type == 'newChat' && config.ncbDisabled))
+                        const visibleBtnTypes = [...btns.getVisibleTypes(), 'send']
                         visibleBtnTypes.forEach(type =>
                             widths[type] = btns[type]?.getBoundingClientRect().width
                                  || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
@@ -276,6 +273,13 @@
 
             // Update SVG
             if (!btn.contains(btnSVG)) btn.append(btnSVG)
+        },
+
+        getVisibleTypes() { // used in update.tooltip() + chatbar.tweak()
+            return this.types.filter(type =>
+                !(type == 'fullWindow' && !sites[env.site].hasSidebar)
+             && !(type == 'wideScreen' && chatgpt.canvasIsOpen())
+             && !(type == 'newChat' && config.ncbDisabled))
         }
     }
 
@@ -340,10 +344,7 @@
         },
 
         tooltip(btnType) { // text & position
-            const visibleBtnTypes = btns.types.filter(type =>
-                    !(type == 'fullWindow' && !sites[env.site].hasSidebar)
-                 && !(type == 'wideScreen' && chatgpt.canvasIsOpen())
-                 && !(type == 'newChat' && config.ncbDisabled))
+            const visibleBtnTypes = btns.getVisibleTypes()
             const ctrAddend = ( env.site == 'perplexity' ? ( location.pathname == '/' ? 94 : 105 )
                               : env.site == 'poe' ? 45 : 13 ) +25
             const spreadFactor = env.site == 'perplexity' ? 26.5 : env.site == 'poe' ? 34 : 30.55

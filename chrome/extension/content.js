@@ -190,7 +190,6 @@
                     } else toggle.mode(btnType)
                 }
             })
-            this.updateColor()
         },
 
         insert() {
@@ -214,7 +213,7 @@
                 parentToInsertInto.insertBefore(this[btnType], elemToInsertBefore)
             })
             parentToInsertInto.insertBefore(tooltipDiv, elemToInsertBefore) // add tooltips
-            setTimeout(() => chatbar.tweak(), 1)
+            setTimeout(() => chatbar.tweak(), 1) ; this.updateColor()
             this.status = 'inserted'
         },
 

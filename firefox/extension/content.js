@@ -153,7 +153,7 @@
                     !(type == 'fullWindow' && !sites[env.site].hasSidebar)
                  && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
             const bOffset = env.site == 'poe' ? -1.5 : env.site == 'perplexity' ? -13 : env.tallChatbar ? 31 : -8.85
-            const rOffset = env.site == 'poe' ? -6   : env.site == 'perplexity' ? -4  : env.tallChatbar ? 47 : -0.25
+            const rOffset = env.site == 'poe' ? -6   : env.site == 'perplexity' ? -4  : env.tallChatbar ? 48 : -0.25
             validBtnTypes.forEach(async (btnType, idx) => {
                 this[btnType] = dom.create.elem('div')
                 this[btnType].id = btnType + '-btn' // for toggle.tooltip()
@@ -337,7 +337,7 @@
                               : env.site == 'poe' ? 45 : 13 ) +25
             const spreadFactor = env.site == 'perplexity' ? 26.5 : env.site == 'poe' ? 34 : 30.55
             const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
-                             + ( env.tallChatbar ? -3 : 4 )
+                             + ( env.tallChatbar ? -2 : 4 )
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // x-pos

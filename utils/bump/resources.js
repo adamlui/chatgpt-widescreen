@@ -14,10 +14,11 @@
           userJSfilePath = `./greasemonkey/${repoName}-mode.user.js`
 
     // Init UI COLORS
-    const nc = '\x1b[0m',    // no color
-          by = '\x1b[1;33m', // bright yellow
-          bg = '\x1b[1;92m', // bright green
-          bw = '\x1b[1;97m'  // bright white
+    const nc = '\x1b[0m',        // no color
+          dg = '\x1b[38;5;243m', // dim gray
+          by = '\x1b[1;33m',     // bright yellow
+          bg = '\x1b[1;92m',     // bright green
+          bw = '\x1b[1;97m'      // bright white
 
     // Init REGEX
     const rePatterns = {
@@ -55,7 +56,7 @@
     async function getSRIhash(url, algorithm = 'sha256') {
         const sriHash = ssri.fromData(
             Buffer.from(await (await fetchData(url)).arrayBuffer()), { algorithms: [algorithm] }).toString()
-        console.log(`${sriHash}\n`)
+        console.log(`${dg + sriHash + nc}\n`)
         return sriHash
     }
 
@@ -92,7 +93,7 @@
     log.working(`\nFetching latest commit hash for ${risingStarsPath}...\n`)
     const latestCommitHashes = {
         risingStars: (await (await fetch(`${ghEndpoint}?path=${risingStarsPath}`)).json())[0]?.sha }
-    console.log(`${latestCommitHashes.risingStars}`)
+    console.log(`${dg + latestCommitHashes.risingStars + nc}`)
 
     log.working('\nProcessing resource(s)...\n')
     let urlsUpdatedCnt = 0
@@ -102,7 +103,7 @@
         console.log('Fetching latest commit hash for repo...')
         latestCommitHashes.repoResources = require('child_process').execFileSync(
             'git', ['ls-remote', `https://github.com/adamlui/${repoName}.git`, 'HEAD']).toString().split('\t')[0]
-        console.log(`${latestCommitHashes.repoResources}\n`)
+        console.log(`${dg + latestCommitHashes.repoResources + nc}\n`)
     }
 
     // Process each resource

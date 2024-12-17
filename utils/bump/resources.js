@@ -22,8 +22,8 @@
     // Init REGEX
     const rePatterns = {
         resourceName: /[^/]+\/(?:css|dist)?\/?[^/]+\.(?:css|js)(?=[?#]|$)/,
-        cssURL: /^\/\/ @resource.+(https:\/\/assets.+\.css.+)$/gm,
-        jsURL: /^\/\/ @require\s+(https:\/\/cdn\.jsdelivr\.net\/gh\/.+$)/gm,
+        cssURL: /^\/\/ @resource.+(https:\/\/assets.+\.css.+)$/,
+        jsURL: /^\/\/ @require\s+(https:\/\/cdn\.jsdelivr\.net\/gh\/.+$)/,
         commitHash: /(@|\?v=)([^/#]+)/, sriHash: /[^#]+$/
     }
 

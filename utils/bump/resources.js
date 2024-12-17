@@ -62,7 +62,7 @@
             return resourceIsValid
         } catch (err) {
             log.error(`\nCannot validate resource: ${resourceURL}\n`)
-            return false
+            return null
         }
     }
 

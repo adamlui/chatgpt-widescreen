@@ -92,7 +92,6 @@
     console.log(latestCommitHash + '\n')
 
     // Process each resource
-    let fileUpdated = false
     for (const jsrURL of jsrURLs) {
         const resourceName = (rePatterns.resourceName.exec(jsrURL) || ['resource'])[0] // dir/filename.js for logs
 
@@ -112,9 +111,9 @@
         console.log(`Writing updated URL for ${resourceName}...`)
         fs.writeFileSync(userJSfilePath, userJScontent.replace(jsrURL, updatedURL), 'utf-8')
         log.success(`${resourceName} bumped!\n`)
-        jsrUpdatedCnt++ ; fileUpdated = true
+        jsrUpdatedCnt++
     }
-    if (fileUpdated) {
+    if (jsrUpdatedCnt > 0) {
         console.log('Bumping userscript version...')
         bumpUserJSver(userJSfilePath)
     }

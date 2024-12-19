@@ -12,12 +12,13 @@
     // Init ENV context
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
+    env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
     settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-          modals.dependencies.import({ app, isMobile: env.browser.isMobile })
+          modals.dependencies.import({ app, isMobile: env.browser.isMobile, isPortrait: env.browser.isPortrait })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -555,9 +556,9 @@
         }
     }).observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
 
-    // Monitor SCHEME CHANGES on chatgpt.com to update button colors
+    // Monitor SCHEME CHANGES on chatgpt.com to update chatbar button + modal colors
     if (env.site == 'chatgpt')
-        new MutationObserver(() => { if (!config.extensionDisabled) btns.updateColor() })
+        new MutationObserver(() => { modals.stylize() ; if (!config.extensionDisabled) btns.updateColor() })
             .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle

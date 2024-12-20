@@ -18,7 +18,7 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-          modals.dependencies.import({ app, env })
+    modals.dependencies.import({ app, env })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -182,7 +182,7 @@
                     Object.assign(this[btnType].style, { // remove dark mode overlay
                         backgroundColor: 'transparent', borderColor: 'transparent' })
                 } else if (env.site == 'poe') // lift buttons slightly
-                this[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.455' : '0.2' ) + 'rem'
+                    this[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.455' : '0.2' ) + 'rem'
 
                 // Add hover/click listeners
                 this[btnType].onmouseover = this[btnType].onmouseout = toggle.tooltip
@@ -212,11 +212,11 @@
                                      : chatbarDiv.children[1]
             // Insert buttons
             btnTypesToInsert.forEach(btnType => {
-                this.updateSVG(btnType) // update icon
+                this.update.svg(btnType) // update icon
                 parentToInsertInto.insertBefore(this[btnType], elemToInsertBefore)
             })
             parentToInsertInto.insertBefore(tooltipDiv, elemToInsertBefore) // add tooltips
-            setTimeout(() => chatbar.tweak(), 1) ; this.updateColor()
+            setTimeout(() => chatbar.tweak(), 1) ; this.update.color()
             this.status = 'inserted'
         },
 
@@ -226,55 +226,57 @@
             this.status = 'missing' // ensure next btns.insert() doesn't return early
         },
 
-        updateColor() {
-            this.color = (
-                env.site == 'chatgpt' ? (
-                    document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
-              : env.site == 'perplexity' ? (
-                    document.documentElement.dataset.colorScheme == 'dark' ?
-                        'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
-                      : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
-              : 'currentColor' )
+        update: {
+            color() {
+                btns.color = (
+                    env.site == 'chatgpt' ? (
+                        document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
+                  : env.site == 'perplexity' ? (
+                        document.documentElement.dataset.colorScheme == 'dark' ?
+                            'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
+                          : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
+                  : 'currentColor' )
 
-            if (this.wideScreen?.style.fill != this.color)
-                this.types.forEach(type => {
-                    if (this[type]) this[type].style.fill = this[type].style.stroke = this.color })
-        },
+                if (btns.wideScreen?.style.fill != btns.color)
+                    btns.types.forEach(type => {
+                        if (btns[type]) btns[type].style.fill = btns[type].style.stroke = btns.color })
+            },
 
-        updateSVG(mode, state = '') {
-            if (!this.wideScreen) this.create()
+            svg(mode, state = '') {
+                if (!btns.wideScreen) btns.create()
 
-            // Pick appropriate button/elements
-            const [btn, ONelems, OFFelems] = (
-                mode == 'fullScreen' ? [this.fullScreen, this.svgElems.fullScreen.on, this.svgElems.fullScreen.off]
-              : mode == 'fullWindow' ? [this.fullWindow, this.svgElems.fullWin, this.svgElems.fullWin]
-              : mode == 'wideScreen' ? [this.wideScreen, this.svgElems.wideScreen.on, this.svgElems.wideScreen.off]
-                                     : [this.newChat, this.svgElems.newChat, this.svgElems.newChat])
-            if (!btn) return
+                // Pick appropriate button/elements
+                const [btn, ONelems, OFFelems] = (
+                    mode == 'fullScreen' ? [btns.fullScreen, btns.svgElems.fullScreen.on, btns.svgElems.fullScreen.off]
+                  : mode == 'fullWindow' ? [btns.fullWindow, btns.svgElems.fullWin, btns.svgElems.fullWin]
+                  : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
+                                         : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
+                if (!btn) return
 
-            // Set SVG attributes
-            const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg', { height: 18 })
-            btnSVG.setAttribute('height', 18) // prevent shrinking
-            if (mode == 'fullWindow') { // stylize full-window button
-                btnSVG.setAttribute('stroke-width', '2')
-                const btnSize = env.site == 'perplexity' ? 18 : 'poe' ? '2em' : 17
-                btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
+                // Set SVG attributes
+                const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg', { height: 18 })
+                btnSVG.setAttribute('height', 18) // prevent shrinking
+                if (mode == 'fullWindow') { // stylize full-window button
+                    btnSVG.setAttribute('stroke-width', '2')
+                    const btnSize = env.site == 'perplexity' ? 18 : 'poe' ? '2em' : 17
+                    btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
+                }
+                btnSVG.setAttribute('viewBox', (
+                    mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' )
+                + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' )
+                )
+                btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
+                if (env.site == 'chatgpt') // override button resizing
+                    btnSVG.style.height = btnSVG.style.width = '1.3rem'
+
+                // Update SVG elements
+                btnSVG.textContent = ''
+                const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
+                svgElems.forEach(elem => btnSVG.append(elem))
+
+                // Update SVG
+                if (!btn.contains(btnSVG)) btn.append(btnSVG)
             }
-            btnSVG.setAttribute('viewBox', (
-                mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' )
-            + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' )
-            )
-            btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
-            if (env.site == 'chatgpt') // override button resizing
-                btnSVG.style.height = btnSVG.style.width = '1.3rem'
-
-            // Update SVG elements
-            btnSVG.textContent = ''
-            const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-            svgElems.forEach(elem => btnSVG.append(elem))
-
-            // Update SVG
-            if (!btn.contains(btnSVG)) btn.append(btnSVG)
         },
 
         getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
@@ -424,11 +426,11 @@
 
         fullerWin() {
             if (config.fullWindow && config.fullerWindows && !config.wideScreen) { // activate fuller windows
-                document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
+                document.head.append(wideScreenStyle) ; btns.update.svg('wideScreen', 'on')
             } else if (!config.fullWindow) { // de-activate fuller windows
                 fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config.wideScreen) { // disable widescreen if result of fuller window
-                    wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
+                    wideScreenStyle.remove() ; btns.update.svg('wideScreen', 'off')
             }}
         },
 
@@ -436,7 +438,7 @@
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
-            settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            settings.save(mode, state) ; btns.update.svg(mode) ; update.tooltip(mode)
             if (!config.extensionDisabled) { // tweak UI
                 if (mode == 'fullWindow') sync.fullerWin()
                 if (env.site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
@@ -549,7 +551,7 @@
 
             // Update button colors on temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
-            if (chatbarIsBlack != isTempChat) { btns.updateColor() ; isTempChat = chatbarIsBlack }
+            if (chatbarIsBlack != isTempChat) { btns.update.color() ; isTempChat = chatbarIsBlack }
 
             // Add/remove Widescreen button on Canvas mode toggle
             if (canvasWasOpen ^ chatgpt.canvasIsOpen()) {
@@ -561,7 +563,7 @@
 
     // Monitor SCHEME CHANGES on chatgpt.com to update chatbar button + modal colors
     if (env.site == 'chatgpt')
-        new MutationObserver(() => { modals.stylize() ; if (!config.extensionDisabled) btns.updateColor() })
+        new MutationObserver(() => { modals.stylize() ; if (!config.extensionDisabled) btns.update.color() })
             .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle

@@ -242,7 +242,10 @@ const chatgpt = {
 
     footer: { get() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; }},
     getFooterDiv() { return chatgpt.footer.get(); },
-    getNewChatButton() { return document.querySelector('button[data-testid*="new-chat-button"]'); },
+
+    getNewChatButton() {
+        return document.querySelector('button[data-testid*="new-chat-button"], button:has([d^="M15.6729"])'); },
+
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },

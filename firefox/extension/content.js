@@ -18,7 +18,7 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-          modals.dependencies.import({ app, isMobile: env.browser.isMobile, isPortrait: env.browser.isPortrait })
+          modals.dependencies.import({ app, env })
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)

@@ -70,24 +70,21 @@
         },
 
         tweak() {
+            if (env.site != 'chatgpt') return
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
-            if (env.site == 'chatgpt') {
-                const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
-                if (inputArea) {
-                    if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
-                    else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
-                        const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                        const visibleBtnTypes = [...btns.getVisibleTypes(), 'send']
-                        visibleBtnTypes.forEach(type =>
-                            widths[type] = btns[type]?.getBoundingClientRect().width
-                                 || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
-                                        sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
-                        const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                        inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
-                            widths.chatbar - totalBtnWidths -43 }px`
-                        inputArea.style.width = '100%' // rid h-scrollbar
-                    }
-                }
+            const inputArea = chatbarDiv.querySelector(sites[env.site].selectors.input) ; if (!inputArea) return
+            if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
+            else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
+                const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                const visibleBtnTypes = [...btns.getVisibleTypes(), 'send']
+                visibleBtnTypes.forEach(type =>
+                    widths[type] = btns[type]?.getBoundingClientRect().width
+                            || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
+                                sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
+                const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
+                    widths.chatbar - totalBtnWidths -43 }px`
+                inputArea.style.width = '100%' // rid h-scrollbar
             }
         },
 

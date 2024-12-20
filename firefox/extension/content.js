@@ -24,13 +24,15 @@
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
-    chrome.runtime.onMessage.addListener(req => {
+    chrome.runtime.onMessage.addListener(async req => {
         if (req.action == 'notify')
             notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
         else if (req.action == 'alert')
             modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
-        else if (req.action == 'showAbout') chatgpt.isLoaded().then(() => { modals.open('about') })
-        else if (req.action == 'syncConfigToUI') sync.configToUI()
+        else if (req.action == 'showAbout') {
+            if (env.site == 'chatgpt') await chatgpt.isLoaded()
+            modals.open('about')
+        } else if (req.action == 'syncConfigToUI') sync.configToUI()
     })
 
     // Define FUNCTIONS

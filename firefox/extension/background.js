@@ -8,19 +8,21 @@ chrome.runtime.onInstalled.addListener(details => {
 chrome.tabs.onActivated.addListener(activeInfo =>
     chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
 
-// Show ABOUT modal on ChatGPT when toolbar button clicked
+// Show ABOUT modal on AI site when toolbar button clicked
+const aiHomeURLs = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\*$/, ''))
 chrome.runtime.onMessage.addListener(async req => {
     if (req.action == 'showAbout') {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        const chatgptTab = new URL(activeTab.url).hostname == 'chatgpt.com' ? activeTab
-            : await chrome.tabs.create({ url: 'https://chatgpt.com/' })
-        if (activeTab != chatgptTab) await new Promise(resolve => // after new tab loads
+        const aiTab = aiHomeURLs.some(aiURL => // check if active tab is AI site
+            new URL(activeTab.url).hostname == new URL(aiURL).hostname) ? activeTab
+                : await chrome.tabs.create({ url: aiHomeURLs[0] }) // ...if not, open AI site
+        if (activeTab != aiTab) await new Promise(resolve => // after new tab loads
             chrome.tabs.onUpdated.addListener(async function statusListener(tabId, info) {
-                if (tabId == chatgptTab.id && info.status == 'complete') {
+                if (tabId == aiTab.id && info.status == 'complete') {
                     chrome.tabs.onUpdated.removeListener(statusListener)
                     setTimeout(resolve, 2500)
         }}))
-        chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout' })
+        chrome.tabs.sendMessage(aiTab.id, { action: 'showAbout' })
     }
 });
 

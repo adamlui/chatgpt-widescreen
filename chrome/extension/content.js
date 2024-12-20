@@ -282,8 +282,8 @@
                 chatbarStyle.innerText = (
                     env.site == 'chatgpt' ? ( config.widerChatbox ? ''
                         : `main form { max-width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
-                  : env.site == 'poe' ? ( !config.widerChatbox ? ''
-                        : '[class*=footerInner] { width: 100% }' )
+                  : env.site == 'poe' ? ( config.widerChatbox && config.wideScreen ?
+                        '[class^=ChatPageMainFooter_footerInner] { width: 98% ; margin-right: 15px }' : '' )
                   : '' )
             },
 
@@ -429,6 +429,7 @@
                 if (env.site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                     mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                         && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid wrong width
+                else if (env.site == 'poe' && config.widerChatbox) update.style.chatbar() // sync WCB
                 notify(`${chrome.i18n.getMessage('mode_' + mode)} ${
                           chrome.i18n.getMessage(`state_${ state ? 'on' : 'off' }`).toUpperCase()}`)
             }

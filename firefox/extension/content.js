@@ -19,7 +19,7 @@
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
 
-    // Export DEPENDENCIES to resources
+    // Export DEPENDENCIES to imported resources
     dom.dependencies.import({ env }) // for env.scheme
     modals.dependencies.import({ app, env }) // for app data + env.scheme
     settings.dependencies.import({ env }) // to load/save active tab's settings using env.site

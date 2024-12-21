@@ -4,12 +4,12 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "selectors": {
       "btns": {
-        "login": "[data-testid*=\"login\"]",
-        "newChat": "button[data-testid*=\"new-chat-button\"], button:has([d^=\"M15.6729\"])",
-        "send": "button[data-testid=\"send-button\"]", "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
-        "stop": "button[data-testid=\"stop-button\"]", "voice": "button[data-testid*=\"composer-speech-button\"]"
+        "login": "[data-testid*=login]",
+        "newChat": "button[data-testid*=new-chat-button], button:has([d^=\"M15.6729\"])",
+        "send": "button[data-testid=send-button]", "sidebarToggle": "button[data-testid*=sidebar-button]",
+        "stop": "button[data-testid=stop-button]", "voice": "button[data-testid*=composer-speech-button]"
       },
-      "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]",
+      "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=sidebar]",
       "footer": ".min-h-4"
     }
   },
@@ -19,7 +19,7 @@
     "hasSidebar": true,
     "selectors": {
       "btns": {
-        "newChat": "div.sticky [class*=\"ring\"]",
+        "newChat": "div.sticky [class*=ring]",
         "send": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])",
         "settings": "button:has([d^=\"M256 0c17\"])",
         "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
@@ -32,9 +32,9 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "hasSidebar": true,
     "selectors": {
-      "btns": { "newChat": "header a[class*=\"button\"]" }, "header": "header",
-      "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
-      "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
+      "btns": { "newChat": "header a[class*=button]" }, "header": "header",
+      "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
+      "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
     }
   }
 }

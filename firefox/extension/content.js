@@ -19,7 +19,7 @@
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
 
-    // Export DEPENDENCIES to resources
+    // Export DEPENDENCIES to imported resources
     dom.dependencies.import({ env }) // for env.scheme
     modals.dependencies.import({ app, env }) // for app data + env.scheme
     settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
@@ -291,7 +291,7 @@
             tweaks() {
                 tweaksStyle.innerText = (
                     ( env.site == 'chatgpt' ? (
-                          ( '[id$="-btn"]:hover { opacity: 100% !important }' ) // prevent chatbar btn dim on hover
+                          ( '[id$=-btn]:hover { opacity: 100% !important }' ) // prevent chatbar btn dim on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : env.site == 'perplexity' ?
@@ -316,8 +316,8 @@
                       + '.col-span-8 { width: 154% }' // widen inner-left container
                       + '.col-span-4 { width: 13.5% ; position: absolute ; right: 0 }' // narrow right-bar
                   ) : env.site == 'poe' ? (
-                        '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
-                      + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
+                        '[class*=ChatMessagesView] { width: 100% !important }' // widen outer container
+                      + '[class^=Message] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
             }
         },
@@ -484,7 +484,7 @@
     // Create/apply general style TWEAKS
     const tweaksStyle = dom.create.style()
     const tcbStyle = ( // heighten chatbox
-              env.site == 'chatgpt' ? `div[class*="prose"]:has(${sites.chatgpt.selectors.input})`
+              env.site == 'chatgpt' ? `div[class*=prose]:has(${sites.chatgpt.selectors.input})`
                                     : sites[env.site].selectors.input )
                    + '{ max-height: 68vh }'
     const hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
@@ -543,7 +543,7 @@
         if (env.site == 'chatgpt') {
 
             // Update button colors on temp chat toggle
-            const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
+            const chatbarIsBlack = !!document.querySelector('div[class*=bg-black]:not([id$=-btn])')
             if (chatbarIsBlack != isTempChat) { btns.update.color() ; isTempChat = chatbarIsBlack }
 
             // Add/remove Widescreen button on Canvas mode toggle

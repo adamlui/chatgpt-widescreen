@@ -36,7 +36,7 @@
         else if (req.action == 'showAbout') {
             if (env.site == 'chatgpt') await chatgpt.isLoaded()
             modals.open('about')
-        } else if (req.action == 'syncConfigToUI') sync.configToUI()
+        } else if (req.action == 'syncConfigToUI') sync.configToUI(req.options)
     })
 
     // Define FUNCTIONS

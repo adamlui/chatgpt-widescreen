@@ -40,7 +40,7 @@
                 })
         },
 
-        configToUI() { return sendMsgToActiveTab('syncConfigToUI') }
+        configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
     // Run MAIN routine
@@ -92,7 +92,7 @@
                 menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
-                    settings.save(key, !config[key]) ; sync.configToUI()
+                    settings.save(key, !config[key]) ; sync.configToUI({ updatedKey: key })
                     notify(`${settings.controls[key].label} ${chrome.i18n.getMessage(`state_${
                         /disabled/i.test(key) != config[key] ? 'on' : 'off' }`).toUpperCase()}`)
                 }

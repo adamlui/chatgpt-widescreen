@@ -13,12 +13,16 @@
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
+    env.scheme = getScheme()
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    modals.dependencies.import({ app, env })
+
+    // Export DEPENDENCIES to resources
+    dom.dependencies.import({ env }) // for env.scheme
+    modals.dependencies.import({ app, env }) // for app data + env.scheme
+    settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -47,7 +51,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || env.scheme == 'dark' ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -215,7 +219,7 @@
             color() {
                 btns.color = (
                     env.site == 'chatgpt' ? (
-                        document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
+                        document.querySelector('.dark.bg-black') || env.scheme == 'dark' ? 'white' : '#202123' )
                   : env.site == 'perplexity' ? (
                         document.documentElement.dataset.colorScheme == 'dark' ?
                             'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
@@ -434,6 +438,12 @@
         }
     }
 
+    function getScheme() {
+        const rootElem = document.documentElement
+        return env.site == 'perplexity' ? rootElem.dataset.colorScheme : rootElem.className
+            || (window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light')
+    }
+
     function isFullWin() {
         return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[env.site].hasSidebar // false if sidebar non-existent
@@ -544,10 +554,9 @@
         }
     }).observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
 
-    // Monitor SCHEME CHANGES on chatgpt.com to update chatbar button + modal colors
-    if (env.site == 'chatgpt')
-        new MutationObserver(() => { modals.stylize() ; if (!config.extensionDisabled) btns.update.color() })
-            .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    // Monitor SCHEME CHANGES to update chatbar button + modal colors
+    new MutationObserver(() => { env.scheme = getScheme() ; modals.stylize() ; btns.update.color() })
+        .observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'data-color-scheme'] })
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {

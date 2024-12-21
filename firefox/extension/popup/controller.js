@@ -46,7 +46,7 @@
     // Run MAIN routine
 
     // Init MASTER TOGGLE
-    const masterToggle = document.querySelector('.main-toggle input')
+    const masterToggle = document.querySelector('input')
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
     masterToggle.onchange = async () => {

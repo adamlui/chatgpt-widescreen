@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
   "about_version": { "message": "Verzió" },
   "about_poweredBy": { "message": "Kiszolgálja" },
-  "about_sourceCode": { "message": "Forráskód" },
+  "about_openSourceCode": { "message": "Open Source" },
   "mode_wideScreen": { "message": "Szélesképernyő" },
   "mode_fullWindow": { "message": "Teljes ablak" },
   "mode_fullScreen": { "message": "Teljes képernyő" },

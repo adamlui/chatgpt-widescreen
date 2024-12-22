@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
   "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
-  "about_sourceCode": { "message": "Gigikana sa kodigo" },
+  "about_openSourceCode": { "message": "Gigikana sa kodigo" },
   "mode_wideScreen": { "message": "Hapit nalukop sa kaumahan ang" },
   "mode_fullWindow": { "message": "Full-Window (suba sa Tinipong Bansa)" },
   "mode_fullScreen": { "message": "Full screen" },

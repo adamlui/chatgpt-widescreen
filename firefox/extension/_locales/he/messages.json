@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות" },
-  "about_sourceCode": { "message": "קוד מקור" },
+  "about_openSourceCode": { "message": "קוד מקור" },
   "mode_wideScreen": { "message": "מסך רחב" },
   "mode_fullWindow": { "message": "חלון מלא" },
   "mode_fullScreen": { "message": "מסך מלא" },

@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "無効化（拡張機能がインストールされています）" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "ソースコード" },
+  "about_openSourceCode": { "message": "Open Source" },
   "mode_wideScreen": { "message": "ワイドスクリーンモード" },
   "mode_fullWindow": { "message": "フルウィンドウモード" },
   "mode_fullScreen": { "message": "フルスクリーンモード" },

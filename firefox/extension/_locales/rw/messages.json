@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Umugereka" },
   "about_version": { "message": "Umukoro" },
   "about_poweredBy": { "message": "Ku" },
-  "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
+  "about_openSourceCode": { "message": "Inkomoko Inyandikoporogaramu" },
   "mode_wideScreen": { "message": "Mugaragaza" },
   "mode_fullWindow": { "message": "Idirishya" },
   "mode_fullScreen": { "message": "Mugaragaza Yuzuye" },

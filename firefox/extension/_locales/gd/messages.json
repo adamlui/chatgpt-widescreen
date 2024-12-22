@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "Bun-tùs a' chod" },
+  "about_openSourceCode": { "message": "Bun-tùs a' chod" },
   "mode_wideScreen": { "message": "Sgrìn fharsaing" },
   "mode_fullWindow": { "message": "Làn - uinneag" },
   "mode_fullScreen": { "message": "Sgrìn slàn" },

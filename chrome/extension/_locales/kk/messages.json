@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
-  "about_sourceCode": { "message": "Бастапқы код" },
+  "about_openSourceCode": { "message": "@ info: whatsthis" },
   "mode_wideScreen": { "message": "Кең экран" },
   "mode_fullWindow": { "message": "Толық терезе" },
   "mode_fullScreen": { "message": "Толық экранға" },

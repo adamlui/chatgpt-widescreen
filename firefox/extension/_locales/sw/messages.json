@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
-  "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "about_openSourceCode": { "message": "Msimbo wa chanzo wazi" },
   "mode_wideScreen": { "message": "Skrini pana" },
   "mode_fullWindow": { "message": "Dirisha kamili" },
   "mode_fullScreen": { "message": "Skrini kamili" },

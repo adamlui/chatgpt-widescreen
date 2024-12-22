@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការដោយ" },
-  "about_sourceCode": { "message": "កូដដើម" },
+  "about_openSourceCode": { "message": "កូដ​ដើម" },
   "mode_wideScreen": { "message": "អេក្រង់ធំទូលាយ" },
   "mode_fullWindow": { "message": "បង្អួច ពេញ" },
   "mode_fullScreen": { "message": "ពេញអេក្រង់" },

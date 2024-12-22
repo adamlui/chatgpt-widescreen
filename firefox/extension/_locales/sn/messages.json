@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
-  "about_sourceCode": { "message": "Kunobva kodhi" },
+  "about_openSourceCode": { "message": "Open source code" },
   "mode_wideScreen": { "message": "Wide chidzitiro" },
   "mode_fullWindow": { "message": "Hwindo rakazara" },
   "mode_fullScreen": { "message": "Chidzitiro chakazara" },

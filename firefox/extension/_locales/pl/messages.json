@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },
   "about_version": { "message": "Wersja" },
   "about_poweredBy": { "message": "Obsługiwane przez" },
-  "about_sourceCode": { "message": "Kod źródłowy" },
+  "about_openSourceCode": { "message": "Otwarty kod PHP" },
   "mode_wideScreen": { "message": "Ekran panoramiczny" },
   "mode_fullWindow": { "message": "Pełne okno" },
   "mode_fullScreen": { "message": "Pełny ekran" },

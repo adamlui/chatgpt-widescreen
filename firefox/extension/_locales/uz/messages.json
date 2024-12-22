@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "O'chirilgan (kengaytma o'rnatilgan)" },
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
-  "about_sourceCode": { "message": "Ochiq kod" },
+  "about_openSourceCode": { "message": "Ochiq kod" },
   "mode_wideScreen": { "message": "Keng ekran" },
   "mode_fullWindow": { "message": "To'liq oyna" },
   "mode_fullScreen": { "message": "Butun ekran" },

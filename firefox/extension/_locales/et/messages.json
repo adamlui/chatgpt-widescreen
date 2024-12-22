@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "Lähtekood" },
+  "about_openSourceCode": { "message": "lähtekood" },
   "mode_wideScreen": { "message": "Laiekraan" },
   "mode_fullWindow": { "message": "Täisaken" },
   "mode_fullScreen": { "message": "Täisekraan" },

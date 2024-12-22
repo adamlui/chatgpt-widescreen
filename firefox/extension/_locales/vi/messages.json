@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Đa ̃ tă ́ t (đa ̃ ca ̀ i đă ̣ t phâ ̀" },
   "about_version": { "message": "Phiên bản" },
   "about_poweredBy": { "message": "Cung cấp bởi" },
-  "about_sourceCode": { "message": "Mã nguồn" },
+  "about_openSourceCode": { "message": "Nguồn mở" },
   "mode_wideScreen": { "message": "Màn Hình Rộng" },
   "mode_fullWindow": { "message": "Cửa sổ đầy đủ" },
   "mode_fullScreen": { "message": "Toàn màn hình" },

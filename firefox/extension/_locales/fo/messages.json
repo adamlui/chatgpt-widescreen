@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },
   "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
-  "about_sourceCode": { "message": "Ada keldukota" },
+  "about_openSourceCode": { "message": "Opna keldukota" },
   "mode_wideScreen": { "message": "Breiddarskrá" },
   "mode_fullWindow": { "message": "Full-window" },
   "mode_fullScreen": { "message": "Fult skjal" },

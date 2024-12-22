@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
-  "about_sourceCode": { "message": "Pirmkods" },
+  "about_openSourceCode": { "message": "Atklātais pirmkods" },
   "mode_wideScreen": { "message": "Platekrāns" },
   "mode_fullWindow": { "message": "Pilns logs" },
   "mode_fullScreen": { "message": "Pilnekrāna režīms" },

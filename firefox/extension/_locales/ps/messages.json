@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
-  "about_sourceCode": { "message": "سرچينه كوډه" },
+  "about_openSourceCode": { "message": "سرچينه كوډه" },
   "mode_wideScreen": { "message": "پرده پرده پرده" },
   "mode_fullWindow": { "message": "بشپړول" },
   "mode_fullScreen": { "message": "بشپړه صفحه" },

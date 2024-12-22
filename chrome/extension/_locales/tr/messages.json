@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
-  "about_sourceCode": { "message": "Kaynak Kodu" },
+  "about_openSourceCode": { "message": "Açık kaynak kodu" },
   "mode_wideScreen": { "message": "-Geniş ekran" },
   "mode_fullWindow": { "message": "Tam Pencere" },
   "mode_fullScreen": { "message": "Tam ekran" },

@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
-  "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
+  "about_openSourceCode": { "message": "ລະຫັດແຫຼ່ງເປີດ" },
   "mode_wideScreen": { "message": "ຫນ້າຈໍກວ້າງ" },
   "mode_fullWindow": { "message": "ປ່ອງຢ້ຽມເຕັມ" },
   "mode_fullScreen": { "message": "ຫນ້າ ຈໍເຕັມ" },

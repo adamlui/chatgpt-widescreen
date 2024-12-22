@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Unterstützt von" },
-  "about_sourceCode": { "message": "Quellcode" },
+  "about_openSourceCode": { "message": "Quellcodeoffen" },
   "mode_wideScreen": { "message": "Breitbildmodus" },
   "mode_fullWindow": { "message": "Vollfenstermodus" },
   "mode_fullScreen": { "message": "Vollbildmodus" },

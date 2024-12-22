@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },
-  "about_sourceCode": { "message": "Codi font" },
+  "about_openSourceCode": { "message": "Codi obert" },
   "mode_wideScreen": { "message": "Pantalla ampla" },
   "mode_fullWindow": { "message": "Finestra completa" },
   "mode_fullScreen": { "message": "Pantalla completa" },

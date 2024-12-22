@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Disabilitá (Extended)" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
-  "about_sourceCode": { "message": "Kódigo di fuente" },
+  "about_openSourceCode": { "message": "Codigo Fuente Abierto" },
   "mode_wideScreen": { "message": "Pantaya amplio" },
   "mode_fullWindow": { "message": "Kompletná kompletná komple" },
   "mode_fullScreen": { "message": "Pantaya yen" },

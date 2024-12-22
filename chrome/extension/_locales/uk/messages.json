@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
-  "about_sourceCode": { "message": "Джерельний код" },
+  "about_openSourceCode": { "message": "Джерельний код" },
   "mode_wideScreen": { "message": "Широкий екран" },
   "mode_fullWindow": { "message": "Повноекранний режим" },
   "mode_fullScreen": { "message": "Повний екран" },

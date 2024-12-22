@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Dinonaktifkan (ekstensi terpasang)" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh" },
-  "about_sourceCode": { "message": "Kode sumber" },
+  "about_openSourceCode": { "message": "Sumber Terbuka" },
   "mode_wideScreen": { "message": "Layar lebar" },
   "mode_fullWindow": { "message": "Jendela penuh" },
   "mode_fullScreen": { "message": "Halaman penuh" },

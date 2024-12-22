@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "已禁用（擴展已安裝）" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技術提供" },
-  "about_sourceCode": { "message": "原始程式碼" },
+  "about_openSourceCode": { "message": "開放源代碼" },
   "mode_wideScreen": { "message": "寬螢幕" },
   "mode_fullWindow": { "message": "全視窗" },
   "mode_fullScreen": { "message": "全螢幕" },

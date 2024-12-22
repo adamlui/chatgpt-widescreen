@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
-  "about_sourceCode": { "message": "Pradinis kodas" },
+  "about_openSourceCode": { "message": "Pradinis kodas" },
   "mode_wideScreen": { "message": "plačiaekranis" },
   "mode_fullWindow": { "message": "Visas langas" },
   "mode_fullScreen": { "message": "Visas ekranas" },

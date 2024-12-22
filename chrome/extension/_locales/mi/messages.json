@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
-  "about_sourceCode": { "message": "Waehere puna" },
+  "about_openSourceCode": { "message": "Waehere puna tuwhera" },
   "mode_wideScreen": { "message": "Mata Whānui" },
   "mode_fullWindow": { "message": "Whakakiia i roto i te katoa" },
   "mode_fullScreen": { "message": "Mata tonu" },

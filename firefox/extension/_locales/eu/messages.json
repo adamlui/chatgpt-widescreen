@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia" },
-  "about_sourceCode": { "message": "Iturburu kode" },
+  "about_openSourceCode": { "message": "Kode ireki" },
   "mode_wideScreen": { "message": "Pantaila zabala" },
   "mode_fullWindow": { "message": "Leiho osoa" },
   "mode_fullScreen": { "message": "Pantaila osoa" },

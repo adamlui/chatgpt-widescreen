@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Lē atoatoa le malosi (Extended faapipiiina)" },
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },
-  "about_sourceCode": { "message": "Punaoa code" },
+  "about_openSourceCode": { "message": "Open source code" },
   "mode_wideScreen": { "message": "Screen lautele" },
   "mode_fullWindow": { "message": "Faumuina Faumuina Full" },
   "mode_fullScreen": { "message": "Lau atoa" },

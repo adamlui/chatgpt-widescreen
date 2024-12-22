@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
   "about_version": { "message": "པར་གཞི།" },
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
-  "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },
+  "about_openSourceCode": { "message": "ཁ་ཕྱེ་བའི་ཁ་བྱང་།" },
   "mode_wideScreen": { "message": "བརྙན་གཟུགས །" },
   "mode_fullWindow": { "message": "ཡོངས་རྫོགས །" },
   "mode_fullScreen": { "message": "འོད་སྡེར་ཨང་།" },

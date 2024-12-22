@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Yettwakkes (asiγzef yebna)" },
   "about_version": { "message": "Lqem" },
   "about_poweredBy": { "message": "Yettunefk-d sɣur" },
-  "about_sourceCode": { "message": "Tangalt aγbalu" },
+  "about_openSourceCode": { "message": "Tangalt taɣbalut" },
   "mode_wideScreen": { "message": "Agdil meqqren" },
   "mode_fullWindow": { "message": "Asfaylu aččuran" },
   "mode_fullScreen": { "message": "Agdil Ačaran" },

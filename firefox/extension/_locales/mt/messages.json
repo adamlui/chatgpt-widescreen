@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },
-  "about_sourceCode": { "message": "Kodiċi tas-sors" },
+  "about_openSourceCode": { "message": "sors miftuħ" },
   "mode_wideScreen": { "message": "Skrin wiesa'" },
   "mode_fullWindow": { "message": "It-tieqa sħiħa" },
   "mode_fullScreen": { "message": "Full-Screen" },

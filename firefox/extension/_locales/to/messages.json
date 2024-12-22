@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
   "about_version": { "message": "Tatau" },
   "about_poweredBy": { "message": "Fakalele ʻe he" },
-  "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
+  "about_openSourceCode": { "message": "Fakaava ʻa e kouti maʻuʻanga tokoni" },
   "mode_wideScreen": { "message": "Screen falahi" },
   "mode_fullWindow": { "message": "Matapa sioʻata kakato" },
   "mode_fullScreen": { "message": "Screen kakato" },

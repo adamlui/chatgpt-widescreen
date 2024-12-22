@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Ikhubazekile (isandiso sifakiweyo)" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
-  "about_sourceCode": { "message": "Ikhowudi engumthombo" },
+  "about_openSourceCode": { "message": "@ info: whatsthis" },
   "mode_wideScreen": { "message": "Iskrini esibanzi" },
   "mode_fullWindow": { "message": "Ifestile epheleleyo" },
   "mode_fullScreen": { "message": "Isikrini esiGcweleyo" },

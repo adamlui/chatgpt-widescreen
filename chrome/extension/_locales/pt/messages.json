@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },
   "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Alimentado por" },
-  "about_sourceCode": { "message": "Código-fonte" },
+  "about_openSourceCode": { "message": "Código-fonte aberto" },
   "mode_wideScreen": { "message": "Tela Ampla" },
   "mode_fullWindow": { "message": "Modo Janela Completa" },
   "mode_fullScreen": { "message": "Tela Cheia" },

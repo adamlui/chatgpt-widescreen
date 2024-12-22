@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "На базе технологии" },
-  "about_sourceCode": { "message": "Исходный код" },
+  "about_openSourceCode": { "message": "Открытый исходный код" },
   "mode_wideScreen": { "message": "Широкий экран" },
   "mode_fullWindow": { "message": "Полноэкранный режим" },
   "mode_fullScreen": { "message": "Полный экран" },

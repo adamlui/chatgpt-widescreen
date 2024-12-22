@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "ناچالاککراو (پەرەپێدەیشن دامەزرابرا)" },
   "about_version": { "message": "وەرژن" },
   "about_poweredBy": { "message": "لەلایەنی" },
-  "about_sourceCode": { "message": "کۆدی سەرچاوە" },
+  "about_openSourceCode": { "message": "Koda çavkanî" },
   "mode_wideScreen": { "message": "پەیشاندانی ڕووناکی" },
   "mode_fullWindow": { "message": "مۆدی پڕۆژەیی" },
   "mode_fullScreen": { "message": "پەیشاندانی چالاک" },

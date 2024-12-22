@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drivs av" },
-  "about_sourceCode": { "message": "Källkod" },
+  "about_openSourceCode": { "message": "öppen källkod" },
   "mode_wideScreen": { "message": "bredbildsformat" },
   "mode_fullWindow": { "message": "Fullfönster" },
   "mode_fullScreen": { "message": "Fullskärm" },

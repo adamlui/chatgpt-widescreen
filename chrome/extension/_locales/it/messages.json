@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
   "about_version": { "message": "Versione" },
   "about_poweredBy": { "message": "Alimentato da" },
-  "about_sourceCode": { "message": "Codice sorgente" },
+  "about_openSourceCode": { "message": "Codice open source" },
   "mode_wideScreen": { "message": "Schermo largo" },
   "mode_fullWindow": { "message": "Modalità finestra completa" },
   "mode_fullScreen": { "message": "Schermo intero" },

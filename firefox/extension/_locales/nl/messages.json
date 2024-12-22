@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },
-  "about_sourceCode": { "message": "Broncode" },
+  "about_openSourceCode": { "message": "open bron" },
   "mode_wideScreen": { "message": "Breedbeeld" },
   "mode_fullWindow": { "message": "Full-window" },
   "mode_fullScreen": { "message": "Volledig scherm" },

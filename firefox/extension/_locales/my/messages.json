@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },
   "about_version": { "message": "ဗားရှင်း" },
   "about_poweredBy": { "message": "မှပံ့ပိုးသည်" },
-  "about_sourceCode": { "message": "ပင္မကုဒ္" },
+  "about_openSourceCode": { "message": "ပွင့်လင်းအရင်းအမြစ်ကုဒ်" },
   "mode_wideScreen": { "message": "ကျယ်ပြန့်သောမျက်နှာပြင်" },
   "mode_fullWindow": { "message": "Window အပြည့်အစုံ" },
   "mode_fullScreen": { "message": "မျက်နှာပြင်အပြည့်အစုံ" },

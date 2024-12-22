@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Създадено от" },
-  "about_sourceCode": { "message": "Изходен код" },
+  "about_openSourceCode": { "message": "Отворен код" },
   "mode_wideScreen": { "message": "Широк екран" },
   "mode_fullWindow": { "message": "Цял прозорец" },
   "mode_fullScreen": { "message": "На цял екран" },

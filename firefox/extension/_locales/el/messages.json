@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Απενεργοποιημένο (εγκατεστημένη επέκταση)" },
   "about_version": { "message": "Έκδοση" },
   "about_poweredBy": { "message": "Με την υποστήριξη" },
-  "about_sourceCode": { "message": "Source code" },
+  "about_openSourceCode": { "message": "Ανοιχτός κώδικας. " },
   "mode_wideScreen": { "message": "Ευρεία οθόνη" },
   "mode_fullWindow": { "message": "Πλήρες παράθυρο" },
   "mode_fullScreen": { "message": "Πλήρης οθόνη" },

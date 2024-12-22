@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Გამორთულია (დამონტაჟებულია გაფართოება)" },
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
-  "about_sourceCode": { "message": "საწყისი კოდი" },
+  "about_openSourceCode": { "message": "საწყისი კოდი" },
   "mode_wideScreen": { "message": "Ფართო ეკრანი" },
   "mode_fullWindow": { "message": "Სრული ფანჯარა" },
   "mode_fullScreen": { "message": "მთელ ეკრანზე" },

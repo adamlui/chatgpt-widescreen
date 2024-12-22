@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },
-  "about_sourceCode": { "message": "ምንጪ ኮድ" },
+  "about_openSourceCode": { "message": "ክፉት ምንጪ ኮድ" },
   "mode_wideScreen": { "message": "ሰፊሕ ስክሪን" },
   "mode_fullWindow": { "message": "ምሉእ ዊንዶው" },
   "mode_fullScreen": { "message": "ምሉእ ስክሪን" },

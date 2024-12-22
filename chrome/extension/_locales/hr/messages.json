@@ -14,7 +14,7 @@
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Pokreće" },
-  "about_sourceCode": { "message": "Izvorni kod" },
+  "about_openSourceCode": { "message": "Izvorni kod" },
   "mode_wideScreen": { "message": "Široki zaslon" },
   "mode_fullWindow": { "message": "Cijeli prozor" },
   "mode_fullScreen": { "message": "Cijeli zaslon" },

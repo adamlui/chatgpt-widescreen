@@ -300,8 +300,11 @@
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                   + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
                   + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
-                  + `.${btns.class}:hover {` // zoom chatbar buttons
-                      + `transform: scale(${ env.site == 'poe' ? 1.15 : 1.285}) ; transition: transform 0.15s ease }`
+                  + ( !config.btnAnimationsDisabled ? // zoom chatbar buttons on hover
+                        ( `.${btns.class}:hover {`
+                            + `transform: scale(${ env.site == 'poe' ? 1.15 : 1.285}) ;`
+                            + 'transition: transform 0.15s ease }' ) : ''
+                    )
             },
 
             wideScreen() {
@@ -396,7 +399,7 @@
                 if ((config.fullWindow && sites[env.site].hasSidebar) ^ isFullWin()) {
                     supressNotifs() ; toggle.mode('fullWindow') }
                 sync.fullerWin() // sync Fuller Windows
-                update.style.tweaks() // sync TCB/NCB/HH/HF
+                update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
                 chatbar.tweak() // update chatgpt.com chatbar inner width
                 btns.insert()

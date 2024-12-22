@@ -33,6 +33,10 @@ window.settings = {
             label: window.settings.getMsg('menuLabel_hiddenFooter'),
             helptip: window.settings.getMsg('helptip_hiddenFooter')
         }},
+        get btnAnimationsDisabled() { return { type: 'toggle',
+            label: window.settings.getMsg('menuLabel_btnAnimations'),
+            helptip: window.settings.getMsg('helptip_btnAnimations')
+        }},
         get notifDisabled() { return { type: 'toggle',
             label: window.settings.getMsg('menuLabel_modeNotifs'),
             helptip: window.settings.getMsg('helptip_modeNotifs')

@@ -1,7 +1,9 @@
 {
   "chatgpt": {
-    "availFeatures": [ "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
-      "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
+    "availFeatures": [
+      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader", "notifDisabled",
+      "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen"
+    ],
     "selectors": {
       "btns": {
         "login": "[data-testid*=login]",
@@ -14,8 +16,10 @@
     }
   },
   "perplexity": {
-    "availFeatures": [ "fullerWindows", "fullWindow", "hiddenHeader",
-      "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
+    "availFeatures": [
+      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled", "ncbDisabled",
+      "tcbDisabled", "wideScreen"
+    ],
     "hasSidebar": true,
     "selectors": {
       "btns": {
@@ -28,8 +32,10 @@
     }
   },
   "poe": {
-    "availFeatures": [ "fullerWindows", "fullWindow", "hiddenHeader",
-      "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
+    "availFeatures": [
+      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled", "ncbDisabled",
+      "tcbDisabled", "widerChatbox", "wideScreen"
+    ],
     "hasSidebar": true,
     "selectors": {
       "btns": { "newChat": "header a[class*=button]" }, "header": "header",

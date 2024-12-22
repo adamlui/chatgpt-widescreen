@@ -555,11 +555,11 @@
     }).observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
 
     // Monitor SCHEME CHANGES to update sidebar toggle + modal colors
-    new MutationObserver(handleSchemeChange).observe( // site scheme changes
+    new MutationObserver(handleSchemePrefChange).observe( // site scheme changes
         document.documentElement, { attributes: true, attributeFilter: ['class', 'data-color-scheme'] })
     window.matchMedia('(prefers-color-scheme: dark)').onchange = () => // browser/system scheme changes
-        requestAnimationFrame(handleSchemeChange)
-    function handleSchemeChange() { env.scheme = getScheme() ; modals.stylize() ; btns.update.color() }
+        requestAnimationFrame(handleSchemePrefChange)
+    function handleSchemePrefChange() { env.scheme = getScheme() ; modals.stylize() ; btns.update.color() }
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {

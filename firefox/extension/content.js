@@ -559,7 +559,10 @@
         document.documentElement, { attributes: true, attributeFilter: ['class', 'data-color-scheme'] })
     window.matchMedia('(prefers-color-scheme: dark)').onchange = () => // browser/system scheme changes
         requestAnimationFrame(handleSchemePrefChange)
-    function handleSchemePrefChange() { env.scheme = getScheme() ; modals.stylize() ; btns.update.color() }
+    function handleSchemePrefChange() {
+        const displayedScheme = getScheme()
+        if (env.scheme != displayedScheme) { env.scheme = displayedScheme ; modals.stylize() ; btns.update.color() }
+    }
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {

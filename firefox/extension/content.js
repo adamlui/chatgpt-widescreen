@@ -291,9 +291,10 @@
             tweaks() {
                 tweaksStyle.innerText = (
                     ( env.site == 'chatgpt' ? (
-                          ( '[id$=-btn]:hover { opacity: 100% !important }' ) // prevent chatbar btn dim on hover
+                            '[id$=-btn]:hover { opacity: 100% !important }' // prevent chatbar btn dim on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
+                          + '[class^="@lg/thread"] { display: none }' // hide Get Plus spam banner
                     ) : env.site == 'perplexity' ?
                         `.${btns.class} { transition: none }` : '' )) // prevent chatbar btn animation on hover-off
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically

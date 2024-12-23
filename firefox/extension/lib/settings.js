@@ -10,36 +10,36 @@ window.settings = {
 
     controls: { // displays top-to-bottom in toolbar menu
         get fullerWindows() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_fullerWins'),
-            helptip: window.settings.getMsg('helptip_fullerWins')
+            label: settings.getMsg('menuLabel_fullerWins'),
+            helptip: settings.getMsg('helptip_fullerWins')
         }},
         get tcbDisabled() { return { type: 'toggle', symbol: '↕️',
-            label: window.settings.getMsg('menuLabel_tallerChatbox'),
-            helptip: window.settings.getMsg('helptip_tallerChatbox')
+            label: settings.getMsg('menuLabel_tallerChatbox'),
+            helptip: settings.getMsg('helptip_tallerChatbox')
         }},
         get widerChatbox() { return { type: 'toggle', symbol: '↔️',
-            label: window.settings.getMsg('menuLabel_widerChatbox'),
-            helptip: window.settings.getMsg('helptip_widerChatbox')
+            label: settings.getMsg('menuLabel_widerChatbox'),
+            helptip: settings.getMsg('helptip_widerChatbox')
         }},
         get ncbDisabled() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_newChatBtn'),
-            helptip: window.settings.getMsg('helptip_newChatBtn')
+            label: settings.getMsg('menuLabel_newChatBtn'),
+            helptip: settings.getMsg('helptip_newChatBtn')
         }},
         get hiddenHeader() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_hiddenHeader'),
-            helptip: window.settings.getMsg('helptip_hiddenHeader')
+            label: settings.getMsg('menuLabel_hiddenHeader'),
+            helptip: settings.getMsg('helptip_hiddenHeader')
         }},
         get hiddenFooter() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_hiddenFooter'),
-            helptip: window.settings.getMsg('helptip_hiddenFooter')
+            label: settings.getMsg('menuLabel_hiddenFooter'),
+            helptip: settings.getMsg('helptip_hiddenFooter')
         }},
         get btnAnimationsDisabled() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_btnAnimations'),
-            helptip: window.settings.getMsg('helptip_btnAnimations')
+            label: settings.getMsg('menuLabel_btnAnimations'),
+            helptip: settings.getMsg('helptip_btnAnimations')
         }},
         get notifDisabled() { return { type: 'toggle',
-            label: window.settings.getMsg('menuLabel_modeNotifs'),
-            helptip: window.settings.getMsg('helptip_modeNotifs')
+            label: settings.getMsg('menuLabel_modeNotifs'),
+            helptip: settings.getMsg('helptip_modeNotifs')
         }}
     },
 

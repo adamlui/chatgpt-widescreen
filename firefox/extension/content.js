@@ -387,7 +387,7 @@
 
     const sync = {
 
-        async configToUI() { // on toolbar popup toggles + AI tab activations
+        async configToUI(options) { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
@@ -402,7 +402,18 @@
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
                 chatbar.tweak() // update chatgpt.com chatbar inner width
-                btns.insert()
+                btns.insert() // since .removed() when config.extensionDisabled
+                if (options.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) { // apply/remove fx
+                    // ...to visually signal location affected by Button Animations toggle-on
+                    const btnHoverStyles = new RegExp(`.${btns.class}:hover\\s*\\{([^}]*)\\}`, 'm')
+                        .exec(tweaksStyle.innerText)?.[1].trim()
+                    document.querySelectorAll(`.${btns.class}`).forEach((btn, idx) =>
+                        setTimeout(() => { // apply/remove fx
+                            btn.style.cssText += btnHoverStyles
+                            setTimeout(() => btn.style.transform = '', 150) // keep transition for smooth removal
+                        }, idx *75) // ...staggered @ 75ms interval
+                    )
+                }
             }
 
             function supressNotifs() {

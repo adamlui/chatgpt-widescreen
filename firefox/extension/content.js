@@ -305,7 +305,8 @@
                             '[id$=-btn]:hover { opacity: 100% !important }' // prevent chatbar btn dim on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
-                          + '[class^="@lg/thread"] { display: none }' // hide Get Plus spam banner
+                          + '[class^="@lg/thread"]:has(button[data-testid=close-button]),' // hide Get Plus spam banner
+                                + '[class*=bottom]:has(button[data-testid=close-button]) { display: none }'
                     ) : env.site == 'perplexity' ?
                         `.${btns.class} { transition: none }` : '' )) // prevent chatbar btn animation on hover-off
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically

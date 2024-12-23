@@ -11,17 +11,17 @@
 
     // Init ENV context
     const env = {
-        browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1] }
+        browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    env.scheme = getScheme()
+    env.ui.scheme = getScheme()
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
-    dom.dependencies.import({ env }) // for env.scheme
-    modals.dependencies.import({ app, env }) // for app data + env.scheme
+    dom.dependencies.import({ env }) // for env.ui.scheme
+    modals.dependencies.import({ app, env }) // for app data + env.ui.scheme
     settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
 
     // Init SETTINGS
@@ -51,7 +51,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || env.scheme == 'dark' ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || env.ui.scheme == 'dark' ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -219,7 +219,7 @@
             color() {
                 btns.color = (
                     env.site == 'chatgpt' ? (
-                        document.querySelector('.dark.bg-black') || env.scheme == 'dark' ? 'white' : '#202123' )
+                        document.querySelector('.dark.bg-black') || env.ui.scheme == 'dark' ? 'white' : '#202123' )
                   : env.site == 'perplexity' ? (
                         document.documentElement.dataset.colorScheme == 'dark' ?
                             'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
@@ -580,7 +580,8 @@
         'change', () => requestAnimationFrame(handleSchemePrefChange))
     function handleSchemePrefChange() {
         const displayedScheme = getScheme()
-        if (env.scheme != displayedScheme) { env.scheme = displayedScheme ; modals.stylize() ; btns.update.color() }
+        if (env.ui.scheme != displayedScheme) {
+            env.ui.scheme = displayedScheme ; modals.stylize() ; btns.update.color() }
     }
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle

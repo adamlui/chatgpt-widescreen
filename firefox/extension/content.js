@@ -403,7 +403,7 @@
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
                 chatbar.tweak() // update chatgpt.com chatbar inner width
-                btns.insert() // since .removed() when config.extensionDisabled
+                btns.insert() // since .remove()'d when config.extensionDisabled
                 if (options.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) { // apply/remove fx
                     // ...to visually signal location affected by Button Animations toggle-on
                     const btnHoverStyles = new RegExp(`.${btns.class}:hover\\s*\\{([^}]*)\\}`, 'm')

@@ -274,7 +274,7 @@
              && !(type == 'newChat' && config.ncbDisabled))
         },
 
-        preiewAnimations() { // used in sync.configToUI() on Button Animations toggle-on
+        previewAnimations() { // used in sync.configToUI() on Button Animations toggle-on
             const btnHoverStyles = new RegExp(`.${btns.class}:hover\\s*\\{([^}]*)\\}`, 'm')
                 .exec(tweaksStyle.innerText)?.[1].trim()
             document.querySelectorAll(`.${btns.class}`).forEach((btn, idx) =>
@@ -417,8 +417,8 @@
                 chatbar.tweak() // update chatgpt.com chatbar inner width
                 btns.insert() // since .remove()'d when config.extensionDisabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
-                    // ...to visually signal location affected by Button Animations toggle-on
-                    btns.preiewAnimations()
+                    // ...to visually signal location + preview fx applied by Button Animations toggle-on
+                    btns.previewAnimations()
             }
 
             function supressNotifs() {

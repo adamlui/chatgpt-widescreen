@@ -68,8 +68,8 @@
 
         get() {
             let chatbar = document.querySelector(sites[env.site].selectors.input)
-            const parentLvls = env.site == 'chatgpt' ? 3 : 2
-            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
+            const lvlsToParent = env.site == 'chatgpt' ? 3 : 2
+            for (let i = 0 ; i < lvlsToParent ; i++) chatbar = chatbar?.parentNode
             return chatbar
         },
 

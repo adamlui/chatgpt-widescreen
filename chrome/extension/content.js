@@ -274,7 +274,7 @@
              && !(type == 'newChat' && config.ncbDisabled))
         },
 
-        signalAnimations() { // used in sync.configToUI() on Button Animations toggle-on
+        preiewAnimations() { // used in sync.configToUI() on Button Animations toggle-on
             const btnHoverStyles = new RegExp(`.${btns.class}:hover\\s*\\{([^}]*)\\}`, 'm')
                 .exec(tweaksStyle.innerText)?.[1].trim()
             document.querySelectorAll(`.${btns.class}`).forEach((btn, idx) =>
@@ -418,7 +418,7 @@
                 btns.insert() // since .remove()'d when config.extensionDisabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
                     // ...to visually signal location affected by Button Animations toggle-on
-                    btns.signalAnimations()
+                    btns.preiewAnimations()
             }
 
             function supressNotifs() {

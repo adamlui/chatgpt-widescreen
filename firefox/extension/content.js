@@ -408,11 +408,13 @@
                 wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; btns.remove() ; chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
-                if (config.wideScreen ^ document.head.contains(wideScreenStyle)) {
+                if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggle.mode('wideScreen') }
-                if ((config.fullWindow && sites[env.site].hasSidebar) ^ isFullWin()) {
-                    supressNotifs() ; toggle.mode('fullWindow') }
-                sync.fullerWin() // sync Fuller Windows
+                if (sites[env.site].hasSidebar) {
+                    if (config.fullWindow ^ isFullWin()) { // sync Full-Window
+                        supressNotifs() ; toggle.mode('fullWindow') }
+                    sync.fullerWin() // sync Fuller Windows
+                }
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
                 chatbar.tweak() // update chatgpt.com chatbar inner width

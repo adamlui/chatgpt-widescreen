@@ -95,13 +95,8 @@
 
         reset() { // all tweaks for popup master toggle-off
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
-            if (env.site == 'chatgpt') {
-                const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
-                if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
-            } else if (env.site == 'poe') {
-                const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile)
-                if (attachFileBtn) attachFileBtn.style.cssText = ''
-            }
+            const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
+            if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
         }
     }
 
@@ -229,7 +224,8 @@
             await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 wideScreenStyle.remove() ; fullWinStyle.remove()
-                tweaksStyle.innerText = '' ; buttons.remove() ; chatbar.reset()
+                tweaksStyle.innerText = '' ; buttons.remove()
+                if (env.site == 'chatgpt') chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggle.mode('wideScreen') }

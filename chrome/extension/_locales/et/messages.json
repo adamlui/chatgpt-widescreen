@@ -53,7 +53,7 @@
   "alert_noMatterSize": { "message": "olenemata suurusest" },
   "alert_directlySupports": { "message": "toetab otseselt minu tasustamata jõupingutusi tagada, et see projekt jääb vabaks ja kõigile kasutamiseks avatuks" },
   "alert_growTogether": { "message": "Koos saame hoida selle võimsa tarkvara kasvamas" },
-  "alert_tyForSupport": { "message": "Tänan teid toetuse eest!" },
+  "alert_tyForSupport": { "message": "Tänan teid toetuse eest" },
   "alert_author": { "message": "Autor" },
   "alert_pressF11": { "message": "Täisekraanilt väljumiseks vajutage klahvi F11" },
   "alert_f11reason": { "message": "F11 kasutati täisekraanile sisenemiseks ja brauseri turvalisuse huvides tuleb selle väljumiseks kasutada sama võtit" },

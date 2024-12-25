@@ -18,7 +18,7 @@
   "about_contributors": { "message": "Придонесувачи" },
   "about_version": { "message": "Верзија" },
   "about_poweredBy": { "message": "Поддржано од" },
-  "about_openSourceCode": { "message": "@ info: whatsthis" },
+  "about_openSourceCode": { "message": "Код со отворен код" },
   "mode_wideScreen": { "message": "Широк екран" },
   "mode_fullWindow": { "message": "Целосен прозорец" },
   "mode_fullScreen": { "message": "На цел екран" },

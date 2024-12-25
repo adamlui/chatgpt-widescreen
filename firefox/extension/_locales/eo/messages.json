@@ -35,7 +35,7 @@
   "helptip_newChatBtn": { "message": "Montri novan babilejbutonon en babilejujo" },
   "helptip_hiddenFooter": { "message": "Kaŝi la paĝopiedon" },
   "helptip_hiddenHeader": { "message": "Kaŝi la paĝokapon" },
-  "helptip_btnAnimations": { "message": "@ info: whatsthis" },
+  "helptip_btnAnimations": { "message": "Anigi babilbreton butonoj sur ŝvebado" },
   "helptip_modeNotifs": { "message": "Montri sciigojn kiam ŝanĝi reĝimojn/agordojn" },
   "alert_choosePlatform": { "message": "Elekti platformon" },
   "alert_updateAvail": { "message": "Neniu priskribo disponebla" },

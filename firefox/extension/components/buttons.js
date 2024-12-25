@@ -63,7 +63,7 @@ window.buttons = {
             Object.assign(this[btnType].style, {
                 position: this.dependencies.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
                 right: `${ rOffset + idx * bOffset }px`, // position left of prev button
-                transition: 'transform 0.15s ease, opacity 0.3s ease' // for tweaksStyle's :hover + .insert()'s fade-in
+                transition: 'transform 0.15s ease, opacity 0.5s ease' // for tweaksStyle's :hover + .insert()'s fade-in
             })
             if (this.dependencies.env.tallChatbar) this[btnType].style.bottom = '8.85px'
             else this[btnType].style.top = `${ this.dependencies.env.site == 'chatgpt' ? -3.25
@@ -111,12 +111,12 @@ window.buttons = {
         const elemToInsertBefore = this.dependencies.env.site == 'chatgpt' ? parentToInsertInto.lastChild
                                  : parentToInsertInto.firstChild // Pro spam toggle or Poe Mic btn
         // Insert buttons
-        btnTypesToInsert.forEach(btnType => {
+        btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
             btn.style.opacity = 0 // hide for fade-in
             parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert buttons
-            setTimeout(() => btn.style.opacity = 1, 10) // fade-in
+            setTimeout(() => btn.style.opacity = 1, (idx +1) *30) // fade-in
         })
         parentToInsertInto.insertBefore(this.dependencies.tooltipDiv, elemToInsertBefore) // add tooltips
         setTimeout(() => this.dependencies.chatbar.tweak(), 1) ; this.update.color()

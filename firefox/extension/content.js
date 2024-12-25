@@ -174,11 +174,8 @@
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                   + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
                   + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
-                  + ( !config.btnAnimationsDisabled ? // zoom chatbar buttons on hover
-                        ( `.${buttons.class}:hover {`
-                            + `transform: scale(${ env.site == 'poe' ? 1.15 : 1.285}) ;`
-                            + 'transition: transform 0.15s ease }' ) : ''
-                    )
+                  + ( config.btnAnimationsDisabled ? '' : // zoom chatbar buttons on hover
+                        `.${buttons.class}:hover { transform: scale(${ env.site == 'poe' ? 1.15 : 1.285}) }` )
             },
 
             wideScreen() {

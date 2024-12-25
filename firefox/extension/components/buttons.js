@@ -62,7 +62,8 @@ window.buttons = {
             this[btnType].className = this.class // for update.style.tweaks()
             Object.assign(this[btnType].style, {
                 position: this.dependencies.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
-                right: `${ rOffset + idx * bOffset }px` // position left of prev button
+                right: `${ rOffset + idx * bOffset }px`, // position left of prev button
+                transition: 'transform 0.15s ease, opacity 0.3s ease' // for tweaksStyle's :hover + .insert()'s fade-in
             })
             if (this.dependencies.env.tallChatbar) this[btnType].style.bottom = '8.85px'
             else this[btnType].style.top = `${ this.dependencies.env.site == 'chatgpt' ? -3.25
@@ -113,7 +114,7 @@ window.buttons = {
         btnTypesToInsert.forEach(btnType => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
-            Object.assign(btn.style, { opacity: 0, transition: 'opacity 0.3s ease' }) // init styles for fade-in
+            btn.style.opacity = 0 // hide for fade-in
             parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert buttons
             setTimeout(() => btn.style.opacity = 1, 10) // fade-in
         })
@@ -196,7 +197,7 @@ window.buttons = {
             const btn = this[btnType] ; if (!btn) return
             setTimeout(() => { // apply/remove fx
                 btn.style.cssText += btnHoverStyles
-                setTimeout(() => btn.style.transform = '', 150) // keep transition for smooth removal
+                setTimeout(() => btn.style.cssText = btn.style.cssText.replace(btnHoverStyles, ''), 150)
             }, idx *75) // ...staggered @ 75ms interval
         })
     }

@@ -205,7 +205,7 @@
                 parentToInsertInto.insertBefore(this[btnType], elemToInsertBefore)
             })
             parentToInsertInto.insertBefore(tooltipDiv, elemToInsertBefore) // add tooltips
-            setTimeout(() => chatbar.tweak(), 1) ; this.update.color()
+            setTimeout(() => { chatbar.tweak() ; this.animate() }, 1) ; this.update.color()
             this.status = 'inserted'
         },
 
@@ -274,7 +274,7 @@
              && !(type == 'newChat' && config.ncbDisabled))
         },
 
-        previewAnimations() { // used in sync.configToUI() on Button Animations toggle-on
+        animate() { // used in btns.insert() + sync.configToUI() on Button Animations toggle-on
             const btnHoverStyles = new RegExp(`.${btns.class}:hover\\s*\\{([^}]*)\\}`, 'm')
                 .exec(tweaksStyle.innerText)?.[1].trim()
             btns.types.slice().reverse().forEach((btnType, idx) => {
@@ -421,7 +421,7 @@
                 btns.insert() // since .remove()'d when config.extensionDisabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
                     // ...to visually signal location + preview fx applied by Button Animations toggle-on
-                    btns.previewAnimations()
+                    btns.animate()
             }
 
             function supressNotifs() {

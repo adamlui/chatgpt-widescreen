@@ -13,6 +13,8 @@
   "menuLabel_about": { "message": "માહિતી" },
   "menuLabel_donate": { "message": "કૃપા કરીને દાન મોકલો" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
+  "about_author": { "message": "લેખક" },
+  "about_andContributors": { "message": "અને ફાળો આપનારાઓ" },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_openSourceCode": { "message": "સ્ત્રોત કોડ" },

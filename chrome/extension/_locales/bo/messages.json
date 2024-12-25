@@ -13,6 +13,8 @@
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_donate": { "message": "ཁྱོད་ཀྱིས་སྦྱིན་པ་གཏོང་འདོད་དམ །" },
   "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
+  "about_author": { "message": "Yazar" },
+  "about_andContributors": { "message": "གྲོགས་རམ །" },
   "about_version": { "message": "པར་གཞི།" },
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
   "about_openSourceCode": { "message": "ཁ་ཕྱེ་བའི་ཁ་བྱང་།" },

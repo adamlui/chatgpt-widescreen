@@ -13,6 +13,8 @@
   "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_donate": { "message": "Хандив илгээнэ үү" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
+  "about_author": { "message": "Зохиогч" },
+  "about_andContributors": { "message": "хувь нэмэр оруулагчид" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_openSourceCode": { "message": "Нээлттэй Эх сурвалж" },

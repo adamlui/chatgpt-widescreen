@@ -69,16 +69,9 @@ window.buttons = {
             else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25
                                    : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
-                const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
-                const rightBtnSelector = `${btnSelectors.send}, ${btnSelectors.voice}`
-                const rightBtn = await new Promise(resolve => {
-                    const rightBtn = document.querySelector(rightBtnSelector)
-                    if (rightBtn) resolve(rightBtn)
-                    else new MutationObserver((_, obs) => {
-                        const rightBtn = document.querySelector(rightBtnSelector)
-                        if (rightBtn) { obs.disconnect() ; resolve(rightBtn) }
-                    }).observe(document.body, { childList: true, subtree: true })
-                })
+                const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns,
+                      rightBtnSelector = `${btnSelectors.send}, ${btnSelectors.voice}`,
+                      rightBtn = await dom.getLoadedElem(rightBtnSelector)
                 btn.classList.add(...(rightBtn?.classList || []))
                 Object.assign(btn.style, { // remove dark mode overlay
                     backgroundColor: 'transparent', borderColor: 'transparent' })

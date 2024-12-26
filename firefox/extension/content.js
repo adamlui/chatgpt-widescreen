@@ -309,7 +309,7 @@
          config.fullWindow = isFullWin() // ...so match it
     else await settings.load('fullWindow') // otherwise load CWM's saved state
 
-    // Append/stylize TOOLTIP div
+    // Stylize TOOLTIP div
     document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;'
         + 'font-size: 0.85rem ; color: white ;' // font style

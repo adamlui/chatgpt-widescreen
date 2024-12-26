@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "kākoʻo pololei i kaʻu mau hana i uku ʻole ʻia e hōʻoia i ka noho manuahi ʻana a wehe ʻia kēia papahana no nā mea a pau e hoʻohana" },
   "alert_growTogether": { "message": "Hiki iā mākou ke hoʻomau i ka ulu ʻana o kēia polokalamu ikaika" },
   "alert_tyForSupport": { "message": "Mahalo iā ʻoe no kāu kākoʻo" },
-  "alert_author": { "message": "mea kākau" },
   "alert_pressF11": { "message": "E kaomi i ka F11 e puka i ka pale piha" },
   "alert_f11reason": { "message": "Ua hoʻohana ʻia ʻo F11 e komo i ka pale piha, a ma muli o nā kumu palekana o ka polokalamu kele pūnaewele, pono e hoʻohana ʻia ke kī like e puka ai" },
   "btnLabel_moreAIextensions": { "message": "Hoʻonui AI hou aku" },

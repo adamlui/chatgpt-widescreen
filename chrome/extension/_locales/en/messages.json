@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "directly supports my unpaid efforts to ensure this project remains free and open for all to use" },
   "alert_growTogether": { "message": "Together, we can keep this powerful software growing" },
   "alert_tyForSupport": { "message": "Thank you for your support" },
-  "alert_author": { "message": "author" },
   "alert_pressF11": { "message": "Press F11 to exit full screen" },
   "alert_f11reason": { "message": "F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it" },
   "btnLabel_moreAIextensions": { "message": "More AI Extensions" },

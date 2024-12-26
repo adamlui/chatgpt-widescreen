@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "እዚ ፕሮጀክት እዚ ብናጻን ንኹሉ ክጥቀመሉ ክፍትሕን ምዃኑ ንምርግጋጽ ብቐጥታ ዘይተኸፍለ ጻዕረይ ይድግፎ" },
   "alert_growTogether": { "message": "ብሓባር ፡ ነዚ ሓያል ሶፍትዌር እዚ ክንዕቅቦ ንኽእል ኢና" },
   "alert_tyForSupport": { "message": "ስለቲ ቐጻሊ ደገፍኩም የመስግነኩም።" },
-  "alert_author": { "message": "ደራሲ" },
   "alert_pressF11": { "message": "ምሉእ ስክሪን ንምውጻእ F11 ጸቕጢ ግበር" },
   "alert_f11reason": { "message": "F11 ምሉእ ስክሪን ንምእታው ተጠቒሙ ነይሩ ፣ ብሰንኪ ናይ ኣሳሽ ውሕስነት ምኽንያታት ድማ ሓደ ዓይነት መፍትሕ ንምውጻእ ኣብ ጥቕሚ ክውዕል ኣለዎ" },
   "btnLabel_moreAIextensions": { "message": "ዝያዳ ናይ AI ምስፍሕፋሕ" },

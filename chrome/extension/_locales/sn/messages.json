@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "inotsigira zvakananga kuedza kwangu kusingabhadharwi kuti ndione kuti basa iri rinoramba rakasununguka uye rakazaruka kuti vose vashandise" },
   "alert_growTogether": { "message": "Pamwe chete, tinogona kuchengeta software iyi yakasimba ichikura" },
   "alert_tyForSupport": { "message": "Ndinokutendai nerutsigiro rwenyu" },
-  "alert_author": { "message": "munyori" },
   "alert_pressF11": { "message": "Press F11 kubuda zvizere chidzitiro" },
   "alert_f11reason": { "message": "F11 yakashandiswa kupinda chidzitiro chakazara, uye nekuda kwezvikonzero zvekuchengetedza bhurawuza, kiyi imwechete inofanira kushandiswa kubuda mairi" },
   "btnLabel_moreAIextensions": { "message": "Zvimwe AI Extensions" },

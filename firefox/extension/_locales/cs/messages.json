@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "přímo podporuje mé neplacené úsilí o to, aby tento projekt zůstal volný a otevřený pro všechny" },
   "alert_growTogether": { "message": "Společně můžeme udržet tento výkonný software v růstu" },
   "alert_tyForSupport": { "message": "Děkujeme za vaši přízeň" },
-  "alert_author": { "message": "autor" },
   "alert_pressF11": { "message": "Stisknutím klávesy F11 ukončíte celou obrazovku" },
   "alert_f11reason": { "message": "F11 byl použit pro vstup na celou obrazovku a z bezpečnostních důvodů prohlížeče musí být stejný klíč použit pro jeho ukončení" },
   "btnLabel_moreAIextensions": { "message": "Další rozšíření AI" },

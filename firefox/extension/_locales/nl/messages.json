@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "ondersteunt direct mijn onbetaalde inspanningen om ervoor te zorgen dat dit project gratis en open blijft voor iedereen om te gebruiken" },
   "alert_growTogether": { "message": "Samen kunnen we deze krachtige software laten groeien" },
   "alert_tyForSupport": { "message": "Bedankt voor uw steun" },
-  "alert_author": { "message": "auteur" },
   "alert_pressF11": { "message": "Druk op F11 om het volledige scherm af te sluiten" },
   "alert_f11reason": { "message": "F11 werd gebruikt om volledig scherm in te voeren, en vanwege browserbeveiligingsredenen moet dezelfde sleutel worden gebruikt om het te verlaten" },
   "btnLabel_moreAIextensions": { "message": "Meer AI-extensies" },

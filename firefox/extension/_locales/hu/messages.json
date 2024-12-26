@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "közvetlenül támogatja a nem fizetett erőfeszítéseimet annak biztosítása érdekében, hogy ez a projekt ingyenes és mindenki számára használható maradjon" },
   "alert_growTogether": { "message": "Együtt növelhetjük ezt az erőteljes szoftvert" },
   "alert_tyForSupport": { "message": "Köszönjük a támogatást" },
-  "alert_author": { "message": "szerző" },
   "alert_pressF11": { "message": "Kilépés a teljes képernyős módból: F11" },
   "alert_f11reason": { "message": "Az F11-et teljes képernyős belépésre használták, és a böngésző biztonsági okokból ugyanazt a kulcsot kell használni a kilépéshez" },
   "btnLabel_moreAIextensions": { "message": "További MI-kiterjesztések" },

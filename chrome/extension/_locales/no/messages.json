@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "støtter direkte min ubetalte innsats for å sikre at dette prosjektet forblir gratis og åpent for alle å bruke" },
   "alert_growTogether": { "message": "Sammen kan vi holde denne kraftige programvaren i vekst" },
   "alert_tyForSupport": { "message": "Takk for støtten" },
-  "alert_author": { "message": "forfattar" },
   "alert_pressF11": { "message": "Trykk F11 for å gå ut av fullskjerm" },
   "alert_f11reason": { "message": "F11 ble brukt til å gå inn i fullskjerm, og på grunn av nettlesersikkerhetsårsaker må samme nøkkel brukes for å avslutte den" },
   "btnLabel_moreAIextensions": { "message": "Flere AI-utvidelser" },

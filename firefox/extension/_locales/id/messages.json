@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "secara langsung mendukung upaya saya yang belum dibayar untuk memastikan proyek ini tetap gratis dan terbuka untuk digunakan semua orang" },
   "alert_growTogether": { "message": "Bersama - sama, kita dapat terus mengembangkan perangkat lunak yang kuat ini" },
   "alert_tyForSupport": { "message": "Terimakasih atas dukungannya" },
-  "alert_author": { "message": "Penulis" },
   "alert_pressF11": { "message": "Tekan F11 untuk keluar dari layar penuh" },
   "alert_f11reason": { "message": "F11 digunakan untuk memasuki layar penuh, dan karena alasan keamanan browser, kunci yang sama harus digunakan untuk keluar" },
   "btnLabel_moreAIextensions": { "message": "Ekstensi AI Lainnya" },

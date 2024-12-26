@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "secara langsung menyokong usaha saya yang tidak dibayar untuk memastikan projek ini kekal percuma dan terbuka untuk digunakan oleh semua" },
   "alert_growTogether": { "message": "Bersama-sama, kita boleh memastikan perisian yang berkuasa ini terus berkembang" },
   "alert_tyForSupport": { "message": "Terima kasih atas sokongan anda" },
-  "alert_author": { "message": "pengarang" },
   "alert_pressF11": { "message": "Tekan F11 untuk keluar dari skrin penuh" },
   "alert_f11reason": { "message": "F11 telah digunakan untuk memasuki skrin penuh, dan atas sebab-sebab keselamatan pelayar, kunci yang sama mesti digunakan untuk keluar daripadanya" },
   "btnLabel_moreAIextensions": { "message": "Lebih Banyak Sambungan AI" },

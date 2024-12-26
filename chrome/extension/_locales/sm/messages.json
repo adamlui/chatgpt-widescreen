@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "lagolagoina saʻo aʻu taumafaiga e aunoa ma se totogi e mautinoa ai o lenei galuega faatino e tumau pea ona saoloto ma tatala mo tagata uma e faaaoga" },
   "alert_growTogether": { "message": "Faatasi, e mafai ona tatou tausia lenei polokalama mamana tuputupu ae" },
   "alert_tyForSupport": { "message": "Talosia na e fiafia iai" },
-  "alert_author": { "message": "tusitala" },
   "alert_pressF11": { "message": "Press F11 e alu i fafo le lau atoa" },
   "alert_f11reason": { "message": "F11 na faʻaaogaina e ulufale ai i le atoa lau, ma ona o le saogalemu o le browser, e tatau ona faʻaaogaina le ki lava e tasi e alu ese ai" },
   "btnLabel_moreAIextensions": { "message": "Sili atu AI Faʻalauteleina" },

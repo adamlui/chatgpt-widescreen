@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "直接支持我的无偿努力，以确保该项目免费开放，供所有人使用" },
   "alert_growTogether": { "message": "携起手来，我们可以让这个强大的软件" },
   "alert_tyForSupport": { "message": "感谢您的支持" },
-  "alert_author": { "message": "作者" },
   "alert_pressF11": { "message": "按下 F11 键退出全屏模式" },
   "alert_f11reason": { "message": "使用 F11 键进入全屏模式，由于浏览器安全原因，必须使用同样的按键退出全屏模式" },
   "btnLabel_moreAIextensions": { "message": "更多 AI 扩展" },

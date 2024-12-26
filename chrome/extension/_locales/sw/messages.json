@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "inasaidia moja kwa moja juhudi zangu ambazo hazijalipwa ili kuhakikisha mradi huu unabaki huru na wazi kwa wote kutumia" },
   "alert_growTogether": { "message": "Kwa pamoja, tunaweza kufanya programu hii yenye nguvu ikue" },
   "alert_tyForSupport": { "message": "Asante kwa msaada tunaozidi kupata kutoka kwako" },
-  "alert_author": { "message": "mwandishi" },
   "alert_pressF11": { "message": "Bonyeza F11 ili utoke kwenye skrini kamili" },
   "alert_f11reason": { "message": "F11 ilitumiwa kuingia skrini kamili, na kutokana na sababu za usalama wa kivinjari, ufunguo huo lazima utumike kuiondoa" },
   "btnLabel_moreAIextensions": { "message": "Viendelezi zaidi vya AI" },

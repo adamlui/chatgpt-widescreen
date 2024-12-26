@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "bu layihənin pulsuz və hamının istifadəsi üçün açıq qalmasını təmin etmək üçün ödənilməmiş səylərimi birbaşa dəstəkləyir" },
   "alert_growTogether": { "message": "Bu güclü proqram təminatını birlikdə inkişaf etdirə bilərik" },
   "alert_tyForSupport": { "message": "Dəstəyiniz üçün təşəkkür edirik" },
-  "alert_author": { "message": "Müəllif" },
   "alert_pressF11": { "message": "Tam ekrandan çıxmaq üçün F11 düyməsini basın" },
   "alert_f11reason": { "message": "F11 tam ekrana daxil olmaq üçün istifadə edildi və brauzer təhlükəsizliyi səbəbilə eyni düymə ondan çıxmaq üçün istifadə edilməlidir" },
   "btnLabel_moreAIextensions": { "message": "Daha çox AI Uzantısı" },

@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "izravno podržava moje neplaćene napore kako bi se osiguralo da ovaj projekt ostane besplatan i otvoren za sve" },
   "alert_growTogether": { "message": "Zajedno možemo održati rast ovog moćnog softvera" },
   "alert_tyForSupport": { "message": "Hvala na podršci" },
-  "alert_author": { "message": "autor" },
   "alert_pressF11": { "message": "Pritisnite F11 za izlaz" },
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog zaslona, a zbog sigurnosnih razloga preglednika, isti ključ mora se koristiti za izlazak iz njega" },
   "btnLabel_moreAIextensions": { "message": "Više AI ekstenzija" },

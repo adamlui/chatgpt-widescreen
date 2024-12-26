@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "to'g'ridan-to'g'ri ushbu loyihaning bepul va hamma foydalanishi uchun ochiq bo'lishini ta'minlash bo'yicha mening to'lanmagan sa'y-harakatlarimni qo'llab-quvvatlaydi" },
   "alert_growTogether": { "message": "Birgalikda biz ushbu kuchli dasturiy ta'minotni o'sishini davom ettira olamiz" },
   "alert_tyForSupport": { "message": "Qo'llab-quvvatlaganingiz uchun rahmat" },
-  "alert_author": { "message": "muallif" },
   "alert_pressF11": { "message": "To'liq ekrandan chiqish uchun F11 tugmasini bosing" },
   "alert_f11reason": { "message": "F11 toʻliq ekranga kirish uchun ishlatilgan va brauzer xavfsizligi sababli undan chiqish uchun xuddi shu kalitdan foydalanish kerak" },
   "btnLabel_moreAIextensions": { "message": "Ko'proq AI kengaytmalari" },

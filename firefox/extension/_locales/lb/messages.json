@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "et ënnerstëtzt direkt meng onbezuelten Efforten fir sécherzestellen datt dëse Projet gratis bleift an op fir jiddereen ze benotzen" },
   "alert_growTogether": { "message": "Zesumme kënne mir dës mächteg Software wuessen halen" },
   "alert_tyForSupport": { "message": "Villmools Merci fir Är Ënnerstëtzung" },
-  "alert_author": { "message": "Auteur" },
   "alert_pressF11": { "message": "Press F11 fir komplett Bildschierm ze verloossen" },
   "alert_f11reason": { "message": "F11 gouf benotzt fir voll Écran ze gitt, a wéinst Browser Sécherheetsgrënn muss de selwechte Schlëssel benotzt ginn fir se auszeginn" },
   "btnLabel_moreAIextensions": { "message": "Méi AI Extensiounen" },

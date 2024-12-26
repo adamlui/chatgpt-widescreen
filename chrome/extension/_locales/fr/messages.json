@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "soutient directement mes efforts non rémunérés pour que ce projet reste gratuit et ouvert à tous" },
   "alert_growTogether": { "message": "Ensemble, nous pouvons continuer à faire croître ce logiciel puissant" },
   "alert_tyForSupport": { "message": "Merci pour votre aide" },
-  "alert_author": { "message": "auteur" },
   "alert_pressF11": { "message": "Appuyez sur F11 pour quitter le mode plein écran" },
   "alert_f11reason": { "message": "F11 a été utilisé pour entrer en mode plein écran et, pour des raisons de sécurité du navigateur, la même touche doit être utilisée pour en sortir" },
   "btnLabel_moreAIextensions": { "message": "Plus d'extensions d'IA" },

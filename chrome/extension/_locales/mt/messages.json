@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "jappoġġja direttament l-isforzi mhux imħallsa tiegħi biex niżgura li dan il-proġett jibqa' liberu u miftuħ għal kulħadd biex juża" },
   "alert_growTogether": { "message": "Flimkien, nistgħu nżommu dan is-softwer qawwi jikber" },
   "alert_tyForSupport": { "message": "Grazzi tal-appoġġ tiegħek" },
-  "alert_author": { "message": "awtur" },
   "alert_pressF11": { "message": "Agħfas F11 biex toħroġ mill-iskrin sħiħ" },
   "alert_f11reason": { "message": "F11 intuża biex jidħol l-iskrin sħiħ, u minħabba raġunijiet ta 'sigurtà tal-browser, l-istess ċavetta trid tintuża biex toħroġha" },
   "btnLabel_moreAIextensions": { "message": "Iktar Estensjonijiet tal-IA" },

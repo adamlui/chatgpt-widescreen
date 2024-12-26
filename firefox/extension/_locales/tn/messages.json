@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "ke ema maiteko a me a a sa duelelweng nokeng ka tlhamalalo go netefatsa gore porojeke eno e nne mahala ebile e bulegile go dirisiwa ke mongwe le mongwe" },
   "alert_growTogether": { "message": "Mmogo, re ka kgona go boloka serweboleta seno se se maatla se gola" },
   "alert_tyForSupport": { "message": "Re lebogela kemonokeng ya gago" },
-  "alert_author": { "message": "mokwadi" },
   "alert_pressF11": { "message": "Tobetsa F11 go tswa mo sekirining ka botlalo" },
   "alert_f11reason": { "message": "F11 e dirisitswe go tsenya sekirini ka botlalo, mme ka ntlha ya mabaka a pabalesego a browser, selo sa konokono se se tshwanang se tshwanetse go dirisiwa go tswa mo sekerining" },
   "btnLabel_moreAIextensions": { "message": "Di-AI Extensions tse Dintsi" },

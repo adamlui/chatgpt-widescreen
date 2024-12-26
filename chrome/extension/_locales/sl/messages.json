@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "neposredno podpira moja neplačana prizadevanja za zagotovitev, da ta projekt ostane brezplačen in odprt za uporabo vsem" },
   "alert_growTogether": { "message": "Skupaj lahko ohranjamo rast te zmogljive programske opreme" },
   "alert_tyForSupport": { "message": "Hvala za vašo podporo" },
-  "alert_author": { "message": "Avtor" },
   "alert_pressF11": { "message": "Pritisnite F11 za izhod iz celozaslonskega načina" },
   "alert_f11reason": { "message": "F11 je bil uporabljen za vstop v celozaslonski način, zaradi varnostnih razlogov brskalnika pa je treba za izhod iz njega uporabiti isti ključ" },
   "btnLabel_moreAIextensions": { "message": "Več razširitev umetne inteligence" },

@@ -54,7 +54,6 @@
   "alert_directlySupports": { "message": "nsakilwa bukomo bwa kwingidija uno mwingilo wampikwa malipilo mwanda wa bantu bonso babwanya kwingidija uno mwingilo" },
   "alert_growTogether": { "message": "Nga tuli pamo, kuti twatwalilila ukukula muli iyi programu iya maka" },
   "alert_tyForSupport": { "message": "Natasha Mukwatasha" },
-  "alert_author": { "message": "kalemba" },
   "alert_pressF11": { "message": "Press F11 Ukufuma Full screen" },
   "alert_f11reason": { "message": "(src) = \"10\" &gt; Ba F11 balibomfeshe pa kuti baingila mu cifulo conse, kabili pa mulandu wa kuti bacingililwe pa mulandu wa kucingililwa, e lyo ne mulandu wine mufwile ukubomfya ifyebo" },
   "btnLabel_moreAIextensions": { "message": "More Awkwafina" },

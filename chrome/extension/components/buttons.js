@@ -105,9 +105,9 @@ window.buttons = {
             .filter(type => !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
                          && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
         const parentToInsertInto = this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
-                                 : chatbarDiv.lastChild // (Perplexity Pro spam toggle or Poe Mic/Send btns) parent
-        const elemToInsertBefore = this.imports.env.site == 'chatgpt' ? parentToInsertInto.lastChild
-                                 : parentToInsertInto.firstChild // Pro spam toggle or Poe Mic btn
+                                 : chatbarDiv.lastChild // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
+        const elemToInsertBefore = parentToInsertInto[this.imports.env.site == 'chatgpt' ? 'lastChild' : 'firstChild']
+
         // Insert buttons
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]

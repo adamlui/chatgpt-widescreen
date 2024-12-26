@@ -2,11 +2,11 @@
 
 window.buttons = {
     types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
-    get class() { return `${this.dependencies.app.name.replace(/ /g, '-').toLowerCase()}-btn` },
+    get class() { return `${this.imports.app.name.replace(/ /g, '-').toLowerCase()}-btn` },
 
-    dependencies: {
-        import(dependencies) { // { app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle }
-            for (const depName in dependencies) this[depName] = dependencies[depName] }
+    imports: {
+        import(deps) { // { app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle }
+            for (const depName in deps) this[depName] = deps[depName] }
     },
 
     svgElems: {
@@ -43,34 +43,34 @@ window.buttons = {
     },
 
     create() {
-        if (this.dependencies.env.site == 'chatgpt'
-            && this.dependencies.chatbar.get()?.nextElementSibling
-            && !this.dependencies.env.tallChatbar
-        ) this.dependencies.env.tallChatbar = true
+        if (this.imports.env.site == 'chatgpt'
+            && this.imports.chatbar.get()?.nextElementSibling
+            && !this.imports.env.tallChatbar
+        ) this.imports.env.tallChatbar = true
         const validBtnTypes = this.types.filter(type =>
-                !(type == 'fullWindow' && !this.dependencies.sites[this.dependencies.env.site].hasSidebar)
+                !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
              && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
-        const bOffset = this.dependencies.env.site == 'poe' ? 1.1
-                      : this.dependencies.env.site == 'perplexity' ? -13
-                      : this.dependencies.env.tallChatbar ? 31 : -8.85
-        const rOffset = this.dependencies.env.site == 'poe' ? -6.5
-                      : this.dependencies.env.site == 'perplexity' ? -4
-                      : this.dependencies.env.tallChatbar ? 48 : -0.25
+        const bOffset = this.imports.env.site == 'poe' ? 1.1
+                      : this.imports.env.site == 'perplexity' ? -13
+                      : this.imports.env.tallChatbar ? 31 : -8.85
+        const rOffset = this.imports.env.site == 'poe' ? -6.5
+                      : this.imports.env.site == 'perplexity' ? -4
+                      : this.imports.env.tallChatbar ? 48 : -0.25
         validBtnTypes.forEach(async (btnType, idx) => {
             this[btnType] = dom.create.elem('div')
             this[btnType].id = btnType + '-btn' // for toggle.tooltip()
             this[btnType].className = this.class // for update.style.tweaks()
             Object.assign(this[btnType].style, {
-                position: this.dependencies.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
+                position: this.imports.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
                 right: `${ rOffset + idx * bOffset }px`, // position left of prev button
                 transition: 'transform 0.15s ease, opacity 0.5s ease' // for tweaksStyle's :hover + .insert()'s fade-in
             })
-            if (this.dependencies.env.tallChatbar) this[btnType].style.bottom = '8.85px'
-            else this[btnType].style.top = `${ this.dependencies.env.site == 'chatgpt' ? -3.25
-                                             : this.dependencies.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 )
+            if (this.imports.env.tallChatbar) this[btnType].style.bottom = '8.85px'
+            else this[btnType].style.top = `${ this.imports.env.site == 'chatgpt' ? -3.25
+                                             : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 )
                                              : 0 }px`
-            if (/chatgpt|perplexity/.test(this.dependencies.env.site)) { // assign classes + tweak styles
-                const btnSelectors = this.dependencies.sites[this.dependencies.env.site].selectors.btns
+            if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
+                const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
                 const rightBtnSelector = `${btnSelectors.send}, ${btnSelectors.voice}`
                 const rightBtn = await new Promise(resolve => {
                     const rightBtn = document.querySelector(rightBtnSelector)
@@ -86,13 +86,13 @@ window.buttons = {
             }
 
             // Add hover/click listeners
-            this[btnType].onmouseover = this[btnType].onmouseout = this.dependencies.toggle.tooltip
+            this[btnType].onmouseover = this[btnType].onmouseout = this.imports.toggle.tooltip
             this[btnType].onclick = () => {
                 if (btnType == 'newChat') {
                     document.querySelector(
-                        this.dependencies.sites[this.dependencies.env.site].selectors.btns.newChat)?.click()
-                    this.dependencies.tooltipDiv.style.opacity = 0
-                } else this.dependencies.toggle.mode(btnType)
+                        this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
+                    this.imports.tooltipDiv.style.opacity = 0
+                } else this.imports.toggle.mode(btnType)
             }
         })
     },
@@ -102,13 +102,13 @@ window.buttons = {
         this.status = 'inserting' ; if (!this.wideScreen) this.create()
 
         // Init elems
-        const chatbarDiv = this.dependencies.chatbar.get() ; if (!chatbarDiv) return
+        const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
         const btnTypesToInsert = this.types.slice().reverse() // to left-to-right for insertion order
-            .filter(type => !(type == 'fullWindow' && !this.dependencies.sites[this.dependencies.env.site].hasSidebar)
+            .filter(type => !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
                          && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
-        const parentToInsertInto = this.dependencies.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
+        const parentToInsertInto = this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
                                  : chatbarDiv.lastChild // (Perplexity Pro spam toggle or Poe Mic/Send btns) parent
-        const elemToInsertBefore = this.dependencies.env.site == 'chatgpt' ? parentToInsertInto.lastChild
+        const elemToInsertBefore = this.imports.env.site == 'chatgpt' ? parentToInsertInto.lastChild
                                  : parentToInsertInto.firstChild // Pro spam toggle or Poe Mic btn
         // Insert buttons
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
@@ -118,23 +118,23 @@ window.buttons = {
             parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert buttons
             setTimeout(() => btn.style.opacity = 1, (idx +1) *30) // fade-in
         })
-        parentToInsertInto.insertBefore(this.dependencies.tooltipDiv, elemToInsertBefore) // add tooltips
-        setTimeout(() => this.dependencies.chatbar.tweak(), 1) ; this.update.color()
+        parentToInsertInto.insertBefore(this.imports.tooltipDiv, elemToInsertBefore) // add tooltips
+        setTimeout(() => this.imports.chatbar.tweak(), 1) ; this.update.color()
         this.status = 'inserted'
     },
 
     remove() {
-        if (!this.dependencies.chatbar.get() || !document.getElementById('fullScreen-btn')) return
-        this.types.forEach(type => this[type]?.remove()) ; this.dependencies.tooltipDiv?.remove()
+        if (!this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
+        this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltipDiv?.remove()
         this.status = 'missing' // ensure next buttons.insert() doesn't return early
     },
 
     update: {
         color() {
             buttons.color = (
-                buttons.dependencies.env.site == 'chatgpt' ? (
-                    document.querySelector('.dark.bg-black') || buttons.dependencies.env.ui.scheme == 'dark' ? 'white' : '#202123' )
-              : buttons.dependencies.env.site == 'perplexity' ? (
+                buttons.imports.env.site == 'chatgpt' ? (
+                    document.querySelector('.dark.bg-black') || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123' )
+              : buttons.imports.env.site == 'perplexity' ? (
                     document.documentElement.dataset.colorScheme == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
                       : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
@@ -162,7 +162,7 @@ window.buttons = {
             const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg')
             if (mode == 'fullWindow') { // stylize full-window button
                 btnSVG.setAttribute('stroke-width', '2')
-                const btnSize = buttons.dependencies.env.site == 'chatgpt' ? 17 : 18
+                const btnSize = buttons.imports.env.site == 'chatgpt' ? 17 : 18
                 btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
             }
             btnSVG.setAttribute('viewBox', (
@@ -171,7 +171,7 @@ window.buttons = {
             )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             btnSVG.style.height = btnSVG.style.width = ( // override button resizing
-                buttons.dependencies.env.site == 'chatgpt' ? '1.3rem' : 18 )
+                buttons.imports.env.site == 'chatgpt' ? '1.3rem' : 18 )
 
             // Update SVG elements
             btnSVG.textContent = ''
@@ -185,14 +185,14 @@ window.buttons = {
 
     getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
         return this.types.filter(type =>
-            !(type == 'fullWindow' && !this.dependencies.sites[this.dependencies.env.site].hasSidebar)
+            !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
          && !(type == 'wideScreen' && chatgpt.canvasIsOpen())
          && !(type == 'newChat' && config.ncbDisabled))
     },
 
     animate() { // used in buttons.insert() + sync.configToUI() on Button Animations toggle-on
         const btnHoverStyles = new RegExp(`.${this.class}:hover\\s*\\{([^}]*)\\}`, 'm')
-            .exec(this.dependencies.tweaksStyle.innerText)?.[1].trim()
+            .exec(this.imports.tweaksStyle.innerText)?.[1].trim()
         this.types.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType] ; if (!btn) return
             setTimeout(() => { // apply/remove fx

@@ -21,9 +21,9 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
-    dom.dependencies.import({ env }) // for env.ui.scheme
-    modals.dependencies.import({ app, env }) // for app data + env.ui.scheme
-    settings.dependencies.import({ env }) // to load/save active tab's settings using env.site
+    dom.imports.import({ env }) // for env.ui.scheme
+    modals.imports.import({ app, env }) // for app data + env.ui.scheme
+    settings.imports.import({ env }) // to load/save active tab's settings using env.site
 
     // Init SETTINGS
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
@@ -145,7 +145,7 @@
     // Export dependencies to BUTTONS
     const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' }),
           tweaksStyle = dom.create.style()
-    buttons.dependencies.import({ app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle })
+    buttons.imports.import({ app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle })
 
     const update = {
 

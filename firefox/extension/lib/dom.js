@@ -1,8 +1,8 @@
 window.dom = {
 
-    dependencies: {
-        import(dependencies) { // { env) }
-            for (const depName in dependencies) this[depName] = dependencies[depName] }
+    imports: {
+        import(deps) { // { env) }
+            for (const depName in deps) this[depName] = deps[depName] }
     },
 
     create: {

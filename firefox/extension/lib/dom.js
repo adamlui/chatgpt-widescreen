@@ -31,13 +31,14 @@ window.dom = {
             .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     },
 
-    elemIsLoaded(selector, timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+    getLoadedElem(selector, timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
-            if (document.querySelector(selector)) resolve(true)
+            const elem = document.querySelector(selector)
+            if (elem) resolve(elem)
             else new MutationObserver((_, obs) => {
-                if (document.querySelector(selector)) {
-                    obs.disconnect() ; resolve(true) }
+                const elem = document.querySelector(selector)
+                if (elem) { obs.disconnect() ; resolve(elem) }
             }).observe(document.body, { childList: true, subtree: true })
         })
         return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )

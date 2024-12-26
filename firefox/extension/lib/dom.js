@@ -32,7 +32,7 @@ window.dom = {
     },
 
     getLoadedElem(selector, timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
             const elem = document.querySelector(selector)
             if (elem) resolve(elem)
@@ -52,7 +52,7 @@ window.dom = {
           + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(starSize => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = `${ this.env.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
+            starsDiv.id = `${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDivsContainer.append(starsDiv)
         })
         targetNode.prepend(starsDivsContainer)

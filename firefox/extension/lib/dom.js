@@ -32,7 +32,7 @@ window.dom = {
     },
 
     getLoadedElem(selector, timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
             const elem = document.querySelector(selector)
             if (elem) resolve(elem)

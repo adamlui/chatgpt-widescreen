@@ -57,18 +57,17 @@ window.buttons = {
                       : this.imports.env.site == 'perplexity' ? -4
                       : this.imports.env.tallChatbar ? 48 : -0.25
         validBtnTypes.forEach(async (btnType, idx) => {
-            this[btnType] = dom.create.elem('div')
-            this[btnType].id = btnType + '-btn' // for toggle.tooltip()
-            this[btnType].className = this.class // for update.style.tweaks()
-            Object.assign(this[btnType].style, {
+            const btn = this[btnType] = dom.create.elem('div')
+            btn.id = `${btnType}-btn` // for toggle.tooltip()
+            btn.className = this.class // for update.style.tweaks()
+            Object.assign(btn.style, {
                 position: this.imports.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
                 right: `${ rOffset + idx * bOffset }px`, // position left of prev button
                 transition: 'transform 0.15s ease, opacity 0.5s ease' // for tweaksStyle's :hover + .insert()'s fade-in
             })
-            if (this.imports.env.tallChatbar) this[btnType].style.bottom = '8.85px'
-            else this[btnType].style.top = `${ this.imports.env.site == 'chatgpt' ? -3.25
-                                             : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 )
-                                             : 0 }px`
+            if (this.imports.env.tallChatbar) btn.style.bottom = '8.85px'
+            else btn.style.top = `${ this.imports.env.site == 'chatgpt' ? -3.25
+                                   : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
                 const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
                 const rightBtnSelector = `${btnSelectors.send}, ${btnSelectors.voice}`
@@ -80,17 +79,16 @@ window.buttons = {
                         if (rightBtn) { obs.disconnect() ; resolve(rightBtn) }
                     }).observe(document.body, { childList: true, subtree: true })
                 })
-                this[btnType].classList.add(...(rightBtn?.classList || []))
-                Object.assign(this[btnType].style, { // remove dark mode overlay
+                btn.classList.add(...(rightBtn?.classList || []))
+                Object.assign(btn.style, { // remove dark mode overlay
                     backgroundColor: 'transparent', borderColor: 'transparent' })
             }
 
             // Add hover/click listeners
-            this[btnType].onmouseover = this[btnType].onmouseout = this.imports.toggle.tooltip
-            this[btnType].onclick = () => {
+            btn.onmouseover = btn.onmouseout = this.imports.toggle.tooltip
+            btn.onclick = () => {
                 if (btnType == 'newChat') {
-                    document.querySelector(
-                        this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
+                    document.querySelector(this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
                     this.imports.tooltipDiv.style.opacity = 0
                 } else this.imports.toggle.mode(btnType)
             }

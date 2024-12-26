@@ -297,8 +297,8 @@
     // Init UI props
     if (env.site == 'chatgpt') {
         sites.chatgpt.hasSidebar = !!await Promise.race([
-            dom.getLoadedElement(sites.chatgpt.selectors.btns.sidebarToggle), // DOM element if sidebar toggle loads
-            dom.getLoadedElement(sites.chatgpt.selectors.btns.login).then(() => false), // null if login button loads
+            dom.getLoadedElem(sites.chatgpt.selectors.btns.sidebarToggle), // DOM element if sidebar toggle loads
+            dom.getLoadedElem(sites.chatgpt.selectors.btns.login).then(() => false), // null if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
     }
@@ -339,7 +339,7 @@
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
-    if (!chatbar.get()) await dom.getLoadedElement(sites[env.site].selectors.input)
+    if (!chatbar.get()) await dom.getLoadedElem(sites[env.site].selectors.input)
     if (env.site == 'chatgpt') // store native chatbar width for Wider Chatbox style
         chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()

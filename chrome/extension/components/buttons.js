@@ -43,7 +43,7 @@ window.buttons = {
     },
 
     create() {
-        if (this.imports.env.site == 'chatgpt'
+        if (/chatgpt|openai/.test(this.imports.env.site)
             && this.imports.chatbar.get()?.nextElementSibling
             && !this.imports.env.tallChatbar
         ) this.imports.env.tallChatbar = true
@@ -66,7 +66,7 @@ window.buttons = {
                 transition: 'transform 0.15s ease, opacity 0.5s ease' // for tweaksStyle's :hover + .insert()'s fade-in
             })
             if (this.imports.env.tallChatbar) btn.style.bottom = '8.85px'
-            else btn.style.top = `${ this.imports.env.site == 'chatgpt' ? -3.25
+            else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25
                                    : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
                 const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
@@ -104,10 +104,12 @@ window.buttons = {
         const btnTypesToInsert = this.types.slice().reverse() // to left-to-right for insertion order
             .filter(type => !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
                          && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
-        const parentToInsertInto = this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
-                                 : chatbarDiv.lastChild // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
-        const elemToInsertBefore = parentToInsertInto[this.imports.env.site == 'chatgpt' ? 'lastChild' : 'firstChild']
-
+        const parentToInsertInto = (
+            /chatgpt|openai/.test(this.imports.env.site) ? chatbarDiv.nextElementSibling || chatbarDiv
+          : chatbarDiv.lastChild ) // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
+        const elemToInsertBefore = parentToInsertInto[
+            /chatgpt|openai/.test(this.imports.env.site) ? 'lastChild'
+          : 'firstChild'] // Perplexity Pro spam toggle or Poe Mic btn
         // Insert buttons
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
@@ -130,14 +132,15 @@ window.buttons = {
     update: {
         color() {
             buttons.color = (
-                buttons.imports.env.site == 'chatgpt' ? (
-                    document.querySelector('.dark.bg-black') || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123' )
-              : buttons.imports.env.site == 'perplexity' ? (
+                /chatgpt|openai/.test(buttons.imports.env.site) ? (
+                    document.querySelector('.dark.bg-black')
+                        || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
+                ) : buttons.imports.env.site == 'perplexity' ? (
                     document.documentElement.dataset.colorScheme == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
-                      : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
-              : 'currentColor' )
-
+                      : 'oklch(var(--text-color-100)/var(--tw-text-opacity))'
+                ) : 'currentColor'
+            )
             if (buttons.wideScreen?.style.fill != buttons.color)
                 buttons.types.forEach(type => {
                     if (buttons[type]) buttons[type].style.fill = buttons[type].style.stroke = buttons.color })
@@ -160,7 +163,7 @@ window.buttons = {
             const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg')
             if (mode == 'fullWindow') { // stylize full-window button
                 btnSVG.setAttribute('stroke-width', '2')
-                const btnSize = buttons.imports.env.site == 'chatgpt' ? 17 : 18
+                const btnSize = /chatgpt|openai/.test(buttons.imports.env.site) ? 17 : 18
                 btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
             }
             btnSVG.setAttribute('viewBox', (
@@ -169,7 +172,7 @@ window.buttons = {
             )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             btnSVG.style.height = btnSVG.style.width = ( // override button resizing
-                buttons.imports.env.site == 'chatgpt' ? '1.3rem' : 18 )
+                /chatgpt|openai/.test(buttons.imports.env.site) ? '1.3rem' : 18 )
 
             // Update SVG elements
             btnSVG.textContent = ''

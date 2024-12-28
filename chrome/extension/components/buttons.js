@@ -92,7 +92,7 @@ window.buttons = {
 
         // Init elems
         const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
-        const btnTypesToInsert = this.getValidTypes().slice().reverse() // to LTR for insertion order
+        const btnTypesToInsert = this.getValidTypes()
         const parentToInsertInto = (
             /chatgpt|openai/.test(this.imports.env.site) ? chatbarDiv.nextElementSibling || chatbarDiv
           : chatbarDiv.lastChild ) // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
@@ -101,7 +101,7 @@ window.buttons = {
           : 'firstChild'] // Perplexity Pro spam toggle or Poe Mic btn
 
         // Insert buttons
-        btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
+        btnTypesToInsert.forEach((btnType, idx) => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
             btn.style.opacity = 0 // hide for fade-in

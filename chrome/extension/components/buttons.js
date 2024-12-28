@@ -101,7 +101,7 @@ window.buttons = {
           : 'firstChild'] // Perplexity Pro spam toggle or Poe Mic btn
 
         // Insert buttons
-        btnTypesToInsert.forEach((btnType, idx) => {
+        btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
             btn.style.opacity = 0 // hide for fade-in

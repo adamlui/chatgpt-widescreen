@@ -47,9 +47,7 @@ window.buttons = {
             && this.imports.chatbar.get()?.nextElementSibling
             && !this.imports.env.tallChatbar
         ) this.imports.env.tallChatbar = true
-        const validBtnTypes = this.types.filter(type =>
-                !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
-             && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
+        const validBtnTypes = this.getValidTypes()
         const bOffset = this.imports.env.site == 'poe' ? 1.1
                       : this.imports.env.site == 'perplexity' ? -13
                       : this.imports.env.tallChatbar ? 31 : -8.85
@@ -94,15 +92,14 @@ window.buttons = {
 
         // Init elems
         const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
-        const btnTypesToInsert = this.types.slice().reverse() // to left-to-right for insertion order
-            .filter(type => !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
-                         && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
+        const btnTypesToInsert = this.getValidTypes().slice().reverse() // to LTR for insertion order
         const parentToInsertInto = (
             /chatgpt|openai/.test(this.imports.env.site) ? chatbarDiv.nextElementSibling || chatbarDiv
           : chatbarDiv.lastChild ) // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
         const elemToInsertBefore = parentToInsertInto[
             /chatgpt|openai/.test(this.imports.env.site) ? 'lastChild'
           : 'firstChild'] // Perplexity Pro spam toggle or Poe Mic btn
+
         // Insert buttons
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
@@ -177,12 +174,14 @@ window.buttons = {
         }
     },
 
-    getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
+    getValidTypes() { // used in this.create() + this.insert() + this.getVisibleTypes()
         return this.types.filter(type =>
             !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
-         && !(type == 'wideScreen' && chatgpt.canvasIsOpen())
-         && !(type == 'newChat' && config.ncbDisabled))
+         && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
     },
+
+    getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
+        return this.getValidTypes().filter(type => !(type == 'newChat' && config.ncbDisabled)) },
 
     animate() { // used in sync.configToUI() on Button Animations toggle-on
         const btnHoverStyles = new RegExp(`.${this.class}:hover\\s*\\{([^}]*)\\}`, 'm')

@@ -5,7 +5,7 @@ window.buttons = {
     get class() { return `${this.imports.app.name.replace(/ /g, '-').toLowerCase()}-btn` },
 
     imports: {
-        import(deps) { // { app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle }
+        import(deps) { // { app, chatbar, env, getScheme, sites, toggle, tooltipDiv, tweaksStyle }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
@@ -126,7 +126,7 @@ window.buttons = {
                     document.querySelector('.dark.bg-black')
                         || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
                 ) : buttons.imports.env.site == 'perplexity' ? (
-                    document.documentElement.dataset.colorScheme == 'dark' ?
+                    buttons.imports.getScheme() == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
                       : 'oklch(var(--text-color-100)/var(--tw-text-opacity))'
                 ) : 'currentColor'

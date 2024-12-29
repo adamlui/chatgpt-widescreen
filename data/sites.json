@@ -1,8 +1,8 @@
 {
   "chatgpt": {
     "availFeatures": [
-      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader", "notifDisabled",
-      "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen"
+      "blockSpamDisabled", "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
+      "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen"
     ],
     "selectors": {
       "btns": {
@@ -17,8 +17,8 @@
   },
   "perplexity": {
     "availFeatures": [
-      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled", "ncbDisabled",
-      "tcbDisabled", "wideScreen"
+      "blockSpamDisabled", "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled",
+      "ncbDisabled", "tcbDisabled", "wideScreen"
     ],
     "hasSidebar": true,
     "selectors": {

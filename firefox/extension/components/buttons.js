@@ -52,7 +52,7 @@ window.buttons = {
             && this.imports.chatbar.get()?.nextElementSibling
             && !this.imports.env.tallChatbar
         ) this.imports.env.tallChatbar = true
-        const validBtnTypes = this.getValidTypes()
+        const validBtnTypes = this.getTypes.valid()
         const bOffset = this.imports.env.site == 'poe' ? 1.1
                       : this.imports.env.site == 'perplexity' ? -13
                       : this.imports.env.tallChatbar ? 31 : -8.85
@@ -97,7 +97,7 @@ window.buttons = {
 
         // Init elems
         const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
-        const btnTypesToInsert = this.getValidTypes()
+        const btnTypesToInsert = this.getTypes.valid()
         const parentToInsertInto = (
             /chatgpt|openai/.test(this.imports.env.site) ? chatbarDiv.nextElementSibling || chatbarDiv
           : chatbarDiv.lastChild ) // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
@@ -183,14 +183,16 @@ window.buttons = {
         }
     },
 
-    getValidTypes() { // used in .create() + .insert() + .getVisibleTypes()
-        return this.types.filter(type =>
-            !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
-         && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
-    },
+    getTypes: {
+        valid() { // used in buttons.create() + buttons.insert() + this.visible()
+            return buttons.types.filter(type =>
+                !(type == 'fullWindow' && !buttons.imports.sites[buttons.imports.env.site].hasSidebar)
+             && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
+        },
 
-    getVisibleTypes() { // used in update.tooltip() + chatbar.tweak() for horizontal math
-        return this.getValidTypes().filter(type => !(type == 'newChat' && config.ncbDisabled)) },
+        visible() { // used in update.tooltip() + chatbar.tweak() for horizontal math
+            return this.valid().filter(type => !(type == 'newChat' && config.ncbDisabled)) }
+    },
 
     animate() { // used in sync.configToUI() on Button Animations toggle-on
         const btnHoverStyles = new RegExp(`.${this.class}:hover\\s*\\{([^}]*)\\}`, 'm')

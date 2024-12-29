@@ -81,7 +81,7 @@
             if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
             else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
                 const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                const visibleBtnTypes = [...buttons.getVisibleTypes(), 'send']
+                const visibleBtnTypes = [...buttons.getTypes.visible(), 'send']
                 visibleBtnTypes.forEach(type =>
                     widths[type] = buttons[type]?.getBoundingClientRect().width
                             || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
@@ -200,7 +200,7 @@
         },
 
         tooltip(btnType) { // text & position
-            const visibleBtnTypes = buttons.getVisibleTypes()
+            const visibleBtnTypes = buttons.getTypes.visible()
             const ctrAddend = ( env.site == 'perplexity' ? ( location.pathname == '/' ? 94 : 105 )
                               : env.site == 'poe' ? 35 : 13 ) +25
             const spreadFactor = env.site == 'perplexity' ? 26.5 : env.site == 'poe' ? 28 : 30.55

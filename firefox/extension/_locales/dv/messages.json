@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "ފޮރުވިފައި ހުރި ފޫޓަރ" },
   "menuLabel_btnAnimations": { "message": "ބަޓަން އެނިމޭޝަންސް" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },
-  "menuLabel_blockSpam": { "message": "ސްޕޭމް ބެނާތައް ބްލޮކްކުރުން" },
+  "menuLabel_blockSpam": { "message": "ސްޕޭމް ބްލޮކް" },
   "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "menuLabel_donate": { "message": "ހަދިޔާ ފޮނުއްވުން އެދެމެވެ" },
   "menuLabel_disabled": { "message": "ނުކުޅެދުންތެރިކަން ހުންނަ މީހުން (އެކްސްޓެންޝަން އިންސްޓޯލްކޮށްފައި)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Жашыруун Footer" },
   "menuLabel_btnAnimations": { "message": "Кнопка анимациялары" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
-  "menuLabel_blockSpam": { "message": "Спам баннерлерин бөгөттөө" },
+  "menuLabel_blockSpam": { "message": "Спам-блок" },
   "menuLabel_about": { "message": "Апплет жөнүндө" },
   "menuLabel_donate": { "message": "Сураныч, кайрымдуулук жөнөтүңүз" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },

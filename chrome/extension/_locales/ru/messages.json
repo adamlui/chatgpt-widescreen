@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Скрытый подвал" },
   "menuLabel_btnAnimations": { "message": "Анимация кнопок" },
   "menuLabel_modeNotifs": { "message": "Уведомления о Режиме" },
-  "menuLabel_blockSpam": { "message": "Блокировка спам-баннеров" },
+  "menuLabel_blockSpam": { "message": "Список блокируемого спама" },
   "menuLabel_about": { "message": "Шифр" },
   "menuLabel_donate": { "message": "Пожалуйста, отправьте пожертвование" },
   "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },

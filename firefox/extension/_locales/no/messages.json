@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Skjult bunntekst" },
   "menuLabel_btnAnimations": { "message": "Knappeanimasjoner" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
-  "menuLabel_blockSpam": { "message": "Blokker spambannere" },
+  "menuLabel_blockSpam": { "message": "Spamblokkering" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Vennligst send en donasjon" },
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },

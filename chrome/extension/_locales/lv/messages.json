@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Slēptā kājene" },
   "menuLabel_btnAnimations": { "message": "Pogu animācijas" },
   "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },
-  "menuLabel_blockSpam": { "message": "Bloķēt surogātpasta banerus" },
+  "menuLabel_blockSpam": { "message": "Surogātpasta bloķēšana" },
   "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_donate": { "message": "Lūdzu, nosūtiet ziedojumu" },
   "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },

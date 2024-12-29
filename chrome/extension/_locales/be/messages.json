@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Схаваны ніжні калантытул" },
   "menuLabel_btnAnimations": { "message": "Анімацыя кнопак" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
-  "menuLabel_blockSpam": { "message": "Блакаваць спам-банэры" },
+  "menuLabel_blockSpam": { "message": "Блок спаму" },
   "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_donate": { "message": "Калі ласка, дашліце ахвяраванне" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },

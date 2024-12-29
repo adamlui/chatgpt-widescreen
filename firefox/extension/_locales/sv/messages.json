@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Dölj sidfot" },
   "menuLabel_btnAnimations": { "message": "Knappanimeringar" },
   "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
-  "menuLabel_blockSpam": { "message": "Blockera skräppostbanners" },
+  "menuLabel_blockSpam": { "message": "Spam-blocklista" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Vänligen skicka en donation" },
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },

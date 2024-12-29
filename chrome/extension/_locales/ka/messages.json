@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Ფარული ქვესართი" },
   "menuLabel_btnAnimations": { "message": "Ღილაკების ანიმაციები" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },
-  "menuLabel_blockSpam": { "message": "Სპამის ბანერების დაბლოკვა" },
+  "menuLabel_blockSpam": { "message": "Სპამის ბლოკი" },
   "menuLabel_about": { "message": "პროგრამის შესახებ" },
   "menuLabel_donate": { "message": "Გაიღეთ შემოწირულობა" },
   "menuLabel_disabled": { "message": "Გამორთულია (დამონტაჟებულია გაფართოება)" },

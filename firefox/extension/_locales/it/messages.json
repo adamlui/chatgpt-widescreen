@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Nascondi Footer" },
   "menuLabel_btnAnimations": { "message": "Animazioni dei pulsanti" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
-  "menuLabel_blockSpam": { "message": "Blocca i banner spam" },
+  "menuLabel_blockSpam": { "message": "Blocco Spam " },
   "menuLabel_about": { "message": "Informazioni generali" },
   "menuLabel_donate": { "message": "Invia una donazione" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },

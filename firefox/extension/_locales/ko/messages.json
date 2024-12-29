@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "숨겨진 바닥글" },
   "menuLabel_btnAnimations": { "message": "버튼 애니메이션" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
-  "menuLabel_blockSpam": { "message": "스팸 배너 차단" },
+  "menuLabel_blockSpam": { "message": "스팸 차단" },
   "menuLabel_about": { "message": "소개" },
   "menuLabel_donate": { "message": "기부금을 보내주세요" },
   "menuLabel_disabled": { "message": "사용 중지됨 (확장 설치됨)" },

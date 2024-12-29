@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Gizli Altbilgi" },
   "menuLabel_btnAnimations": { "message": "Düymə Animasiyaları" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
-  "menuLabel_blockSpam": { "message": "Spam bannerlərini bloklayın" },
+  "menuLabel_blockSpam": { "message": "Spam Bloku" },
   "menuLabel_about": { "message": "Haqqında" },
   "menuLabel_donate": { "message": "İanə göndərin" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },

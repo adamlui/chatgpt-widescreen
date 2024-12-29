@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Yashirin altbilgi" },
   "menuLabel_btnAnimations": { "message": "Tugma animatsiyalari" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
-  "menuLabel_blockSpam": { "message": "Spam-bannerlarni bloklash" },
+  "menuLabel_blockSpam": { "message": "Spamni bloklash" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "menuLabel_donate": { "message": "Iltimos, xayriya yuboring" },
   "menuLabel_disabled": { "message": "O'chirilgan (kengaytma o'rnatilgan)" },

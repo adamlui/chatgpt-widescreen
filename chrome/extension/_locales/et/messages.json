@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Peidetud jalus" },
   "menuLabel_btnAnimations": { "message": "Nupu animatsioonid" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },
-  "menuLabel_blockSpam": { "message": "Blokeeri rämpsposti bännerid" },
+  "menuLabel_blockSpam": { "message": "Rämpsposti blokeerimine" },
   "menuLabel_about": { "message": "Info" },
   "menuLabel_donate": { "message": "Saada annetus" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Gizli Alt Bilgi" },
   "menuLabel_btnAnimations": { "message": "Düğme animasyonları" },
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
-  "menuLabel_blockSpam": { "message": "Spam Bannerları Engelle" },
+  "menuLabel_blockSpam": { "message": "Spam'ı engelle" },
   "menuLabel_about": { "message": "Hakkımızda" },
   "menuLabel_donate": { "message": "Lütfen bağış gönderin" },
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },

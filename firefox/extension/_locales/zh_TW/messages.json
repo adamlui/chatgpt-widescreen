@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "隱藏頁尾" },
   "menuLabel_btnAnimations": { "message": "按鈕動畫" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
-  "menuLabel_blockSpam": { "message": "封鎖垃圾訊息橫幅" },
+  "menuLabel_blockSpam": { "message": "垃圾郵件封鎖" },
   "menuLabel_about": { "message": "關於" },
   "menuLabel_donate": { "message": "請發送捐款" },
   "menuLabel_disabled": { "message": "已禁用（擴展已安裝）" },

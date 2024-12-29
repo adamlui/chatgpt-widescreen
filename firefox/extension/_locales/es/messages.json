@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Ocultar pie de página" },
   "menuLabel_btnAnimations": { "message": "Animaciones de botones" },
   "menuLabel_modeNotifs": { "message": "Notificaciones de modo" },
-  "menuLabel_blockSpam": { "message": "Bloquear banners de spam" },
+  "menuLabel_blockSpam": { "message": "Bloquear spam" },
   "menuLabel_about": { "message": "Acerca de" },
   "menuLabel_donate": { "message": "Por favor, envíe una donación" },
   "menuLabel_disabled": { "message": "Deshabilitado (extensión instalada)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "གསང་བའི་རྐང་པང་།" },
   "menuLabel_btnAnimations": { "message": "གློག་ཀླད་དང་ཁ་པར །" },
   "menuLabel_modeNotifs": { "message": "མ་དབྱིབས་སྒྲིག་བཀོད །" },
-  "menuLabel_blockSpam": { "message": "སེམསཔམ་དར་ཆགས །" },
+  "menuLabel_blockSpam": { "message": "Spam block" },
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_donate": { "message": "ཁྱོད་ཀྱིས་སྦྱིན་པ་གཏོང་འདོད་དམ །" },
   "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },

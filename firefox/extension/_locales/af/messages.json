@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Versteekte Voetskrif" },
   "menuLabel_btnAnimations": { "message": "Knoppie Animasies" },
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
-  "menuLabel_blockSpam": { "message": "Blok spam baniere" },
+  "menuLabel_blockSpam": { "message": "Spamblok" },
   "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_donate": { "message": "Stuur asseblief 'n donasie" },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "लुकेको फुटर" },
   "menuLabel_btnAnimations": { "message": "बटन एनिमेसनहरू" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
-  "menuLabel_blockSpam": { "message": "स्प्याम ब्यानरहरू ब्लक गर्नुहोस्" },
+  "menuLabel_blockSpam": { "message": "स्प्याम ब्लक" },
   "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_donate": { "message": "कृपया दान पठाउनुहोस्" },
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },

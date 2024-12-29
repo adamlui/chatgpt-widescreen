@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Kaŝita piedfingro" },
   "menuLabel_btnAnimations": { "message": "Butonaj animacioj" },
   "menuLabel_modeNotifs": { "message": "Mode Sciigoj" },
-  "menuLabel_blockSpam": { "message": "Bloki spam- standardojn" },
+  "menuLabel_blockSpam": { "message": "Spambloko" },
   "menuLabel_about": { "message": "Alproksimigas" },
   "menuLabel_donate": { "message": "Sendu al mi donacon" },
   "menuLabel_disabled": { "message": "Malŝaltita (etendo instalita)" },

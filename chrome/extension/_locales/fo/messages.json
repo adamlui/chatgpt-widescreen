@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Skjult fótaskrivi" },
   "menuLabel_btnAnimations": { "message": "Knappur animatiónir" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
-  "menuLabel_blockSpam": { "message": "Blokkar spam bannarar" },
+  "menuLabel_blockSpam": { "message": "Spamblokkur" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_donate": { "message": "Send okkum eina gávu" },
   "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },

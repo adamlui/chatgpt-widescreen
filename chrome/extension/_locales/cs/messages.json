@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Skrytá zápatí" },
   "menuLabel_btnAnimations": { "message": "Animace tlačítek" },
   "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
-  "menuLabel_blockSpam": { "message": "Blokovat spamové bannery" },
+  "menuLabel_blockSpam": { "message": "Blokování spamu" },
   "menuLabel_about": { "message": "O" },
   "menuLabel_donate": { "message": "Prosíme o zaslání daru" },
   "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },

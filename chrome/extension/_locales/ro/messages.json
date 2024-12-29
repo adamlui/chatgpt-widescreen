@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Subsol ascuns" },
   "menuLabel_btnAnimations": { "message": "Animații cu butoane" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
-  "menuLabel_blockSpam": { "message": "Blochează bannerele de spam" },
+  "menuLabel_blockSpam": { "message": "Blocaj spam" },
   "menuLabel_about": { "message": "Despre" },
   "menuLabel_donate": { "message": "Te rugăm să trimiți o donație" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "የተደበቀ እግር" },
   "menuLabel_btnAnimations": { "message": "አዝራር እነማዎች" },
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },
-  "menuLabel_blockSpam": { "message": "የአይፈለጌ መልእክት ሰንደቅ አላማዎችን አግድ" },
+  "menuLabel_blockSpam": { "message": "አይፈለጌ መልእክት አግድ" },
   "menuLabel_about": { "message": "ስለ" },
   "menuLabel_donate": { "message": "እባክዎን ልገሳ ይላኩ" },
   "menuLabel_disabled": { "message": "የተጠናከረ (የተጫነ)" },

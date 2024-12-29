@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Rodapé oculto" },
   "menuLabel_btnAnimations": { "message": "Animações do Botão" },
   "menuLabel_modeNotifs": { "message": "Notificações de Modo" },
-  "menuLabel_blockSpam": { "message": "Bloquear banners de spam" },
+  "menuLabel_blockSpam": { "message": "Lista de bloqueios por spam" },
   "menuLabel_about": { "message": "Quem somos" },
   "menuLabel_donate": { "message": "Envie um donativo" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },

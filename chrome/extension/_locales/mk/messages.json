@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Скриена подножје" },
   "menuLabel_btnAnimations": { "message": "Анимации со копчиња" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },
-  "menuLabel_blockSpam": { "message": "Блокирај ги банерите за несакана пошта" },
+  "menuLabel_blockSpam": { "message": "Блок за несакана пошта" },
   "menuLabel_about": { "message": "За" },
   "menuLabel_donate": { "message": "Испратете донација" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },

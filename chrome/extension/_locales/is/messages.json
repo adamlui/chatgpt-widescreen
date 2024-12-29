@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Falinn fótur" },
   "menuLabel_btnAnimations": { "message": "Hnappahreyfimyndir" },
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
-  "menuLabel_blockSpam": { "message": "Loka á ruslpóstborða" },
+  "menuLabel_blockSpam": { "message": "Blokk fyrir ruslpóst" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_donate": { "message": "Vinsamlegast sendu styrk" },
   "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },

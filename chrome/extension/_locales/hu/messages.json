@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Rejtett lábléc" },
   "menuLabel_btnAnimations": { "message": "Gomb animációk" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
-  "menuLabel_blockSpam": { "message": "Spam bannerek blokkolása" },
+  "menuLabel_blockSpam": { "message": "Levélszemétblokk" },
   "menuLabel_about": { "message": "A" },
   "menuLabel_donate": { "message": "Kérjük, küldjön adományt" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },

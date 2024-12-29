@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Ausgeblendete Fußzeile" },
   "menuLabel_btnAnimations": { "message": "Schaltflächenanimationen" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },
-  "menuLabel_blockSpam": { "message": "Spam-Banner blockieren" },
+  "menuLabel_blockSpam": { "message": "Spam-Block" },
   "menuLabel_about": { "message": "Über" },
   "menuLabel_donate": { "message": "Bitte spenden Sie" },
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "پاورقی پنهان" },
   "menuLabel_btnAnimations": { "message": "انیمیشن های دکمه" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
-  "menuLabel_blockSpam": { "message": "بنرهای هرزنامه را مسدود کنید" },
+  "menuLabel_blockSpam": { "message": "بلوک اسپم" },
   "menuLabel_about": { "message": "درباره" },
   "menuLabel_donate": { "message": "لطفا کمک مالی بفرستید" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },

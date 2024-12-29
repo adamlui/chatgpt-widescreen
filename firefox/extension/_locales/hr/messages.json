@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_btnAnimations": { "message": "Animacije gumba" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
-  "menuLabel_blockSpam": { "message": "Blokiraj bannere neželjene pošte" },
+  "menuLabel_blockSpam": { "message": "Blokiranje neželjene pošte" },
   "menuLabel_about": { "message": "O nama" },
   "menuLabel_donate": { "message": "Pošaljite donaciju" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },

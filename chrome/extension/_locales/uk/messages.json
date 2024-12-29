@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Прихований нижній колонтитул" },
   "menuLabel_btnAnimations": { "message": "Анімація кнопок" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },
-  "menuLabel_blockSpam": { "message": "Блокувати спам-банери" },
+  "menuLabel_blockSpam": { "message": "Блокування спаму" },
   "menuLabel_about": { "message": "Про нас" },
   "menuLabel_donate": { "message": "Будь ласка, надішліть пожертву" },
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },

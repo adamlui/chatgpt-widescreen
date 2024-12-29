@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "CAA -" },
   "menuLabel_btnAnimations": { "message": "Knäppchen Animatiounen" },
   "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
-  "menuLabel_blockSpam": { "message": "Spam-Banner blockéieren" },
+  "menuLabel_blockSpam": { "message": "Spam Block" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_donate": { "message": "Schéckt w.e.g. eng Donatioun" },
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },

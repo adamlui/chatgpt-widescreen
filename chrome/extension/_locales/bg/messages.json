@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Скрит долен колонтитул" },
   "menuLabel_btnAnimations": { "message": "Анимации с бутони" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
-  "menuLabel_blockSpam": { "message": "Блокиране на банери за спам" },
+  "menuLabel_blockSpam": { "message": "Блок за спам" },
   "menuLabel_about": { "message": "Относно" },
   "menuLabel_donate": { "message": "Моля, изпратете дарение" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },

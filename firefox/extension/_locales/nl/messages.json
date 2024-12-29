@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Verborgen voettekst" },
   "menuLabel_btnAnimations": { "message": "Knopanimaties" },
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
-  "menuLabel_blockSpam": { "message": "Blokkeer spambanners" },
+  "menuLabel_blockSpam": { "message": "Spam-blokkeerlijst" },
   "menuLabel_about": { "message": "Over" },
   "menuLabel_donate": { "message": "Stuur een donatie" },
   "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },

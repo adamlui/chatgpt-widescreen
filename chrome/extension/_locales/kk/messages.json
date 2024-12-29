@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_btnAnimations": { "message": "Түймешік анимациялары" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
-  "menuLabel_blockSpam": { "message": "Спам баннерлерін бұғаттау" },
+  "menuLabel_blockSpam": { "message": "Спам блогы" },
   "menuLabel_about": { "message": "Туралы" },
   "menuLabel_donate": { "message": "Қайырымдылық жасауыңызды сұраймыз" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },

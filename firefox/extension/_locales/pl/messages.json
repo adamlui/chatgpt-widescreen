@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Ukryta stopka" },
   "menuLabel_btnAnimations": { "message": "Animacje przycisków" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
-  "menuLabel_blockSpam": { "message": "Blokuj banery spamu" },
+  "menuLabel_blockSpam": { "message": "Blokada spamu" },
   "menuLabel_about": { "message": "Około" },
   "menuLabel_donate": { "message": "Prześlij darowiznę" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },

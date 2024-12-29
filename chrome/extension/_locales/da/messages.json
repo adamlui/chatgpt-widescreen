@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Skjult sidefod" },
   "menuLabel_btnAnimations": { "message": "Knapanimationer" },
   "menuLabel_modeNotifs": { "message": "Tilstandsmeddelelser" },
-  "menuLabel_blockSpam": { "message": "Bloker spam-bannere" },
+  "menuLabel_blockSpam": { "message": "Liste over spamblokeringer" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Send en donation" },
   "menuLabel_disabled": { "message": "Deaktiveret (udvidelse installeret)" },

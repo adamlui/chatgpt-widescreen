@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "បាតកថា ដែល បាន លាក់" },
   "menuLabel_btnAnimations": { "message": "ចលនា ប៊ូតុង" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
-  "menuLabel_blockSpam": { "message": "ទប់ស្កាត់បដាសារឥតបានការ" },
+  "menuLabel_blockSpam": { "message": "ទប់ស្កាត់សារឥតបានការ" },
   "menuLabel_about": { "message": "អំពី" },
   "menuLabel_donate": { "message": "សូមផ្ញើការបរិច្ចាគ" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },

@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Ezkutuko orri-oina" },
   "menuLabel_btnAnimations": { "message": "Botoien animazioak" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
-  "menuLabel_blockSpam": { "message": "Blokeatu spam pankartak" },
+  "menuLabel_blockSpam": { "message": "Spam blokea" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_donate": { "message": "Mesedez, bidali dohaintza" },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },

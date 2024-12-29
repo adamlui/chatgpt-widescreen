@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Natago nga Footer" },
   "menuLabel_btnAnimations": { "message": "Mga Animasyon sa Button" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
-  "menuLabel_blockSpam": { "message": "I-block ang Mga Spam Banner" },
+  "menuLabel_blockSpam": { "message": "Pag-block sa Spam" },
   "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_donate": { "message": "Palihug ipadala ang usa ka donasyon" },
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },

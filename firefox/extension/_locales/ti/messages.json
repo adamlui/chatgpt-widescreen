@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "እተሓብአ ፉተር" },
   "menuLabel_btnAnimations": { "message": "ኣኒሜሽን ኣኒሜሽን" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },
-  "menuLabel_blockSpam": { "message": "ናይ ስፓም ባነር ዕጽዋ" },
+  "menuLabel_blockSpam": { "message": "ናይ ስፓም ዕጽዋ" },
   "menuLabel_about": { "message": "ብዛዕባ" },
   "menuLabel_donate": { "message": "ብኽብረትካ በጃኻ ውህበት ልኢኽካ" },
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },

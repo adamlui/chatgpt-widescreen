@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Թաքնված ստորագիր" },
   "menuLabel_btnAnimations": { "message": "Կոճակի անիմացիաներ" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
-  "menuLabel_blockSpam": { "message": "Արգելափակել սպամ պաստառները" },
+  "menuLabel_blockSpam": { "message": "Սպամի արգելափակում" },
   "menuLabel_about": { "message": "Մանրամասն" },
   "menuLabel_donate": { "message": "Խնդրում ենք նվիրատվություն ուղարկել" },
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },

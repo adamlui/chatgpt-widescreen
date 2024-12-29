@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Footer moħbija" },
   "menuLabel_btnAnimations": { "message": "Animazzjonijiet bil-Buttuni" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
-  "menuLabel_blockSpam": { "message": "Imblokka l-Banners tal-Ispam" },
+  "menuLabel_blockSpam": { "message": "Blokk tal-Ispam" },
   "menuLabel_about": { "message": "Dwar" },
   "menuLabel_donate": { "message": "Jekk jogħġbok ibgħat donazzjoni" },
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },

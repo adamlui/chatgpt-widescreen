@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "Пинҳонии Пойгоҳи Пинҳон" },
   "menuLabel_btnAnimations": { "message": "Аниматсияҳои тугма" },
   "menuLabel_modeNotifs": { "message": "Огоҳиномаҳо" },
-  "menuLabel_blockSpam": { "message": "Бекор кардани баннерҳои спам" },
+  "menuLabel_blockSpam": { "message": "Блоки спам" },
   "menuLabel_about": { "message": "Дар бораи" },
   "menuLabel_donate": { "message": "Mangyaring magpadala ng isang pagpap" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },

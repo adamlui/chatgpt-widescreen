@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "فۆتەری پوختە" },
   "menuLabel_btnAnimations": { "message": "Bişkojka Anîmasyonên" },
   "menuLabel_modeNotifs": { "message": "ئاگاداریە کردن لە هەرێم" },
-  "menuLabel_blockSpam": { "message": "Bannerên Spam asteng bikin" },
+  "menuLabel_blockSpam": { "message": "Block Spam" },
   "menuLabel_about": { "message": "دەربارەی" },
   "menuLabel_donate": { "message": "Ji kerema xwe bexşê bişînin" },
   "menuLabel_disabled": { "message": "ناچالاککراو (پەرەپێدەیشن دامەزرابرا)" },

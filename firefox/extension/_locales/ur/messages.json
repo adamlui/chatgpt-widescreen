@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "پوشیدہ فوٹر" },
   "menuLabel_btnAnimations": { "message": "بٹن کی حرکت پذیری" },
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز (Mode Notifications)" },
-  "menuLabel_blockSpam": { "message": "اسپام بینرز بلاک کریں" },
+  "menuLabel_blockSpam": { "message": "اسپام بلاک" },
   "menuLabel_about": { "message": "متعلق" },
   "menuLabel_donate": { "message": "براہ کرم ایک عطیہ بھیجیں" },
   "menuLabel_disabled": { "message": "غیر فعال (توسیع انسٹال ہے)" },

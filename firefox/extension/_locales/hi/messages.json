@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "छिपे हुए पाद लेख" },
   "menuLabel_btnAnimations": { "message": "बटन एनिमेशन" },
   "menuLabel_modeNotifs": { "message": "मोड अधिसूचनाएँ" },
-  "menuLabel_blockSpam": { "message": "स्पैम बैनर ब्लॉक करें" },
+  "menuLabel_blockSpam": { "message": "स्पैम ब्लॉक" },
   "menuLabel_about": { "message": "परिचय" },
   "menuLabel_donate": { "message": "कृपया दान भेजें" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित है)" },

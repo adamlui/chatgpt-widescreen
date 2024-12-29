@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "છુપાયેલ ફુટર" },
   "menuLabel_btnAnimations": { "message": "બટન એનિમેશન" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
-  "menuLabel_blockSpam": { "message": "સ્પામ બેનરો બ્લોક કરો" },
+  "menuLabel_blockSpam": { "message": "સ્પામ બ્લોક" },
   "menuLabel_about": { "message": "માહિતી" },
   "menuLabel_donate": { "message": "કૃપા કરીને દાન મોકલો" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },

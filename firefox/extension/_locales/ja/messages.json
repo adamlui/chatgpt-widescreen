@@ -10,7 +10,7 @@
   "menuLabel_hiddenFooter": { "message": "非表示のフッター" },
   "menuLabel_btnAnimations": { "message": "ボタンアニメーション" },
   "menuLabel_modeNotifs": { "message": "モードの通知" },
-  "menuLabel_blockSpam": { "message": "スパムバナーをブロック" },
+  "menuLabel_blockSpam": { "message": "スパムブロックリスト" },
   "menuLabel_about": { "message": "詳細" },
   "menuLabel_donate": { "message": "寄付を送ってください" },
   "menuLabel_disabled": { "message": "無効化（拡張機能がインストールされています）" },

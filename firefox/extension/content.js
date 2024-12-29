@@ -372,8 +372,8 @@
 
         // Maintain button visibility on nav
         if (config.extensionDisabled) return
-        else if (!document.getElementById('fullScreen-btn') && chatbar.get() && buttons.status != 'inserting') {
-            buttons.status = 'missing' ; buttons.insert() }
+        else if (!document.getElementById('fullScreen-btn') && chatbar.get() && buttons.state.status != 'inserting') {
+            buttons.state.status = 'missing' ; buttons.insert() }
 
         // Maintain button colors + Widescreen button visibility on snowflake chatgpt.com
         if (env.site == 'chatgpt') {

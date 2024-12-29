@@ -4,6 +4,11 @@ window.buttons = {
     types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
     get class() { return `${this.imports.app.name.replace(/ /g, '-').toLowerCase()}-btn` },
 
+    state: {
+        status: 'missing', // or 'inserting', 'inserted'
+        hasFadedIn: false // to prevent fade-in on subsequent .insert()s till .remove()
+    },
+
     imports: {
         import(deps) { // { app, chatbar, env, getScheme, sites, toggle, tooltipDiv, tweaksStyle }
             for (const depName in deps) this[depName] = deps[depName] }
@@ -87,8 +92,8 @@ window.buttons = {
     },
 
     insert() {
-        if (this.status?.startsWith('insert') || document.getElementById('fullScreen-btn')) return
-        this.status = 'inserting' ; if (!this.wideScreen) this.create()
+        if (this.state.status?.startsWith('insert') || document.getElementById('fullScreen-btn')) return
+        this.state.status = 'inserting' ; if (!this.wideScreen) this.create()
 
         // Init elems
         const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
@@ -104,19 +109,23 @@ window.buttons = {
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
-            btn.style.opacity = 0 // hide for fade-in
-            parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert buttons
-            setTimeout(() => btn.style.opacity = 1, (idx +1) *30) // fade-in
+            parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert button
+            if (!this.state.hasFadedIn) { // fade-in
+                btn.style.opacity = 0 ; setTimeout(() => btn.style.opacity = 1, (idx +1) *30)
+                if (idx == btnTypesToInsert.length -1) // final button scheduled for fade-in
+                    this.state.hasFadedIn = true // ...so disable fade-in on subsequent .insert()s till .remove()
+            }
         })
         parentToInsertInto.insertBefore(this.imports.tooltipDiv, elemToInsertBefore) // add tooltips
         setTimeout(() => this.imports.chatbar.tweak(), 1) ; this.update.color()
-        this.status = 'inserted'
+        this.state.status = 'inserted'
     },
 
     remove() {
         if (!this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
         this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltipDiv?.remove()
-        this.status = 'missing' // ensure next buttons.insert() doesn't return early
+        this.state.status = 'missing' // ensure next .insert() doesn't return early
+        this.state.hasFadedIn = false // ensure next .insert() fades in buttons
     },
 
     update: {
@@ -174,7 +183,7 @@ window.buttons = {
         }
     },
 
-    getValidTypes() { // used in this.create() + this.insert() + this.getVisibleTypes()
+    getValidTypes() { // used in .create() + .insert() + .getVisibleTypes()
         return this.types.filter(type =>
             !(type == 'fullWindow' && !this.imports.sites[this.imports.env.site].hasSidebar)
          && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))

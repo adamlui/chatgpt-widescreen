@@ -168,14 +168,17 @@
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
                           + '[class^="@lg/thread"]:has(button[data-testid=close-button]),' // hide Get Plus spam banner
                                 + '[class*=bottom]:has(button[data-testid=close-button]) { display: none }'
-                    ) : env.site == 'perplexity' ?
-                        `.${buttons.class} { transition: none }` : '' )) // prevent chatbar btn animation on hover-off
+                    ) : env.site == 'perplexity' ? (
+                            'div.absolute.w-full:has(svg[data-icon="xmark"]) { display: none }' // hide homepage spam banners
+                          + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
+                    ) : '' )
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                   + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
                   + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
                   + ( config.btnAnimationsDisabled ? '' : // zoom chatbar buttons on hover
                         `.${buttons.class}:hover { transform: scale(${ env.site == 'poe' ? 1.15 : 1.285}) }` )
+                )
             },
 
             wideScreen() {

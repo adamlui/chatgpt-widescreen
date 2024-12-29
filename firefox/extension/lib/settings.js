@@ -40,6 +40,10 @@ window.settings = {
         get notifDisabled() { return { type: 'toggle',
             label: settings.getMsg('menuLabel_modeNotifs'),
             helptip: settings.getMsg('helptip_modeNotifs')
+        }},
+        get blockSpamDisabled() { return { type: 'toggle',
+            label: settings.getMsg('menuLabel_blockSpam'),
+            helptip: settings.getMsg('helptip_blockSpam')
         }}
     },
 

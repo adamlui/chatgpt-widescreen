@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode Anglais" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "A yeke sara si ChatGPT aga nzoni mingi na yâ ti tele ti azo kue nga na yâ ti tele ti azo kue nga na yâ ti tele ti azo kue. A yeke sala nga kua na ndo ti perplexity.ai + poe.com!" },
+  "appDesc": { "message": "A yeke sara si ChatGPT ayeke na a-écran ti kota/ti-écran/ti-écran. A yeke nga na ndo ti perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "A yeke sara kua na Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },

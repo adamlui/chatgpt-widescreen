@@ -145,7 +145,7 @@
     // Export dependencies to BUTTONS
     const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' }),
           tweaksStyle = dom.create.style()
-    buttons.imports.import({ app, chatbar, env, getScheme, sites, toggle, tooltipDiv, tweaksStyle })
+    buttons.imports.import({ app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle })
 
     const update = {
 

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Modh sgrion farsaing" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Cuir Widescreen + Fullscreen modhan gu chatgpt.com + perplexity.ai + poe.com airson barrachd fhaicinn" },
+  "appDesc": { "message": "Ag àrdachadh ChatGPT le modhan spama bacaidh farsaing / làn / làn-sgrìn +. Cuideachd ag obair air perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Uinneag nas coileanta" },
   "menuLabel_tallerChatbox": { "message": "Bogsa-còmhraidh nas àirde" },
   "menuLabel_widerChatbox": { "message": "Bocs cabadaich nas fharsainge" },

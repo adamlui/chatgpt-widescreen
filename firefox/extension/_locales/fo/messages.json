@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Legg Widescreen + Fullscreen til chatgpt.com + perplexity.ai + poe.com fyri at fáa betri sjónarmið" },
+  "appDesc": { "message": "Tað bøtir um ChatGPT við breiðum/fullum/høgum skermum + spamblock-tilgongdum. Arbeiði eisini á perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Hægri Chatbox" },
   "menuLabel_widerChatbox": { "message": "Breiðari chatbox" },

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Geniş Ekran Modu" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Gelişmiş görüntüleme için chatgpt.com + perplexity.ai + poe.com'a Geniş Ekran + Tam Ekran modları ekler" },
+  "appDesc": { "message": "ChatGPT'yi geniş/tam/uzun ekran + spamblock modlarıyla geliştirir. Ayrıca perplexity.ai + poe.com üzerinde de çalışır!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzun Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha Geniş Sohbet Kutusu" },

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Mode Layar Lebar ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Menambahkan mode Layar Lebar + Layar Penuh ke chatgpt.com + perplexity.ai + poe.com untuk tampilan yang lebih baik" },
+  "appDesc": { "message": "Meningkatkan ChatGPT dengan mode layar lebar/penuh/tinggi + spamblock. Juga berfungsi di perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Lebih tinggi Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kotak Obrolan yang Lebih Luas" },

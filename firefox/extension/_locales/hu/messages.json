@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT szélesvásznú mód" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Szélesvásznú + teljes képernyős módokat ad a chatgpt.com + perplexity.ai + poe.com oldalakhoz a jobb megtekinthetőség érdekében" },
+  "appDesc": { "message": "Javítja a ChatGPT-t széles/teljes/magas képernyős + spamblokk módokkal. A perplexity.ai + poe.com oldalon is működik!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Magasabb chatbox" },
   "menuLabel_widerChatbox": { "message": "Szélesebb chatbox" },

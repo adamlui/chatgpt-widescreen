@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Tryb szerokoekranowy ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Dodaje tryby panoramiczne + pełnoekranowe do chatgpt.com + perplexity.ai + poe.com dla lepszego oglądania" },
+  "appDesc": { "message": "Ulepsza ChatGPT o tryby szeroki/pełny/wysoki ekran + spamblock. Działa również na perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Szersze okno czatu" },

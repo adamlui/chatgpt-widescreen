@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT ሰፊ ማያ ገጽ ሁነታ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ለተሻሻለ እይታ ወደ chatgpt.com + perplexity.ai + poe.com ሰፊ ስክሪን + ሙሉ ስክሪን ሁነታዎችን ያክላል" },
+  "appDesc": { "message": "ChatGPTን በሰፊ/ሙሉ/ረጅም ስክሪን + አይፈለጌ መልእክት ማገድን ያሻሽላል። እንዲሁም perplexity.ai + poe.com ላይ ይሰራል!" },
   "menuLabel_fullerWins": { "message": "ሙሉ ዊንዶውስ" },
   "menuLabel_tallerChatbox": { "message": "ታለር ቻትቦክስ" },
   "menuLabel_widerChatbox": { "message": "ሰፋ ያለ የውይይት ሳጥን" },

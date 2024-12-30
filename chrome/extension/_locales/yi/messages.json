@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT ווידעסקרעען מאָדע" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "מוסיף Widescreen + Fullscreen מאָדעס צו chatgpt.com + perplexity.ai + poe.com פֿאַר ימפּרוווד וויוינג" },
+  "appDesc": { "message": "ימפּרוווז ChatGPT מיט ברייט / פול / הויך פאַרשטעלן + ספּאַמבלאָקק מאָדעס. אַרבעט אויך אויף perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "פולער Windows" },
   "menuLabel_tallerChatbox": { "message": "העכער טשאַטבאָקס" },
   "menuLabel_widerChatbox": { "message": "ווידער טשאַטבאָקס" },

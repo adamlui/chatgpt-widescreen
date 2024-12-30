@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT မျက်နှာပြင်ကျယ်မုဒ်" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "တိုးမြှင့်ကြည့်ရှုဘို့ chatgpt.com + perplexity.ai + poe.com မှ Widescreen + Fullscreen ကို Modes သာထည့်သွင်း" },
+  "appDesc": { "message": "မျက်နှာပြင်ကျယ်/အပြည့်/အမြင့်+စပမ်းဘလောက်မုဒ်များဖြင့် ChatGPT ကို မြှင့်တင်ပေးသည်။ perplexity.ai + poe.com တွင်လည်း လုပ်ဆောင်သည်။" },
   "menuLabel_fullerWins": { "message": "ပြည့်စုံသော ပြတင်းပေါက်များ" },
   "menuLabel_tallerChatbox": { "message": "မြင့်တဲ့ စကားပြောဘုတ်" },
   "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },

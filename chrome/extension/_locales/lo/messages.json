@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ໂໝດຫນ້າຈໍກວ້າງ ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ເພີ່ມ Widescreen + ໂຫມດ Fullscreen ກັບ chatgpt.com + perplexity.ai + poe.com ສໍາ ລັບການເບິ່ງທີ່ເພີ່ມຂື້ນ" },
+  "appDesc": { "message": "ປັບປຸງ ChatGPT ດ້ວຍ ຫນ້າ ຈໍກວ້າງ/ເຕັມ/ສູງ + ໂຫມດ spamblock. ຍັງເຮັດວຽກຢູ່ໃນ perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "ກ່ອງສົນທະນາທີ່ກວ້າງຂວາງ" },

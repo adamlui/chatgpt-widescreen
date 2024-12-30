@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Kuwonjezera Widescreen + Fullscreen modes kuti chatgpt.com + perplexity.ai + poe.com kwa kuonera bwino" },
+  "appDesc": { "message": "Imakulitsa ChatGPT yokhala ndi mitundu yayikulu/yathunthu/yatali-skrini + ya spamblock. Komanso imagwira ntchito pa perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Mawindo" },
   "menuLabel_tallerChatbox": { "message": "Zambiri zaife" },
   "menuLabel_widerChatbox": { "message": "Lumikizanani nafe" },

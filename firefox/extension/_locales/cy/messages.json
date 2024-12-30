@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Modd Sgrin Eang" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Yn ychwanegu moddau Sgrin Lawn + Sgrin Lawn i chatgpt.com + perplexity.ai + poe.com ar gyfer gwylio gwell" },
+  "appDesc": { "message": "Yn gwella ChatGPT gyda moddau bloc sbam + sgrin lydan / lawn / uchel. Hefyd yn gweithio ar perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Ffenestri Lawn" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Blwch Sgwrsio Ehangach" },

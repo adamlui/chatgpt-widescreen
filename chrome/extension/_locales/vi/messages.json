@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Chế độ màn hình rộng ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Thêm chế độ Màn hình rộng + Toàn màn hình vào chatgpt.com + perplexity.ai + poe.com để xem nâng cao" },
+  "appDesc": { "message": "Cải thiện ChatGPT với chế độ màn hình rộng/toàn màn hình/cao + chế độ chặn thư rác. Cũng hoạt động trên perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Cửa sổ Fuller" },
   "menuLabel_tallerChatbox": { "message": "Hộp trò chuyện cao hơn" },
   "menuLabel_widerChatbox": { "message": "Hộp trò chuyện rộng hơn" },

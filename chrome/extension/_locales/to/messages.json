@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Tanaki atu ʻa e Widescreen + Fullscreen ki he chatgpt.com + perplexity.ai + poe.com ke toe lahi ange hono mamataʻi" },
+  "appDesc": { "message": "Fakalahi ʻa e ChatGPT ʻaki ʻa e ngaahi founga kehekehe/kakato/maʻolunga + spamblock. Ngaue foki ʻi he perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Ngaahi matapa sioʻata ʻo e kau foo" },
   "menuLabel_tallerChatbox": { "message": "Maʻolunga ange Chatbox" },
   "menuLabel_widerChatbox": { "message": "Lahi ange Chatbox" },

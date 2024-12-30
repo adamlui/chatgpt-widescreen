@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen rejimi" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Geniş görüntü üçün chatgpt.com + perplexity.ai + poe.com ünvanına Geniş ekran + Tam ekran rejimi əlavə edir" },
+  "appDesc": { "message": "Geniş/tam/hündür ekran + spam bloklama rejimləri ilə ChatGPT-ni təkmilləşdirir. Həmçinin perplexity.ai + poe.com üzərində işləyir!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha geniş söhbət qutusu" },

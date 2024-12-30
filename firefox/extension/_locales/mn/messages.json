@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Өргөн Дэлгэц" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Өргөн дэлгэц + Бүтэн дэлгэцийн горимуудыг нэмсэн chatgpt.com + perplexity.ai + poe.com Сайжруулсан үзэхийн тулд" },
+  "appDesc": { "message": "Өргөн/бүрэн/өндөр дэлгэц + спамблок горимоор ChatGPT-ийг сайжруулдаг. Мөн perplexity.ai + poe.com дээр ажилладаг!" },
   "menuLabel_fullerWins": { "message": "Windows-ийн Windows" },
   "menuLabel_tallerChatbox": { "message": "Chater" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },

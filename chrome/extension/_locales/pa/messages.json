@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ਚੈਟਜੀਪੀਟੀ ਵਾਈਡਸਕ੍ਰੀਨ ਮੋਡ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ਵਿਸਕ੍ਰੀਨ + ਫੁੱਲਸਕ੍ਰੀਨ ਮੋਡ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ chatgpt.com + perplexity.ai + poe.com enhanced ਦੇਖਣ ਲਈ" },
+  "appDesc": { "message": "ਚੌੜਾ/ਪੂਰੀ/ਲੰਬੀ-ਸਕ੍ਰੀਨ + ਸਪੈਮਬਲਾਕ ਮੋਡਾਂ ਨਾਲ ਚੈਟਜੀਪੀਟੀ ਨੂੰ ਵਧਾਉਂਦਾ ਹੈ। perplexity.ai + poe.com 'ਤੇ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ!" },
   "menuLabel_fullerWins": { "message": "ਫੁਲਰ ਵਿੰਡੋਜ਼" },
   "menuLabel_tallerChatbox": { "message": "ਚੈਟਬਾਕਸ ਚੈਟਬਾਕਸ" },
   "menuLabel_widerChatbox": { "message": "ਚੌੜਾ ਚੈਟਬਾਕਸ" },

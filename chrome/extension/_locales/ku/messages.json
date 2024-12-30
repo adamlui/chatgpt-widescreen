@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT چالاکی ڕووناک" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ji bo dîtina pêşkeftî modên Widescreen + Fullscreen li chatgpt.com + perplexity.ai + poe.com zêde dike" },
+  "appDesc": { "message": "ChatGPT bi awayên berfire/tevaj/bilind + modên spamblokê zêde dike. Di heman demê de li ser perplexity.ai + poe.com jî dixebite!" },
   "menuLabel_fullerWins": { "message": "پەنجەی پڕۆژەیی" },
   "menuLabel_tallerChatbox": { "message": "پەیامبەری بەرزتر" },
   "menuLabel_widerChatbox": { "message": "پەیامبەری ڕووناکتر" },

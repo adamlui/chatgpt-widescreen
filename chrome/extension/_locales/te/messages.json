@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT వైడ్ స్క్రీన్ మోడ్" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "మెరుగైన వీక్షణ కోసం Widescreen + Fullscreen మోడ్ ‌ లను chatgpt.com + perplexity.ai + poe.com కు జోడిస్తుంది" },
+  "appDesc": { "message": "విస్తృత/పూర్తి/పొడవైన స్క్రీన్ + స్పాంబ్‌లాక్ మోడ్‌లతో ChatGPT ని మెరుగుపరుస్తుంది. perplexity.ai + poe.com లో కూడా పని చేస్తుంది!" },
   "menuLabel_fullerWins": { "message": "పూర్తి విండోస్" },
   "menuLabel_tallerChatbox": { "message": "పొడవైన చాట్‌బాక్స్" },
   "menuLabel_widerChatbox": { "message": "విస్తృత చాట్ ‌ బాక్స్" },

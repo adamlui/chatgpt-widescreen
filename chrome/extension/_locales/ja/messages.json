@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPTワイドスクリーンモード" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Chatgpt.com + perplexity.ai + poe.comにワイドスクリーン+フルスクリーンモードを追加して、表示を強化" },
+  "appDesc": { "message": "ワイド/フル/トールスクリーン+スパンブロックモードで ChatGPT を強化します。perplexity.ai + poe.com でも動作します！" },
   "menuLabel_fullerWins": { "message": "より広いウィンドウ" },
   "menuLabel_tallerChatbox": { "message": "より高いチャットボックス" },
   "menuLabel_widerChatbox": { "message": "ワイドチャットボックス" },

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen ප්‍රකාරය" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "වැඩි දියුණු කළ නැරඹීම සඳහා chatgpt.com + perplexity.ai + poe.com වෙත පුළුල් තිර + පූර්ණ තිර මාතයන් එක් කරයි" },
+  "appDesc": { "message": "පුළුල්/පූර්ණ/උස තිරය + spamblock මාතයන් සමග ChatGPT වැඩි දියුණු කරයි. perplexity.ai + poe.com හි ද ක් ‍ රියා කරයි!" },
   "menuLabel_fullerWins": { "message": "Fuller වින්ඩෝස්" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "පුළුල් චැට්බොක්ස්" },

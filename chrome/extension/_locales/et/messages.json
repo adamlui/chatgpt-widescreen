@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT laiekraanirežiim" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Lisab täiustatud vaatamiseks laiekraani + täisekraani režiimid saidile chatgpt.com + perplexity.ai + poe.com" },
+  "appDesc": { "message": "Täiustab ChatGPT-d laiekraani/täisekraani/kõrge ekraani + spämmiblokeeringu režiimidega. Töötab ka aadressil perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Pikem vestluskast" },
   "menuLabel_widerChatbox": { "message": "Laiem vestluskast" },

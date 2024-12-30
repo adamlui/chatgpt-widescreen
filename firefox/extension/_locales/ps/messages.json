@@ -1,7 +1,7 @@
 {
   "appName": { "message": "د WIFT چارټ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "د پرمختللي لید لپاره د chatgpt.com + perplexity.ai + poe.com ته د Widescreen + د بشپړ سکرین حالتونه اضافه کوي" },
+  "appDesc": { "message": "ChatGPT د پراخه/بشپړ/اوچت سکرین + سپمبلاک حالتونو سره وده کوي. په perplexity.ai + poe.com کې هم کار کوي!" },
   "menuLabel_fullerWins": { "message": "بشپړ Windows" },
   "menuLabel_tallerChatbox": { "message": "د Valler" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },

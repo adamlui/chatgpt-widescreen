@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ናይ ChatGPT ሰፊሕ ስክሪን ኣገባብ" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Widescreen + Fullscreen modes to chatgpt.com + perplexity.ai + poe.com ንተመሓየሸ ምርኣይ" },
+  "appDesc": { "message": "ChatGPT ብሰፊሕ/ምሉእ/ነዊሕ ማያ + ስፓምቦክ ሞድታት የደልድሎ ። ኣብ perplexity.ai + poe.com እውን ይሰርሕ!" },
   "menuLabel_fullerWins": { "message": "መስኮታት ምሉእ" },
   "menuLabel_tallerChatbox": { "message": "Undo-type" },
   "menuLabel_widerChatbox": { "message": "ሰፊሕ ቻትቦክስ" },

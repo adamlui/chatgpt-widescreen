@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT वाइडस्क्रीन मोड" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "उन्नत देखने के लिए chatgpt.com + perplexity.ai + poe.com में वाइडस्क्रीन + फुलस्क्रीन मोड जोड़ता है" },
+  "appDesc": { "message": "विस्तृत/पूर्ण/लम्बी - स्क्रीन + स्पैमब्लॉक मोड के साथ चैटजीपीटी को बढ़ाता है। Perplexity.ai + poe.com पर भी काम करता है!" },
   "menuLabel_fullerWins": { "message": "बड़ी विंडोज़" },
   "menuLabel_tallerChatbox": { "message": "लंबी चैटबॉक्स" },
   "menuLabel_widerChatbox": { "message": "व्यापक चैटबॉक्स" },

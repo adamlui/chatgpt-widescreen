@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT platekrāna režīms" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Pievieno Widescreen + Fullscreen režīmus chatgpt.com + perplexity.ai + poe.com uzlabotai apskatei" },
+  "appDesc": { "message": "Uzlabo ChatGPT ar plata/pilna/augsta ekrāna + surogātpasta bloķēšanas režīmiem. Darbojas arī vietnē perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Plašāka tērzētava" },

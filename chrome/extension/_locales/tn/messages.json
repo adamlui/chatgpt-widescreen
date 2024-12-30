@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Widescreen Mode" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "E tsenya mefuta ya Widescreen + Fullscreen mo chatgpt.com + perplexity.ai + poe.com go e leba ka tsela e e tokafaditsweng" },
+  "appDesc": { "message": "E tokafatsa ChatGPT ka ditsela tse di atlhameng/tse di tletseng/tse di telele tsa sekerini + tsa spamblock. Gape o bereka mo perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Difensetere tse di Tletseng" },
   "menuLabel_tallerChatbox": { "message": "Lebokoso la Dipuisano le Legolo" },
   "menuLabel_widerChatbox": { "message": "Lebokoso le Legolo la Dipuisano" },

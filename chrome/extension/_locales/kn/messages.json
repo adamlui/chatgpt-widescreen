@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT ವೈಡ್ಸ್ಕ್ರೀನ್ ಮೋಡ್" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "ವರ್ಧಿತ ವೀಕ್ಷಣೆಗಾಗಿ Chatgpt.com + perplexity.ai + poe.com ಗೆ ವೈಡ್‌ಸ್ಕ್ರೀನ್ + ಫುಲ್‌ಸ್ಕ್ರೀನ್ ಮೋಡ್‌ಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ" },
+  "appDesc": { "message": "ವೈಡ್/ಫುಲ್/ಟಾಲ್-ಸ್ಕ್ರೀನ್ + ಸ್ಪಾಂಬ್ಲಾಕ್ ಮೋಡ್‌ಗಳೊಂದಿಗೆ ChatGPT ಅನ್ನು ವರ್ಧಿಸುತ್ತದೆ. perplexity.ai + poe.com ನಲ್ಲಿ ಸಹ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ!" },
   "menuLabel_fullerWins": { "message": "ಪೂರ್ಣ ಕಿಟಕಿಗಳು" },
   "menuLabel_tallerChatbox": { "message": "ಎತ್ತರದ ಚಾಟ್ಬಾಕ್ಸ್" },
   "menuLabel_widerChatbox": { "message": "ವಿಶಾಲ ಚಾಟ್ ಬಾಕ್ಸ್" },

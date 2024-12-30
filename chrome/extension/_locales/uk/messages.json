@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Режим Широкого Екрану ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Додає широкоекранний + повноекранний режими до chatgpt.com + perplexity.ai + poe.com для розширеного перегляду" },
+  "appDesc": { "message": "Покращує ChatGPT з широким/повним/високим екраном + режими блокування спам-блокування. Також працює на perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Більш Широкі Вікна" },
   "menuLabel_tallerChatbox": { "message": "Вища Чат-коробка" },
   "menuLabel_widerChatbox": { "message": "Ширше вікно чату" },

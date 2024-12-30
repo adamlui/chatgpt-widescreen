@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT-laajakuvaustila" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Lisää laajakuvanäytön + koko näytön tilat chatgpt.com: iin + perplexity.ai + poe.com: iin parantaaksesi katselua" },
+  "appDesc": { "message": "Parantaa ChatGPT:tä laaja/koko/korkea näyttö + roskapostitiloilla. Toimii myös sivustolla perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Leveämpi keskusteluruutu" },

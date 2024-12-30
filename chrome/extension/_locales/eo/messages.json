@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BabilejoGPT Larĝekrana reĝimo" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Aldonas Widescreen + Fullscreen-reĝimojn al chatgpt.com + perplexity.ai + poe.com por plibonigita spektado" },
+  "appDesc": { "message": "Plibonigas ChatGPT per larĝa/plena/alta ekrano + spambloka reĝimoj. Ankaŭ funkcias ĉe perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Pli larĝa retbabilejo" },

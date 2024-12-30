@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Mode Plein écran de ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ajoute les modes Grand écran + Plein écran à chatgpt.com + perplexity.ai + poe.com pour une meilleure visualisation" },
+  "appDesc": { "message": "Améliore ChatGPT avec les modes écran large/plein écran/grand écran + anti-spam. Fonctionne également sur perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fenêtres plus larges" },
   "menuLabel_tallerChatbox": { "message": "Boîte de chat plus haute" },
   "menuLabel_widerChatbox": { "message": "Boîte de discussion plus large" },

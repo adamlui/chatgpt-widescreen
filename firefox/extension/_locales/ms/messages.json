@@ -1,7 +1,7 @@
 {
   "appName": { "message": "Mod Skrin Lebar ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Menambah mod Skrin Lebar + Skrin Penuh ke chatgpt.com + perplexity.ai + poe.com untuk tontonan yang dipertingkatkan" },
+  "appDesc": { "message": "Meningkatkan ChatGPT dengan mod skrin lebar/penuh/tinggi + sekatan spam. Juga berfungsi pada perplexity.ai + poe.com!" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Kotak Sembang Lebih Tinggi" },
   "menuLabel_widerChatbox": { "message": "Kotak Sembang Lebih Luas" },

@@ -1,7 +1,7 @@
 {
   "appName": { "message": "གཟུགས་བརྙན།" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "རྒྱ་ཆེཝ་/ཆ་ཚང་/གསལ་གཞི་མཐོ་དྲགས་ + ཨིས་པམ་བཀག་ཐབས་ཐབས་ལམ་ཚུ་དང་གཅིག་ཁར་ ཅཱཊི་ཇི་པི་ཊི་ཡར་འཕེལ་འབདཝ་ཨིན། perplexity.ai + poe.com ནང་ལུ་ཡང་ལཱ་འབདཝ་ཨིན།" },
+  "appDesc": { "message": "རྒྱ་ཆེཝ་/ཆ་ཚང་/མཐོ་བའི་གསལ་གཞི་ཐབས་ལམ་ཚུ་དང་གཅིག་ཁར་ ཅཱཊི་ཇི་པི་ཊི་ཡར་འཕེལ་འབདཝ་ཨིན། perplexity.ai + poe.com ནང་ལུ་ཡང་ལཱ་འབདཝ་ཨིན།" },
   "menuLabel_fullerWins": { "message": "སྒོ་སྒྲིག་གི་རྒྱ་ཚད།" },
   "menuLabel_tallerChatbox": { "message": "ཊེམ་པེལེཊི།" },
   "menuLabel_widerChatbox": { "message": "སྦྲེལ་མཐུད།" },

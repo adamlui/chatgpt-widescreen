@@ -2,7 +2,7 @@
   "appName": { "message": "מצב מסך רחב של ChatGPT" },
   "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "משפר את  ChatGPT עם מצבי מסך רחב/מלא/גבוה + חסימת ספאם. עובד גם על  perplexity.ai + poe.com!" },
-  "menuLabel_fullerWins": { "message": "Fuller Windows" },
+  "menuLabel_fullerWins": { "message": "חלונות מלאים יותר" },
   "menuLabel_tallerChatbox": { "message": "צ'טבוקס גבוה יותר" },
   "menuLabel_widerChatbox": { "message": "תיבת צ'אט רחבה יותר" },
   "menuLabel_newChatBtn": { "message": "לחצן צ'אט חדש" },

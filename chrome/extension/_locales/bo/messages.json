@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT གསལ་གཞི་རྒྱ་ཆེ་བའི་ཐབས་ལམ།" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "གློག་བརྙན་རྒྱ་ཆེ་བ། ཆ་ཚང་། མཐོ་པོ། + བརྡ་འཕྲིན་བཀག་སྡོམ་གྱི་ཐབས་ལམ་སྤྱད་དེ་ChatGPT ཡར་རྒྱས་གཏོང་བ། ད་དུང་perplexity.ai + poe.com ཐོག་ལས་ཀ་བྱེད་ཀྱི་ཡོད།" },
+  "appDesc": { "message": "གསལ་གཞི་རྒྱ་ཆེ་བ། ཆ་ཚང་། མཐོ་བའི་ཐབས་ལམ་དང་མཉམ་དུ་ChatGPT ཡར་རྒྱས་གཏོང་བ། ད་དུང་perplexity.ai + poe.com ཐོག་ལས་ཀ་བྱེད་ཀྱི་ཡོད།" },
   "menuLabel_fullerWins": { "message": "སྒེའུ་ཁུང་སྒོ་རྒྱག་པ" },
   "menuLabel_tallerChatbox": { "message": "ཟ་ཁང་།" },
   "menuLabel_widerChatbox": { "message": "ཆེ་ཆུང་གི་སྒེའུ་ཁུང་།" },

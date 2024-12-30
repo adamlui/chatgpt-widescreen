@@ -171,7 +171,7 @@
                                 + '[class*=bottom]:has(button[data-testid=close-button]) { display: none }' )) // logged-out
                     ) : env.site == 'perplexity' ? (
                             ( config.blockSpamDisabled ? '' : // hide homepage spam banners
-                                'div.absolute.w-full:has(svg[data-icon="xmark"]) { display: none }' )
+                                'div.absolute.w-full:has(svg[data-icon=xmark]) { display: none }' )
                           + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
                     ) : '' )
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically

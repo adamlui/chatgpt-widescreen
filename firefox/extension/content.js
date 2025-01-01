@@ -324,8 +324,10 @@
         + 'background-color: rgba(0,0,0,0.71) ; padding: 5px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;'
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'box-shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;' // drop shadow
-        + 'position: absolute ; bottom: 58px ; opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ;' // visibility
-        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + 'position: absolute ; bottom: 58px ; opacity: 0 ; z-index: 9999 ;' // visibility
+        + 'transition: opacity 0.1s ; -webkit-transition: opacity 0.1s ; -moz-transition: opacity 0.1s ;'
+            + '-ms-transition: opacity 0.1s ; -o-transition: opacity 0.1s ;'
+        + 'user-select: none ; webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }'
     ))
 
     // Apply general style TWEAKS

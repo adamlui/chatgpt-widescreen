@@ -59,6 +59,7 @@ window.buttons = {
         const rOffset = this.imports.env.site == 'poe' ? -6.5
                       : this.imports.env.site == 'perplexity' ? -4
                       : this.imports.env.tallChatbar ? 48 : -0.25
+        const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'
         validBtnTypes.forEach(async (btnType, idx) => {
             const btn = this[btnType] = dom.create.elem('div')
             btn.id = `${btnType}-btn` // for toggle.tooltip()
@@ -66,7 +67,9 @@ window.buttons = {
             Object.assign(btn.style, {
                 position: this.imports.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
                 right: `${ rOffset + idx * bOffset }px`, // position left of prev button
-                transition: 'transform 0.15s ease, opacity 0.5s ease' // for tweaksStyle's :hover + .insert()'s fade-in
+                transition: transitionStyles, // for tweaksStyle's :hover + .insert()'s fade-in
+                    '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
+                    '-o-transition': transitionStyles, '-ms-transition': transitionStyles
             })
             if (this.imports.env.tallChatbar) btn.style.bottom = '8.85px'
             else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25

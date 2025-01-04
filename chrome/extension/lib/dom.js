@@ -31,19 +31,6 @@ window.dom = {
             .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     },
 
-    getLoadedElem(selector, timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
-        const isLoadedPromise = new Promise(resolve => {
-            const elem = document.querySelector(selector)
-            if (elem) resolve(elem)
-            else new MutationObserver((_, obs) => {
-                const elem = document.querySelector(selector)
-                if (elem) { obs.disconnect() ; resolve(elem) }
-            }).observe(document.body, { childList: true, subtree: true })
-        })
-        return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
-    },
-
     fillStarryBG(targetNode) { // requires https://assets.aiwebextensions.com/styles/rising-stars/css/<black|white>.min.css
         if (targetNode.querySelector('[id*=stars]')) return
         const starsDivsContainer = document.createElement('div')
@@ -56,5 +43,18 @@ window.dom = {
             starsDivsContainer.append(starsDiv)
         })
         targetNode.prepend(starsDivsContainer)
+    },
+
+    getLoadedElem(selector, timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
+        const isLoadedPromise = new Promise(resolve => {
+            const elem = document.querySelector(selector)
+            if (elem) resolve(elem)
+            else new MutationObserver((_, obs) => {
+                const elem = document.querySelector(selector)
+                if (elem) { obs.disconnect() ; resolve(elem) }
+            }).observe(document.body, { childList: true, subtree: true })
+        })
+        return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     }
 };

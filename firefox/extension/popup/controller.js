@@ -27,7 +27,7 @@
         fade() {
 
             // Update toolbar icon
-            const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+            const iconDimensions = [16, 32, 48, 64, 128], iconPaths = {}
             iconDimensions.forEach(dimension => iconPaths[dimension] = `../icons/${
                 config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png` )
             chrome.action.setIcon({ path: iconPaths })

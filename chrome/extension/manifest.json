@@ -12,8 +12,7 @@
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "64": "icons/icon64.png",
-    "128": "icons/icon128.png",
-    "223": "icons/icon223.png"
+    "128": "icons/icon128.png"
   },
   "permissions": [ "activeTab", "storage" ],
   "action": { "default_popup": "popup/index.html" },

@@ -31,13 +31,13 @@
 <br><br>
 
 <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-badge">
-    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
+    <img width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
+    <img width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-badge">
-    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
+    <img width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://gm.chatgptwidescreen.com">
-    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+    <img width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
@@ -45,19 +45,19 @@
 
 **ChatGPT 宽屏模式** 为 ChatGPT 添加了宽屏/全屏/高屏 + 垃圾邮件拦截模式，通过减少滚动和消除混乱来增强您的聊天会话，创造更身临其境的观看体验。
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📺 演示
 
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://media.chatgptwidescreen.com/images/screenshots/demo-vid/thumbnail.png">
+    <img src="https://assets.chatgptwidescreen.com/images/screenshots/demo-vid/thumbnail.png">
 </a>
 
 </div><br>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 💊 好处
 
@@ -71,40 +71,40 @@
 
 🌐 适用于: **chatgpt.com** + **perplexity.ai** + **poe.com**
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🗨️ 用户反馈
 
-#### <a href="https://gm.chatgptwidescreen.com/feedback"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon25.png"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></picture></a> Greasy Fork:
+#### <a href="https://gm.chatgptwidescreen.com/feedback"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon25.png"><img width=12 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></picture></a> Greasy Fork:
 
-<a href="https://gm.chatgptwidescreen.com/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
+<a href="https://gm.chatgptwidescreen.com/feedback"><img width=999 src="https://assets.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
-#### <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=14 src="https://media.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon16.png"></a> Chrome Web Store:
+#### <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=14 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon16.png"></a> Chrome Web Store:
 
-<a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/chrome-web-store.png"></a>
+<a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=999 src="https://assets.chatgptwidescreen.com/images/reviews/chrome-web-store.png"></a>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🚀 如何安装
 
-### <img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://assets.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://assets.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://assets.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
 1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link))
 
 2. 访问 [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 
-*专业提示：更容易访问扩展开关, (1) 点击 <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png"> 在分机名称旁边.*
+*专业提示：更容易访问扩展开关, (1) 点击 <img height=12 width=12 src="https://assets.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://assets.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png"> 在分机名称旁边.*
 
 <div align="center">
 
-<img width=268 src="https://media.chatgptwidescreen.com/images/screenshots/chrome/pin-instructions/zh-cn.png">
-<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/chrome/toolbar-menu/zh-cn.png">
+<img width=268 src="https://assets.chatgptwidescreen.com/images/screenshots/chrome/pin-instructions/zh-cn.png">
+<img width=288 src="https://assets.chatgptwidescreen.com/images/screenshots/chrome/toolbar-menu/zh-cn.png">
 
 </div>
 
 #
 
-### <img height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"><img height=16 src="https://assets.aiwebextensions.com/images/icons/platforms/scriptcat/icon16.png"> Greasemonkey 用户脚本:
+### <img height=17 src="https://assets.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://assets.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"><img height=16 src="https://assets.aiwebextensions.com/images/icons/platforms/scriptcat/icon16.png"> Greasemonkey 用户脚本:
 
 1. 安装用户脚本管理器：
     - ScriptCat 为了 [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) 或 [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
@@ -119,15 +119,15 @@
 <div align="center">
 
 <picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/lightmode.png">
-    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/darkmode.png">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/lightmode.png">
+    <img src="https://assets.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/darkmode.png">
 </picture>
 
 *注意：由于全窗口模式隐藏了侧边栏，请按“+”开始新的聊天*
 
 </div>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## ⚡ 依赖关系
 
@@ -148,7 +148,7 @@ ChatGPT 寬屏模式 依賴於強大的 [chatgpt.js](https://github.com/KudoAI/c
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🌐 兼容性
 
@@ -169,13 +169,13 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <div align="center">
 
 <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
+    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
+    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://gm.chatgptwidescreen.com">
-    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
+    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
@@ -184,7 +184,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 
 </div>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🧠 贡献者
 
@@ -201,10 +201,10 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <a href="https://github.com/RdJNL"><img width=46 title="@RdJNL" src="https://avatars.githubusercontent.com/u/8948329?first-contrib=2023.6.6-buttons-invisible-alert"></img></a>
 <a href="https://github.com/wheregone"><img width=46 title="@wheregone" src="https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea"></img></a>
 <a href="https://github.com/Aubermean"><img width=46 title="@Aubermean" src="https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea"></img></a>
-<a href="https://greasyfork.org/users/1210535-%E5%A4%A7%E8%81%AA%E6%98%8E-h4ha"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.5-plus-buttons-distorted-bug-report" title="大聪明 (H4Ha)"></picture></a>
+<a href="https://greasyfork.org/users/1210535-%E5%A4%A7%E8%81%AA%E6%98%8E-h4ha"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.5-plus-buttons-distorted-bug-report" title="大聪明 (H4Ha)"></picture></a>
 <a href="https://github.com/comonetso"><img width=46 title="@comonetso" src="https://avatars.githubusercontent.com/u/76943037?first-contrib=2023.11.10-gizmo-ui-dark-mode-button-colors-broken-bug-report"></img></a>
-<a href="https://greasyfork.org/users/1220444-some-guy-9283"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.19-hide-chat-btn-request" title="Some Guy 9283"></picture></a>
-<a href="https://greasyfork.org/users/1182535-jianmin-liang"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.27-new-ui-report" title="jianmin liang"></picture></a>
+<a href="https://greasyfork.org/users/1220444-some-guy-9283"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.19-hide-chat-btn-request" title="Some Guy 9283"></picture></a>
+<a href="https://greasyfork.org/users/1182535-jianmin-liang"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.11.27-new-ui-report" title="jianmin liang"></picture></a>
 <a href="https://github.com/jaysqvl"><img width=46 title="@jaysqvl" src="https://avatars.githubusercontent.com/u/67295085?first-contrib=2023.11.28-new-ui-report"></img></a>
 <a href="https://github.com/KamiyaMinoru"><img width=46 title="@KamiyaMinoru" src="https://avatars.githubusercontent.com/u/78710607?first-contrib=2023.11.29-win7-edge-copy-bug-report"></img></a>
 <a href="https://github.com/SwissFred57"><img width=46 title="@SwissFred57" src="https://avatars.githubusercontent.com/u/123299068?first-contrib=2023.11.30-unworking-wider-chatbox-bug-report"></img></a>
@@ -213,15 +213,15 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <a href="https://github.com/Yash-Singh1"><img width=46 title="@Yash-Singh1" src="https://avatars.githubusercontent.com/u/53054099?first-contrib=2023.2.3-added-eslint-plugin-userscripts"></img></a>
 <a href="https://github.com/asgeirtj"><img width=46 title="@asgeirtj" src="https://avatars.githubusercontent.com/u/27446620?first-contrib=2023.4.4-esc-to-stop-generating-idea"></img></a>
 <a href="https://github.com/OhneNot"><img width=46 title="@OhneNot" src="https://avatars.githubusercontent.com/u/14350406?first-contrib=2024.5.3-update-manifest-to-match-new-chatgpt.com-domain-alert"></img></a>
-<a href="https://greasyfork.org/users/1296464-brian-fennell"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.3-new-chatgpt.com-domain-alert" title="Brian Fennell"></picture></a>
-<a href="https://greasyfork.org/users/1009954-syz0528"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.5-poe-widescreen-stopped-working-alert" title="syz0528"></picture></a>
+<a href="https://greasyfork.org/users/1296464-brian-fennell"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.3-new-chatgpt.com-domain-alert" title="Brian Fennell"></picture></a>
+<a href="https://greasyfork.org/users/1009954-syz0528"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.5-poe-widescreen-stopped-working-alert" title="syz0528"></picture></a>
 <a href="https://github.com/urorwell"><img width=46 title="@urorwell" src="https://avatars.githubusercontent.com/u/22183609?first-contrib=2024.5.15-stopped-working-in-chatgpt-4o-alert"></img></a>
 <a href="https://github.com/l-jessie"><img width=46 title="@l-jessie" src="https://avatars.githubusercontent.com/u/158301265?first-contrib=2024.5.15-stopped-working-on-chatgpt.com-alert"></img></a>
 <a href="#"><img width=46 title="Emily Y" src="https://lh3.googleusercontent.com/a-/ALV-UjUSy2Z_D3FeaVBTnVl2mb9lC7y1UQX7mH4BZBsgzDbeNyMYPmg=s46-w46-h46?first-contrib=2024.5.15-stopped-working-on-chatgpt.com-alert"></img></a>
 <a href="#"><img width=46 title="Chris Wade" src="https://lh3.googleusercontent.com/a-/ALV-UjVhSNbcZPS5Z-VwZrZ1wX2lu7b4gMjs8HUgS_J_RJv695D0qu1T=s46-w46-h46?first-contrib=2024.5.15-stopped-working-on-chatgpt.com-alert"></img></a>
 <a href="https://github.com/eltociear"><img width=46 title="@eltociear" src="https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.6.8-corrected-typo-in-comment"></img></a>
 <a href="https://github.com/auxten"><img width=46 title="@auxten" src="https://avatars.githubusercontent.com/u/240147?first-contrib=2024.6.14-auto-focus-chatbar-idea"></img></a>
-<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.6.27-portuguese-translation-corrections" title="hacker09"></picture></a>
+<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=46 src="https://assets.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.6.27-portuguese-translation-corrections" title="hacker09"></picture></a>
 <a href="#"><img width=46 title="哦妈咪唛唛哄" src="https://lh3.googleusercontent.com/a-/ALV-UjXXqPAjJZb584F0VxUThtrsaOVBZCjODpY-zUNZIQWTyU9Lsns=s46-w46-h46?first-contrib=2024.8.26-stopped-working-on-chatgpt.com-alert"></img></a>
 <a href="https://github.com/svan-b"><img width=46 title="@svan-b" src="https://avatars.githubusercontent.com/u/155944537?first-contrib=2024.8.27-sidebar-update-testing"></img></a>
 <a href="https://github.com/Jeff-Zzh"><img width=46 title="@Jeff-Zzh" src="https://avatars.githubusercontent.com/u/74002352?first-contrib=2024.8.28-sidebar-update-testing"></img></a>
@@ -233,22 +233,22 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <a href="https://github.com/Enissay"><img width=46 title="@Enissay" src="https://avatars.githubusercontent.com/u/794673?first-contrib=2024.9.11-button-css-bug-report-confirmation"></img></a>
 <a href="https://github.com/mrbacky"><img width=46 title="@mrbacky" src="https://avatars.githubusercontent.com/u/55503325?first-contrib=2024.9.11-button-css-bug-report"></img></a>
 <a href="https://github.com/AliasUruz"><img width=46 title="@AliasUruz" src="https://avatars.githubusercontent.com/u/130197125?first-contrib=2024.12.1-new-chat-btn-stopped-working-bug-report"></img></a>
-<img title="Chrome Web Store Team" src="https://media.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon48.png?e2a66b7&first-contrib=2024.12.7-hidden-footer-stopped-working-email">
+<img title="Chrome Web Store Team" src="https://assets.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon48.png?e2a66b7&first-contrib=2024.12.7-hidden-footer-stopped-working-email">
 <a href="#"><img width=47 title="Copilot Autofix" src="https://github.githubassets.com/favicons/favicon.svg?first-contrib=2024.12.9-cmd-injection-autofix"></a>
 <a href="https://github.com/dependabot"><img width=46 title="Dependabot" src="https://avatars.githubusercontent.com/in/29110"></img></a>
 <a href="https://github.com/ImgBotApp"><img width=46 title="@ImgBotApp" src="https://avatars.githubusercontent.com/u/31427850"></img></a>
-<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/platforms/chatgpt/black-on-white/icon50.png"><img width=46 title="ChatGPT" src="https://media.chatgptwidescreen.com/images/icons/platforms/chatgpt/white-on-gray/icon50.png"></img></picture></a>
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptwidescreen.com/images/icons/platforms/chatgpt/black-on-white/icon50.png"><img width=46 title="ChatGPT" src="https://assets.chatgptwidescreen.com/images/icons/platforms/chatgpt/white-on-gray/icon50.png"></img></picture></a>
 
 </div><br>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/ai-web-extensions
 <br><br>
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📜 相关应用
 
@@ -273,7 +273,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 [自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-infinity/discussions)
 
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> /
 <a href="#top">回到顶部 ↑</a>

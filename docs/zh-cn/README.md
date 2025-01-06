@@ -169,13 +169,13 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <div align="center">
 
 <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
+    <img alt="[获取 Chrome 版本]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
+    <img alt="[获取 Edge 版本]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+    <img alt="[获取 Firefox 版本]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://gm.chatgptwidescreen.com">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
+    <img alt="[获取 Greasemonkey 版本]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 

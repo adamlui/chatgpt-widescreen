@@ -23,7 +23,7 @@
 <br><br>
 
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+    <img alt="[Get for Firefox]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
 
@@ -110,7 +110,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 <div align="center">
 
 <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+    <img alt="[Get for Firefox]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
 

@@ -125,9 +125,9 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 <div align="center">
 
 <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
+    <img alt="[Get for Chrome]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
+    <img alt="[Get for Edge]" height=75 src="https://assets.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 
 <br>
 

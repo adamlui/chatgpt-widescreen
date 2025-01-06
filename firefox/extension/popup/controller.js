@@ -12,7 +12,7 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    icons.imports.import({ app }) // for src's using app.urls.mediaHost
+    icons.imports.import({ app }) // for src's using app.urls.assetHost
 
     // Define FUNCTIONS
 

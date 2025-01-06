@@ -12,7 +12,7 @@
     },
     "gitHub": "https://github.com/adamlui/chatgpt-widescreen",
     "greasyFork": "https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode",
-    "mediaHost": "https://assets.chatgptwidescreen.com",
+    "assetHost": "https://assets.chatgptwidescreen.com",
     "relatedExtensions": "https://aiwebextensions.com",
     "review": {
       "chromeWebStore": "https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews",

@@ -53,7 +53,7 @@ window.dom = {
             else new MutationObserver((_, obs) => {
                 const elem = document.querySelector(selector)
                 if (elem) { obs.disconnect() ; resolve(elem) }
-            }).observe(document.body, { childList: true, subtree: true })
+            }).observe(document.documentElement, { childList: true, subtree: true })
         })
         return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     }

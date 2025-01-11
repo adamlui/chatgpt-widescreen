@@ -50,19 +50,20 @@ jobs:
 
               # Get the latest commit timestamps for both files
               ff_timestamp=$(git log -1 --format="%ct" -- "$ff_file" 2>/dev/null || echo 0)
-              chrome_timestamp=$(git log -1 --format="%ct" -- "$chromium_file" 2>/dev/null || echo 0)
-      
+              chromium_timestamp=$(git log -1 --format="%ct" -- "$chromium_file" 2>/dev/null || echo 0)
+
               # Sync the most recently updated messages.json to the other dir
-              if (( $ff_timestamp != $chrome_timestamp )) ; then
-                [[ "$locales_updated" != true ]] && locales_updated=true
-                if (( $ff_timestamp > $chrome_timestamp )) ; then
-                     cp -f "$ff_file" "$chromium_file"
-                else cp -f "$chromium_file" "$ff_file" ; fi
+              if [[ $ff_timestamp -ne $chromium_timestamp ]] ; then
+                if (( $ff_timestamp > $chromium_timestamp )) ; then
+                     cp -f "$ff_file" "$chromium_file" ; sync_src="${ff_dir%%/*}"
+                else cp -f "$chromium_file" "$ff_file" ; sync_src="${chromium_dir%%/*}" ; fi
               fi
 
             fi
           done
-          if [[ "$locales_updated" == true ]] ; then echo "LOCALES_UPDATED=true" >> $GITHUB_ENV ; fi
+
+          # Expose sync src for commit msg in self-push step
+          echo "SYNC_SRC=$sync_src" >> $GITHUB_ENV
 
       - name: Sync ** to adamlui/ai-apps/chatgpt-widescreen/
         run: |
@@ -93,11 +94,10 @@ jobs:
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to adamlui/chatgpt-widescreen
-        if: env.LOCALES_UPDATED == 'true'
+        if: env.SYNC_SRC
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/adamlui/chatgpt-widescreen]" || true
+          git add . && git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from ${{ env.SYNC_SRC }}/]" || true
           git push
 
       - name: Push changes to adamlui/ai-apps

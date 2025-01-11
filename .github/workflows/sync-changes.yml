@@ -40,24 +40,24 @@ jobs:
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           ff_dir="firefox/extension/_locales"
-          chrome_dir="chrome/extension/_locales"
+          chromium_dir="chrome/extension/_locales"
           
           # Loop thru all lang dirs in firefox
           for locale in $(find "$ff_dir" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;) ; do
             ff_file="$ff_dir/$locale/messages.json"
-            chrome_file="$chrome_dir/$locale/messages.json"
-            if [[ -f "$ff_file" && -f "$chrome_file" ]] ; then
+            chromium_file="$chromium_dir/$locale/messages.json"
+            if [[ -f "$ff_file" && -f "$chromium_file" ]] ; then
 
               # Get the latest commit timestamps for both files
               ff_timestamp=$(git log -1 --format="%ct" -- "$ff_file" 2>/dev/null || echo 0)
-              chrome_timestamp=$(git log -1 --format="%ct" -- "$chrome_file" 2>/dev/null || echo 0)
+              chrome_timestamp=$(git log -1 --format="%ct" -- "$chromium_file" 2>/dev/null || echo 0)
       
               # Sync the most recently updated messages.json to the other dir
               if (( $ff_timestamp != $chrome_timestamp )) ; then
                 [[ "$locales_updated" != true ]] && locales_updated=true
                 if (( $ff_timestamp > $chrome_timestamp )) ; then
-                     cp -f "$ff_file" "$chrome_file"
-                else cp -f "$chrome_file" "$ff_file" ; fi
+                     cp -f "$ff_file" "$chromium_file"
+                else cp -f "$chromium_file" "$ff_file" ; fi
               fi
 
             fi

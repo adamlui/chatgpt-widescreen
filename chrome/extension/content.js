@@ -26,6 +26,9 @@
     settings.imports.import({ env }) // to load/save active tab's settings using env.site
 
     // Init SETTINGS
+    const firstRunKey = `${env.site}_isFirstRun`
+    if ((await chrome.storage.sync.get(firstRunKey))[firstRunKey] == undefined) { // activate widescreen on install
+        settings.save('wideScreen', true) ; settings.save('isFirstRun', false) }
     await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings

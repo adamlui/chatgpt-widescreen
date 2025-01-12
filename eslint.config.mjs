@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import css from '@eslint/css'
 import globals from 'globals'
 import importPlugin from 'eslint-plugin-import'
 import json from '@eslint/json'
@@ -41,6 +42,7 @@ export default [
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
+    { files: ['**/*.css'], language: 'css/css', ...css.configs.recommended },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },

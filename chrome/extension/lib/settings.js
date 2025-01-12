@@ -9,39 +9,39 @@ window.settings = {
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 
     controls: { // displays top-to-bottom in toolbar menu
-        get fullerWindows() { return { type: 'toggle',
+        get fullerWindows() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_fullerWins'),
             helptip: settings.getMsg('helptip_fullerWins')
         }},
-        get tcbDisabled() { return { type: 'toggle', symbol: '↕️',
+        get tcbDisabled() { return { type: 'toggle', symbol: '↕️', defaultVal: false,
             label: settings.getMsg('menuLabel_tallerChatbox'),
             helptip: settings.getMsg('helptip_tallerChatbox')
         }},
-        get widerChatbox() { return { type: 'toggle', symbol: '↔️',
+        get widerChatbox() { return { type: 'toggle', symbol: '↔️', defaultVal: false,
             label: settings.getMsg('menuLabel_widerChatbox'),
             helptip: settings.getMsg('helptip_widerChatbox')
         }},
-        get ncbDisabled() { return { type: 'toggle',
+        get ncbDisabled() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_newChatBtn'),
             helptip: settings.getMsg('helptip_newChatBtn')
         }},
-        get hiddenHeader() { return { type: 'toggle',
+        get hiddenHeader() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_hiddenHeader'),
             helptip: settings.getMsg('helptip_hiddenHeader')
         }},
-        get hiddenFooter() { return { type: 'toggle',
+        get hiddenFooter() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_hiddenFooter'),
             helptip: settings.getMsg('helptip_hiddenFooter')
         }},
-        get btnAnimationsDisabled() { return { type: 'toggle',
+        get btnAnimationsDisabled() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_btnAnimations'),
             helptip: settings.getMsg('helptip_btnAnimations')
         }},
-        get notifDisabled() { return { type: 'toggle',
+        get notifDisabled() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_modeNotifs'),
             helptip: settings.getMsg('helptip_modeNotifs')
         }},
-        get blockSpamDisabled() { return { type: 'toggle',
+        get blockSpamDisabled() { return { type: 'toggle', defaultVal: false,
             label: settings.getMsg('menuLabel_blockSpam'),
             helptip: settings.getMsg('helptip_blockSpam')
         }}
@@ -53,17 +53,21 @@ window.settings = {
     load(...keys) {
         keys = keys.flat() // flatten array args nested by spread operator
         if (typeof GM_info != 'undefined') // synchronously load from userscript manager storage
-            keys.forEach(key => window.config[key] = GM_getValue(
-                `${this.imports.app.configKeyPrefix}_${key}`, false))
+            keys.forEach(key => {
+                config[key] = GM_getValue(`${this.imports.app.configKeyPrefix}_${key}`,
+                    this.controls[key]?.defaultVal || this.controls[key]?.type == 'toggle')
+            })
         else // asynchronously load from browser extension storage
             return Promise.all(keys.map(key => // resolve promise when all keys load
                 new Promise(resolve => // resolve promise when single key value loads
                     chrome.storage.sync.get(
-                        !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key,
-                        result => { window.config[key] = result[`${this.imports.env.site}_${key}`]
-                            || result[key] || false ; resolve()
+                        !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key, result => {
+                            window.config[key] = `${this.imports.env.site}_${key}` in result || key in result ?
+                                result[`${this.imports.env.site}_${key}`] || result[key]
+                                    : this.controls[key]?.defaultVal || this.controls[key]?.type == 'toggle'
+                            resolve()
         }))))
-},
+    },
 
     save(key, val) {
         if (typeof GM_info != 'undefined') // save to userscript manager storage

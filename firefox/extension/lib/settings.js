@@ -58,14 +58,12 @@ window.settings = {
                     this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle')
             })
         else // asynchronously load from browser extension storage
-            return Promise.all(keys.map(key => // resolve promise when all keys load
-                new Promise(resolve => // resolve promise when single key value loads
-                    chrome.storage.sync.get(
-                        !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key, result => {
-                            window.config[key] = result[`${this.imports.env.site}_${key}`] ?? result[key]
-                                ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
-                            resolve()
-        }))))
+            return Promise.all(keys.map(async key => { // resolve promise when all keys load
+                const result = await chrome.storage.sync.get(
+                    !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key )
+                window.config[key] = result[`${this.imports.env.site}_${key}`] ?? result[key]
+                    ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
+        }))
     },
 
     save(key, val) {

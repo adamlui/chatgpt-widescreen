@@ -32,18 +32,18 @@ chrome.runtime.onMessage.addListener(async req => {
     // Init APP data
     const app = {
         version: chrome.runtime.getManifest().version,
-        latestResourceCommitHash: 'ad86f2f', // for cached app.json + sites.json + icons.questionMark.src
+        latestResourceCommitHash: '7a20e13', // for cached app.json + sites.json + icons.questionMark.src
         urls: {},
         chatgptJSver: /v(\d+\.\d+\.\d+)/.exec(await (await fetch(chrome.runtime.getURL('lib/chatgpt.js'))).text())[1]
     }
     app.urls.resourceHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestResourceCommitHash}`
-    const remoteAppData = await (await fetch(`${app.urls.resourceHost}/data/app.json`)).json()
+    const remoteAppData = await (await fetch(`${app.urls.resourceHost}/data/assets/data/app.json`)).json()
     Object.assign(app, { ...remoteAppData, urls: { ...app.urls, ...remoteAppData.urls }})
     chrome.storage.sync.set({ app }) // save to browser storage
 
     // Init SITES data
     const sites = Object.assign(Object.create(null),
-        await (await fetch(`${app.urls.resourceHost}/data/sites.json`)).json())
+        await (await fetch(`${app.urls.resourceHost}/assets/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
 
 })()

@@ -62,6 +62,7 @@
   "btnLabel_moreAIextensions": { "message": "Ukulundako kwa AI nakumbi" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
   "btnLabel_rateUs": { "message": "Tupimine" },
+  "btnLabel_discuss": { "message": "Landenipo" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
   "btnLabel_checkForUpdates": { "message": "Moneni ifyapya" },
   "btnLabel_update": { "message": "Ukuwamya" },

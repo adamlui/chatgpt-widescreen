@@ -62,6 +62,7 @@
   "btnLabel_moreAIextensions": { "message": "Sili atu AI Faʻalauteleina" },
   "btnLabel_leaveReview": { "message": "Tuua Iloiloga" },
   "btnLabel_rateUs": { "message": "Faatusatusaina i Tatou" },
+  "btnLabel_discuss": { "message": "Talanoa" },
   "btnLabel_getSupport": { "message": "Maua Lagolago" },
   "btnLabel_checkForUpdates": { "message": "Siaki mo faʻafouga" },
   "btnLabel_update": { "message": "Fa'afouga" },

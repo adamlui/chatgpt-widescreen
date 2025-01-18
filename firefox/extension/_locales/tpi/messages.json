@@ -62,6 +62,7 @@
   "btnLabel_moreAIextensions": { "message": "+ long extensions" },
   "btnLabel_leaveReview": { "message": "Lusim toksave" },
   "btnLabel_rateUs": { "message": "Toksave long mipela" },
+  "btnLabel_discuss": { "message": "Toktok" },
   "btnLabel_getSupport": { "message": "Kisim helpim" },
   "btnLabel_checkForUpdates": { "message": "Lukim ol eleksen" },
   "btnLabel_update": { "message": "Toksave" },

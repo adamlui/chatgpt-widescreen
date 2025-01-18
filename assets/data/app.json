@@ -12,14 +12,12 @@
       "payPal": "https://paypal.me/adamlui"
     },
     "gitHub": "https://github.com/adamlui/chatgpt-widescreen",
-    "greasyFork": "https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode",
     "assetHost": "https://assets.chatgptwidescreen.com",
     "relatedExtensions": "https://aiwebextensions.com",
     "review": {
       "chromeWebStore": "https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews",
       "edgeAddons": "https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa",
       "firefoxAddons": "https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/",
-      "greasyFork": "https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion",
       "productHunt": "https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new"
     },
     "support": "https://support.chatgptwidescreen.com"

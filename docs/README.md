@@ -4,7 +4,7 @@
 <h5>English | <a href="zh-cn/#readme">简体中文</a></h5>
 </div>
 
-<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chromium/media/images/tiles/marquee-promo-tile-1400x560.png"></img>
+<img src="https://assets.chatgptwidescreen.com/images/tiles/marquee/tile-1400x560.png"></img>
 
 <div align="center">
 

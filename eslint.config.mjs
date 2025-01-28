@@ -1,5 +1,7 @@
 import js from '@eslint/js'
 import css from '@eslint/css'
+import html from '@html-eslint/eslint-plugin'
+import htmlParser from '@html-eslint/parser'
 import globals from 'globals'
 import importPlugin from 'eslint-plugin-import'
 import json from '@eslint/json'
@@ -43,6 +45,15 @@ export default [
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
     { files: ['**/*.css'], language: 'css/css', ...css.configs.recommended },
+    {
+        files: ['**/*.html'], languageOptions: { parser: htmlParser }, plugins: { '@html-eslint': html },
+        rules: {
+            ...html.configs['flat/recommended'].rules,
+            '@html-eslint/require-title': 'off', // allow missing title tags
+            '@html-eslint/quotes': 'off', // allow unquoted attrs for compactness
+            '@html-eslint/attrs-newline': 'off' // allow attrs on one line
+        }
+    },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },

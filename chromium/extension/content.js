@@ -353,11 +353,11 @@
 
     update.style.tweaks() ; document.head.append(tweaksStyle);
 
-    // Add STARS styles
+    // Add RISING PARTICLES styles
     ['black', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
-            href: `https://assets.aiwebextensions.com/styles/rising-stars/dist/${
-                color}.min.css?v=0cde30f9ae3ce99ae998141f6e7a36de9b0cc2e7`
+            href: `https://assets.aiwebextensions.com/styles/rising-particles/dist/${
+                color}.min.css?v=727feff`
     })))
 
     // Create WIDESCREEN style

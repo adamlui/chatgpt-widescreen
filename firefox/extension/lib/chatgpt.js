@@ -508,6 +508,8 @@ const chatgpt = {
         return node; // if assignment used
     },
 
+    response: { stopGenerating() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}},
+
     sidebar: {
         exists() { return !!chatgpt.getNewChatLink(); },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
@@ -529,7 +531,8 @@ const chatgpt = {
         }
     },
 
-    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }}
+    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    stop() { chatgpt.response.stopGenerating(); }
 };
 
 // Create alias functions

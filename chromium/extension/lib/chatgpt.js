@@ -308,34 +308,6 @@ const chatgpt = {
 
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    async isIdle(timeout = null) {
-        const obsConfig = { childList: true, subtree: true },
-              msgDivSelector = 'div[data-message-author-role]';
-
-        // Create promises
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
-        const isIdlePromise = (async () => {
-            await new Promise(resolve => { // when on convo page
-                if (document.querySelector(msgDivSelector)) resolve();
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            await new Promise(resolve => { // when reply starts generating
-                new MutationObserver((_, obs) => {
-                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            return new Promise(resolve => { // when reply stops generating
-                new MutationObserver((_, obs) => {
-                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
-                }).observe(document.body, obsConfig);
-            });
-        })();
-
-        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
-    },
-
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out

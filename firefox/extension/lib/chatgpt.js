@@ -292,6 +292,7 @@ const chatgpt = {
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getSendButton() { return document.querySelector('[data-testid=send-button]'); },
+    getStopButton() { return document.querySelector('button[data-testid=stop-button]'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
     async isLoaded(timeout = null) {

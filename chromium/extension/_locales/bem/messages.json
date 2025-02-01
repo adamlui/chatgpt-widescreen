@@ -58,7 +58,7 @@
   "alert_growTogether": { "message": "Nga tuli pamo, kuti twatwalilila ukukula muli iyi programu iya maka" },
   "alert_tyForSupport": { "message": "Natasha Mukwatasha" },
   "alert_pressF11": { "message": "Tinikeni F11 pakuti mufume pa cikope conse" },
-  "alert_f11reason": { "message": "F11 yabomfiwe ku kwingila mu cimonwa conse, kabili pa mulandu wa kucingililwa kwa browser, icifungulo cimo cine cifwile ukubomfiwa ku kufumamo ." },
+  "alert_f11reason": { "message": "F11 yabomfiwe ku kwingila mu cimonwa conse, kabili pa mulandu wa kucingililwa kwa browser, icifungulo cimo cine cifwile ukubomfiwa ku kufumamo " },
   "btnLabel_moreAIextensions": { "message": "Ukulundako kwa AI nakumbi" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
   "btnLabel_rateUs": { "message": "Tupimine" },

@@ -69,5 +69,5 @@
   "btnLabel_dismiss": { "message": "Otkaži" },
   "link_viewChanges": { "message": "Vidi promjene" },
   "state_on": { "message": "na " },
-  "state_off": { "message": "ugasi." }
+  "state_off": { "message": "ugasi" }
 }

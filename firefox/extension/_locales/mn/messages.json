@@ -69,5 +69,5 @@
   "btnLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Хүмүүсийг харах" },
   "state_on": { "message": "дээр" },
-  "state_off": { "message": "Унт." }
+  "state_off": { "message": "Унт" }
 }

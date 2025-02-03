@@ -70,7 +70,7 @@
                     dark:  'color: #ef4848 ; text-shadow: rgba(255, 116, 116, 0.87) 3px 0 9px'
                 }
             }
-            const styledStateSpan = document.createElement('span')
+            const styledStateSpan = dom.create.elem('span')
             styledStateSpan.style.cssText = stateStyles[
                 foundState == chrome.i18n.getMessage('state_off').toUpperCase() ? 'off' : 'on'][env.ui.scheme]
             styledStateSpan.append(foundState) ; notif.append(styledStateSpan)
@@ -361,17 +361,15 @@
     })))
 
     // Create WIDESCREEN style
-    const wideScreenStyle = dom.create.style()
-    wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
+    const wideScreenStyle = dom.create.style(null, { id: 'wideScreen-mode' })
     if (!chatbar.get()) await dom.getLoadedElem(sites[env.site].selectors.input)
     if (env.site == 'chatgpt') // store native chatbar width for Wider Chatbox style
         chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()
 
     // Create FULL-WINDOW style
-    const fullWinStyle = dom.create.style()
-    fullWinStyle.id = 'fullWindow-mode' // for sync.mode()
-    fullWinStyle.innerText = sites[env.site].selectors.sidebar + '{ display: none }'
+    const fullWinStyle = dom.create.style(
+        sites[env.site].selectors.sidebar + '{ display: none }', { id: 'fullWindow-mode' })
 
     // Create/append CHATBAR style
     const chatbarStyle = dom.create.style()

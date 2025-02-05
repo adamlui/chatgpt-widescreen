@@ -191,7 +191,8 @@
                   + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
                   + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
                   + ( config.btnAnimationsDisabled ? '' : // zoom chatbar buttons on hover
-                        `.${buttons.class}:hover { transform: scale(${ env.site == 'poe' ? 1.15 : 1.285 }) }` )
+                        `.${buttons.class} { will-change: transform } /* prevent wobble */
+                         .${buttons.class}:hover { transform: scale(${ env.site == 'poe' ? 1.15 : 1.285 }) }` )
                 )
             },
 

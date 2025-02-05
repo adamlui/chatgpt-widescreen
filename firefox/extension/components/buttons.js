@@ -102,7 +102,7 @@ window.buttons = {
                     }
                 }
             }
-            btn.onmouseenter = () => btn.style.willChange = 'transform' // hint browser to optimize hover-zoom
+            btn.onmouseenter = () => btn.style.willChange = 'transform' // optimize hover-zoom to prevent wobble
             btn.onmouseleave = () => btn.style.willChange = 'auto' // deallocate optimizations
         })
     },

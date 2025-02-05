@@ -89,7 +89,7 @@ window.buttons = {
                 if (btnType == 'newChat') {
                     document.querySelector(this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
                     this.imports.tooltipDiv.style.opacity = 0
-                } else {
+                } else { // toggle mode
                     this.imports.toggle.mode(btnType)
                     if (btnType == 'fullWindow' // disable right btn tooltips on Perplexity homepage to avoid v-flicker
                             && this.imports.env.site == 'perplexity' && location.pathname == '/') {
@@ -102,6 +102,8 @@ window.buttons = {
                     }
                 }
             }
+            btn.onmouseenter = () => btn.style.willChange = 'transform' // hint browser to optimize hover-zoom
+            btn.onmouseleave = () => btn.style.willChange = 'auto' // deallocate optimizations
         })
     },
 

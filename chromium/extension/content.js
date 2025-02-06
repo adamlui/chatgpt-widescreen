@@ -179,8 +179,7 @@
                           + 'main { overflow: clip !important }' // prevent h-scrollbar...
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
                           + ( config.blockSpamDisabled ? '' : // hide Get Plus spam banner
-                                ( '[class^="@lg/thread"]:has(button[data-testid=close-button]),' // logged-in
-                                + '[class*=bottom]:has(button[data-testid=close-button]) { display: none }' )) // logged-out
+                                '[class*=bottom-full]:has(button[data-testid=close-button]) { display: none }' )
                     ) : env.site == 'perplexity' ? (
                             ( config.blockSpamDisabled ? '' : // hide homepage spam banners
                                 'div.absolute.w-full:has(svg[data-icon=xmark]) { display: none }' )

@@ -118,8 +118,12 @@ window.buttons = {
 
     async getRightBtn() {
         const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
-        if (this.imports.env.site == 'chatgpt') // wait 1s for corny button strip (earliest wide Voice button appears)
-            await dom.getLoadedElem('ul:has(svg.icon-md)', 1000)
+        if (this.imports.env.site == 'chatgpt' && !this.chatgptBtnStripChecked
+                && document.querySelector(btnSelectors.login)) {
+            await dom.getLoadedElem( // wait for cheesy colored btn strip below chatbar (earliest Speak btn appears...
+                'ul:has(svg.icon-md)', 1500) // ...since it can be wide/spammy or skinny/textless in Guest mode)
+            this.chatgptBtnStripChecked = true
+        }
         return await dom.getLoadedElem(`${btnSelectors.send}, ${btnSelectors.voice}`)
     },
 

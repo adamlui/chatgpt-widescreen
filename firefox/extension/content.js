@@ -152,7 +152,8 @@
                     ) : env.site == 'perplexity' ? (
                             ( config.blockSpamDisabled ? '' : // block spam
                                `div.absolute.w-full:has(svg[data-icon=xmark]), /* homepage spam banners */
-                                div[class*=bottom]:has([data-testid*=login-modal]) /* Google corner popup */
+                                div[class*=bottom]:has([data-testid*=login-modal]), /* lower-right login/signup popup */
+                                #credential_picker_container /* upper-right Google signin popup */
                                     { display: none }` )
                           + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
                     ) : '' )

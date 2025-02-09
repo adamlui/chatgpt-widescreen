@@ -92,6 +92,12 @@
                     .backgroundColor == 'rgb(48, 48, 48)'
         },
 
+        isTall() {
+            return env.site == 'poe' ? true
+                : env.site == 'perplexity' ? this.get()?.getBoundingClientRect().height > 60
+                : /* chatgpt */ !!this.get()?.nextElementSibling
+        },
+
         tweak() {
             if (env.site != 'chatgpt') return
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return

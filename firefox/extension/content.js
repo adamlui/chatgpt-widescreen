@@ -92,6 +92,12 @@
                     .backgroundColor == 'rgb(48, 48, 48)'
         },
 
+        isTall() {
+            return env.site == 'poe' ? true
+                : env.site == 'perplexity' ? this.get()?.getBoundingClientRect().height > 60
+                : /* chatgpt */ !!this.get()?.nextElementSibling
+        },
+
         tweak() {
             if (env.site != 'chatgpt') return
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
@@ -322,6 +328,8 @@
         return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
 
     // Run MAIN routine
+
+    console.log(chatbar.isTall())
 
     // Init UI props
     if (env.site == 'chatgpt') {

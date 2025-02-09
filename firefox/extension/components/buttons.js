@@ -48,17 +48,19 @@ window.buttons = {
     },
 
     create() {
-        if (/chatgpt|openai/.test(this.imports.env.site)
-            && this.imports.chatbar.get()?.nextElementSibling
-            && !this.imports.env.tallChatbar
-        ) this.imports.env.tallChatbar = true
+        if (/chatgpt|openai/.test(this.imports.env.site)) {
+            if (this.imports.chatbar.get()?.nextElementSibling && !this.imports.env.tallChatbar)
+                this.imports.env.tallChatbar = true
+            if (document.querySelector(this.imports.sites.chatgpt.selectors.btns.login))
+                this.imports.env.guestMode = true
+        }
         const validBtnTypes = this.getTypes.valid()
         const bOffset = this.imports.env.site == 'poe' ? 1.1
                       : this.imports.env.site == 'perplexity' ? -13
                       : this.imports.env.tallChatbar ? 31 : -8.85
         const rOffset = this.imports.env.site == 'poe' ? -6.5
                       : this.imports.env.site == 'perplexity' ? -4
-                      : this.imports.env.tallChatbar ? 48 : -0.25
+                      : this.imports.env.tallChatbar ? ( this.imports.env.guestMode ? 53 : 48 ) : -0.25
         const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'
         validBtnTypes.forEach(async (btnType, idx) => {
             const btn = this[btnType] = dom.create.elem('div')
@@ -71,7 +73,7 @@ window.buttons = {
                     '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
                     '-o-transition': transitionStyles, '-ms-transition': transitionStyles
             })
-            if (this.imports.env.tallChatbar) btn.style.bottom = '8.85px'
+            if (this.imports.env.tallChatbar) btn.style.bottom = `${ this.imports.env.guestMode ? 11.85 : 8.85 }px`
             else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25
                                    : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles

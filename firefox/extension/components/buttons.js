@@ -146,8 +146,7 @@ window.buttons = {
         color() {
             buttons.color = (
                 /chatgpt|openai/.test(buttons.imports.env.site) ? (
-                    document.querySelector('.dark.bg-black')
-                        || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
+                    buttons.imports.chatbar.isDark() || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
                 ) : buttons.imports.env.site == 'perplexity' ? (
                     buttons.imports.env.ui.scheme == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'

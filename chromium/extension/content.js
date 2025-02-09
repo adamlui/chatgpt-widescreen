@@ -86,6 +86,12 @@
             return chatbar
         },
 
+        isDark() {
+            return env.site != 'chatgpt' ? undefined
+                : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
+                    .backgroundColor == 'rgb(48, 48, 48)'
+        },
+
         tweak() {
             if (env.site != 'chatgpt') return
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
@@ -403,8 +409,8 @@
         if (env.site == 'chatgpt') {
 
             // Update button colors on temp chat toggle
-            const chatbarIsBlack = !!document.querySelector('div[class*=bg-black]:not([id$=-btn])')
-            if (chatbarIsBlack != isTempChat) { buttons.update.color() ; isTempChat = chatbarIsBlack }
+            const chatbarIsDark = chatbar.isDark()
+            if (chatbarIsDark != isTempChat) { buttons.update.color() ; isTempChat = chatbarIsDark }
 
             // Add/remove Widescreen button on Canvas mode toggle
             if (canvasWasOpen ^ chatgpt.canvasIsOpen()) {

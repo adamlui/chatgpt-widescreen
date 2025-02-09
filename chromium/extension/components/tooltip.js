@@ -3,8 +3,21 @@
 window.tooltip = {
 
     imports: {
-        import(deps) { // { site: env.site, sites }
+        import(deps) { // { msgs: app.msgs (Greasemonkey only), site: env.site, sites }
             for (const depName in deps) this[depName] = deps[depName] }
+    },
+
+    get runtime() {
+        if (typeof GM_info != 'undefined') return 'Greasemonkey userscript'
+        else if (typeof chrome != 'undefined' && chrome.runtime) {
+            if (typeof browser != 'undefined') return 'Firefox add-on'
+            else return `Chromium ${ navigator.userAgent.includes('Edg') ? 'Edge add-on' : 'extension' }`
+        } else return 'Unknown'
+    },
+
+    getMsg(key) {
+        return /Chromium|Firefox/.test(this.runtime) ? chrome.i18n.getMessage(key)
+            : this.imports.msgs[key] // from tooltip.imports.import({ msgs: app.msgs }) in userscript
     },
 
     createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },
@@ -37,7 +50,7 @@ window.tooltip = {
         const spreadFactor = site == 'perplexity' ? 27.5 : site == 'poe' ? 28 : 31
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                          + ( site == 'chatgpt' && chatbar.is.tall() ? -2 : 4 )
-        this.div.innerText = chrome.i18n.getMessage(`tooltip_${btnType}${
+        this.div.innerText = this.getMsg(`tooltip_${btnType}${
             !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')}`)
         this.div.style.right = `${ iniRoffset - this.div.getBoundingClientRect().width /2 }px` // x-pos
         this.div.style.bottom = ( // y-pos

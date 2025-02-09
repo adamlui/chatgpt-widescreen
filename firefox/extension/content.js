@@ -80,45 +80,42 @@
         }
     }
 
-    const toggle = {
+    function toggleMode(mode, state = '') {
+        switch (state.toUpperCase()) {
+            case 'ON' : activateMode(mode) ; break
+            case 'OFF' : deactivateMode(mode) ; break
+            default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
+                      : mode == 'fullWindow' ? isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
+                                                                                      : activateMode(mode)
+        }
 
-        mode(mode, state = '') {
-            switch (state.toUpperCase()) {
-                case 'ON' : activateMode(mode) ; break
-                case 'OFF' : deactivateMode(mode) ; break
-                default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
-                          : mode == 'fullWindow' ? isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
-                                                                                          : activateMode(mode)
-            }
+        function activateMode(mode) {
+            if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
+            else if (mode == 'fullWindow') {
+                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
+                if (sidebarToggle) sidebarToggle.click()
+                else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
+            } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
+        }
 
-            function activateMode(mode) {
-                if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
-                else if (mode == 'fullWindow') {
-                    const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
-                    if (sidebarToggle) sidebarToggle.click()
-                    else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
-                } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
-            }
-
-            function deactivateMode(mode) {
-                if (mode == 'wideScreen') {
-                    wideScreenStyle.remove() ; sync.mode('wideScreen')
-                } else if (mode == 'fullWindow') {
-                    const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
-                    if (sidebarToggle) sidebarToggle.click()
-                    else { fullWinStyle.remove() ; sync.mode('fullWindow') }
-                } else if (mode == 'fullScreen') {
-                    if (config.f11) modals.alert(
-                        chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
-                    else document.exitFullscreen().catch(
-                        err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
-                }
+        function deactivateMode(mode) {
+            if (mode == 'wideScreen') {
+                wideScreenStyle.remove() ; sync.mode('wideScreen')
+            } else if (mode == 'fullWindow') {
+                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
+                if (sidebarToggle) sidebarToggle.click()
+                else { fullWinStyle.remove() ; sync.mode('fullWindow') }
+            } else if (mode == 'fullScreen') {
+                if (config.f11) modals.alert(
+                    chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
+                else document.exitFullscreen().catch(
+                    err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
             }
         }
     }
 
     const tweaksStyle = dom.create.style()
-    buttons.imports.import({ appName: app.name, chatbar, env, sites, toggle, tooltip, tweaksStyle })
+    buttons.imports.import({ appName: app.name, chatbar, env, sites, toggleMode, tooltip, tweaksStyle })
 
     const update = {
 
@@ -190,10 +187,10 @@
                 if (env.site == 'chatgpt') chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
-                    supressNotifs() ; toggle.mode('wideScreen') }
+                    supressNotifs() ; toggleMode('wideScreen') }
                 if (sites[env.site].hasSidebar) {
                     if (config.fullWindow ^ isFullWin()) { // sync Full-Window
-                        supressNotifs() ; toggle.mode('fullWindow') }
+                        supressNotifs() ; toggleMode('fullWindow') }
                     sync.fullerWin() // sync Fuller Windows
                 }
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
@@ -313,11 +310,11 @@
         buttons.insert()
 
     // Restore PREV SESSION's state
-        if (config.wideScreen) toggle.mode('wideScreen', 'ON')
+        if (config.wideScreen) toggleMode('wideScreen', 'ON')
         if (config.fullWindow && sites[env.site].hasSidebar) {
             if (sites[env.site].selectors.btns.sidebarToggle) // site has own FW config
                 sync.mode('fullWindow') // ...so sync w/ it
-            else toggle.mode('fullWindow', 'on') // otherwise self-toggle
+            else toggleMode('fullWindow', 'on') // otherwise self-toggle
         }
     }
 

@@ -1,4 +1,4 @@
-// Requires lib/chatgpt.js + lib/dom.js + app.name + chatbar + env + sites + toggle + tooltip + tweaksStyle
+// Requires lib/chatgpt.js + lib/dom.js + app.name + chatbar + env + sites + toggleMode() + tooltip + tweaksStyle
 
 window.buttons = {
     types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
@@ -10,7 +10,7 @@ window.buttons = {
     },
 
     imports: {
-        import(deps) { // { appName: app.name, chatbar, env, sites, toggle, tooltip, tweaksStyle }
+        import(deps) { // { appName: app.name, chatbar, env, sites, toggleMode, tooltip, tweaksStyle }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
@@ -101,7 +101,7 @@ window.buttons = {
                     document.querySelector(this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
                     this.imports.tooltip.div.style.opacity = 0
                 } else { // toggle mode
-                    this.imports.toggle.mode(btnType)
+                    this.imports.toggleMode(btnType)
                     if (btnType == 'fullWindow' // disable right btn tooltips on Perplexity homepage to avoid v-flicker
                             && this.imports.env.site == 'perplexity' && location.pathname == '/') {
                         this.imports.tooltip.div.style.opacity = 0;

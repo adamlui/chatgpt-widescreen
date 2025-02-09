@@ -197,11 +197,9 @@
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px` // x-pos
             tooltipDiv.style.bottom = ( // y-pos
                 env.site == 'perplexity' ? (
-                    location.pathname != '/' ? '64px' : ( // not homepage
-                        isFullWin() ? '58px' // full-window homepage
-                      : document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' // logged-in homepage
-                      : '50vh' // logged-out homepage
-                    )
+                    location.pathname != '/' ? '64px' // not homepage
+                        : document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' // logged-in homepage
+                                             : '50vh' // logged-out homepage
                 ) : env.site == 'poe' ? '50px' : '59px'
             )
         }

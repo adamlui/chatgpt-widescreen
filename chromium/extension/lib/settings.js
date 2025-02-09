@@ -1,8 +1,10 @@
+// Requires env.site
+
 window.config = {}
 window.settings = {
 
     imports: {
-        import(deps) { // { app (Greasemonkey only), env (extension only) }
+        import(deps) { // { app (Greasemonkey only), site: env.site (extension only) }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
@@ -60,8 +62,8 @@ window.settings = {
         else // asynchronously load from browser extension storage
             return Promise.all(keys.map(async key => { // resolve promise when all keys load
                 const result = await chrome.storage.sync.get(
-                    !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key )
-                window.config[key] = result[`${this.imports.env.site}_${key}`] ?? result[key]
+                    !this.browserwideKeys.includes(key) ? `${this.imports.site}_${key}` : key )
+                window.config[key] = result[`${this.imports.site}_${key}`] ?? result[key]
                     ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
         }))
     },
@@ -71,7 +73,7 @@ window.settings = {
             GM_setValue(`${this.imports.app.configKeyPrefix}_${key}`, val)
         else // save to browser extension storage
             chrome.storage.sync.set({
-                [ !this.browserwideKeys.includes(key) ? `${this.imports.env.site}_${key}` : key ] : val })
+                [ !this.browserwideKeys.includes(key) ? `${this.imports.site}_${key}` : key ] : val })
         window.config[key] = val // save to memory
     }
 };

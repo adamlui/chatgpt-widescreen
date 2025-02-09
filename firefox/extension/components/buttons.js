@@ -1,8 +1,8 @@
-// Requires lib/chatgpt.js + lib/dom.js + app + chatbar + env + sites + toggle + tooltip + tweaksStyle
+// Requires lib/chatgpt.js + lib/dom.js + app.name + chatbar + env + sites + toggle + tooltip + tweaksStyle
 
 window.buttons = {
     types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
-    get class() { return `${this.imports.app.name.replace(/ /g, '-').toLowerCase()}-btn` },
+    get class() { return `${this.imports.appName.replace(/ /g, '-').toLowerCase()}-btn` },
 
     state: {
         status: 'missing', // or 'inserting', 'inserted'
@@ -10,7 +10,7 @@ window.buttons = {
     },
 
     imports: {
-        import(deps) { // { app, chatbar, env, sites, toggle, tooltip, tweaksStyle }
+        import(deps) { // { appName: app.name, chatbar, env, sites, toggle, tooltip, tweaksStyle }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 

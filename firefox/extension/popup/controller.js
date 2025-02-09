@@ -7,7 +7,7 @@
     // Init ENV context
     const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
         { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
-    settings.imports.import({ env }) // to load/save active tab's settings using env.site
+    settings.imports.import({ site: env.site }) // to load/save active tab's settings
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),

@@ -1,14 +1,14 @@
-// Requires env + sites
+// Requires env.site + sites
 
 window.chatbar = {
 
     imports: {
-        import(deps) { // { env, sites }
+        import(deps) { // { site: env.site, sites }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
     get() {
-        const site = this.imports.env.site
+        const site = this.imports.site
         let chatbar = document.querySelector(this.imports.sites[site].selectors.input)
         const lvlsToParent = site == 'chatgpt' ? 3 : 2
         for (let i = 0 ; i < lvlsToParent ; i++) chatbar = chatbar?.parentNode
@@ -17,13 +17,13 @@ window.chatbar = {
 
     is: {
         dark() {
-            return chatbar.imports.env.site != 'chatgpt' ? undefined
+            return chatbar.imports.site != 'chatgpt' ? undefined
                 : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
                     .backgroundColor == 'rgb(48, 48, 48)'
         },
 
         tall() {
-            const site = chatbar.imports.env.site
+            const site = chatbar.imports.site
             return site == 'poe' ? true
                  : site == 'perplexity' ? chatbar.get()?.getBoundingClientRect().height > 60
                  : /* chatgpt */ !!chatbar.get()?.nextElementSibling
@@ -31,7 +31,7 @@ window.chatbar = {
     },
 
     tweak() {
-        const site = this.imports.env.site ; if (!/chatgpt|perplexity/.test(site)) return
+        const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') {

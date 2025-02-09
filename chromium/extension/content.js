@@ -22,10 +22,10 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
-    chatbar.imports.import({ env, sites }) // for env.site + sites.selectors
-    dom.imports.import({ env }) // for env.ui.scheme
-    modals.imports.import({ app, env }) // for app data + env.ui.scheme
-    settings.imports.import({ env }) // to load/save active tab's settings using env.site
+    chatbar.imports.import({ site: env.site, sites }) // for conditional logic + sites.selectors
+    dom.imports.import({ scheme: env.ui.scheme }) // for dom.addRisingParticles()
+    modals.imports.import({ app, env }) // for app data + env.<browser|ui> flags
+    settings.imports.import({ site: env.site }) // to load/save active tab's settings
     tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
 
     // Init SETTINGS
@@ -118,7 +118,7 @@
     }
 
     const tweaksStyle = dom.create.style()
-    buttons.imports.import({ app, chatbar, env, sites, toggle, tooltip, tweaksStyle })
+    buttons.imports.import({ appName: app.name, chatbar, env, sites, toggle, tooltip, tweaksStyle })
 
     const update = {
 

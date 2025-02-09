@@ -1,3 +1,5 @@
+// Requires env + sites
+
 window.chatbar = {
 
     imports: {

@@ -1,4 +1,4 @@
-// Requires lib/chatgpt.js + lib/dom.js
+// Requires lib/chatgpt.js + lib/dom.js + app + chatbar + env + sites + toggle + tooltip + tweaksStyle
 
 window.buttons = {
     types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left

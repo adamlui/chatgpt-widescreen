@@ -2,7 +2,7 @@ window.config = {}
 window.settings = {
 
     imports: {
-        import(deps) { // { app (userscript only), env (extension only) }
+        import(deps) { // { app (Greasemonkey only), env (extension only) }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 

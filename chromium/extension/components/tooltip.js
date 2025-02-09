@@ -10,7 +10,7 @@ window.tooltip = {
     getMsg(key) {
         return typeof GM_info != 'undefined' ?
             this.imports.msgs[key] // from tooltip.imports.import({ msgs: app.msgs }) in userscript
-                : chrome.i18n.getMessage(key) // from ./locales/*/messages.json
+                : chrome.i18n.getMessage(key) // from ./_locales/*/messages.json
     },
 
     createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },

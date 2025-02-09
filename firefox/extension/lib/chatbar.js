@@ -29,10 +29,9 @@ window.chatbar = {
     },
 
     tweak() {
-        const site = this.imports.env.site ; if (site == 'poe') return
-        const sites = this.imports.sites
+        const site = this.imports.env.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
-        const selectors = sites[site].selectors
+        const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') {
             const inputArea = chatbarDiv.querySelector(selectors.input) ; if (!inputArea) return
             if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'

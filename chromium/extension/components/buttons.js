@@ -213,7 +213,7 @@ window.buttons = {
             )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             btnSVG.style.height = btnSVG.style.width = ( // override button resizing
-                buttons.imports.env.site == 'chatgpt' ? '1.3rem' : 18 )
+                buttons.imports.env.site == 'chatgpt' ? '1.3rem' : '18px' )
 
             // Update SVG elements
             btnSVG.textContent = ''

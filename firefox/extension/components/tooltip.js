@@ -7,17 +7,10 @@ window.tooltip = {
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
-    get runtime() {
-        if (typeof GM_info != 'undefined') return 'Greasemonkey userscript'
-        else if (typeof chrome != 'undefined' && chrome.runtime) {
-            if (typeof browser != 'undefined') return 'Firefox add-on'
-            else return `Chromium ${ navigator.userAgent.includes('Edg') ? 'Edge add-on' : 'extension' }`
-        } else return 'Unknown'
-    },
-
     getMsg(key) {
-        return /Chromium|Firefox/.test(this.runtime) ? chrome.i18n.getMessage(key)
-            : this.imports.msgs[key] // from tooltip.imports.import({ msgs: app.msgs }) in userscript
+        return typeof GM_info != 'undefined' ?
+            this.imports.msgs[key] // from tooltip.imports.import({ msgs: app.msgs }) in userscript
+                : chrome.i18n.getMessage(key) // from ./locales/*/messages.json
     },
 
     createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },

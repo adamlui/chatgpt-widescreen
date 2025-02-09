@@ -147,8 +147,7 @@
                                 // ...on sync.mode('fullWindow) => delayed chatbar.tweak()
                           + ( config.blockSpamDisabled ? '' : // block spam
                                `[class*=bottom-full]:has(button[data-testid=close-button]), /* Get Plus banner */
-                                [class*="@lg/thread:bottom"]:has(button[data-testid=close-button]), /* limit reached */
-                                [data-radix-popper-content-wrapper] /* useless button popups */
+                                [class*="@lg/thread:bottom"]:has(button[data-testid=close-button]) /* limit reached */
                                     { display: none }` )
                     ) : env.site == 'perplexity' ? (
                             ( config.blockSpamDisabled ? '' : // block spam

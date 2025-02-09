@@ -187,7 +187,7 @@
         async tooltip(btnType) { // text & position
             const visibleBtnTypes = buttons.getTypes.visible()
             const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
-                            + ( env.site == 'perplexity' ? ( chatbar.is.tall() ? 39 : 56 )
+                            + ( env.site == 'perplexity' ? ( chatbar.is.tall() ? -1 : 8 )
                               : env.site == 'poe' ? 28 : 7 )
             const spreadFactor = env.site == 'perplexity' ? 27.5 : env.site == 'poe' ? 28 : 31
             const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
@@ -226,7 +226,7 @@
                 }
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
-                chatbar.tweak() // update chatgpt.com chatbar inner width
+                chatbar.tweak() // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
                 buttons.insert() // since .remove()'d when config.extensionDisabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
                     // ...to visually signal location + preview fx applied by Button Animations toggle-on

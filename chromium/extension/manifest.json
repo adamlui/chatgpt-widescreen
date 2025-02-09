@@ -20,7 +20,7 @@
     "matches": [ "<all_urls>" ],
     "resources": [
       "components/buttons.js", "components/modals.js", "components/tooltip.js",
-      "lib/chatbar.js", "lib/chatgpt.js", "lib/dom.js", "lib/settings.js"
+      "lib/chatbar.js", "lib/chatgpt.js", "lib/dom.js", "lib/settings.js", "lib/ui.js"
     ]
   }],
   "content_scripts": [{

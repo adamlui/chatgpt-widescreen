@@ -7,7 +7,7 @@
 
     // Import JS resources
     for (const resource of [
-        'lib/chatbar.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js',
+        'lib/chatbar.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js', 'lib/ui.js',
         'components/buttons.js', 'components/modals.js', 'components/tooltip.js'
     ]) await import(chrome.runtime.getURL(resource))
 
@@ -15,7 +15,7 @@
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    env.ui.scheme = getScheme()
+    env.ui.scheme = ui.getScheme()
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
@@ -27,6 +27,7 @@
     modals.imports.import({ app, env }) // for app data + env.<browser|ui> flags
     settings.imports.import({ site: env.site }) // to load/save active tab's settings
     tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
+    ui.imports.import({ site: env.site, sites }) // for ui.ui.isFullWin() logic
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`
@@ -85,7 +86,7 @@
             case 'ON' : activateMode(mode) ; break
             case 'OFF' : deactivateMode(mode) ; break
             default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
-                      : mode == 'fullWindow' ? isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
+                      : mode == 'fullWindow' ? ui.isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
                                                                                       : activateMode(mode)
         }
 
@@ -189,7 +190,7 @@
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggleMode('wideScreen') }
                 if (sites[env.site].hasSidebar) {
-                    if (config.fullWindow ^ isFullWin()) { // sync Full-Window
+                    if (config.fullWindow ^ ui.isFullWin()) { // sync Full-Window
                         supressNotifs() ; toggleMode('fullWindow') }
                     sync.fullerWin() // sync Fuller Windows
                 }
@@ -222,7 +223,7 @@
 
         async mode(mode) { // setting + icon + tooltip + chatbar
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
-                          : mode == 'fullWindow' ? isFullWin()
+                          : mode == 'fullWindow' ? ui.isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; buttons.update.svg(mode) ; tooltip.update(mode)
             if (!config.extensionDisabled) { // tweak UI
@@ -236,19 +237,6 @@
             }
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
-    }
-
-    function getScheme() {
-        const rootElem = document.documentElement
-        return env.site == 'perplexity' ? rootElem.dataset.colorScheme : rootElem.className
-            || (window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light')
-    }
-
-    function isFullWin() {
-        return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')
-            : !sites[env.site].hasSidebar // false if sidebar non-existent
-           || /\d+/.exec(getComputedStyle(document.querySelector(
-                  sites[env.site].selectors.sidebar))?.width || '')[0] < 100
     }
 
     chatgpt.canvasIsOpen = function() {
@@ -268,7 +256,7 @@
     // Init FULL-MODE states
     config.fullScreen = chatgpt.isFullScreen()
     if (sites[env.site].selectors.btns.sidebarToggle) // site has native FW state
-         config.fullWindow = isFullWin() // ...so match it
+         config.fullWindow = ui.isFullWin() // ...so match it
     else await settings.load('fullWindow') // otherwise load CWM's saved state
 
     // Apply general style TWEAKS
@@ -348,7 +336,7 @@
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener( // for browser/system scheme pref changes
         'change', () => requestAnimationFrame(handleSchemePrefChange))
     function handleSchemePrefChange() {
-        const displayedScheme = getScheme()
+        const displayedScheme = ui.getScheme()
         if (env.ui.scheme != displayedScheme) {
             env.ui.scheme = displayedScheme ; modals.stylize() ; buttons.update.color() }
     }
@@ -357,7 +345,7 @@
     if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await new Promise(resolve => setTimeout(resolve, env.site == 'perplexity' ? 500 : 0))
-            if ((config.fullWindow ^ isFullWin()) && !config.modeSynced) sync.mode('fullWindow')
+            if ((config.fullWindow ^ ui.isFullWin()) && !config.modeSynced) sync.mode('fullWindow')
         })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from node observer
             let obsTarget = document.querySelector(sites[env.site].selectors.sidebar)

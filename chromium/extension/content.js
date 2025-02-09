@@ -7,8 +7,9 @@
 
     // Import JS resources
     for (const resource of [
-        'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js', 'components/buttons.js', 'components/modals.js'])
-            await import(chrome.runtime.getURL(resource))
+        'lib/chatbar.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js',
+        'components/buttons.js', 'components/modals.js'
+    ]) await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
     const env = {
@@ -21,6 +22,7 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
+    chatbar.imports.import({ env, sites }) // for env.site + sites.selectors
     dom.imports.import({ env }) // for env.ui.scheme
     modals.imports.import({ app, env }) // for app data + env.ui.scheme
     settings.imports.import({ env }) // to load/save active tab's settings using env.site
@@ -74,53 +76,6 @@
             styledStateSpan.style.cssText = stateStyles[
                 foundState == chrome.i18n.getMessage('state_off').toUpperCase() ? 'off' : 'on'][env.ui.scheme]
             styledStateSpan.append(foundState) ; notif.append(styledStateSpan)
-        }
-    }
-
-    const chatbar = {
-
-        get() {
-            let chatbar = document.querySelector(sites[env.site].selectors.input)
-            const lvlsToParent = env.site == 'chatgpt' ? 3 : 2
-            for (let i = 0 ; i < lvlsToParent ; i++) chatbar = chatbar?.parentNode
-            return chatbar
-        },
-
-        isDark() {
-            return env.site != 'chatgpt' ? undefined
-                : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
-                    .backgroundColor == 'rgb(48, 48, 48)'
-        },
-
-        isTall() {
-            return env.site == 'poe' ? true
-                : env.site == 'perplexity' ? this.get()?.getBoundingClientRect().height > 60
-                : /* chatgpt */ !!this.get()?.nextElementSibling
-        },
-
-        tweak() {
-            if (env.site != 'chatgpt') return
-            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
-            const inputArea = chatbarDiv.querySelector(sites[env.site].selectors.input) ; if (!inputArea) return
-            if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
-            else if (!env.tallChatbar) { // narrow it to not clash w/ buttons
-                const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                const visibleBtnTypes = [...buttons.getTypes.visible(), 'send']
-                visibleBtnTypes.forEach(type =>
-                    widths[type] = buttons[type]?.getBoundingClientRect().width
-                            || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
-                                sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
-                const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
-                    widths.chatbar - totalBtnWidths -43 }px`
-                inputArea.style.width = '100%' // rid h-scrollbar
-            }
-        },
-
-        reset() { // all tweaks for popup master toggle-off
-            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
-            const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
-            if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
         }
     }
 

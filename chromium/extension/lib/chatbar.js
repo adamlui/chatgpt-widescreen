@@ -15,7 +15,7 @@ window.chatbar = {
 
     is: {
         dark() {
-            return chatbar.imports.env.site.site != 'chatgpt' ? undefined
+            return chatbar.imports.env.site != 'chatgpt' ? undefined
                 : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
                     .backgroundColor == 'rgb(48, 48, 48)'
         },

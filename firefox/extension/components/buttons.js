@@ -49,31 +49,31 @@ window.buttons = {
 
     create() {
         if (/chatgpt|openai/.test(this.imports.env.site)) {
-            if (this.imports.chatbar.get()?.nextElementSibling)
-                this.imports.env.tallChatbar = true
+            if (this.imports.chatbar.isTall())
+                this.imports.env.hasTallChatbar = true
             if (document.querySelector(this.imports.sites.chatgpt.selectors.btns.login))
                 this.imports.env.guestMode = true
         }
         const validBtnTypes = this.getTypes.valid()
         const bOffset = this.imports.env.site == 'poe' ? 1.1
                       : this.imports.env.site == 'perplexity' ? -13
-                      : this.imports.env.tallChatbar ? 31 : -8.85
+                      : this.imports.env.hasTallChatbar ? 31 : -8.85
         const rOffset = this.imports.env.site == 'poe' ? -6.5
                       : this.imports.env.site == 'perplexity' ? -4
-                      : this.imports.env.tallChatbar ? ( this.imports.env.guestMode ? 53 : 48 ) : -0.25
+                      : this.imports.env.hasTallChatbar ? ( this.imports.env.guestMode ? 53 : 48 ) : -0.25
         const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'
         validBtnTypes.forEach(async (btnType, idx) => {
             const btn = this[btnType] = dom.create.elem('div')
             btn.id = `${btnType}-btn` // for toggle.tooltip()
             btn.className = this.class // for update.style.tweaks()
             Object.assign(btn.style, {
-                position: this.imports.env.tallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
+                position: this.imports.env.hasTallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
                 right: `${ rOffset + idx * bOffset }px`, // position left of prev button
                 transition: transitionStyles, // for tweaksStyle's :hover + .insert()'s fade-in
                     '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
                     '-o-transition': transitionStyles, '-ms-transition': transitionStyles
             })
-            if (this.imports.env.tallChatbar) btn.style.bottom = `${ this.imports.env.guestMode ? 11.85 : 8.85 }px`
+            if (this.imports.env.hasTallChatbar) btn.style.bottom = `${ this.imports.env.guestMode ? 11.85 : 8.85 }px`
             else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25
                                    : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles

@@ -199,7 +199,7 @@
                     location.pathname != '/' ? '64px' : ( // not homepage
                         isFullWin() ? '58px' // full-window homepage
                       : document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' // logged-in homepage
-                      : '50.5vh' // logged-out homepage
+                      : '50vh' // logged-out homepage
                     )
                 ) : env.site == 'poe' ? '50px' : '59px'
             )

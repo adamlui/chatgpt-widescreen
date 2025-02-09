@@ -10,7 +10,7 @@ window.buttons = {
     },
 
     imports: {
-        import(deps) { // { app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle }
+        import(deps) { // { app, chatbar, env, sites, toggle, tooltip, tweaksStyle }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
@@ -76,7 +76,7 @@ window.buttons = {
 
         validBtnTypes.forEach(async (btnType, idx) => {
             const btn = this[btnType] = dom.create.elem('div')
-            btn.id = `${btnType}-btn` // for toggle.tooltip()
+            btn.id = `${btnType}-btn` // for tooltip.toggle()
             btn.className = this.class // for update.style.tweaks()
             Object.assign(btn.style, {
                 position: this.imports.env.hasTallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
@@ -95,20 +95,20 @@ window.buttons = {
             }
 
             // Add hover/click listeners
-            btn.onmouseover = btn.onmouseout = this.imports.toggle.tooltip
+            btn.onmouseover = btn.onmouseout = this.imports.tooltip.toggle
             btn.onclick = () => {
                 if (btnType == 'newChat') {
                     document.querySelector(this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
-                    this.imports.tooltipDiv.style.opacity = 0
+                    this.imports.tooltip.div.style.opacity = 0
                 } else { // toggle mode
                     this.imports.toggle.mode(btnType)
                     if (btnType == 'fullWindow' // disable right btn tooltips on Perplexity homepage to avoid v-flicker
                             && this.imports.env.site == 'perplexity' && location.pathname == '/') {
-                        this.imports.tooltipDiv.style.opacity = 0;
+                        this.imports.tooltip.div.style.opacity = 0;
                         ['fullWindow', 'fullScreen'].forEach(btnType => {
                             const btn = this[btnType]
                             btn.onmouseover = btn.onmouseout = null
-                            setTimeout(() => btn.onmouseover = btn.onmouseout = this.imports.toggle.tooltip, 300)
+                            setTimeout(() => btn.onmouseover = btn.onmouseout = this.imports.tooltip.toggle, 300)
                         })
                     }
                 }
@@ -134,7 +134,7 @@ window.buttons = {
              && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
         },
 
-        visible() { // used in update.tooltip() + chatbar.tweak() for horizontal math
+        visible() { // used in tooltip.update() + chatbar.tweak() for horizontal math
             return this.valid().filter(type => !(type == 'newChat' && config.ncbDisabled)) }
     },
 
@@ -163,14 +163,14 @@ window.buttons = {
                     this.state.hasFadedIn = true // ...so disable fade-in on subsequent .insert()s till .remove()
             }
         })
-        parentToInsertInto.insertBefore(this.imports.tooltipDiv, elemToInsertBefore) // add tooltips
+        parentToInsertInto.insertBefore(this.imports.tooltip.div, elemToInsertBefore) // add tooltips
         setTimeout(() => this.imports.chatbar.tweak(), 1) ; this.update.color()
         this.state.status = 'inserted'
     },
 
     remove() {
         if (!this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
-        this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltipDiv?.remove()
+        this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltip.div?.remove()
         this.state.status = 'missing' // ensure next .insert() doesn't return early
         this.state.hasFadedIn = false // ensure next .insert() fades in buttons
     },

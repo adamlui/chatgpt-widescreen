@@ -8,7 +8,7 @@
     // Import JS resources
     for (const resource of [
         'lib/chatbar.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js',
-        'components/buttons.js', 'components/modals.js'
+        'components/buttons.js', 'components/modals.js', 'components/tooltip.js'
     ]) await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
@@ -26,6 +26,7 @@
     dom.imports.import({ env }) // for env.ui.scheme
     modals.imports.import({ app, env }) // for app data + env.ui.scheme
     settings.imports.import({ env }) // to load/save active tab's settings using env.site
+    tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`
@@ -113,18 +114,11 @@
                         err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
                 }
             }
-        },
-
-        tooltip(event) {
-            update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
-            tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
     }
 
-    // Export dependencies to BUTTONS
-    const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' }),
-          tweaksStyle = dom.create.style()
-    buttons.imports.import({ app, chatbar, env, sites, toggle, tooltipDiv, tweaksStyle })
+    const tweaksStyle = dom.create.style()
+    buttons.imports.import({ app, chatbar, env, sites, toggle, tooltip, tweaksStyle })
 
     const update = {
 
@@ -182,26 +176,6 @@
                       + '[class^=Message] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
             }
-        },
-
-        async tooltip(btnType) { // text & position
-            const visibleBtnTypes = buttons.getTypes.visible()
-            const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
-                            + ( env.site == 'perplexity' ? ( chatbar.is.tall() ? -1 : 8 )
-                              : env.site == 'poe' ? 28 : 7 )
-            const spreadFactor = env.site == 'perplexity' ? 27.5 : env.site == 'poe' ? 28 : 31
-            const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
-                             + ( env.site == 'chatgpt' && chatbar.is.tall() ? -2 : 4 )
-            tooltipDiv.innerText = chrome.i18n.getMessage(`tooltip_${btnType}${
-                !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')}`)
-            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px` // x-pos
-            tooltipDiv.style.bottom = ( // y-pos
-                env.site == 'perplexity' ? (
-                    location.pathname != '/' ? '64px' // not homepage
-                        : document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' // logged-in homepage
-                                             : '50vh' // logged-out homepage
-                ) : env.site == 'poe' ? '50px' : '59px'
-            )
         }
     }
 
@@ -253,7 +227,7 @@
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
-            settings.save(mode, state) ; buttons.update.svg(mode) ; update.tooltip(mode)
+            settings.save(mode, state) ; buttons.update.svg(mode) ; tooltip.update(mode)
             if (!config.extensionDisabled) { // tweak UI
                 if (mode == 'fullWindow') sync.fullerWin()
                 if (env.site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
@@ -300,18 +274,6 @@
          config.fullWindow = isFullWin() // ...so match it
     else await settings.load('fullWindow') // otherwise load CWM's saved state
 
-    // Stylize TOOLTIP div
-    document.head.append(dom.create.style('.cwm-tooltip {'
-        + 'background-color: rgba(0,0,0,0.71) ; padding: 5px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;'
-        + 'font-size: 0.85rem ; color: white ; white-space: nowrap ;' // text style
-        + `--shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;
-              box-shadow: var(--shadow) ; -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;`
-        + 'position: absolute ; bottom: 58px ; opacity: 0 ; z-index: 9999 ;' // visibility
-        + 'transition: opacity 0.1s ; -webkit-transition: opacity 0.1s ; -moz-transition: opacity 0.1s ;'
-            + '-ms-transition: opacity 0.1s ; -o-transition: opacity 0.1s ;'
-        + 'user-select: none ; webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }'
-    ))
-
     // Apply general style TWEAKS
     const tcbStyle = ( // heighten chatbox
               env.site == 'chatgpt' ? `div[class*=prose]:has(${sites.chatgpt.selectors.input})`
@@ -345,7 +307,8 @@
     const chatbarStyle = dom.create.style()
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
-    // Insert BUTTONS
+    // Insert BUTTONS/TOOLTIPS
+    tooltip.createDiv() ; tooltip.stylize()
     if (!config.extensionDisabled) {
         buttons.insert()
 

@@ -49,7 +49,7 @@ window.buttons = {
 
     create() {
         if (/chatgpt|openai/.test(this.imports.env.site)) {
-            if (this.imports.chatbar.get()?.nextElementSibling && !this.imports.env.tallChatbar)
+            if (this.imports.chatbar.get()?.nextElementSibling)
                 this.imports.env.tallChatbar = true
             if (document.querySelector(this.imports.sites.chatgpt.selectors.btns.login))
                 this.imports.env.guestMode = true

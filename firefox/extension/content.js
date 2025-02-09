@@ -170,7 +170,6 @@
                 wideScreenStyle.innerText = (
                     env.site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
-                      + ( !env.tallChatbar ? '.text-base:nth-of-type(2) { max-width: 97% !important }' : '' )
                   ) : env.site == 'perplexity' ? (
                         `${sites.perplexity.selectors.header} ~ div,` // outer container
                       + `${sites.perplexity.selectors.header} ~ div > div` // inner container
@@ -191,7 +190,7 @@
                               : env.site == 'poe' ? 28 : 0 )
             const spreadFactor = env.site == 'perplexity' ? 27.5 : env.site == 'poe' ? 28 : 31
             const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
-                             + ( env.tallChatbar ? -2 : 4 )
+                             + ( env.site == 'chatgpt' && chatbar.is.tall() ? -2 : 4 )
             tooltipDiv.innerText = chrome.i18n.getMessage(`tooltip_${btnType}${
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')}`)
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px` // x-pos

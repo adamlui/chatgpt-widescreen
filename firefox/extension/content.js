@@ -188,7 +188,7 @@
         async tooltip(btnType) { // text & position
             const visibleBtnTypes = buttons.getTypes.visible()
             const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
-                            + ( env.site == 'perplexity' ? ( chatbar.isTall() ? 39 : 56 )
+                            + ( env.site == 'perplexity' ? ( chatbar.is.tall() ? 39 : 56 )
                               : env.site == 'poe' ? 28 : 0 )
             const spreadFactor = env.site == 'perplexity' ? 27.5 : env.site == 'poe' ? 28 : 31
             const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
@@ -374,7 +374,7 @@
         if (env.site == 'chatgpt') {
 
             // Update button colors on temp chat toggle
-            const chatbarIsDark = chatbar.isDark()
+            const chatbarIsDark = chatbar.is.dark()
             if (chatbarIsDark != isTempChat) { buttons.update.color() ; isTempChat = chatbarIsDark }
 
             // Add/remove Widescreen button on Canvas mode toggle

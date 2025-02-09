@@ -13,17 +13,19 @@ window.chatbar = {
         return chatbar
     },
 
-    isDark() {
-        return this.imports.env.site.site != 'chatgpt' ? undefined
-            : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
-                .backgroundColor == 'rgb(48, 48, 48)'
-    },
+    is: {
+        dark() {
+            return chatbar.imports.env.site.site != 'chatgpt' ? undefined
+                : getComputedStyle(document.getElementById('composer-background') || document.documentElement)
+                    .backgroundColor == 'rgb(48, 48, 48)'
+        },
 
-    isTall() {
-        const site = this.imports.env.site
-        return site == 'poe' ? true
-             : site == 'perplexity' ? this.get()?.getBoundingClientRect().height > 60
-             : /* chatgpt */ !!this.get()?.nextElementSibling
+        tall() {
+            const site = chatbar.imports.env.site
+            return site == 'poe' ? true
+                 : site == 'perplexity' ? chatbar.get()?.getBoundingClientRect().height > 60
+                 : /* chatgpt */ !!chatbar.get()?.nextElementSibling
+        }
     },
 
     tweak() {
@@ -32,7 +34,7 @@ window.chatbar = {
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const inputArea = chatbarDiv.querySelector(sites[site].selectors.input) ; if (!inputArea) return
         if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
-        else if (!this.isTall()) { // narrow it to not clash w/ buttons
+        else if (!this.is.tall()) { // narrow it to not clash w/ buttons
             const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
             const visibleBtnTypes = [...buttons.getTypes.visible(), 'send']
             visibleBtnTypes.forEach(type =>

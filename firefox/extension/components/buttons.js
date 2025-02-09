@@ -60,7 +60,7 @@ window.buttons = {
     },
 
     async create() {
-        if (this.imports.env.site == 'chatgpt' && this.imports.chatbar.isTall())
+        if (this.imports.env.site == 'chatgpt' && this.imports.chatbar.is.tall())
             this.imports.env.hasTallChatbar = true
         if (/chatgpt|perplexity/.test(this.imports.env.site))
             this.rightBtn = await this.getRightBtn() // for rOffset + styles
@@ -175,7 +175,7 @@ window.buttons = {
         color() {
             buttons.color = (
                 buttons.imports.env.site == 'chatgpt' ? (
-                    buttons.imports.chatbar.isDark() || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
+                    buttons.imports.chatbar.is.dark() || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
                 ) : buttons.imports.env.site == 'perplexity' ? (
                     buttons.imports.env.ui.scheme == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'

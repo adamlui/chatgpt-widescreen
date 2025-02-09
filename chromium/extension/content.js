@@ -226,17 +226,17 @@
             }
         },
 
-        tooltip(btnType) { // text & position
+        async tooltip(btnType) { // text & position
             const visibleBtnTypes = buttons.getTypes.visible()
-            const ctrAddend = ( env.site == 'perplexity' ? ( location.pathname == '/' ? 94 : 105 )
-                              : env.site == 'poe' ? 35 : 13 ) +25
-            const spreadFactor = env.site == 'perplexity' ? 26.5 : env.site == 'poe' ? 28 : 30.55
+            const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
+                            + ( env.site == 'perplexity' ? ( chatbar.isTall() ? 39 : 56 )
+                              : env.site == 'poe' ? 28 : 0 )
+            const spreadFactor = env.site == 'perplexity' ? 27.5 : env.site == 'poe' ? 28 : 31
             const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                              + ( env.tallChatbar ? -2 : 4 )
-            tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
-                !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
-            tooltipDiv.style.right = `${ // x-pos
-                iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
+            tooltipDiv.innerText = chrome.i18n.getMessage(`tooltip_${btnType}${
+                !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')}`)
+            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px` // x-pos
             tooltipDiv.style.bottom = ( // y-pos
                 env.site == 'perplexity' ? (
                     location.pathname != '/' ? '64px' : ( // not homepage
@@ -244,7 +244,7 @@
                       : document.querySelector(sites.perplexity.selectors.btns.settings) ? 'revert-layer' // logged-in homepage
                       : '50.5vh' // logged-out homepage
                     )
-                ) : '50px' // non-Perplexity sites
+                ) : env.site == 'poe' ? '50px' : '59px'
             )
         }
     }
@@ -347,7 +347,7 @@
     // Stylize TOOLTIP div
     document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0,0,0,0.71) ; padding: 5px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;'
-        + 'font-size: 0.85rem ; color: white ;' // font style
+        + 'font-size: 0.85rem ; color: white ; white-space: nowrap ;' // text style
         + `--shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;
               box-shadow: var(--shadow) ; -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;`
         + 'position: absolute ; bottom: 58px ; opacity: 0 ; z-index: 9999 ;' // visibility

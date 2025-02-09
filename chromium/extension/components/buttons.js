@@ -47,21 +47,21 @@ window.buttons = {
         }
     },
 
-    create() {
-        if (/chatgpt|openai/.test(this.imports.env.site)) {
-            if (this.imports.chatbar.isTall())
-                this.imports.env.hasTallChatbar = true
-            if (document.querySelector(this.imports.sites.chatgpt.selectors.btns.login))
-                this.imports.env.guestMode = true
-        }
+    async create() {
+        if (this.imports.env.site == 'chatgpt' && this.imports.chatbar.isTall())
+            this.imports.env.hasTallChatbar = true
+        if (/chatgpt|perplexity/.test(this.imports.env.site))
+            this.rightBtn = await this.getRightBtn() // for rOffset + styles
+
         const validBtnTypes = this.getTypes.valid()
         const bOffset = this.imports.env.site == 'poe' ? 1.1
                       : this.imports.env.site == 'perplexity' ? -13
                       : this.imports.env.hasTallChatbar ? 31 : -8.85
         const rOffset = this.imports.env.site == 'poe' ? -6.5
                       : this.imports.env.site == 'perplexity' ? -4
-                      : this.imports.env.hasTallChatbar ? ( this.imports.env.guestMode ? 53 : 48 ) : -0.25
+                      : this.imports.env.hasTallChatbar ? ( this.rightBtn.getBoundingClientRect().width +14 ) : -0.25
         const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'
+
         validBtnTypes.forEach(async (btnType, idx) => {
             const btn = this[btnType] = dom.create.elem('div')
             btn.id = `${btnType}-btn` // for toggle.tooltip()
@@ -73,14 +73,11 @@ window.buttons = {
                     '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
                     '-o-transition': transitionStyles, '-ms-transition': transitionStyles
             })
-            if (this.imports.env.hasTallChatbar) btn.style.bottom = `${ this.imports.env.guestMode ? 11.85 : 8.85 }px`
+            if (this.imports.env.hasTallChatbar) btn.style.bottom = '11.85px'
             else btn.style.top = `${ /chatgpt|openai/.test(this.imports.env.site) ? -3.25
                                    : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
             if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
-                const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns,
-                      rightBtnSelector = `${btnSelectors.send}, ${btnSelectors.voice}`,
-                      rightBtn = await dom.getLoadedElem(rightBtnSelector)
-                btn.classList.add(...(rightBtn?.classList || []))
+                btn.classList.add(...(this.rightBtn?.classList || []))
                 Object.assign(btn.style, { // remove dark mode overlay
                     backgroundColor: 'transparent', borderColor: 'transparent' })
             }
@@ -107,9 +104,16 @@ window.buttons = {
         })
     },
 
-    insert() {
+    async getRightBtn() {
+        const btnSelectors = this.imports.sites[this.imports.env.site].selectors.btns
+        if (this.imports.env.site == 'chatgpt') // wait 1s for corny button strip (earliest wide Voice button appears)
+            await dom.getLoadedElem('ul:has(svg.icon-md)', 1000)
+        return await dom.getLoadedElem(`${btnSelectors.send}, ${btnSelectors.voice}`)
+    },
+
+    async insert() {
         if (this.state.status?.startsWith('insert') || document.getElementById('fullScreen-btn')) return
-        this.state.status = 'inserting' ; if (!this.wideScreen) this.create()
+        this.state.status = 'inserting' ; if (!this.wideScreen) await this.create()
 
         // Init elems
         const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return

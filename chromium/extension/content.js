@@ -194,8 +194,10 @@
                                 `[class*=bottom-full]:has(button[data-testid=close-button]), /* Get Plus banner */
                                     [data-radix-popper-content-wrapper] /* useless popups */ { display: none }` )
                     ) : env.site == 'perplexity' ? (
-                            ( config.blockSpamDisabled ? '' : // hide homepage spam banners
-                                'div.absolute.w-full:has(svg[data-icon=xmark]) { display: none }' )
+                            ( config.blockSpamDisabled ? '' : // block spam
+                                `div.absolute.w-full:has(svg[data-icon=xmark]), /* homepage spam banners */
+                                    div[class*=bottom]:has([data-testid*=login-modal]) /* Google corner popup */
+                                        { display: none }` )
                           + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
                     ) : '' )
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically

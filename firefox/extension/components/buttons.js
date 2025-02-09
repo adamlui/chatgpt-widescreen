@@ -47,6 +47,18 @@ window.buttons = {
         }
     },
 
+    animate() { // used in sync.configToUI() on Button Animations toggle-on
+        const btnHoverStyles = new RegExp(`.${this.class}:hover\\s*\\{([^}]*)\\}`, 'm')
+            .exec(this.imports.tweaksStyle.innerText)?.[1].trim()
+        this.types.slice().reverse().forEach((btnType, idx) => {
+            const btn = this[btnType] ; if (!btn) return
+            setTimeout(() => { // apply/remove fx
+                btn.style.cssText += btnHoverStyles
+                setTimeout(() => btn.style.cssText = btn.style.cssText.replace(btnHoverStyles, ''), 150)
+            }, idx *75) // ...staggered @ 75ms interval
+        })
+    },
+
     async create() {
         if (this.imports.env.site == 'chatgpt' && this.imports.chatbar.isTall())
             this.imports.env.hasTallChatbar = true
@@ -109,6 +121,17 @@ window.buttons = {
         if (this.imports.env.site == 'chatgpt') // wait 1s for corny button strip (earliest wide Voice button appears)
             await dom.getLoadedElem('ul:has(svg.icon-md)', 1000)
         return await dom.getLoadedElem(`${btnSelectors.send}, ${btnSelectors.voice}`)
+    },
+
+    getTypes: {
+        valid() { // used in buttons.create() + buttons.insert() + this.visible()
+            return buttons.types.filter(type =>
+                !(type == 'fullWindow' && !buttons.imports.sites[buttons.imports.env.site].hasSidebar)
+             && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
+        },
+
+        visible() { // used in update.tooltip() + chatbar.tweak() for horizontal math
+            return this.valid().filter(type => !(type == 'newChat' && config.ncbDisabled)) }
     },
 
     async insert() {
@@ -200,28 +223,5 @@ window.buttons = {
             // Update SVG
             if (!btn.contains(btnSVG)) btn.append(btnSVG)
         }
-    },
-
-    getTypes: {
-        valid() { // used in buttons.create() + buttons.insert() + this.visible()
-            return buttons.types.filter(type =>
-                !(type == 'fullWindow' && !buttons.imports.sites[buttons.imports.env.site].hasSidebar)
-             && !(type == 'wideScreen' && chatgpt.canvasIsOpen()))
-        },
-
-        visible() { // used in update.tooltip() + chatbar.tweak() for horizontal math
-            return this.valid().filter(type => !(type == 'newChat' && config.ncbDisabled)) }
-    },
-
-    animate() { // used in sync.configToUI() on Button Animations toggle-on
-        const btnHoverStyles = new RegExp(`.${this.class}:hover\\s*\\{([^}]*)\\}`, 'm')
-            .exec(this.imports.tweaksStyle.innerText)?.[1].trim()
-        this.types.slice().reverse().forEach((btnType, idx) => {
-            const btn = this[btnType] ; if (!btn) return
-            setTimeout(() => { // apply/remove fx
-                btn.style.cssText += btnHoverStyles
-                setTimeout(() => btn.style.cssText = btn.style.cssText.replace(btnHoverStyles, ''), 150)
-            }, idx *75) // ...staggered @ 75ms interval
-        })
     }
 };

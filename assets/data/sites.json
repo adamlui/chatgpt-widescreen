@@ -38,7 +38,7 @@
     ],
     "hasSidebar": true,
     "selectors": {
-      "btns": { "newChat": "header a[class*=button]" }, "header": "header",
+      "btns": { "newChat": "header a[class*=button]", "send": "[data-button-send]" }, "header": "header",
       "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
       "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
     }

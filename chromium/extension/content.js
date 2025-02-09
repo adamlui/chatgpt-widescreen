@@ -27,7 +27,7 @@
     modals.imports.import({ app, env }) // for app data + env.<browser|ui> flags
     settings.imports.import({ site: env.site }) // to load/save active tab's settings
     tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
-    ui.imports.import({ site: env.site, sites }) // for ui.ui.isFullWin() logic
+    ui.imports.import({ site: env.site, sites }) // for ui.isFullWin() logic
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`

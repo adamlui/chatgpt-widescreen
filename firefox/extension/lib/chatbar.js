@@ -30,7 +30,7 @@ window.chatbar = {
         }
     },
 
-    tweak() {
+    tweak() { // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
         const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
@@ -51,11 +51,11 @@ window.chatbar = {
         } else if (site == 'perplexity') { // left-align Attach File button
             const attachFileBtn = document.querySelector(selectors.btns.attachFile) ; if (!attachFileBtn) return
             let newParent = chatbarDiv
-            if (this.is.tall()) {
-                newParent = newParent.querySelector('div:has(> span > button)') // left btn cluster
+            if (this.is.tall()) { // select new newParent
+                newParent = chatbarDiv.querySelector('div:has(> span > button)') // left button cluster
                 attachFileBtn.style.marginRight = '-10px' // bring Search button closer
             }
-            newParent.insertBefore(attachFileBtn.parentNode, newParent.children[1])
+            newParent?.insertBefore(attachFileBtn.parentNode, newParent.children[1])
         }
     },
 

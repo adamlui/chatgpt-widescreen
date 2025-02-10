@@ -27,7 +27,6 @@
     modals.imports.import({ app, env }) // for app data + env.<browser|ui> flags
     settings.imports.import({ site: env.site }) // to load/save active tab's settings
     tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
-    ui.imports.import({ site: env.site, sites }) // for ui.isFullWin() logic
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`
@@ -252,6 +251,8 @@
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
     }
+
+    ui.imports.import({ site: env.site, sites }) // for ui.isFullWin() logic + sidebar selector/flag
 
     // Init FULL-MODE states
     config.fullScreen = chatgpt.isFullScreen()

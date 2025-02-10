@@ -34,7 +34,7 @@ window.chatbar = {
         const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
-        if (site == 'chatgpt') {
+        if (site == 'chatgpt') { // update chatbar inner width
             const inputArea = chatbarDiv.querySelector(selectors.input) ; if (!inputArea) return
             if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
             else if (!this.is.tall()) { // narrow it to not clash w/ buttons

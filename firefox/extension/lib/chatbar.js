@@ -60,6 +60,7 @@ window.chatbar = {
     },
 
     reset() { // all tweaks for popup master toggle-off
+        if (this.imports.site != 'chatgpt') return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const inputArea = chatbarDiv.querySelector(this.imports.sites.chatgpt.selectors.input)
         if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'

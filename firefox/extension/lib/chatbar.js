@@ -39,11 +39,10 @@ window.chatbar = {
             if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
             else if (!this.is.tall()) { // narrow it to not clash w/ buttons
                 const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                const visibleBtnTypes = [...buttons.getTypes.visible(), 'send']
-                visibleBtnTypes.forEach(type =>
-                    widths[type] = buttons[type]?.getBoundingClientRect().width
-                                || document.querySelector(`${selectors.btns.send}, ${selectors.btns.stop}`)
-                                       ?.getBoundingClientRect().width || 0 )
+                const visibleBtnTypes = [...buttons.getTypes.visible(), 'end']
+                visibleBtnTypes.forEach(type => widths[type] = buttons[type]?.getBoundingClientRect().width
+                  || document.querySelector(`${selectors.btns.send}, ${selectors.btns.stop}, ${selectors.btns.voice}`)
+                        ?.getBoundingClientRect().width || 0 )
                 const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                 inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
                     widths.chatbar - totalBtnWidths -43 }px`

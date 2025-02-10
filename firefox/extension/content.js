@@ -86,7 +86,7 @@
             case 'OFF' : deactivateMode(mode) ; break
             default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
                       : mode == 'fullWindow' ? ui.isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
-                                                                                      : activateMode(mode)
+                                                                                         : activateMode(mode)
         }
 
         function activateMode(mode) {

@@ -15,11 +15,6 @@ window.tooltip = {
 
     createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },
 
-    toggle(event) {
-        tooltip.update(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltip.div.style.opacity = event.type == 'mouseover' ? 1 : 0
-    },
-
     stylize() {
         if (this.styles) return
         this.styles = dom.create.style(`.cwm-tooltip {
@@ -33,6 +28,11 @@ window.tooltip = {
             user-select: none ; webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }`
         )
         document.head.append(this.styles)
+    },
+
+    toggle(event) {
+        tooltip.update(event.currentTarget.id.replace(/-btn$/, ''))
+        tooltip.div.style.opacity = event.type == 'mouseover' ? 1 : 0
     },
 
     async update(btnType) { // text & position

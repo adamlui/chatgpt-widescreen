@@ -49,7 +49,7 @@ window.tooltip = {
         this.div.style.bottom = ( // y-pos
             site == 'perplexity' ? (
                 location.pathname != '/' ? '64px' // not homepage
-                    : document.querySelector( // logged-in homepage
+                  : document.querySelector( // logged-in homepage
                         this.imports.sites.perplexity.selectors.btns.settings) ? 'revert-layer'
                                          : '50vh' // logged-out homepage
             ) : site == 'poe' ? '50px' : '59px'

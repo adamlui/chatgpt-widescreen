@@ -11,16 +11,15 @@
         'components/buttons.js', 'components/modals.js', 'components/tooltip.js'
     ]) await import(chrome.runtime.getURL(resource))
 
-    // Import DATA
-    const { app } = await chrome.storage.sync.get('app'),
-          { sites } = await chrome.storage.sync.get('sites')
-
     // Init ENV context
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    ui.import({ site: env.site, sites }) // for ui.isFullWin() logic + sidebar selector/flag
-    env.ui.scheme = ui.getScheme()
+    ui.import({ site: env.site }) ; env.ui.scheme = ui.getScheme()
+
+    // Import DATA
+    const { app } = await chrome.storage.sync.get('app'),
+          { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
     chatbar.import({ site: env.site, sites }) // for conditional logic + sites.selectors
@@ -28,6 +27,7 @@
     modals.import({ app, env }) // for app data + env.<browser|ui> flags
     settings.import({ site: env.site }) // to load/save active tab's settings
     tooltip.import({ site: env.site, sites }) // for tooltip.update() position logic
+    ui.import({ sites }) // for ui.isFullWin() sidebar selector/flag
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`

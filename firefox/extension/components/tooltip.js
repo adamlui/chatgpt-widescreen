@@ -1,15 +1,11 @@
-// Requires dom.js + env.site + sites
+// Requires dom.js + env.site + msgs: app.msgs (Greasemonkey only) + site: env.site + sites
 
 window.tooltip = {
-
-    imports: {
-        import(deps) { // { msgs: app.msgs (Greasemonkey only), site: env.site, sites }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     getMsg(key) {
         return typeof GM_info != 'undefined' ?
-            this.imports.msgs[key] // from tooltip.imports.import({ msgs: app.msgs }) in userscript
+            this.imports.msgs[key] // from tooltip.import({ msgs: app.msgs }) in userscript
                 : chrome.i18n.getMessage(key) // from ./_locales/*/messages.json
     },
 

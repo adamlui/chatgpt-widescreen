@@ -1,12 +1,8 @@
 window.dom = {
-
-    imports: {
-        import(deps) { // { env }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
-    // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme|darkScheme>.min.css
+    // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme>.min.css
 
         if (targetNode.querySelector('[id*=particles]')) return
         const particlesDivsWrapper = document.createElement('div')
@@ -16,7 +12,7 @@ window.dom = {
           + 'z-index: -1' ); // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(particleSize => {
             const particlesDiv = document.createElement('div')
-            particlesDiv.id = `${ this.imports.env.ui.scheme == 'dark' ? darkScheme
+            particlesDiv.id = `${ this.imports.scheme == 'dark' ? darkScheme
                 : lightScheme }-particles-${particleSize}`
             particlesDivsWrapper.append(particlesDiv)
         })

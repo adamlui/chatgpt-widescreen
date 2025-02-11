@@ -1,11 +1,7 @@
-// Requires env.site + sites
+// Requires site: env.site + sites
 
 window.ui = {
-
-    imports: {
-        import(deps) { // { site: env.site, sites }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     getScheme() {
         const rootElem = document.documentElement

@@ -1,11 +1,7 @@
-// Requires env.site + sites
+// Requires site: env.site + sites
 
 window.chatbar = {
-
-    imports: {
-        import(deps) { // { site: env.site, sites }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     get() {
         const site = this.imports.site

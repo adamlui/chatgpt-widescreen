@@ -1,12 +1,8 @@
-// Requires env.site
+// Requires app (Greasemonkey only) + site: env.site (extension only)
 
 window.config = {}
 window.settings = {
-
-    imports: {
-        import(deps) { // { app (Greasemonkey only), site: env.site (extension only) }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     browserwideKeys: [ 'extensionDisabled', 'fullScreen' ], // to not load/save per-site
 

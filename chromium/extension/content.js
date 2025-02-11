@@ -22,11 +22,11 @@
           { sites } = await chrome.storage.sync.get('sites')
 
     // Export DEPENDENCIES to imported resources
-    chatbar.imports.import({ site: env.site, sites }) // for conditional logic + sites.selectors
-    dom.imports.import({ scheme: env.ui.scheme }) // for dom.addRisingParticles()
-    modals.imports.import({ app, env }) // for app data + env.<browser|ui> flags
-    settings.imports.import({ site: env.site }) // to load/save active tab's settings
-    tooltip.imports.import({ site: env.site, sites }) // for tooltip.update() position logic
+    chatbar.import({ site: env.site, sites }) // for conditional logic + sites.selectors
+    dom.import({ scheme: env.ui.scheme }) // for dom.addRisingParticles()
+    modals.import({ app, env }) // for app data + env.<browser|ui> flags
+    settings.import({ site: env.site }) // to load/save active tab's settings
+    tooltip.import({ site: env.site, sites }) // for tooltip.update() position logic
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`
@@ -115,7 +115,7 @@
     }
 
     const tweaksStyle = dom.create.style()
-    buttons.imports.import({ appName: app.name, chatbar, env, sites, toggleMode, tooltip, tweaksStyle })
+    buttons.import({ appName: app.name, chatbar, env, sites, toggleMode, tooltip, tweaksStyle })
 
     const update = {
 
@@ -252,7 +252,7 @@
         ])
     }
 
-    ui.imports.import({ site: env.site, sites }) // for ui.isFullWin() logic + sidebar selector/flag
+    ui.import({ site: env.site, sites }) // for ui.isFullWin() logic + sidebar selector/flag
 
     // Init FULL-MODE states
     config.fullScreen = chatgpt.isFullScreen()

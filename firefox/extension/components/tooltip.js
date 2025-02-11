@@ -3,13 +3,13 @@
 window.tooltip = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
+    createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },
+
     getMsg(key) {
         return typeof GM_info != 'undefined' ?
             this.imports.msgs[key] // from tooltip.import({ msgs: app.msgs }) in userscript
                 : chrome.i18n.getMessage(key) // from ./_locales/*/messages.json
     },
-
-    createDiv() { this.div = dom.create.elem('div', { class: 'cwm-tooltip' }) },
 
     stylize() {
         if (this.styles) return

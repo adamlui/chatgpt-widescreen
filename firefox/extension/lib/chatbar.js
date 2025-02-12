@@ -26,6 +26,13 @@ window.chatbar = {
         }
     },
 
+    reset() { // all tweaks for popup master toggle-off
+        if (this.imports.site != 'chatgpt') return
+        const chatbarDiv = this.get() ; if (!chatbarDiv) return
+        const inputArea = chatbarDiv.querySelector(this.imports.sites.chatgpt.selectors.input)
+        if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
+    },
+
     tweak() { // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
         const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
@@ -53,12 +60,5 @@ window.chatbar = {
             }
             newParent?.insertBefore(attachFileBtn.parentNode, newParent.children[1])
         }
-    },
-
-    reset() { // all tweaks for popup master toggle-off
-        if (this.imports.site != 'chatgpt') return
-        const chatbarDiv = this.get() ; if (!chatbarDiv) return
-        const inputArea = chatbarDiv.querySelector(this.imports.sites.chatgpt.selectors.input)
-        if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
     }
 };

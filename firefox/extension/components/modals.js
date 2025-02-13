@@ -38,7 +38,7 @@ window.modals = {
             + `<b>⚡ ${this.getMsg('about_poweredBy')}:</b> `
                 + `<a href="${this.imports.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                     + ` v${this.imports.app.chatgptJSver}`,
-            modalBtns, '', 686
+            modalBtns, '', 730
         )
 
         // Format text

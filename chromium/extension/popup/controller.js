@@ -45,6 +45,12 @@
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
+    function toggleSiteSettingsVisibility() {
+        Object.assign(siteSettingsTogglesDiv.style, siteSettingsTogglesDiv.style.opacity == 0 ?
+            { position: '', left: '', opacity: 1 } // show
+          : { position: 'absolute', left: '-9999px', opacity: 0 }) // hide using position to support transition
+    }
+
     // Run MAIN routine
 
     // Init MASTER TOGGLE
@@ -117,8 +123,7 @@
     siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)
     document.body.append(siteSettingsRow, siteSettingsTogglesDiv)
     for (const site of Object.keys(sites)) { // create toggle per site
-        const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, ''),
-              configKey = `${site}Disabled`
+        const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, '')
 
         // Init elems
         const toggleDiv = dom.create.elem('div', {
@@ -130,7 +135,8 @@
               toggleSlider = dom.create.elem('span', { class: 'slider' }),
               toggleLabelSpan = dom.create.elem('span')
         toggleLabelSpan.textContent = siteHomeURL
-        await settings.load(configKey) ; toggleInput.checked = !config[configKey]
+        await settings.load(`${site}Disabled`) ; toggleInput.checked = !config[`${site}Disabled`]
+        if (env.site == site) env.siteDisabled = config[`${site}Disabled`] // to auto-expand toggles later if true
 
         // Assemble/append elems
         toggleLabel.append(toggleInput, toggleSlider) ; toggleDiv.append(toggleLabel, toggleLabelSpan)
@@ -140,18 +146,16 @@
         toggleDiv.onclick = () => toggleInput.click()
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
         toggleInput.onchange = () => {
-            settings.save(configKey, !config[configKey]) ; sync.configToUI({ updatedKey: configKey })
+            settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI({ updatedKey: `${site}Disabled` })
             if (env.site == site) { // fade/notify if setting of active site toggled
                 sync.fade()
                 notify(`${appName} 🧩 ${
-                    chrome.i18n.getMessage(`state_${config[configKey] ? 'off' : 'on' }`).toUpperCase()}`)
+                    chrome.i18n.getMessage(`state_${config[`${site}Disabled`] ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
     }
-    siteSettingsRow.onclick = () =>
-        Object.assign(siteSettingsTogglesDiv.style, siteSettingsTogglesDiv.style.opacity == 0 ?
-            { position: '', left: '', opacity: 1 } // show
-          : { position: 'absolute', left: '-9999px', opacity: 0 }) // hide using position to support transition
+    siteSettingsRow.onclick = toggleSiteSettingsVisibility
+    if (env.siteDisabled) toggleSiteSettingsVisibility() // expand to signal how to ungray menu
 
     // LOCALIZE labels
     let translationOccurred = false

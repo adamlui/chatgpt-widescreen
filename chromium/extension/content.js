@@ -24,7 +24,7 @@
     // Export DEPENDENCIES to imported resources
     chatbar.import({ site: env.site, sites }) // for conditional logic + sites.selectors
     dom.import({ scheme: env.ui.scheme }) // for dom.addRisingParticles()
-    modals.import({ app, env }) // for app data + env.<browser|ui> flags
+    modals.import({ app, env }) // for app data + env['<browser|ui>'] flags
     settings.import({ site: env.site, sites }) // to load/save active tab's settings + `${site}Disabled`
     tooltip.import({ site: env.site, sites }) // for tooltip.update() position logic
     ui.import({ sites }) // for ui.isFullWin() sidebar selector/flag

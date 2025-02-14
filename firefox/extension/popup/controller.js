@@ -35,8 +35,11 @@
             ))})
 
             // Update menu contents
-            document.querySelectorAll('div.logo, div.menu-title, div.menu, #site-settings')
-                .forEach(elem => elem.classList.toggle('disabled', !masterToggle.checked))
+            const siteHomeURL = sites[env.site]?.urls?.homepage?.replace(/^https?:\/\//, ''),
+                  siteToggle = document.querySelector(`div[title*="${siteHomeURL}"] input`),
+                  extensionIsDisabled = !masterToggle.checked || ( siteToggle ? !siteToggle.checked : false )
+            document.querySelectorAll('div.logo, div.menu-title, div.menu')
+                .forEach(elem => elem.classList.toggle('disabled', extensionIsDisabled))
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
@@ -52,7 +55,6 @@
     masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
-        if (siteSettingsTogglesDiv.style.opacity == 1) siteSettingsRow.click() // hide Site Settings toggles
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         if (!config.notifDisabled) notify(`${appName} 🧩 ${
             chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
@@ -114,7 +116,7 @@
     siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
     siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)
     document.body.append(siteSettingsRow, siteSettingsTogglesDiv)
-    Object.keys(sites).forEach(site => { // create toggle per site
+    for (const site of Object.keys(sites)) { // create toggle per site
         const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, ''),
               configKey = `${site}Disabled`
 
@@ -128,7 +130,7 @@
               toggleSlider = dom.create.elem('span', { class: 'slider' }),
               toggleLabelSpan = dom.create.elem('span')
         toggleLabelSpan.textContent = siteHomeURL
-        settings.load(configKey).then(() => toggleInput.checked = !config[configKey])
+        await settings.load(configKey) ; toggleInput.checked = !config[configKey]
 
         // Assemble/append elems
         toggleLabel.append(toggleInput, toggleSlider) ; toggleDiv.append(toggleLabel, toggleLabelSpan)
@@ -139,11 +141,13 @@
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
         toggleInput.onchange = () => {
             settings.save(configKey, !config[configKey]) ; sync.configToUI({ updatedKey: configKey })
-            if (env.site == site) // notify if setting of active site toggled
+            if (env.site == site) { // fade/notify if setting of active site toggled
+                sync.fade()
                 notify(`${appName} 🧩 ${
                     chrome.i18n.getMessage(`state_${config[configKey] ? 'off' : 'on' }`).toUpperCase()}`)
+            }
         }
-    })
+    }
     siteSettingsRow.onclick = () =>
         Object.assign(siteSettingsTogglesDiv.style, siteSettingsTogglesDiv.style.opacity == 0 ?
             { position: '', left: '', opacity: 1 } // show
@@ -160,7 +164,7 @@
     if (translationOccurred) // update <html lang> attr
         document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
-    sync.fade() // based on master toggle
+    sync.fade() // based on master/site toggle
 
     // Create/append FOOTER container
     const footer = dom.create.elem('footer') ; document.body.append(footer)

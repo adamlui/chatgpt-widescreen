@@ -140,7 +140,7 @@
         // Add listeners
         toggleDiv.onclick = () => toggleInput.click()
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
-        toggleInput.onchange = async () => {
+        toggleInput.onchange = () => {
             settings.save(configKey, !config[configKey]) ; sync.configToUI({ updatedKey: configKey })
             if (env.site == site) // notify if setting of active site toggled
                 notify(`${appName} 🧩 ${

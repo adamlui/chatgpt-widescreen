@@ -68,7 +68,7 @@ window.chatbar = {
                 newParent = chatbarDiv.querySelector('div:has(> span > button)') // left button cluster
                 attachFileBtn.style.marginRight = '-10px' // bring Search button closer
             }
-            newParent?.insertBefore(attachFileBtn.parentNode, newParent.children[1])
+            newParent?.children[1]?.before(attachFileBtn.parentNode)
             attachFileBtn.setAttribute('left-aligned', true)
         }
     }

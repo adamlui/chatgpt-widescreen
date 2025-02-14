@@ -153,14 +153,14 @@ window.buttons = {
         btnTypesToInsert.slice().reverse().forEach((btnType, idx) => {
             const btn = this[btnType]
             this.update.svg(btnType) // update icon
-            parentToInsertInto.insertBefore(btn, elemToInsertBefore) // insert button
+            elemToInsertBefore.before(btn) // insert button
             if (!this.state.hasFadedIn) { // fade-in
                 btn.style.opacity = 0 ; setTimeout(() => btn.style.opacity = 1, (idx +1) *30)
                 if (idx == btnTypesToInsert.length -1) // final button scheduled for fade-in
                     this.state.hasFadedIn = true // ...so disable fade-in on subsequent .insert()s till .remove()
             }
         })
-        parentToInsertInto.insertBefore(this.imports.tooltip.div, elemToInsertBefore) // add tooltips
+        elemToInsertBefore.before(this.imports.tooltip.div) // add tooltips
         setTimeout(() => this.imports.chatbar.tweak(), 1) ; this.update.color()
         this.state.status = 'inserted'
     },

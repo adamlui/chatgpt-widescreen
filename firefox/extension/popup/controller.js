@@ -52,7 +52,7 @@
     const appName = ( // for shorter notifs
         await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ? app.name : chrome.i18n.getMessage('appName')
     await settings.load('extensionDisabled')
-    masterToggle.checked = !config.extensionDisabled ; sync.fade()
+    masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         if (siteSettingsTogglesDiv.style.opacity == 1) siteSettingsRow.click() // hide Site Settings toggles
@@ -163,7 +163,7 @@
     if (translationOccurred) // update <html lang> attr
         document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
-    sync.fade() // in case master toggle off
+    sync.fade() // based on master toggle
 
     // Create/append FOOTER container
     const footer = dom.create.elem('footer') ; document.body.append(footer)

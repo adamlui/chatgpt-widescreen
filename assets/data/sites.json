@@ -13,7 +13,8 @@
       },
       "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=sidebar]",
       "footer": ".min-h-4"
-    }
+    },
+    "urls": { "homepage": "https://chatgpt.com" }
   },
   "perplexity": {
     "availFeatures": [
@@ -29,7 +30,8 @@
         "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
       },
       "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]", "sidebar": "div.sticky"
-    }
+    },
+    "urls": { "homepage": "https://www.perplexity.ai" }
   },
   "poe": {
     "availFeatures": [
@@ -41,6 +43,7 @@
       "btns": { "newChat": "header a[class*=button]", "send": "[data-button-send]" }, "header": "header",
       "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
       "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
-    }
+    },
+    "urls": { "homepage": "https://poe.com" }
   }
 }

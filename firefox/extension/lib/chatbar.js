@@ -27,10 +27,20 @@ window.chatbar = {
     },
 
     reset() { // all tweaks for popup master toggle-off
-        if (this.imports.site != 'chatgpt') return
+        const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
-        const inputArea = chatbarDiv.querySelector(this.imports.sites.chatgpt.selectors.input)
-        if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
+        const selectors = this.imports.sites[site].selectors
+        if (site == 'chatgpt') { // restore chatbar inner width
+            const inputArea = chatbarDiv.querySelector(selectors.input)
+            if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
+        } else if (site == 'perplexity') { // remove left-align Attach File button
+            const attachFileBtn = chatbarDiv.querySelector(selectors.btns.attachFile)
+            if (attachFileBtn?.getAttribute('left-aligned')) {
+                const sendBtn = chatbarDiv.querySelector(selectors.btns.send) ; if (!sendBtn) return
+                sendBtn.before(attachFileBtn.parentNode) ; attachFileBtn.removeAttribute('left-aligned')
+                if (this.is.tall()) attachFileBtn.style.marginRight = ''
+            }
+        }
     },
 
     tweak() { // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
@@ -59,6 +69,7 @@ window.chatbar = {
                 attachFileBtn.style.marginRight = '-10px' // bring Search button closer
             }
             newParent?.insertBefore(attachFileBtn.parentNode, newParent.children[1])
+            attachFileBtn.setAttribute('left-aligned', true)
         }
     }
 };

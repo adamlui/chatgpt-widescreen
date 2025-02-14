@@ -185,7 +185,7 @@
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; buttons.remove()
-                if (env.site == 'chatgpt') chatbar.reset()
+                if (/chatgpt|perplexity/.test(env.site)) chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggleMode('wideScreen') }

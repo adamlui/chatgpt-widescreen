@@ -12,6 +12,9 @@
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
+    app.name = ( // shorten for shorter notifs
+        await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ? 'ChatGPT Widescreen'
+                                                                    : chrome.i18n.getMessage('appName')
     icons.import({ app }) // for src's using app.urls.assetHost
 
     // Define FUNCTIONS
@@ -52,10 +55,8 @@
     masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
-        if (!config.notifDisabled)
-            notify(`${ (await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ?
-                'ChatGPT Widescreen' : chrome.i18n.getMessage('appName')} 🧩 ${
-                    chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
+        if (!config.notifDisabled) notify(`${app.name} 🧩 ${
+            chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
     // Create CHILD menu entries on matched pages

@@ -7,15 +7,14 @@
     // Init ENV context
     const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
         { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
-    settings.import({ site: env.site }) // to load/save active tab's settings
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
           { sites } = await chrome.storage.sync.get('sites')
-    app.name = ( // shorten for shorter notifs
-        await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ? 'ChatGPT Widescreen'
-                                                                    : chrome.i18n.getMessage('appName')
+
+    // Export DEPENDENCIES to imported resources
     icons.import({ app }) // for src's using app.urls.assetHost
+    settings.import({ site: env.site, sites }) // to load/save active tab's settings + `${site}Disabled`
 
     // Define FUNCTIONS
 
@@ -36,7 +35,7 @@
             ))})
 
             // Update menu contents
-            document.querySelectorAll('div.logo, div.menu-title, div.menu')
+            document.querySelectorAll('div.logo, div.menu-title, div.menu, #site-settings')
                 .forEach(elem => {
                     elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
                     elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
@@ -50,12 +49,15 @@
 
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('input')
+    const appName = ( // for shorter notifs
+        await chrome.i18n.getAcceptLanguages())[0].startsWith('en') ? app.name : chrome.i18n.getMessage('appName')
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
     masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
+        if (siteSettingsTogglesDiv.style.opacity == 1) siteSettingsRow.click() // hide Site Settings toggles
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
-        if (!config.notifDisabled) notify(`${app.name} 🧩 ${
+        if (!config.notifDisabled) notify(`${appName} 🧩 ${
             chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
@@ -99,9 +101,56 @@
                 }
             }
         })
-
-        sync.fade() // in case master toggle off
     }
+
+    // Create SITE SETTINGS
+    const siteSettingsRow = dom.create.elem('div', {
+        id: 'site-settings', class: 'menu-item menu-area',
+        title: `${chrome.i18n.getMessage('helptip_enableDisable')} ${appName} ${
+            chrome.i18n.getMessage('helptip_perSite')}`
+    })
+    const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
+    const siteSettingsLabelSpan = dom.create.elem('span')
+    const siteSettingsTogglesDiv = dom.create.elem('div',
+        { style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px ; transition: 0.35s ease-in-out' })
+    siteSettingsLabel.innerText = '🌐'
+    siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
+    siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)
+    document.body.append(siteSettingsRow, siteSettingsTogglesDiv)
+    Object.keys(sites).forEach(site => { // create toggle per site
+        const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, ''),
+              configKey = `${site}Disabled`
+
+        // Init elems
+        const toggleDiv = dom.create.elem('div', {
+            class: 'menu-item menu-area',
+            title: `${chrome.i18n.getMessage('helptip_run')} ${appName} on ${siteHomeURL}`
+        })
+        const toggleLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
+              toggleInput = dom.create.elem('input', { type: 'checkbox' }),
+              toggleSlider = dom.create.elem('span', { class: 'slider' }),
+              toggleLabelSpan = dom.create.elem('span')
+        toggleLabelSpan.textContent = siteHomeURL
+        settings.load(configKey).then(() => toggleInput.checked = !config[configKey])
+
+        // Assemble/append elems
+        toggleLabel.append(toggleInput, toggleSlider) ; toggleDiv.append(toggleLabel, toggleLabelSpan)
+        siteSettingsTogglesDiv.append(toggleDiv)
+
+        // Add listeners
+        toggleDiv.onclick = () => toggleInput.click()
+        toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
+        toggleInput.onchange = async () => {
+            settings.save(configKey, !config[configKey]) ; sync.configToUI({ updatedKey: configKey })
+            if (env.site == site) // notify if setting of active site toggled
+                notify(`${appName} 🧩 ${
+                    chrome.i18n.getMessage(`state_${config[configKey] ? 'off' : 'on' }`).toUpperCase()}`)
+        }
+    })
+    siteSettingsRow.onclick = () =>
+        Object.assign(siteSettingsTogglesDiv.style, siteSettingsTogglesDiv.style.opacity == 0 ?
+            { position: '', left: '', opacity: 1 } // show
+          : { position: 'absolute', left: '-9999px', opacity: 0 }) // hide using position to support transition
 
     // LOCALIZE labels
     let translationOccurred = false
@@ -113,6 +162,8 @@
     }})
     if (translationOccurred) // update <html lang> attr
         document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
+
+    sync.fade() // in case master toggle off
 
     // Create/append FOOTER container
     const footer = dom.create.elem('footer') ; document.body.append(footer)

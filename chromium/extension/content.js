@@ -25,7 +25,7 @@
     chatbar.import({ site: env.site, sites }) // for conditional logic + sites.selectors
     dom.import({ scheme: env.ui.scheme }) // for dom.addRisingParticles()
     modals.import({ app, env }) // for app data + env.<browser|ui> flags
-    settings.import({ site: env.site }) // to load/save active tab's settings
+    settings.import({ site: env.site, sites }) // to load/save active tab's settings + `${site}Disabled`
     tooltip.import({ site: env.site, sites }) // for tooltip.update() position logic
     ui.import({ sites }) // for ui.isFullWin() sidebar selector/flag
 
@@ -33,7 +33,8 @@
     const firstRunKey = `${env.site}_isFirstRun`
     if ((await chrome.storage.sync.get(firstRunKey))[firstRunKey] == undefined) { // activate widescreen on install
         settings.save('wideScreen', true) ; settings.save('isFirstRun', false) }
-    await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
+    const siteDisabledKeys = Object.keys(sites).map(site => `${site}Disabled`)
+    await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(async req => {
@@ -180,13 +181,14 @@
     const sync = {
 
         async configToUI(options) { // on toolbar popup toggles + AI tab activations
-            const extensionWasDisabled = config.extensionDisabled
-            await settings.load('extensionDisabled', ...sites[env.site].availFeatures)
-            if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
+            const extensionWasDisabled = config.extensionDisabled || config[`${env.site}Disabled`]
+            await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)
+            if (!extensionWasDisabled && ( config.extensionDisabled || config[`${env.site}Disabled`] )) {
+                // Outright disable modes/tweaks/btns
                 wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; buttons.remove()
                 if (/chatgpt|perplexity/.test(env.site)) chatbar.reset()
-            } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
+            } else if (!config.extensionDisabled && !config[`${env.site}Disabled`]) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggleMode('wideScreen') }
                 if (sites[env.site].hasSidebar) {
@@ -197,7 +199,7 @@
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
                 chatbar.tweak() // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
-                buttons.insert() // since .remove()'d when config.extensionDisabled
+                buttons.insert() // since .remove()'d when extension disabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
                     // ...to visually signal location + preview fx applied by Button Animations toggle-on
                     buttons.animate()
@@ -226,7 +228,7 @@
                           : mode == 'fullWindow' ? ui.isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; buttons.update.svg(mode) ; tooltip.update(mode)
-            if (!config.extensionDisabled) { // tweak UI
+            if (!config.extensionDisabled && !config[`${env.site}Disabled`]) { // tweak UI
                 if (mode == 'fullWindow') sync.fullerWin()
                 if (env.site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                     mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
@@ -294,7 +296,7 @@
 
     // Insert BUTTONS/TOOLTIPS
     tooltip.createDiv() ; tooltip.stylize()
-    if (!config.extensionDisabled) {
+    if (!config.extensionDisabled && !config[`${env.site}Disabled`]) {
         buttons.insert()
 
     // Restore PREV SESSION's state
@@ -311,7 +313,7 @@
     new MutationObserver(() => {
 
         // Maintain button visibility on nav
-        if (config.extensionDisabled) return
+        if (config.extensionDisabled || config[`${env.site}Disabled`]) return
         else if (!document.getElementById('fullScreen-btn') && chatbar.get() && buttons.state.status != 'inserting') {
             buttons.state.status = 'missing' ; buttons.insert() }
 

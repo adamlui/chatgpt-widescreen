@@ -62,7 +62,7 @@ window.chatbar = {
                 inputArea.style.width = '100%' // rid h-scrollbar
             }
         } else if (site == 'perplexity') { // left-align Attach File button
-            const attachFileBtn = document.querySelector(selectors.btns.attachFile) ; if (!attachFileBtn) return
+            const attachFileBtn = chatbarDiv.querySelector(selectors.btns.attachFile) ; if (!attachFileBtn) return
             let newParent = chatbarDiv
             if (this.is.tall()) { // select new newParent
                 newParent = chatbarDiv.querySelector('div:has(> span > button)') // left button cluster

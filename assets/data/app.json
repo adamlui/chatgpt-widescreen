@@ -1,5 +1,5 @@
 {
-  "name": "ChatGPT Widescreen Mode", "symbol": "🖥️", "slug": "chatgpt-widescreen",
+  "name": "ChatGPT Widescreen", "symbol": "🖥️", "slug": "chatgpt-widescreen",
   "author": { "name": "Adam Lui", "url": "https://github.com/adamlui" },
   "urls": {
     "chatgptJS": "https://chatgpt.js.org",

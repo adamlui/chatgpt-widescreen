@@ -140,10 +140,10 @@
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
     const siteSettingsCaret = icons.create('caretDown', { size: 11,
-        style: 'position: absolute ; right: 12px ; transform: rotate(-90deg) ; transition: transform 0.08s' })
+        style: 'position: absolute ; right: 14px ; transform: rotate(-90deg) ; transition: transform 0.08s' })
     const siteTogglesDiv = dom.create.elem('div', {
         style: `position: absolute ; left: -99px ; opacity: 0 ; border-left: 4px solid transparent ;
-                border-image: linear-gradient(transparent, rgb(212 212 212)) 30 100%`
+                border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%`
     })
     siteSettingsLabel.innerText = '🌐'
     siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')

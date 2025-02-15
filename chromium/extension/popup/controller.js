@@ -70,10 +70,12 @@
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = async () => {
+        const extensionWasDisabled = !!document.querySelector('.disabled')
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
-        notify(`${appName} 🧩 ${
-            chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
+        const extensionIsDisabled = !!document.querySelector('.disabled')
+        if (extensionWasDisabled ^ extensionIsDisabled) notify(`${appName} 🧩 ${
+            chrome.i18n.getMessage(`state_${ extensionIsDisabled ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
     // Create CHILD menu entries on matched pages
@@ -156,11 +158,13 @@
         toggleRow.onclick = () => toggleInput.click()
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
         toggleInput.onchange = () => {
+            const extensionWasDisabled = !!document.querySelector('.disabled')
             settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI()
             if (env.site == site) { // fade/notify if setting of active site toggled
                 sync.fade()
-                notify(`${appName} 🧩 ${
-                    chrome.i18n.getMessage(`state_${config[`${site}Disabled`] ? 'off' : 'on' }`).toUpperCase()}`)
+                const extensionIsDisabled = !!document.querySelector('.disabled')
+                if (extensionWasDisabled ^ extensionIsDisabled) notify(`${appName} 🧩 ${
+                    chrome.i18n.getMessage(`state_${extensionIsDisabled ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
     }

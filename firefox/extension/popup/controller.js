@@ -49,6 +49,7 @@
         const transitionDuration = 350, // ms
               toggleRows = siteTogglesDiv.querySelectorAll('.menu-item')
         if (siteTogglesDiv.style.opacity == 0) { // show toggles
+            siteSettingsCaret.style.transform = ''
             Object.assign(siteTogglesDiv.style, { position: '', left: '', opacity: 1 })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
@@ -57,8 +58,10 @@
                 row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
                 setTimeout(() => row.style.opacity = 1, idx * transitionDuration /10)
             })
-        } else // hide toggles
+        } else { // hide toggles
+            siteSettingsCaret.style.transform = 'rotate(-90deg)'
             Object.assign(siteTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })
+        }
     }
 
     // Run MAIN routine
@@ -128,11 +131,13 @@
     })
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
-    const siteTogglesDiv = dom.create.elem('div',
-        { style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px' })
+    const siteSettingsCaret = icons.create({ name: 'caretDown', size: 11,
+        style: 'position: absolute ; right: 10px ; transform: rotate(-90deg)' })
+    const siteTogglesDiv = dom.create.elem('div', {
+        style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px' })
     siteSettingsLabel.innerText = '🌐'
     siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
-    siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)
+    siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan, siteSettingsCaret)
     document.body.append(siteSettingsRow, siteTogglesDiv)
     for (const site of Object.keys(sites)) { // create toggle per site
         const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, '')
@@ -169,6 +174,8 @@
         }
     }
     siteSettingsRow.onclick = toggleSiteSettingsVisibility
+    siteSettingsRow.onmouseenter = siteSettingsRow.onmouseleave = event =>
+        siteSettingsCaret.style.fill = event.type == 'mouseenter' ? 'white' : 'black'
     if (env.siteDisabled) toggleSiteSettingsVisibility() // expand to signal how to ungray menu
 
     // LOCALIZE labels

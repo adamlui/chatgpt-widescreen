@@ -16,6 +16,12 @@
     icons.import({ app }) // for src's using app.urls.assetHost
     settings.import({ site: env.site, sites }) // to load/save active tab's settings + `${site}Disabled`
 
+    // Init SITE URLs
+    const siteURLs = Object.fromEntries(Object.keys(sites).map(site => {
+        const homepage = sites[site].urls.homepage.replace(/^https?:\/\//, '')
+        return [site, { homepage, favicon: `https://www.google.com/s2/favicons?domain=${homepage}` }]
+    }))
+
     // Define FUNCTIONS
 
     function notify(msg, pos = 'bottom-right') {
@@ -38,8 +44,7 @@
             ))})
 
             // Update menu contents
-            const siteHomeURL = sites[env.site]?.urls?.homepage?.replace(/^https?:\/\//, ''),
-                  siteToggle = document.querySelector(`div[title*="${siteHomeURL}"] input`),
+            const siteToggle = document.querySelector(`div[title*="${siteURLs[env.site]?.homepage}"] input`),
                   extensionIsDisabled = !masterToggle.checked || ( siteToggle ? !siteToggle.checked : false )
             document.querySelectorAll('div.logo, div.menu-title, div.menu')
                 .forEach(elem => elem.classList.toggle('disabled', extensionIsDisabled))
@@ -145,23 +150,24 @@
     siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan, siteSettingsCaret)
     document.body.append(siteSettingsRow, siteTogglesDiv)
     for (const site of Object.keys(sites)) { // create toggle per site
-        const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, '')
 
         // Init elems
         const toggleRow = dom.create.elem('div', {
             class: 'menu-item menu-area',
-            title: `${chrome.i18n.getMessage('helptip_run')} ${appName} on ${siteHomeURL}`
+            title: `${chrome.i18n.getMessage('helptip_run')} ${appName} on ${siteURLs[site].homepage}`
         })
-        const toggleLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
-              toggleInput = dom.create.elem('input', { type: 'checkbox' }),
-              toggleSlider = dom.create.elem('span', { class: 'slider' }),
-              toggleLabelSpan = dom.create.elem('span')
-        toggleLabelSpan.textContent = siteHomeURL
+        const toggleLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' })
+        const toggleInput = dom.create.elem('input', { type: 'checkbox' })
+        const toggleSlider = dom.create.elem('span', { class: 'slider' })
+        const toggleLabelSpan = dom.create.elem('span')
+        const toggleFavicon = dom.create.elem('img',
+            { src: siteURLs[site].favicon, width: 15, style: 'position: absolute ; right: 13px' })
+        toggleLabelSpan.textContent = siteURLs[site].homepage
         await settings.load(`${site}Disabled`) ; toggleInput.checked = !config[`${site}Disabled`]
         if (env.site == site) env.siteDisabled = config[`${site}Disabled`] // to auto-expand toggles later if true
 
         // Assemble/append elems
-        toggleLabel.append(toggleInput, toggleSlider) ; toggleRow.append(toggleLabel, toggleLabelSpan)
+        toggleLabel.append(toggleInput, toggleSlider) ; toggleRow.append(toggleLabel, toggleLabelSpan, toggleFavicon)
         siteTogglesDiv.append(toggleRow)
 
         // Add listeners

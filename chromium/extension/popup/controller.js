@@ -131,7 +131,7 @@
     })
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
-    const siteSettingsCaret = icons.create({ name: 'caretDown', size: 11,
+    const siteSettingsCaret = icons.create('caretDown', { size: 11,
         style: 'position: absolute ; right: 12px ; transform: rotate(-90deg) ; transition: transform 0.08s' })
     const siteTogglesDiv = dom.create.elem('div', {
         style: `position: absolute ; left: -99px ; opacity: 0 ; border-left: 10px solid transparent ;
@@ -211,7 +211,7 @@
     const aboutSpan = dom.create.elem('span', {
         title: `${chrome.i18n.getMessage('menuLabel_about')} ${chrome.i18n.getMessage('appName')}`,
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const aboutIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
     aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
@@ -219,7 +219,7 @@
     const moreExtensionsSpan = dom.create.elem('span', {
         title:  chrome.i18n.getMessage('btnLabel_moreAIextensions'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreExtensionsIcon = icons.create({ name: 'plus', size: 16 })
+    const moreExtensionsIcon = icons.create('plus')
     moreExtensionsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedExtensions }) ; close() }
     moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
 

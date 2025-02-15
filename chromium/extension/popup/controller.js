@@ -132,7 +132,7 @@
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
     const siteSettingsCaret = icons.create({ name: 'caretDown', size: 11,
-        style: 'position: absolute ; right: 12px ; transform: rotate(-90deg)' })
+        style: 'position: absolute ; right: 12px ; transform: rotate(-90deg) ; transition: transform 0.08s' })
     const siteTogglesDiv = dom.create.elem('div', {
         style: `position: absolute ; left: -99px ; opacity: 0 ; border-left: 10px solid transparent ;
                 border-image: linear-gradient(transparent, rgb(212 212 212)) 30 100%`

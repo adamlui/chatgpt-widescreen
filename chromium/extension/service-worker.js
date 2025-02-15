@@ -44,6 +44,10 @@ chrome.runtime.onMessage.addListener(async req => {
     // Init SITES data
     const sites = Object.assign(Object.create(null),
         await (await fetch(`${app.urls.resourceHost}/assets/data/sites.json`)).json())
+    Object.keys(sites).forEach(site => { // strip protocol from homepage URL + add favicon URL for popup menu
+        sites[site].urls.homepage = sites[site].urls.homepage.replace(/^https?:\/\//, '') // for cleaner tooltips/labels
+        sites[site].urls.favicon = `https://www.google.com/s2/favicons?domain=${sites[site].urls.homepage}`
+    })
     chrome.storage.local.set({ sites })
 
 })()

@@ -156,7 +156,7 @@
         toggleDiv.onclick = () => toggleInput.click()
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
         toggleInput.onchange = () => {
-            settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI({ updatedKey: `${site}Disabled` })
+            settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI()
             if (env.site == site) { // fade/notify if setting of active site toggled
                 sync.fade()
                 notify(`${appName} 🧩 ${

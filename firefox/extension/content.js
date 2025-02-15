@@ -18,8 +18,8 @@
     ui.import({ site: env.site }) ; env.ui.scheme = ui.getScheme()
 
     // Import DATA
-    const { app } = await chrome.storage.sync.get('app'),
-          { sites } = await chrome.storage.sync.get('sites')
+    const { app } = await chrome.storage.local.get('app'),
+          { sites } = await chrome.storage.local.get('sites')
 
     // Export DEPENDENCIES to imported resources
     chatbar.import({ site: env.site, sites }) // for conditional logic + sites.selectors
@@ -31,7 +31,7 @@
 
     // Init SETTINGS
     const firstRunKey = `${env.site}_isFirstRun`
-    if ((await chrome.storage.sync.get(firstRunKey))[firstRunKey] == undefined) { // activate widescreen on install
+    if ((await chrome.storage.local.get(firstRunKey))[firstRunKey] == undefined) { // activate widescreen on install
         settings.save('wideScreen', true) ; settings.save('isFirstRun', false) }
     const siteDisabledKeys = Object.keys(sites).map(site => `${site}Disabled`)
     await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)

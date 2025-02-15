@@ -9,8 +9,8 @@
         { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
 
     // Import DATA
-    const { app } = await chrome.storage.sync.get('app'),
-          { sites } = await chrome.storage.sync.get('sites')
+    const { app } = await chrome.storage.local.get('app'),
+          { sites } = await chrome.storage.local.get('sites')
 
     // Export DEPENDENCIES to imported resources
     icons.import({ app }) // for src's using app.urls.assetHost

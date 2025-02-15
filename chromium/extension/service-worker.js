@@ -39,11 +39,11 @@ chrome.runtime.onMessage.addListener(async req => {
     app.urls.resourceHost = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestResourceCommitHash}`
     const remoteAppData = await (await fetch(`${app.urls.resourceHost}/assets/data/app.json`)).json()
     Object.assign(app, { ...remoteAppData, urls: { ...app.urls, ...remoteAppData.urls }})
-    chrome.storage.sync.set({ app }) // save to browser storage
+    chrome.storage.local.set({ app }) // save to browser storage
 
     // Init SITES data
     const sites = Object.assign(Object.create(null),
         await (await fetch(`${app.urls.resourceHost}/assets/data/sites.json`)).json())
-    chrome.storage.sync.set({ sites })
+    chrome.storage.local.set({ sites })
 
 })()

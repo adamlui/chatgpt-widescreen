@@ -72,7 +72,7 @@
     masterToggle.onchange = async () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
-        if (!config.notifDisabled) notify(`${appName} 🧩 ${
+        notify(`${appName} 🧩 ${
             chrome.i18n.getMessage(`state_${ config.extensionDisabled ? 'off' : 'on' }`).toUpperCase()}`)
     }
 

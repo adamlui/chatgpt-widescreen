@@ -47,18 +47,18 @@
 
     function toggleSiteSettingsVisibility() {
         const transitionDuration = 350, // ms
-              toggleRows = siteSettingsTogglesDiv.querySelectorAll('.menu-item')
-        if (siteSettingsTogglesDiv.style.opacity == 0) { // show toggles
-            Object.assign(siteSettingsTogglesDiv.style, { position: '', left: '', opacity: 1 })
+              toggleRows = siteTogglesDiv.querySelectorAll('.menu-item')
+        if (siteTogglesDiv.style.opacity == 0) { // show toggles
+            Object.assign(siteTogglesDiv.style, { position: '', left: '', opacity: 1 })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
-            siteSettingsTogglesDiv.offsetHeight // force reflow to insta-apply reset
+            siteTogglesDiv.offsetHeight // force reflow to insta-apply reset
             toggleRows.forEach((row, idx) => { // fade-in staggered
                 row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
                 setTimeout(() => row.style.opacity = 1, idx * transitionDuration /10)
             })
         } else // hide toggles
-            Object.assign(siteSettingsTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })
+            Object.assign(siteTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })
     }
 
     // Run MAIN routine
@@ -126,17 +126,17 @@
     })
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
-    const siteSettingsTogglesDiv = dom.create.elem('div',
+    const siteTogglesDiv = dom.create.elem('div',
         { style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px' })
     siteSettingsLabel.innerText = '🌐'
     siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
     siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)
-    document.body.append(siteSettingsRow, siteSettingsTogglesDiv)
+    document.body.append(siteSettingsRow, siteTogglesDiv)
     for (const site of Object.keys(sites)) { // create toggle per site
         const siteHomeURL = sites[site].urls.homepage.replace(/^https?:\/\//, '')
 
         // Init elems
-        const toggleDiv = dom.create.elem('div', {
+        const toggleRow = dom.create.elem('div', {
             class: 'menu-item menu-area',
             title: `${chrome.i18n.getMessage('helptip_run')} ${appName} on ${siteHomeURL}`
         })
@@ -149,11 +149,11 @@
         if (env.site == site) env.siteDisabled = config[`${site}Disabled`] // to auto-expand toggles later if true
 
         // Assemble/append elems
-        toggleLabel.append(toggleInput, toggleSlider) ; toggleDiv.append(toggleLabel, toggleLabelSpan)
-        siteSettingsTogglesDiv.append(toggleDiv)
+        toggleLabel.append(toggleInput, toggleSlider) ; toggleRow.append(toggleLabel, toggleLabelSpan)
+        siteTogglesDiv.append(toggleRow)
 
         // Add listeners
-        toggleDiv.onclick = () => toggleInput.click()
+        toggleRow.onclick = () => toggleInput.click()
         toggleInput.onclick = toggleSlider.onclick = event => event.stopImmediatePropagation() // prevent double toggle
         toggleInput.onchange = () => {
             settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI()

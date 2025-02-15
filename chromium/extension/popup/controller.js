@@ -46,7 +46,7 @@
     }
 
     function toggleSiteSettingsVisibility() {
-        const transitionDuration = 35, // ms
+        const transitionDuration = 350, // ms
               toggleRows = siteSettingsTogglesDiv.querySelectorAll('.menu-item')
         if (siteSettingsTogglesDiv.style.opacity == 0) { // show toggles
             Object.assign(siteSettingsTogglesDiv.style, { position: '', left: '', opacity: 1 })
@@ -54,8 +54,8 @@
                 row.style.transition = 'none' ; row.style.opacity = 0 })
             siteSettingsTogglesDiv.offsetHeight // force reflow to insta-apply reset
             toggleRows.forEach((row, idx) => { // fade-in staggered
-                row.style.transition = `opacity 0.${transitionDuration}s ease-in-out`
-                setTimeout(() => row.style.opacity = 1, idx * transitionDuration)
+                row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
+                setTimeout(() => row.style.opacity = 1, idx * transitionDuration /10)
             })
         } else // hide toggles
             Object.assign(siteSettingsTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })

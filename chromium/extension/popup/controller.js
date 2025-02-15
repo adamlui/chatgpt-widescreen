@@ -46,9 +46,19 @@
     }
 
     function toggleSiteSettingsVisibility() {
-        Object.assign(siteSettingsTogglesDiv.style, siteSettingsTogglesDiv.style.opacity == 0 ?
-            { position: '', left: '', opacity: 1 } // show
-          : { position: 'absolute', left: '-9999px', opacity: 0 }) // hide using position to support transition
+        const transitionDuration = 35, // ms
+              toggleRows = siteSettingsTogglesDiv.querySelectorAll('.menu-item')
+        if (siteSettingsTogglesDiv.style.opacity == 0) { // show toggles
+            Object.assign(siteSettingsTogglesDiv.style, { position: '', left: '', opacity: 1 })
+            toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
+                row.style.transition = 'none' ; row.style.opacity = 0 })
+            siteSettingsTogglesDiv.offsetHeight // force reflow to insta-apply reset
+            toggleRows.forEach((row, idx) => { // fade-in staggered
+                row.style.transition = `opacity 0.${transitionDuration}s ease-in-out`
+                setTimeout(() => row.style.opacity = 1, idx * transitionDuration)
+            })
+        } else // hide toggles
+            Object.assign(siteSettingsTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })
     }
 
     // Run MAIN routine
@@ -117,7 +127,7 @@
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
     const siteSettingsTogglesDiv = dom.create.elem('div',
-        { style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px ; transition: 0.35s ease-in-out' })
+        { style: 'position: absolute ; left: -99px ; opacity: 0 ; padding-left: 15px' })
     siteSettingsLabel.innerText = '🌐'
     siteSettingsLabelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
     siteSettingsRow.append(siteSettingsLabel, siteSettingsLabelSpan)

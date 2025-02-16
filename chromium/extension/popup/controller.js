@@ -43,8 +43,13 @@
             // Update menu contents
             const siteToggle = document.querySelector(`div[title*="${sites[env.site]?.urls?.homepage}"] input`),
                   extensionIsDisabled = !masterToggle.checked || ( siteToggle ? !siteToggle.checked : false )
-            document.querySelectorAll('div.logo, div.menu-title, div.menu')
-                .forEach(elem => elem.classList.toggle('disabled', extensionIsDisabled))
+            document.querySelectorAll('.logo, .menu-title, .menu-item').forEach((elem, idx) => {
+                if (elem.id == 'site-settings' || elem.parentElement?.previousElementSibling?.id == 'site-settings')
+                    return // never potentially disable important Site Settings
+                elem.style.transition = extensionIsDisabled ? '' : 'opacity 0.25s ease-in'
+                setTimeout(() => // fade-out abruptly, fade-in staggered
+                    elem.classList.toggle('disabled', extensionIsDisabled), extensionIsDisabled ? 0 : idx *10)
+            })
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }

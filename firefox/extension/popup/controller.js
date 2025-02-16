@@ -8,7 +8,10 @@
     const env = {
         site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
             { active: true, currentWindow: true }))[0].url).hostname)?.[1],
-        displaysEnglish: (await chrome.i18n.getAcceptLanguages())[0].startsWith('en')
+        browser: {
+            displaysEnglish: (await chrome.i18n.getAcceptLanguages())[0].startsWith('en'),
+            isFF: navigator.userAgent.includes('Firefox')
+        }
     }
 
     // Import DATA
@@ -59,7 +62,7 @@
         const transitionDuration = 350, // ms
               toggleRows = siteTogglesDiv.querySelectorAll('.menu-item')
         if (siteTogglesDiv.style.height == '0px') { // show toggles
-            Object.assign(siteTogglesDiv.style, { height: '99px', transition: 'height 0.15s' })
+            Object.assign(siteTogglesDiv.style, { height: '99px', transition: env.browser.isFF ? '' : 'height 0.25s' })
             Object.assign(siteSettingsCaret.style, { transform: '', transition: 'transform 0.15s ease-out' })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
@@ -78,7 +81,7 @@
 
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('input'),
-          appName = env.displaysEnglish ? app.name : chrome.i18n.getMessage('appName') // for shorter notifs
+          appName = env.browser.displaysEnglish ? app.name : chrome.i18n.getMessage('appName') // for shorter notifs
     await settings.load('extensionDisabled')
     masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = async () => {
@@ -208,7 +211,7 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsSpan = dom.create.elem('span', { class: 'cjs-span',
-        title: env.displaysEnglish ? '' : `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
+        title: env.browser.displaysEnglish ? '' : `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
         src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js.png?b2a1975` })
     cjsSpan.onclick = () => { open(app.urls.chatgptJS) ; close() }

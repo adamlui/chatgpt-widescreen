@@ -46,16 +46,51 @@ window.dom = {
             .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     },
 
-    getLoadedElem(selector, timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
-        const isLoadedPromise = new Promise(resolve => {
-            const elem = document.querySelector(selector)
-            if (elem) resolve(elem)
-            else new MutationObserver((_, obs) => {
+    get: {
+
+        computedSize(elems, { dimension } = {}) { // total width/height of elems (including margins)
+        // * Returns { width: totalWidth, height: totalHeight } if no dimension passed
+        // * Returns float if { dimension: 'width' | 'height' } passed
+
+            // Validate args
+            elems = elems instanceof NodeList ? [...elems] : [].concat(elems)
+            elems.forEach(elem => { if (!(elem instanceof Node))
+                throw new Error(`Invalid elem: Element "${JSON.stringify(elem)}" is not a valid DOM node`) })
+            const validDimensions = ['width', 'height'], dimensionsToCompute = [].concat(dimension || validDimensions)
+            dimensionsToCompute.forEach(dimension => { if (!validDimensions.includes(dimension))
+                throw new Error('Invalid dimension: Use \'width\' or \'height\'') })
+
+            // Compute dimensions
+            const computedDimensions = { width: 0, height: 0 }
+            elems.forEach(elem => {
+                const elemStyle = getComputedStyle(elem) ; if (elemStyle.display == 'none') return
+                if (dimensionsToCompute.includes('width'))
+                    computedDimensions.width += elem.getBoundingClientRect().width
+                        + parseFloat(elemStyle.marginLeft) + parseFloat(elemStyle.marginRight)
+                if (dimensionsToCompute.includes('height'))
+                    computedDimensions.height += elem.getBoundingClientRect().height
+                        + parseFloat(elemStyle.marginTop) + parseFloat(elemStyle.marginBottom)
+            })
+
+            // Return computed dimensions
+            return dimensionsToCompute.length > 1 ? computedDimensions // obj w/ width/height
+                 : computedDimensions[dimensionsToCompute[0]] // single total val
+        },
+
+        computedHeight(elems) { return this.computedSize(elems, { dimension: 'height' }) }, // including margins
+        computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
+
+        loadedElem(selector, timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
+            const isLoadedPromise = new Promise(resolve => {
                 const elem = document.querySelector(selector)
-                if (elem) { obs.disconnect() ; resolve(elem) }
-            }).observe(document.documentElement, { childList: true, subtree: true })
-        })
-        return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
+                if (elem) resolve(elem)
+                else new MutationObserver((_, obs) => {
+                    const elem = document.querySelector(selector)
+                    if (elem) { obs.disconnect() ; resolve(elem) }
+                }).observe(document.documentElement, { childList: true, subtree: true })
+            })
+            return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
+        }
     }
 };

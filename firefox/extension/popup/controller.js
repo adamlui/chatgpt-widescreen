@@ -63,9 +63,7 @@
               toggleRows = siteTogglesDiv.querySelectorAll('.menu-item')
         if (siteTogglesDiv.style.height == '0px') { // show toggles
             Object.assign(siteTogglesDiv.style, {
-                height: `${ toggleRows.length * dom.get.computedHeight(toggleRows[0]) }px`,
-                transition: env.browser.isFF ? '' : 'height 0.25s'
-            })
+                height: `${dom.get.computedHeight(toggleRows)}px`, transition: env.browser.isFF ? '' : 'height 0.25s' })
             Object.assign(siteSettingsCaret.style, { transform: '', transition: 'transform 0.15s ease-out' })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })

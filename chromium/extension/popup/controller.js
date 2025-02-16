@@ -50,9 +50,9 @@
     function toggleSiteSettingsVisibility() {
         const transitionDuration = 350, // ms
               toggleRows = siteTogglesDiv.querySelectorAll('.menu-item')
-        if (siteTogglesDiv.style.opacity == 0) { // show toggles
-            siteSettingsCaret.style.transform = ''
-            Object.assign(siteTogglesDiv.style, { position: '', left: '', opacity: 1 })
+        if (siteTogglesDiv.style.height == '0px') { // show toggles
+            Object.assign(siteTogglesDiv.style, { height: '99px', transition: 'height 0.15s' })
+            Object.assign(siteSettingsCaret.style, { transform: '', transition: 'transform 0.15s ease-out' })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
             siteTogglesDiv.offsetHeight // force reflow to insta-apply reset
@@ -61,8 +61,8 @@
                 setTimeout(() => row.style.opacity = 1, idx * transitionDuration /10)
             })
         } else { // hide toggles
-            siteSettingsCaret.style.transform = 'rotate(-90deg)'
-            Object.assign(siteTogglesDiv.style, { opacity: 0, position: 'absolute', left: '-9999px' })
+            Object.assign(siteTogglesDiv.style, { height: 0, transition: '' })
+            Object.assign(siteSettingsCaret.style, { transform: 'rotate(-90deg)', transition: '' })
         }
     }
 
@@ -134,9 +134,9 @@
     const siteSettingsLabel = dom.create.elem('label', { class: 'menu-icon' })
     const siteSettingsLabelSpan = dom.create.elem('span')
     const siteSettingsCaret = icons.create('caretDown', { size: 11,
-        style: 'position: absolute ; right: 14px ; transform: rotate(-90deg) ; transition: transform 0.08s ease-out' })
+        style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' })
     const siteTogglesDiv = dom.create.elem('div', {
-        style: `position: absolute ; left: -99px ; opacity: 0 ; border-left: 4px solid transparent ;
+        style: `border-left: 4px solid transparent ; height: 0 ; overflow: hidden ;
                 border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%`
     })
     siteSettingsLabel.innerText = '🌐'

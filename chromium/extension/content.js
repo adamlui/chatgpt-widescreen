@@ -94,7 +94,7 @@
         function activateMode(mode) {
             if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
             else if (mode == 'fullWindow') {
-                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
+                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebar)
                 if (sidebarToggle) sidebarToggle.click()
                 else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
             } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
@@ -104,7 +104,7 @@
             if (mode == 'wideScreen') {
                 wideScreenStyle.remove() ; sync.mode('wideScreen')
             } else if (mode == 'fullWindow') {
-                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebarToggle)
+                const sidebarToggle = document.querySelector(sites[env.site].selectors.btns.sidebar)
                 if (sidebarToggle) sidebarToggle.click()
                 else { fullWinStyle.remove() ; sync.mode('fullWindow') }
             } else if (mode == 'fullScreen') {
@@ -249,7 +249,7 @@
     // Init UI props
     if (env.site == 'chatgpt') {
         sites.chatgpt.hasSidebar = !!await Promise.race([
-            dom.get.loadedElem(sites.chatgpt.selectors.btns.sidebarToggle), // DOM element if sidebar toggle loads
+            dom.get.loadedElem(sites.chatgpt.selectors.btns.sidebar), // DOM element if sidebar toggle loads
             dom.get.loadedElem(sites.chatgpt.selectors.btns.login).then(() => false), // null if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
@@ -257,7 +257,7 @@
 
     // Init FULL-MODE states
     config.fullScreen = chatgpt.isFullScreen()
-    if (sites[env.site].selectors.btns.sidebarToggle) // site has native FW state
+    if (sites[env.site].selectors.btns.sidebar) // site has native FW state
          config.fullWindow = ui.isFullWin() // ...so match it
     else await settings.load('fullWindow') // otherwise load CWM's saved state
 
@@ -302,7 +302,7 @@
     // Restore PREV SESSION's state
         if (config.wideScreen) toggleMode('wideScreen', 'ON')
         if (config.fullWindow && sites[env.site].hasSidebar) {
-            if (sites[env.site].selectors.btns.sidebarToggle) // site has own FW config
+            if (sites[env.site].selectors.btns.sidebar) // site has own FW config
                 sync.mode('fullWindow') // ...so sync w/ it
             else toggleMode('fullWindow', 'on') // otherwise self-toggle
         }
@@ -344,7 +344,7 @@
     }
 
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
-    if (sites[env.site].selectors.btns.sidebarToggle && sites[env.site].hasSidebar) {
+    if (sites[env.site].selectors.btns.sidebar && sites[env.site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await new Promise(resolve => setTimeout(resolve, env.site == 'perplexity' ? 500 : 0))
             if ((config.fullWindow ^ ui.isFullWin()) && !config.modeSynced) sync.mode('fullWindow')

@@ -24,9 +24,7 @@
 
     // Define FUNCTIONS
 
-    function extensionIsDisabled() {
-        return config.extensionDisabled || ( env.site ? config[`${env.site}Disabled`] : false )}
-
+    function extensionIsDisabled() { return config.extensionDisabled || !!config[`${env.site}Disabled`] }
     function getMsg(key) { return chrome.i18n.getMessage(key) }
 
     function notify(msg, pos = 'bottom-right') {
@@ -63,19 +61,20 @@
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
-    function toggleSiteSettingsVisibility() {
+    function toggleSiteSettingsVisibility({ transitions = true } = {}) {
         const transitionDuration = 350, // ms
               toggleRows = ssTogglesDiv.querySelectorAll('.menu-entry')
         if (ssTogglesDiv.style.height == '0px') { // show toggles
-            Object.assign(ssTogglesDiv.style, {
-                height: `${dom.get.computedHeight(toggleRows)}px`, transition: env.browser.isFF ? '' : 'height 0.25s' })
-            Object.assign(ssLabel.caret.style, { transform: '', transition: 'transform 0.15s ease-out' })
+            Object.assign(ssTogglesDiv.style, { height: `${dom.get.computedHeight(toggleRows)}px`,
+                transition: transitions && !env.browser.isFF ? 'height 0.25s' : '' })
+            Object.assign(ssLabel.caret.style, { transform: '',
+                transition: transitions ? 'transform 0.15s ease-out' : '' })
             toggleRows.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
             ssTogglesDiv.offsetHeight // force reflow to insta-apply reset
             toggleRows.forEach((row, idx) => { // fade-in staggered
-                row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
-                setTimeout(() => row.style.opacity = 1, idx * transitionDuration /10)
+                if (transitions) row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
+                setTimeout(() => row.style.opacity = 1, transitions ? idx * transitionDuration /10 : 0)
             })
         } else { // hide toggles
             Object.assign(ssTogglesDiv.style, { height: 0, transition: '' })
@@ -191,8 +190,13 @@
         }
     }
 
-    if (config[`${env.site}Disabled`]) // auto-expand Site Settings to signal how to ungray menu
-        setTimeout(toggleSiteSettingsVisibility, env.browser.isFF ? 335 : 250) // delay more in FF since no transition
+    // Auto-expand SITE SETTINGS conditionally
+    const menuIsShort = !env.site // not on webpage
+        || !chrome.runtime.getManifest().content_scripts[0].matches.toString().includes(env.site) // not on AI page
+    if (menuIsShort || config[`${env.site}Disabled`]) // auto-expand Site Settings
+        setTimeout(() => toggleSiteSettingsVisibility({ transitions: !menuIsShort }),
+            menuIsShort ? 0 // no delay since emptyish already
+          : env.browser.isFF ? 335 : 250) // delay some since entries appear (more in FF since no transition)
 
     // LOCALIZE labels
     let translationOccurred = false

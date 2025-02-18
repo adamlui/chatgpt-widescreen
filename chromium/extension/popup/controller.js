@@ -193,10 +193,10 @@
     // Auto-expand SITE SETTINGS conditionally
     const onMatchedPage = chrome.runtime.getManifest().content_scripts[0].matches.toString().includes(env.site)
     if (!onMatchedPage || config[`${env.site}Disabled`]) { // auto-expand Site Settings
-        if (!onMatchedPage) ssLabel.div.style.pointerEvents = ssLabel.caret.style.display = 'none' // disable label
+        if (!onMatchedPage) ssLabel.div.style.pointerEvents = 'none' // disable label
         setTimeout(() => toggleSiteSettingsVisibility({ transitions: onMatchedPage }),
             !onMatchedPage ? 0 // no delay since emptyish already
-                : env.browser.isFF ? 335 : 250) // delay some since entries appear (more in FF since no transition)
+                : env.browser.isFF ? 335 : 250) // some delay since entries appear (more in FF since no transition)
     }
 
     // LOCALIZE labels

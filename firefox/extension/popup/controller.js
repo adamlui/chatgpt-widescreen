@@ -191,12 +191,13 @@
     }
 
     // Auto-expand SITE SETTINGS conditionally
-    const menuIsShort = !env.site // not on webpage
-        || !chrome.runtime.getManifest().content_scripts[0].matches.toString().includes(env.site) // not on AI page
-    if (menuIsShort || config[`${env.site}Disabled`]) // auto-expand Site Settings
-        setTimeout(() => toggleSiteSettingsVisibility({ transitions: !menuIsShort }),
-            menuIsShort ? 0 // no delay since emptyish already
-          : env.browser.isFF ? 335 : 250) // delay some since entries appear (more in FF since no transition)
+    const onMatchedPage = chrome.runtime.getManifest().content_scripts[0].matches.toString().includes(env.site)
+    if (!onMatchedPage || config[`${env.site}Disabled`]) { // auto-expand Site Settings
+        if (!onMatchedPage) ssLabel.div.style.pointerEvents = ssLabel.caret.style.display = 'none' // disable label
+        setTimeout(() => toggleSiteSettingsVisibility({ transitions: onMatchedPage }),
+            !onMatchedPage ? 0 // no delay since emptyish already
+                : env.browser.isFF ? 335 : 250) // delay some since entries appear (more in FF since no transition)
+    }
 
     // LOCALIZE labels
     let translationOccurred = false

@@ -50,13 +50,14 @@
 
     // Define FUNCTIONS
 
+    function getMsg(key) { return chrome.i18n.getMessage(key) }
+
     function notify(msg, pos = '', notifDuration = '', shadow = '') {
-        if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
+        if (config.notifDisabled && !msg.includes(getMsg('menuLabel_modeNotifs'))) return
 
         // Strip state word to append colored one later
-        const foundState = [ chrome.i18n.getMessage('state_on').toUpperCase(),
-                             chrome.i18n.getMessage('state_off').toUpperCase()
-              ].find(word => msg.includes(word))
+        const foundState = [
+            getMsg('state_on').toUpperCase(), getMsg('state_off').toUpperCase() ].find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -77,7 +78,7 @@
             }
             const styledStateSpan = dom.create.elem('span')
             styledStateSpan.style.cssText = stateStyles[
-                foundState == chrome.i18n.getMessage('state_off').toUpperCase() ? 'off' : 'on'][env.ui.scheme]
+                foundState == getMsg('state_off').toUpperCase() ? 'off' : 'on'][env.ui.scheme]
             styledStateSpan.append(foundState) ; notif.append(styledStateSpan)
         }
     }
@@ -108,10 +109,9 @@
                 if (sidebarToggle) sidebarToggle.click()
                 else { fullWinStyle.remove() ; sync.mode('fullWindow') }
             } else if (mode == 'fullScreen') {
-                if (config.f11) modals.alert(
-                    chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
-                else document.exitFullscreen().catch(
-                    err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
+                if (config.f11) modals.alert(getMsg('alert_pressF11'), `${getMsg('alert_f11reason')}.`)
+                else document.exitFullscreen()
+                    .catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
             }
         }
     }
@@ -234,8 +234,7 @@
                     mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                         && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid wrong width
                 else if (env.site == 'poe' && config.widerChatbox) update.style.chatbar() // sync WCB
-                notify(`${chrome.i18n.getMessage('mode_' + mode)} ${
-                          chrome.i18n.getMessage(`state_${ state ? 'on' : 'off' }`).toUpperCase()}`)
+                notify(`${getMsg('mode_' + mode)} ${getMsg(`state_${ state ? 'on' : 'off' }`).toUpperCase()}`)
             }
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }

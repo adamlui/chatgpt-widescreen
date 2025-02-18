@@ -27,8 +27,10 @@
     function extensionIsDisabled() {
         return config.extensionDisabled || ( env.site ? config[`${env.site}Disabled`] : false )}
 
+    function getMsg(key) { return chrome.i18n.getMessage(key) }
+
     function notify(msg, pos = 'bottom-right') {
-        if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
+        if (config.notifDisabled && !msg.includes(getMsg('menuLabel_modeNotifs'))) return
         sendMsgToActiveTab('notify', { msg, pos })
     }
 
@@ -83,7 +85,7 @@
 
     // Run MAIN routine
 
-    const appName = env.browser.displaysEnglish ? app.name : chrome.i18n.getMessage('appName') // for shorter notifs
+    const appName = env.browser.displaysEnglish ? app.name : getMsg('appName') // for shorter notifs
 
     // Init MASTER TOGGLE
     const masterToggle = {
@@ -98,7 +100,7 @@
         masterToggle.switch.classList.toggle('on') ; settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${appName} 🧩 ${
-            chrome.i18n.getMessage(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
+            getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
     // Create CHILD menu entries on matched pages
@@ -142,14 +144,13 @@
     // Create SITE SETTINGS label
     const ssLabel = { // category label row
         div: dom.create.elem('div', { id: 'site-settings', class: 'menu-entry highlight-on-hover',
-            title: `${chrome.i18n.getMessage('helptip_enableDisable')} ${appName} ${
-                chrome.i18n.getMessage('helptip_perSite')}`
+            title: `${getMsg('helptip_enableDisable')} ${appName} ${getMsg('helptip_perSite')}`
         }),
         label: dom.create.elem('label', { class: 'menu-icon' }), labelSpan: dom.create.elem('span'),
         caret: icons.create('caretDown', { size: 11, class: 'caret',
             style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' })
     }
-    ssLabel.label.innerText = '🌐' ; ssLabel.labelSpan.textContent = chrome.i18n.getMessage('menuLabel_siteSettings')
+    ssLabel.label.innerText = '🌐' ; ssLabel.labelSpan.textContent = getMsg('menuLabel_siteSettings')
     ssLabel.div.onclick = toggleSiteSettingsVisibility;
     ['label', 'labelSpan', 'caret'].forEach(elemType => ssLabel.div.append(ssLabel[elemType]))
     document.body.append(ssLabel.div)
@@ -165,7 +166,7 @@
         // Init entry's elems
         const ssEntry = {
             div: dom.create.elem('div', { class: 'menu-entry highlight-on-hover',
-                title: `${chrome.i18n.getMessage('helptip_run')} ${appName} on ${sites[site].urls.homepage}` }),
+                title: `${getMsg('helptip_run')} ${appName} on ${sites[site].urls.homepage}` }),
             switch: dom.create.elem('div', { class: 'toggle menu-icon' }),
             track: dom.create.elem('span', { class: 'track' }), label: dom.create.elem('span'),
             favicon: dom.create.elem('img', {
@@ -185,7 +186,7 @@
             if (env.site == site) { // fade/notify if setting of active site toggled
                 sync.fade()
                 if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${appName} 🧩 ${
-                    chrome.i18n.getMessage(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
+                    getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
     }
@@ -197,7 +198,7 @@
     let translationOccurred = false
     document.querySelectorAll('[data-locale]').forEach(elem => {
         const localeKeys = elem.dataset.locale.split(' '),
-              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
+              translatedText = localeKeys.map(key => getMsg(key)).join(' ')
         if (translatedText != elem.innerText) {
             elem.innerText = translatedText ; translationOccurred = true }
     })
@@ -211,7 +212,7 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsSpan = dom.create.elem('span', { class: 'cjs-span',
-        title: env.browser.displaysEnglish ? '' : `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
+        title: env.browser.displaysEnglish ? '' : `${getMsg('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
         src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js.png?b2a1975` })
     cjsSpan.onclick = () => { open(app.urls.chatgptJS) ; close() }
@@ -219,7 +220,7 @@
 
     // Create/append ABOUT footer button
     const aboutSpan = dom.create.elem('span', {
-        title: `${chrome.i18n.getMessage('menuLabel_about')} ${chrome.i18n.getMessage('appName')}`,
+        title: `${getMsg('menuLabel_about')} ${getMsg('appName')}`,
         class: 'menu-icon highlight-on-hover', style: 'right:30px ; padding-top: 2px' })
     const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
@@ -227,7 +228,7 @@
 
     // Create/append RELATED EXTENSIONS footer button
     const moreExtensionsSpan = dom.create.elem('span', {
-        title:  chrome.i18n.getMessage('btnLabel_moreAIextensions'),
+        title:  getMsg('btnLabel_moreAIextensions'),
         class: 'menu-icon highlight-on-hover', style: 'right:2px ; padding-top: 2px' })
     const moreExtensionsIcon = icons.create('plus')
     moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }

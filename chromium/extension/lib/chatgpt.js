@@ -336,6 +336,7 @@ const chatgpt = {
     },
 
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
+    isTyping() { return !!this.getStopButton() },
 
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility

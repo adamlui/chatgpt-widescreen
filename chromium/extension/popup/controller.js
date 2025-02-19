@@ -86,6 +86,11 @@
 
     const appName = env.browser.displaysEnglish ? app.name : getMsg('appName') // for shorter notifs
 
+    // LOCALIZE extension title, set document lang
+    const menuTitle = document.querySelector('.menu-title')
+    menuTitle.innerText = getMsg(menuTitle.dataset.locale)
+    document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
+
     // Init MASTER TOGGLE
     const masterToggle = {
         div: document.querySelector('.master-toggle'),
@@ -200,17 +205,6 @@
           : 335 // more in FF since no transition
         )
     }
-
-    // LOCALIZE labels
-    let translationOccurred = false
-    document.querySelectorAll('[data-locale]').forEach(elem => {
-        const localeKeys = elem.dataset.locale.split(' '),
-              translatedText = localeKeys.map(key => getMsg(key)).join(' ')
-        if (translatedText != elem.innerText) {
-            elem.innerText = translatedText ; translationOccurred = true }
-    })
-    if (translationOccurred) // update <html lang> attr
-        document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
     sync.fade() // based on master/site toggle
 

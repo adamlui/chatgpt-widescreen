@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Қолдау көрсеткеніңіз үшін рақмет" },
   "alert_pressF11": { "message": "Толық экраннан шығу үшін F11 пернесін басыңыз" },
   "alert_f11reason": { "message": "F11 толық экранды енгізу үшін пайдаланылды, және браузердің қауіпсіздігіне байланысты, оны шығу үшін сол кілтті пайдалану керек" },
+  "notif_chatStopped": { "message": "Чат тоқтатылды" },
   "btnLabel_moreAIextensions": { "message": "Қосымша жасанды интеллект кеңейтімдері" },
   "btnLabel_leaveReview": { "message": "Пікіріңіз жазыныз" },
   "btnLabel_rateUs": { "message": "Бізге баға беріңіз" },

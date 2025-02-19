@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Merci pour votre aide" },
   "alert_pressF11": { "message": "Appuyez sur F11 pour quitter le mode plein écran" },
   "alert_f11reason": { "message": "F11 a été utilisé pour entrer en mode plein écran et, pour des raisons de sécurité du navigateur, la même touche doit être utilisée pour en sortir" },
+  "notif_chatStopped": { "message": "Chat arrêté" },
   "btnLabel_moreAIextensions": { "message": "Plus d'extensions d'IA" },
   "btnLabel_leaveReview": { "message": "Laissez Review" },
   "btnLabel_rateUs": { "message": "Évaluez-nous" },

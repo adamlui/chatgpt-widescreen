@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Qo'llab-quvvatlaganingiz uchun rahmat" },
   "alert_pressF11": { "message": "To'liq ekrandan chiqish uchun F11 tugmasini bosing" },
   "alert_f11reason": { "message": "F11 toʻliq ekranga kirish uchun ishlatilgan va brauzer xavfsizligi sababli undan chiqish uchun xuddi shu kalitdan foydalanish kerak" },
+  "notif_chatStopped": { "message": "Chat toʻxtatildi" },
   "btnLabel_moreAIextensions": { "message": "Ko'proq AI kengaytmalari" },
   "btnLabel_leaveReview": { "message": "Sharh qoldiring" },
   "btnLabel_rateUs": { "message": "Bizni baholash" },

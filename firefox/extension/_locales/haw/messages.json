@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Mahalo iā ʻoe no kāu kākoʻo" },
   "alert_pressF11": { "message": "E kaomi i ka F11 e puka i ka pale piha" },
   "alert_f11reason": { "message": "Ua hoʻohana ʻia ʻo F11 e komo i ka pale piha, a ma muli o nā kumu palekana o ka polokalamu kele pūnaewele, pono e hoʻohana ʻia ke kī like e puka ai" },
+  "notif_chatStopped": { "message": "Ua kū ke kamaʻilio ʻana" },
   "btnLabel_moreAIextensions": { "message": "Hoʻonui AI hou aku" },
   "btnLabel_leaveReview": { "message": "Haʻalele Nānā" },
   "btnLabel_rateUs": { "message": "E helu iā mākou" },

@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Re lebogela kemonokeng ya gago" },
   "alert_pressF11": { "message": "Tobetsa F11 go tswa mo sekirining ka botlalo" },
   "alert_f11reason": { "message": "F11 e dirisitswe go tsenya sekirini ka botlalo, mme ka ntlha ya mabaka a pabalesego a browser, selo sa konokono se se tshwanang se tshwanetse go dirisiwa go tswa mo sekerining" },
+  "notif_chatStopped": { "message": "Motlotlo o emisitswe" },
   "btnLabel_moreAIextensions": { "message": "Di-AI Extensions tse Dintsi" },
   "btnLabel_leaveReview": { "message": "Tlogela Tlhatlhobo" },
   "btnLabel_rateUs": { "message": "Maemo a Rona" },

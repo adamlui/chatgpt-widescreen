@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Paldies par Jūsu atbalstu" },
   "alert_pressF11": { "message": "Nospiediet F11, lai izietu no pilnekrāna režīma" },
   "alert_f11reason": { "message": "F11 tika izmantots, lai ieietu pilnekrāna režīmā, un pārlūkprogrammas drošības apsvērumu dēļ, lai to izietu, ir jāizmanto tā pati atslēga" },
+  "notif_chatStopped": { "message": "Tērzēšana apturēta" },
   "btnLabel_moreAIextensions": { "message": "Citi MI paplašinājumi" },
   "btnLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
   "btnLabel_rateUs": { "message": "Novērtē mūs" },

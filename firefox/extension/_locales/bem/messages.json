@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Natasha Mukwatasha" },
   "alert_pressF11": { "message": "Tinikeni F11 pakuti mufume pa cikope conse" },
   "alert_f11reason": { "message": "F11 yabomfiwe ku kwingila mu cimonwa conse, kabili pa mulandu wa kucingililwa kwa browser, icifungulo cimo cine cifwile ukubomfiwa ku kufumamo " },
+  "notif_chatStopped": { "message": "Chat yaima" },
   "btnLabel_moreAIextensions": { "message": "Ukulundako kwa AI nakumbi" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
   "btnLabel_rateUs": { "message": "Tupimine" },

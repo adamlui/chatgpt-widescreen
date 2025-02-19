@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Ви благодариме за вашата поддршка" },
   "alert_pressF11": { "message": "Притиснете F11 за да излезете од цел екран" },
   "alert_f11reason": { "message": "F11 беше искористен за влез на цел екран, а поради безбедносни причини на прелистувачот, истиот клуч мора да се искористи за да се излезе од него" },
+  "notif_chatStopped": { "message": "Разговорот е запрен" },
   "btnLabel_moreAIextensions": { "message": "Повеќе екстензии на вештачка интелигенција" },
   "btnLabel_leaveReview": { "message": "Остави еден преглед" },
   "btnLabel_rateUs": { "message": "Оценете не" },

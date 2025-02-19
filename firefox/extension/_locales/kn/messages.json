@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "ಬೆಂಬಲ ಮತ್ತು ಆಲ್ ದಿ ಬೆಸ್ಟ್ ‌ ಗೆ ಧನ್ಯವಾದಗಳು" },
   "alert_pressF11": { "message": "ಪೂರ್ಣ ಪರದೆಯನ್ನು ನಿರ್ಗಮಿಸಲು F11 ಒತ್ತಿರಿ" },
   "alert_f11reason": { "message": "F11 ಅನ್ನು ಪೂರ್ಣ ಪರದೆಯನ್ನು ನಮೂದಿಸಲು ಬಳಸಲಾಗುತ್ತಿತ್ತು, ಮತ್ತು ಬ್ರೌಸರ್ ಭದ್ರತಾ ಕಾರಣಗಳಿಂದಾಗಿ, ಅದನ್ನು ನಿರ್ಗಮಿಸಲು ಅದೇ ಕೀಲಿಯನ್ನು ಬಳಸಬೇಕು" },
+  "notif_chatStopped": { "message": "ಚಾಟ್ ನಿಲ್ಲಿಸಲಾಗಿದೆ" },
   "btnLabel_moreAIextensions": { "message": "ಹೆಚ್ಚಿನ AI ವಿಸ್ತರಣೆಗಳು" },
   "btnLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
   "btnLabel_rateUs": { "message": "ನಮಗೆ ರೇಟಿಂಗ್ ನೀಡಿ" },

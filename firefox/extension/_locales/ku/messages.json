@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Spas ji bo piştgiriya we" },
   "alert_pressF11": { "message": "فانکشن ١١ بۆ داخستنی مۆدی چالاک بکە" },
   "alert_f11reason": { "message": "فانکشن ١١ بۆ چالاککردنی مۆدی چالاک بەکارهێنراوە، و بەهۆی هۆکارەتیی براوزەر، هیچ پشتیوانیانە بەکار نەهێنراوە" },
+  "notif_chatStopped": { "message": "Sohbet rawestiya" },
   "btnLabel_moreAIextensions": { "message": "Zêdetir Pêvekên AI-ê" },
   "btnLabel_leaveReview": { "message": "Bihêle Review" },
   "btnLabel_rateUs": { "message": "Me binirxînin" },

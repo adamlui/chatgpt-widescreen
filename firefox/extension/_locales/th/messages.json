@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "ขอขอบคุณสำหรับการสนับสนุนของคุณ" },
   "alert_pressF11": { "message": "กด F11 เพื่อออกจากโหมดเต็มหน้าจอ" },
   "alert_f11reason": { "message": "F11 ถูกใช้เพื่อเข้าสู่แบบเต็มหน้าจอและเนื่องจากเหตุผลด้านความปลอดภัยของเบราว์เซอร์จึงต้องใช้คีย์เดียวกันเพื่อออกจากหน้าจอ" },
+  "notif_chatStopped": { "message": "การแชทหยุดลง" },
   "btnLabel_moreAIextensions": { "message": "ส่วนขยาย AI เพิ่มเติม" },
   "btnLabel_leaveReview": { "message": "ให้รีวิว" },
   "btnLabel_rateUs": { "message": "ให้คะแนนเรา" },

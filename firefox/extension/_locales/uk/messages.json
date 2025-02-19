@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Дякую за підтримку" },
   "alert_pressF11": { "message": "Натисніть F11, щоб вийти з повноекранного режиму" },
   "alert_f11reason": { "message": "F11 була використана для входу в повноекранний режим, і з міркувань безпеки браузера для виходу з нього також потрібно використовувати ту саму клавішу" },
+  "notif_chatStopped": { "message": "Чат зупинено" },
   "btnLabel_moreAIextensions": { "message": "Більше розширень AI" },
   "btnLabel_leaveReview": { "message": "Залишити відгук" },
   "btnLabel_rateUs": { "message": "Оцініть нас" },

@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "あなたのサポートをありがとう" },
   "alert_pressF11": { "message": "フルスクリーンモードを終了するにはF11キーを押してください" },
   "alert_f11reason": { "message": "F11キーを使用してフルスクリーンモードに入力したため、同じキーを使用して終了する必要があります（ブラウザのセキュリティ上の理由による）" },
+  "notif_chatStopped": { "message": "チャットが停止しました" },
   "btnLabel_moreAIextensions": { "message": "その他のAI拡張機能" },
   "btnLabel_leaveReview": { "message": "レビューを残す" },
   "btnLabel_rateUs": { "message": "評価してください" },

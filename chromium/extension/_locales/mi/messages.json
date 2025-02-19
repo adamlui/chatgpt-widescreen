@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "kia ora mo to whakaaro ki a koe" },
   "alert_pressF11": { "message": "Patohia te F11 ki te puta mata tonu" },
   "alert_f11reason": { "message": "I whakamahia te F11 ki te whakauru i te mata katoa, na te take o te haumarutanga o te tirotiro, me whakamahi te ki ano ki te puta atu" },
+  "notif_chatStopped": { "message": "Ka mutu te kōrerorero" },
   "btnLabel_moreAIextensions": { "message": "Ētahi atu whakawhitinga AI" },
   "btnLabel_leaveReview": { "message": "Waiho i te arotake" },
   "btnLabel_rateUs": { "message": "Te utu ki a tatou" },

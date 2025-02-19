@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Dankon pro via subteno" },
   "alert_pressF11": { "message": "Premu F11 por forlasi la tutan ekranon" },
   "alert_f11reason": { "message": "F11 kutimis eniri plenan ekranon, kaj pro retumilaj sekureckialoj, la sama ŝlosilo devas esti utiligita por forlasi ĝin" },
+  "notif_chatStopped": { "message": "Babilejo haltis" },
   "btnLabel_moreAIextensions": { "message": "Pli da AI- etendaĵoj" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_rateUs": { "message": "Taksi nin" },

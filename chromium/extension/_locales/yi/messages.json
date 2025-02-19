@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "דאנק איר פֿאַר דיין שטיצן" },
   "alert_pressF11": { "message": "דרוק F11 צו אַרויסגאַנג פול פאַרשטעלן" },
   "alert_f11reason": { "message": "F11 איז געניצט צו אַרייַן פול פאַרשטעלן, און רעכט צו בלעטערער זיכערהייט סיבות, דער זעלביקער שליסל מוזן זיין געוויינט צו אַרויסגאַנג עס" },
+  "notif_chatStopped": { "message": "שמועסן פארשטאפט" },
   "btnLabel_moreAIextensions": { "message": "מער אַי יקסטענשאַנז" },
   "btnLabel_leaveReview": { "message": "לאָזן איבערבליק" },
   "btnLabel_rateUs": { "message": "קורס אונדז" },

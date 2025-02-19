@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Waad ku mahadsan tahay taageeradaada" },
   "alert_pressF11": { "message": "Riix F11 si aad uga baxdo shaashadda buuxda" },
   "alert_f11reason": { "message": "F11 waxaa loo isticmaalay in lagu galo shaashad buuxda, sababo la xiriira amniga biraawsarka, isla furaha waa in loo adeegsadaa inuu ka baxo" },
+  "notif_chatStopped": { "message": "Chat joojiyay" },
   "btnLabel_moreAIextensions": { "message": "Kordhinta AI dheeraad ah" },
   "btnLabel_leaveReview": { "message": "Dib u eegista Ka tag" },
   "btnLabel_rateUs": { "message": "Nagu Qiimee" },

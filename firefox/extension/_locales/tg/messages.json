@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Salamat sa iyong suporta" },
   "alert_pressF11": { "message": "Фишурдани F11 барои баромадан аз экрани пурра" },
   "alert_f11reason": { "message": "F11 барои ворид кардани экрани пурра истифода мешуд ва бо сабабҳои амниятӣ браузер бояд барои баромадан аз он ҳамон калидро истифода барад" },
+  "notif_chatStopped": { "message": "Чат боздошта шуд" },
   "btnLabel_moreAIextensions": { "message": "Васеъсозии бештари AI" },
   "btnLabel_leaveReview": { "message": "Баромадан аз тафсир" },
   "btnLabel_rateUs": { "message": "Баҳои мо" },

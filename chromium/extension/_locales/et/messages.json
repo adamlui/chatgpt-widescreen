@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Tänan teid toetuse eest" },
   "alert_pressF11": { "message": "Täisekraanilt väljumiseks vajutage klahvi F11" },
   "alert_f11reason": { "message": "F11 kasutati täisekraanile sisenemiseks ja brauseri turvalisuse huvides tuleb selle väljumiseks kasutada sama võtit" },
+  "notif_chatStopped": { "message": "Vestlus on peatatud" },
   "btnLabel_moreAIextensions": { "message": "Veel tehisintellekti laiendusi" },
   "btnLabel_leaveReview": { "message": "Jäta tagasiside" },
   "btnLabel_rateUs": { "message": "Hinda meid" },

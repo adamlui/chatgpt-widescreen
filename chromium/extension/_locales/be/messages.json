@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Дзякуй за падтрымку" },
   "alert_pressF11": { "message": "Націсніце F11, каб выйсці з поўнага экрана" },
   "alert_f11reason": { "message": "F11 быў выкарыстаны для ўваходу на поўны экран, і з-за прычын бяспекі браўзэра, той жа ключ павінен быць выкарыстаны для выхаду з яго" },
+  "notif_chatStopped": { "message": "Чат спынены" },
   "btnLabel_moreAIextensions": { "message": "Больш пашырэнняў штучнага інтэлекту" },
   "btnLabel_leaveReview": { "message": "Пакінуць водгук" },
   "btnLabel_rateUs": { "message": "Ацаніць нас" },

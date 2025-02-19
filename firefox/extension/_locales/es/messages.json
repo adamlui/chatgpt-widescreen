@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Gracias por tu apoyo" },
   "alert_pressF11": { "message": "Presiona F11 para salir de la pantalla completa" },
   "alert_f11reason": { "message": "Se utilizó F11 para ingresar a pantalla completa y, debido a razones de seguridad del navegador, la misma tecla debe ser utilizada para salir de ella" },
+  "notif_chatStopped": { "message": "Chat detenido" },
   "btnLabel_moreAIextensions": { "message": "Más extensiones de IA" },
   "btnLabel_leaveReview": { "message": "Deje opinión" },
   "btnLabel_rateUs": { "message": "Valóranos" },

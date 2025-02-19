@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Desteğiniz için teşekkür ederiz" },
   "alert_pressF11": { "message": "Tam ekrandan çıkmak için F11 tuşuna basın" },
   "alert_f11reason": { "message": "Tam ekrana girmek için F11 kullanıldı ve tarayıcı güvenliği nedeniyle, çıkmak için aynı anahtar kullanılmalıdır" },
+  "notif_chatStopped": { "message": "Sohbet durduruldu" },
   "btnLabel_moreAIextensions": { "message": "Daha Fazla Yapay Zeka Uzantısı" },
   "btnLabel_leaveReview": { "message": "İncelemeyi bırak" },
   "btnLabel_rateUs": { "message": "Bize oy verin" },

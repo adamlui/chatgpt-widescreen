@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Misaotra anareo amin'ny fanohanana ataonareo" },
   "alert_pressF11": { "message": "Fitoerana F11" },
   "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra" },
+  "notif_chatStopped": { "message": "Najanona ny karajia" },
   "btnLabel_moreAIextensions": { "message": "More AI Extensions" },
   "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },
   "btnLabel_rateUs": { "message": "Omeo isa izahay" },

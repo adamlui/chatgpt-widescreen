@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "성원에 감사드립니다" },
   "alert_pressF11": { "message": "전체 화면 모드에서 나가려면 F11을 누르세요" },
   "alert_f11reason": { "message": "F11을 사용하여 전체 화면 모드로 전환한 후 브라우저 보안상의 이유로 동일한 키를 사용하여 종료해야 합니다" },
+  "notif_chatStopped": { "message": "채팅 중지됨" },
   "btnLabel_moreAIextensions": { "message": "AI 확장 프로그램 더 보기" },
   "btnLabel_leaveReview": { "message": "리뷰를 남겨 주세요" },
   "btnLabel_rateUs": { "message": "평가하기" },

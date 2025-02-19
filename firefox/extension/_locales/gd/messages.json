@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Taing airson do thaic" },
   "alert_pressF11": { "message": "Brùth F11 gus an làn - sgrìn fhàgail" },
   "alert_f11reason": { "message": "Chaidh F11 a chleachdadh gus làn sgrion a chuir a - steach, agus air sgàth adhbharan tèarainteachd brabhsair, feumar an aon iuchair a chleachdadh airson a leigeil a - mach" },
+  "notif_chatStopped": { "message": "Chaidh stad a chur air a 'chat" },
   "btnLabel_moreAIextensions": { "message": "Barrachd leudachain" },
   "btnLabel_leaveReview": { "message": "Fàg Lèirmheas" },
   "btnLabel_rateUs": { "message": "Rèitich sinn" },

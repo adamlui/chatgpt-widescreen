@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "-Hvala na podrsci" },
   "alert_pressF11": { "message": "Pritisnite F11 da biste izašli iz celog ekrana" },
   "alert_f11reason": { "message": "F11 je korišćen za ulazak preko celog ekrana, a zbog bezbednosnih razloga pregledača, isti ključ mora biti korišćen za izlazak iz njega" },
+  "notif_chatStopped": { "message": "Ćaskanje je zaustavljeno" },
   "btnLabel_moreAIextensions": { "message": "Još proširenja za veštačku inteligenciju" },
   "btnLabel_leaveReview": { "message": "Ostavi recenziju" },
   "btnLabel_rateUs": { "message": "OCENITE NAS" },

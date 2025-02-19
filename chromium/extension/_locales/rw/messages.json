@@ -69,6 +69,7 @@
   "alert_tyForSupport": { "message": "Mwarakoze kudushyigikira. " },
   "alert_pressF11": { "message": "Kuri Gusohoka Mugaragaza" },
   "alert_f11reason": { "message": "F11 yakoreshejwe mu kwinjira mugaragaza yuzuye, kandi kubera impamvu z'umutekano wa mushakisha, urufunguzo rugomba gukoreshwa kugirango usohoke" },
+  "notif_chatStopped": { "message": "Guhagarara" },
   "btnLabel_moreAIextensions": { "message": "Umigereka" },
   "btnLabel_leaveReview": { "message": "Isubiramo" },
   "btnLabel_rateUs": { "message": "Gupima" },

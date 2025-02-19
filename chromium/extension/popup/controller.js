@@ -17,6 +17,7 @@
     // Import DATA
     const { app } = await chrome.storage.local.get('app'),
           { sites } = await chrome.storage.local.get('sites')
+    app.name = env.browser.displaysEnglish ? app.name : getMsg('appName') // for shorter notifs
 
     // Export DEPENDENCIES to imported resources
     icons.import({ app }) // for src's using app.urls.assetHost
@@ -84,8 +85,6 @@
 
     // Run MAIN routine
 
-    const appName = env.browser.displaysEnglish ? app.name : getMsg('appName') // for shorter notifs
-
     // LOCALIZE extension title, set document lang
     const menuTitle = document.querySelector('.menu-title')
     menuTitle.innerText = getMsg(menuTitle.dataset.locale)
@@ -103,7 +102,7 @@
         env.extensionWasDisabled = extensionIsDisabled()
         masterToggle.switch.classList.toggle('on') ; settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
-        if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${appName} 🧩 ${
+        if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${app.name} 🧩 ${
             getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
     }
 
@@ -148,7 +147,7 @@
     // Create SITE SETTINGS label
     const ssLabel = { // category label row
         div: dom.create.elem('div', { id: 'site-settings', class: 'menu-entry highlight-on-hover',
-            title: `${getMsg('helptip_enableDisable')} ${appName} ${getMsg('helptip_perSite')}`
+            title: `${getMsg('helptip_enableDisable')} ${app.name} ${getMsg('helptip_perSite')}`
         }),
         label: dom.create.elem('label', { class: 'menu-icon' }), labelSpan: dom.create.elem('span'),
         caret: icons.create('caretDown', { size: 11, class: 'caret',
@@ -170,7 +169,7 @@
         // Init entry's elems
         const ssEntry = {
             div: dom.create.elem('div', { class: 'menu-entry highlight-on-hover',
-                title: `${getMsg('helptip_run')} ${appName} on ${sites[site].urls.homepage}` }),
+                title: `${getMsg('helptip_run')} ${app.name} on ${sites[site].urls.homepage}` }),
             switch: dom.create.elem('div', { class: 'toggle menu-icon' }),
             track: dom.create.elem('span', { class: 'track' }), label: dom.create.elem('span'),
             favicon: dom.create.elem('img', {
@@ -189,7 +188,7 @@
             settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI()
             if (env.site == site) { // fade/notify if setting of active site toggled
                 sync.fade()
-                if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${appName} 🧩 ${
+                if (env.extensionWasDisabled ^ extensionIsDisabled()) notify(`${app.name} 🧩 ${
                     getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
@@ -221,7 +220,7 @@
 
     // Create/append ABOUT footer button
     const aboutSpan = dom.create.elem('span', {
-        title: `${getMsg('menuLabel_about')} ${getMsg('appName')}`,
+        title: `${getMsg('menuLabel_about')} ${getMsg('app.name')}`,
         class: 'menu-icon highlight-on-hover', style: 'right:30px ; padding-top: 2px' })
     const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }

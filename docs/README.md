@@ -29,6 +29,13 @@
     <img alt="[www.chatgptwidescreen.com]" height=31 src="https://img.shields.io/badge/web-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></img></a>
 <br><br>
 
+</div>
+
+> [!IMPORTANT]
+> _**Greasy Fork users:** If you installed ChatGPT Widescreen **before January 18, 2025**, auto-updates no longer work because the script's update mechanism has migrated to GitHub. To continue receiving updates, click the 'Install Greasemonkey Userscript' button below (once) or click [this link](https://gm.chatgptwidescreen.com) (once)_
+
+<div align="center">
+
 <a href="https://chrome.chatgptwidescreen.com/?utm_source=github&utm_medium=readme&utm_content=platform-badge">
     <img alt="[Get for Chrome]" width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com">

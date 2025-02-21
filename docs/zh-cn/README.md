@@ -30,6 +30,13 @@
     <img alt="[www.chatgptwidescreen.com]" height=31 src="https://img.shields.io/badge/%E7%BD%91%E7%AB%99-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></img></a>
 <br><br>
 
+</div>
+
+> [!IMPORTANT]
+> _**Greasy Fork 用户：** 如果您在 **2025 年 1 月 18 日** 之前安装了 ChatGPT 宽屏模式，则自动更新将不再起作用，因为脚本的更新机制已迁移到 GitHub。要继续接收更新，请点击下面的 “安装 Greasemonkey 用户脚本” 按钮（一次）或点击 [此链接](https://gm.chatgptwidescreen.com)（一次）_
+
+<div align="center">
+
 <a href="https://chrome.chatgptwidescreen.com/?utm_source=github&utm_medium=readme&utm_content=platform-badge">
     <img alt="[获取 Chrome 版本]" width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com">

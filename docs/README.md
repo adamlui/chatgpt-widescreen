@@ -36,7 +36,7 @@
 <a href="https://ff.chatgptwidescreen.com/?utm_source=github&utm_medium=readme&utm_content=platform-badge">
     <img alt="[Get for Firefox]" width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://gm.chatgptwidescreen.com">
-    <img alt="[Get for Greasemonkey]" width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+    <img alt="[Get for Greasemonkey]" width=auto height=60 src="https://assets.chatgptwidescreen.com/images/badges/greasemonkey/install-greasemonkey-userscript.png"></a>
 
 </div>
 

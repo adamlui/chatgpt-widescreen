@@ -20,7 +20,7 @@ window.chatbar = {
     },
 
     reset() { // all tweaks for popup master toggle-off
-        const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
+        const site = this.imports.site
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') { // restore chatbar inner width

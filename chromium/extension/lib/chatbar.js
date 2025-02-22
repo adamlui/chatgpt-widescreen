@@ -1,4 +1,4 @@
-// Requires site: env.site + sites
+// Requires dom.js + site: env.site + sites
 
 window.chatbar = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
@@ -33,11 +33,14 @@ window.chatbar = {
                 sendBtn.before(attachFileBtn.parentNode) ; attachFileBtn.removeAttribute('left-aligned')
                 if (this.is.tall()) attachFileBtn.style.marginRight = ''
             }
+        } else if (site == 'poe') { // restore Poe Mic button position
+            const micBtn = chatbarDiv.querySelector(selectors.btns.mic) ; if (!micBtn) return
+            micBtn.style.marginRight = ''
         }
     },
 
-    tweak() { // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
-        const site = this.imports.site ; if (!/chatgpt|perplexity/.test(site)) return
+    async tweak() { // update ChatGPT chatbar inner width or left-align Perplexity Attach File btn or move Poe Mic btn right
+        const site = this.imports.site
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') { // update chatbar inner width
@@ -63,6 +66,9 @@ window.chatbar = {
             }
             newParent?.children[1]?.before(attachFileBtn.parentNode)
             attachFileBtn.setAttribute('left-aligned', true)
+        } else if (site == 'poe') { // move Poe Mic btn right
+            const micBtn = await dom.get.loadedElem(selectors.btns.mic, 5000) ; if (!micBtn) return
+            micBtn.style.marginRight = '-7px'
         }
     }
 };

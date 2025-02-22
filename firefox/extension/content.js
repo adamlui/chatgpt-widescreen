@@ -198,7 +198,7 @@
                 }
                 update.style.tweaks() // sync TCB/NCB/HH/HF/BA
                 update.style.chatbar() // sync WCB
-                chatbar.tweak() // update ChatGPT chatbar inner width + left-align Perplexity Attach File button
+                chatbar.tweak() // update ChatGPT chatbar inner width or hack other sites' button positions
                 buttons.insert() // since .remove()'d when extension disabled
                 if (options?.updatedKey == 'btnAnimationsDisabled' && !config.btnAnimationsDisabled) // apply/remove fx
                     // ...to visually signal location + preview fx applied by Button Animations toggle-on

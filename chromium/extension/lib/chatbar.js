@@ -67,7 +67,7 @@ window.chatbar = {
             newParent?.children[1]?.before(attachFileBtn.parentNode)
             attachFileBtn.setAttribute('left-aligned', true)
         } else if (site == 'poe') // move Mic btn closer to Send
-            dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 }).then(micBtn => {
-                if (micBtn) micBtn.style.marginRight = '-7px' })
+            dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 })
+                .then(btn => { if (btn) btn.style.marginRight = '-7px' })
     }
 };

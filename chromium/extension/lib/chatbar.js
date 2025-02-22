@@ -5,10 +5,8 @@ window.chatbar = {
 
     get() {
         const site = this.imports.site
-        let chatbar = document.querySelector(this.imports.sites[site].selectors.input)
-        const lvlsToParent = site == 'chatgpt' ? 3 : 2
-        for (let i = 0 ; i < lvlsToParent ; i++) chatbar = chatbar?.parentNode
-        return chatbar
+        return site == 'chatgpt' ? document.querySelector('[id^=composer]')
+             : document.querySelector(this.imports.sites[site].selectors.input).parentNode.parentNode
     },
 
     is: {
@@ -18,12 +16,7 @@ window.chatbar = {
                     .backgroundColor == 'rgb(48, 48, 48)'
         },
 
-        tall() {
-            const site = chatbar.imports.site
-            return site == 'poe' ? true
-                 : site == 'perplexity' ? chatbar.get()?.getBoundingClientRect().height > 60
-                 : /* chatgpt */ !!chatbar.get()?.nextElementSibling
-        }
+        tall() { return chatbar.get()?.getBoundingClientRect().height > 60 }
     },
 
     reset() { // all tweaks for popup master toggle-off

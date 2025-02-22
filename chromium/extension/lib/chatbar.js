@@ -67,7 +67,7 @@ window.chatbar = {
             newParent?.children[1]?.before(attachFileBtn.parentNode)
             attachFileBtn.setAttribute('left-aligned', true)
         } else if (site == 'poe') { // move Poe Mic btn right
-            const micBtn = await dom.get.loadedElem(selectors.btns.mic, 5000) ; if (!micBtn) return
+            const micBtn = await dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 }) ; if (!micBtn) return
             micBtn.style.marginRight = '-7px'
         }
     }

@@ -118,7 +118,7 @@ window.buttons = {
         if (this.imports.env.site == 'chatgpt' && !this.chatgptBtnStripChecked
                 && document.querySelector(btnSelectors.login)) {
             await dom.get.loadedElem( // wait for cheesy colored btn strip below chatbar (earliest Speak btn appears...
-                'ul:has(svg.icon-md)', 1500) // ...since it can be wide/spammy or skinny/textless in Guest mode)
+                'ul:has(svg.icon-md)', { timeout: 1500 }) // ...since it can be wide/spammy or skinny/textless as Guest)
             this.chatgptBtnStripChecked = true
         }
         return await dom.get.loadedElem(`${btnSelectors.send}, ${btnSelectors.voice}`)

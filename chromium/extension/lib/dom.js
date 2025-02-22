@@ -80,7 +80,7 @@ window.dom = {
         computedHeight(elems) { return this.computedSize(elems, { dimension: 'height' }) }, // including margins
         computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
 
-        loadedElem(selector, timeout = null) {
+        loadedElem(selector, { timeout = null } = {}) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
                 const elem = document.querySelector(selector)

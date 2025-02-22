@@ -40,7 +40,10 @@
     ],
     "hasSidebar": true,
     "selectors": {
-      "btns": { "newChat": "header a[class*=button]", "send": "[data-button-send]" }, "header": "header",
+      "btns": {
+        "header": "header", "mic": "button[data-button-voice-input=true]",
+        "newChat": "header a[class*=button]", "send": "[data-button-send]"
+      },
       "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
       "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
     },

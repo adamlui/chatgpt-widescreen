@@ -183,11 +183,9 @@
         async configToUI(options) { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled || config[`${env.site}Disabled`]
             await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)
-            if (!extensionWasDisabled && ( config.extensionDisabled || config[`${env.site}Disabled`] )) {
-                // Outright disable modes/tweaks/btns
-                wideScreenStyle.remove() ; fullWinStyle.remove()
-                tweaksStyle.innerText = '' ; buttons.remove()
-                chatbar.reset()
+            if (!extensionWasDisabled && ( config.extensionDisabled || config[`${env.site}Disabled`] )) { // reset UI
+                [wideScreenStyle, fullWinStyle, buttons].forEach(target => target.remove())
+                tweaksStyle.innerText = '' ; chatbar.reset()
             } else if (!config.extensionDisabled && !config[`${env.site}Disabled`]) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { // sync Widescreen
                     supressNotifs() ; toggleMode('wideScreen') }

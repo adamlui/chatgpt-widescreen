@@ -39,7 +39,7 @@ window.chatbar = {
         }
     },
 
-    async tweak() { // update ChatGPT chatbar inner width or left-align Perplexity Attach File btn or move Poe Mic btn right
+    tweak() { // update ChatGPT chatbar inner width or left-align Perplexity Attach File btn or move Poe Mic btn right
         const site = this.imports.site
         const chatbarDiv = this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
@@ -66,9 +66,8 @@ window.chatbar = {
             }
             newParent?.children[1]?.before(attachFileBtn.parentNode)
             attachFileBtn.setAttribute('left-aligned', true)
-        } else if (site == 'poe') { // move Poe Mic btn right
-            const micBtn = await dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 }) ; if (!micBtn) return
-            micBtn.style.marginRight = '-7px'
-        }
+        } else if (site == 'poe') // move Mic btn closer to Send
+            dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 }).then(micBtn => {
+                if (micBtn) micBtn.style.marginRight = '-7px' })
     }
 };

@@ -204,10 +204,9 @@
             }
 
             function supressNotifs() {
-                if (!config.notifDisabled) {
-                    settings.save('notifDisabled', true) // suppress notifs for cleaner UI
-                    setTimeout(() => settings.save('notifDisabled', false), 55) // ...temporarily
-                }
+                if (config.notifiedDisabled) return
+                settings.save('notifDisabled', true) // suppress notifs for cleaner UI
+                setTimeout(() => settings.save('notifDisabled', false), 55) // ...temporarily
             }
         },
 

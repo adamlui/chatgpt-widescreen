@@ -63,9 +63,9 @@ window.buttons = {
             this.rightBtn = await this.getRightBtn() // for rOffset + styles
 
         const validBtnTypes = this.getTypes.valid()
-        const bOffset = this.imports.env.site == 'poe' ? 1.1
-                      : this.imports.env.site == 'perplexity' ? -13
-                      : this.imports.env.hasTallChatbar ? 31 : -8.85
+        const spreadFactor = this.imports.env.site == 'poe' ? 1.1
+                           : this.imports.env.site == 'perplexity' ? -13
+                           : this.imports.env.hasTallChatbar ? 31 : -8.85
         const rOffset = this.imports.env.site == 'poe' ? -6.5
                       : this.imports.env.site == 'perplexity' ? -4
                       : this.imports.env.hasTallChatbar ? ( this.rightBtn.getBoundingClientRect().width +14 ) : -0.25
@@ -77,7 +77,7 @@ window.buttons = {
             btn.className = this.class // for update.style.tweaks()
             Object.assign(btn.style, {
                 position: this.imports.env.hasTallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
-                right: `${ rOffset + idx * bOffset }px`, // position left of prev button
+                right: `${ rOffset + idx * spreadFactor }px`, // position left of prev button
                 transition: transitionStyles, // for tweaksStyle's :hover + .insert()'s fade-in
                     '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
                     '-o-transition': transitionStyles, '-ms-transition': transitionStyles

@@ -33,8 +33,8 @@
     const firstRunKey = `${env.site}_isFirstRun`
     if ((await chrome.storage.local.get(firstRunKey))[firstRunKey] == undefined) { // activate widescreen on install
         settings.save('wideScreen', true) ; settings.save('isFirstRun', false) }
-    const siteDisabledKeys = Object.keys(sites).map(site => `${site}Disabled`)
-    await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)
+    settings.siteDisabledKeys = Object.keys(sites).map(site => `${site}Disabled`)
+    await settings.load('extensionDisabled', ...settings.siteDisabledKeys, ...sites[env.site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(async req => {
@@ -182,7 +182,7 @@
 
         async configToUI(options) { // on toolbar popup toggles + AI tab activations
             const extensionWasDisabled = config.extensionDisabled || config[`${env.site}Disabled`]
-            await settings.load('extensionDisabled', ...siteDisabledKeys, ...sites[env.site].availFeatures)
+            await settings.load('extensionDisabled', ...settings.siteDisabledKeys, ...sites[env.site].availFeatures)
             if (!extensionWasDisabled && ( config.extensionDisabled || config[`${env.site}Disabled`] )) { // reset UI
                 [wideScreenStyle, fullWinStyle, buttons].forEach(target => target.remove())
                 tweaksStyle.innerText = '' ; chatbar.reset()

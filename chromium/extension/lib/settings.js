@@ -48,6 +48,14 @@ window.settings = {
         }}
     },
 
+    categories: {
+        get siteSettings() { return {
+            label: settings.getMsg('menuLabel_siteSettings'),
+            helptip: `${settings.getMsg('helptip_enableDisable')} ${settings.getMsg('appName')} `
+                      + settings.getMsg('helptip_perSite')
+        }}
+    },
+
     getMsg(key) {
         return typeof GM_info != 'undefined' ? this.imports.app.msgs[key] : chrome.i18n.getMessage(key) },
 

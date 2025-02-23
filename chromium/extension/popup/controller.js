@@ -148,13 +148,12 @@
     // Create SITE SETTINGS label
     const ssLabel = { // category label row
         div: dom.create.elem('div', { id: 'site-settings', class: 'menu-entry highlight-on-hover',
-            title: `${getMsg('helptip_enableDisable')} ${app.name} ${getMsg('helptip_perSite')}`
-        }),
+            title: settings.categories.siteSettings.helptip }),
         label: dom.create.elem('label', { class: 'menu-icon' }), labelSpan: dom.create.elem('span'),
         caret: icons.create('caretDown', { size: 11, class: 'caret',
             style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' })
     }
-    ssLabel.label.innerText = '🌐' ; ssLabel.labelSpan.textContent = getMsg('menuLabel_siteSettings')
+    ssLabel.label.innerText = '🌐' ; ssLabel.labelSpan.textContent = settings.categories.siteSettings.label
     ssLabel.div.onclick = toggleSiteSettingsVisibility;
     ['label', 'labelSpan', 'caret'].forEach(elemType => ssLabel.div.append(ssLabel[elemType]))
     document.body.append(ssLabel.div)

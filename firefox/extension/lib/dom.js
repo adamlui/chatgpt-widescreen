@@ -93,4 +93,5 @@ window.dom = {
             })
             return Promise.race([isLoadedPromise, timeoutPromise])
         }
+    }
 };

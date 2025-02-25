@@ -35,8 +35,8 @@ window.tooltip = {
         const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
         const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
                         + ( site == 'perplexity' ? ( chatbar.is.tall() ? -1 : 8 )
-                          : site == 'poe' ? 28 : 7 )
-        const spreadFactor = site == 'perplexity' ? 27.5 : site == 'poe' ? 28 : 31
+                          : site == 'poe' ? 22 : 7 )
+        const spreadFactor = site == 'perplexity' ? 27.5 : site == 'poe' ? 27 : 31
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                          + ( site == 'chatgpt' && chatbar.is.tall() ? -2 : 4 )
         this.div.innerText = this.getMsg(`tooltip_${btnType}${

@@ -81,9 +81,8 @@ window.dom = {
         computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
 
         loadedElem(selector, { timeout = null } = {}) {
-            const promises = {
-                timeout: new Promise(resolve => timeout ? setTimeout(() => resolve(null), timeout) : undefined),
-                isLoaded: new Promise(resolve => {
+            const raceEntries = [
+                new Promise(resolve => { // when elem loads
                     const elem = document.querySelector(selector)
                     if (elem) resolve(elem)
                     else new MutationObserver((_, obs) => {
@@ -91,8 +90,9 @@ window.dom = {
                         if (elem) { obs.disconnect() ; resolve(elem) }
                     }).observe(document.documentElement, { childList: true, subtree: true })
                 })
-            }
-            return Promise.race(Object.values(promises))
+            ]
+            if (timeout) raceEntries.push(new Promise(resolve => setTimeout(() => resolve(null), timeout)))
+            return Promise.race(raceEntries)
         }
     }
 };

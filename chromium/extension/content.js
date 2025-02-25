@@ -149,6 +149,10 @@
                                 #credential_picker_container /* upper-right Google signin popup */
                                     { display: none }` )
                           + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
+                    ) : env.site == 'poe' ? (
+                            ( config.blockSpamDisabled ? '' : // block spam
+                               `[class*=NewFeatureCard] /* New Feature cards */
+                                    { display: none }` )
                     ) : '' )
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header

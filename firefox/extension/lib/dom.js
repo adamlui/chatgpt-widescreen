@@ -81,17 +81,18 @@ window.dom = {
         computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
 
         loadedElem(selector, { timeout = null } = {}) {
-            const timeoutPromise = new Promise(resolve =>
-                timeout ? setTimeout(() => resolve(null), timeout) : undefined)
-            const isLoadedPromise = new Promise(resolve => {
-                const elem = document.querySelector(selector)
-                if (elem) resolve(elem)
-                else new MutationObserver((_, obs) => {
+            const promises = {
+                timeout: new Promise(resolve => timeout ? setTimeout(() => resolve(null), timeout) : undefined),
+                isLoaded: new Promise(resolve => {
                     const elem = document.querySelector(selector)
-                    if (elem) { obs.disconnect() ; resolve(elem) }
-                }).observe(document.documentElement, { childList: true, subtree: true })
-            })
-            return Promise.race([isLoadedPromise, timeoutPromise])
+                    if (elem) resolve(elem)
+                    else new MutationObserver((_, obs) => {
+                        const elem = document.querySelector(selector)
+                        if (elem) { obs.disconnect() ; resolve(elem) }
+                    }).observe(document.documentElement, { childList: true, subtree: true })
+                })
+            }
+            return Promise.race(Object.values(promises))
         }
     }
 };

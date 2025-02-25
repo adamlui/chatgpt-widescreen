@@ -35,8 +35,8 @@
   },
   "poe": {
     "availFeatures": [
-      "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled", "ncbDisabled",
-      "tcbDisabled", "widerChatbox", "wideScreen"
+      "blockSpamDisabled", "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled",
+      "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen"
     ],
     "hasSidebar": true,
     "selectors": {

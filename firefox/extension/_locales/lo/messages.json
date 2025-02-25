@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "ການຕັ້ງຄ່າເວັບໄຊ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "menuLabel_donate": { "message": "ສະນັ້ນ ໃຫ້ບໍລິຈາກ" },
-  "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ" },
-  "menuLabel_extensionInstalled": { "message": "ການຂະຫຍາຍທີ່ຕິດຕັ້ງ" },
   "about_author": { "message": "ຜູ້ຂຽນ" },
   "about_and": { "message": "ແລະ" },
   "about_contributors": { "message": "ຜູ້ປະກອບສ່ວນ" },

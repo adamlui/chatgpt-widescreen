@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "လုပ်ငန်းခွင် ဆက်တင်များ" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_donate": { "message": "ကျေးဇူးပြု ၍ လှူဒါန်းမှုတစ်ခု ပေးပို့ပါ" },
-  "menuLabel_disabled": { "message": "ပိတ်ထားသည်" },
-  "menuLabel_extensionInstalled": { "message": "တိုးချဲ့မှုကို တပ်ဆင်ထားသည်" },
   "about_author": { "message": "ရေးသူ" },
   "about_and": { "message": "Raw Material (Inventory) တွေ ဝယ်မယ့် လုပ်ငန်းမျိုးအတွက်၊" },
   "about_contributors": { "message": "ပါဝင်အားဖြည့်သူများ" },

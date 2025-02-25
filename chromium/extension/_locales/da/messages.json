@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Site Settings" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Send en donation" },
-  "menuLabel_disabled": { "message": "Inaktiv" },
-  "menuLabel_extensionInstalled": { "message": "udvidelse installeret" },
   "about_author": { "message": "Forfatter" },
   "about_and": { "message": "og" },
   "about_contributors": { "message": "bidragydere" },

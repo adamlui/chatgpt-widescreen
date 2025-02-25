@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Sayt Parametrləri " },
   "menuLabel_about": { "message": "Haqqında" },
   "menuLabel_donate": { "message": "İanə göndərin" },
-  "menuLabel_disabled": { "message": "Bağlandı" },
-  "menuLabel_extensionInstalled": { "message": "uzadılma quraşdırılıb" },
   "about_author": { "message": "Müəllif" },
   "about_and": { "message": "və " },
   "about_contributors": { "message": "Dəstəkçilər" },

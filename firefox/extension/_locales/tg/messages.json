@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Mga Setting ng Site" },
   "menuLabel_about": { "message": "Дар бораи" },
   "menuLabel_donate": { "message": "Mangyaring magpadala ng isang pagpap" },
-  "menuLabel_disabled": { "message": "Имкон дода нашудааст" },
-  "menuLabel_extensionInstalled": { "message": "васеъӣ насб шудааст" },
   "about_author": { "message": "Муаалиф" },
   "about_and": { "message": "ва" },
   "about_contributors": { "message": "саҳмгузорон" },

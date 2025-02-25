@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "સાઇટ સેટિંગ્સ" },
   "menuLabel_about": { "message": "માહિતી" },
   "menuLabel_donate": { "message": "કૃપા કરીને દાન મોકલો" },
-  "menuLabel_disabled": { "message": "અક્ષમ છે" },
-  "menuLabel_extensionInstalled": { "message": "એક્સ્ટેંશન ઇન્સ્ટોલ" },
   "about_author": { "message": "લેખક" },
   "about_and": { "message": "અને" },
   "about_contributors": { "message": "ફાળો આપનારાઓ" },

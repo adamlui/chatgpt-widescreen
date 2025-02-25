@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Сайтын Тохиргоо" },
   "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_donate": { "message": "Хандив илгээнэ үү" },
-  "menuLabel_disabled": { "message": "Идэвхгүй" },
-  "menuLabel_extensionInstalled": { "message": "өргөтгөлийг суулгагдсан" },
   "about_author": { "message": "Зохиогч" },
   "about_and": { "message": "болон" },
   "about_contributors": { "message": "ᠲᠤᠰᠠᠯᠠᠭᠴᠢᠳ" },

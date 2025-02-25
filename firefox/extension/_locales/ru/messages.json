@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Настройки сайта" },
   "menuLabel_about": { "message": "Шифр" },
   "menuLabel_donate": { "message": "Пожалуйста, отправьте пожертвование" },
-  "menuLabel_disabled": { "message": "Выключено" },
-  "menuLabel_extensionInstalled": { "message": "Расширение установлено" },
   "about_author": { "message": "Автор" },
   "about_and": { "message": "и" },
   "about_contributors": { "message": "участников" },

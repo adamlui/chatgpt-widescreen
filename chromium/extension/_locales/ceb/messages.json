@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Mga Setting sa Site" },
   "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_donate": { "message": "Palihug ipadala ang usa ka donasyon" },
-  "menuLabel_disabled": { "message": "Baldado" },
-  "menuLabel_extensionInstalled": { "message": "pag-instalar sa extension" },
   "about_author": { "message": "Awtor" },
   "about_and": { "message": "og " },
   "about_contributors": { "message": "mga kontribyutor" },

@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "站点设置" },
   "menuLabel_about": { "message": "关于" },
   "menuLabel_donate": { "message": "请捐款" },
-  "menuLabel_disabled": { "message": "已禁用" },
-  "menuLabel_extensionInstalled": { "message": "已安装扩展" },
   "about_author": { "message": "作者" },
   "about_and": { "message": "和" },
   "about_contributors": { "message": "贡献者" },

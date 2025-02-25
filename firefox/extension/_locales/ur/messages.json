@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "سائٹ کی ترتیبات" },
   "menuLabel_about": { "message": "متعلق" },
   "menuLabel_donate": { "message": "براہ کرم ایک عطیہ بھیجیں" },
-  "menuLabel_disabled": { "message": "غیر فعال" },
-  "menuLabel_extensionInstalled": { "message": "ایکسٹینشن انسٹال ہو گئی ہے" },
   "about_author": { "message": "مصنف" },
   "about_and": { "message": "اور " },
   "about_contributors": { "message": "تعاون کنندگان" },

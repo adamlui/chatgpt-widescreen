@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "የጣቢያ ቅንብሮች" },
   "menuLabel_about": { "message": "ስለ" },
   "menuLabel_donate": { "message": "እባክዎን ልገሳ ይላኩ" },
-  "menuLabel_disabled": { "message": "የተሰናከለ" },
-  "menuLabel_extensionInstalled": { "message": "ቅጥያ ተጭኗል" },
   "about_author": { "message": "ደራሲ" },
   "about_and": { "message": "እና" },
   "about_contributors": { "message": "አስተዋጽዖ አበርካቾች " },

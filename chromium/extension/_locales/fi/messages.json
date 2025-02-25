@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Sivuston lisäasetukset" },
   "menuLabel_about": { "message": "Tietoa" },
   "menuLabel_donate": { "message": "Lähetä lahjoitus" },
-  "menuLabel_disabled": { "message": "Pois käytöstä" },
-  "menuLabel_extensionInstalled": { "message": "laajennus asennettu" },
   "about_author": { "message": "Tekijä" },
   "about_and": { "message": "ja" },
   "about_contributors": { "message": "tuottajat" },

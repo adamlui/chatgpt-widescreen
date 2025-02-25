@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Iisetingi Zesayithi" },
   "menuLabel_about": { "message": "Malunga" },
   "menuLabel_donate": { "message": "Nceda uthumele umnikelo" },
-  "menuLabel_disabled": { "message": "Kuyabhaleka" },
-  "menuLabel_extensionInstalled": { "message": "ulwandiso lufakiwe" },
   "about_author": { "message": "Inkcazelo ngombhali" },
   "about_and": { "message": "no" },
   "about_contributors": { "message": "Abanikeli" },

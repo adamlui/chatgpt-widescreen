@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Подесувања на страницата" },
   "menuLabel_about": { "message": "За" },
   "menuLabel_donate": { "message": "Испратете донација" },
-  "menuLabel_disabled": { "message": "Оневозможено" },
-  "menuLabel_extensionInstalled": { "message": "инсталирана екстензија" },
   "about_author": { "message": "Автор" },
   "about_and": { "message": "и" },
   "about_contributors": { "message": "Придонесувачи" },

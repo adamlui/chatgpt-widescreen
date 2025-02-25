@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "ਸਾਈਟ ਦੀਆਂ ਸੈਟਿੰਗਾਂ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "menuLabel_donate": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਦਾਨ ਭੇਜੋ" },
-  "menuLabel_disabled": { "message": "ਅਯੋਗ" },
-  "menuLabel_extensionInstalled": { "message": "ਐਕਸਟੈਂਸ਼ਨ ਇੰਸਟਾਲ" },
   "about_author": { "message": "_ਲੇਖਕ" },
   "about_and": { "message": "ਅਤੇ" },
   "about_contributors": { "message": "ਸਹਿਯੋਗ" },

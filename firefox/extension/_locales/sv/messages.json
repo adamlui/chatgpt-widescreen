@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Webbplatsinställningar" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Vänligen skicka en donation" },
-  "menuLabel_disabled": { "message": "Handikappade" },
-  "menuLabel_extensionInstalled": { "message": "tillägg installerat" },
   "about_author": { "message": "Författare" },
   "about_and": { "message": "och" },
   "about_contributors": { "message": "bidragsgivare" },

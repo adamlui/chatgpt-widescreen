@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "தள அமைப்புகள்" },
   "menuLabel_about": { "message": "பற்றி" },
   "menuLabel_donate": { "message": "நன்கொடை அனுப்பவும்" },
-  "menuLabel_disabled": { "message": "& செயல் நீக்கு" },
-  "menuLabel_extensionInstalled": { "message": "நீட்டிப்பு நிறுவப்பட்டது" },
   "about_author": { "message": "நூலாசிரியர்" },
   "about_and": { "message": "மற்றும்" },
   "about_contributors": { "message": "பங்களிப்போர்" },

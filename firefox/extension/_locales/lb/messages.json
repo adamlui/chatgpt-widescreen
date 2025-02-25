@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Siteastellungen" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_donate": { "message": "Schéckt w.e.g. eng Donatioun" },
-  "menuLabel_disabled": { "message": "Deaktivéiert" },
-  "menuLabel_extensionInstalled": { "message": "verlängerung installéiert" },
   "about_author": { "message": "Auteur" },
   "about_and": { "message": "a(n)" },
   "about_contributors": { "message": "Matwierkend" },

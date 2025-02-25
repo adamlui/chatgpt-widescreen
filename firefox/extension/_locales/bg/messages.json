@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Настройки на сайта" },
   "menuLabel_about": { "message": "Относно" },
   "menuLabel_donate": { "message": "Моля, изпратете дарение" },
-  "menuLabel_disabled": { "message": "С увреждания" },
-  "menuLabel_extensionInstalled": { "message": "инсталирано разширение" },
   "about_author": { "message": "Автор" },
   "about_and": { "message": "и" },
   "about_contributors": { "message": "Сътрудници" },

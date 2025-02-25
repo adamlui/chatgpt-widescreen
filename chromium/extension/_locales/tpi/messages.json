@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Ol sait bilong dispela hap" },
   "menuLabel_about": { "message": "Long" },
   "menuLabel_donate": { "message": "Plis salim wanpela donesen" },
-  "menuLabel_disabled": { "message": "Lek han nogut" },
-  "menuLabel_extensionInstalled": { "message": "extension i stap long en" },
   "about_author": { "message": "Man bilong raitim" },
   "about_and": { "message": "na" },
   "about_contributors": { "message": "ol contributor" },

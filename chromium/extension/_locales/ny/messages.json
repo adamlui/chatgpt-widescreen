@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Site Zikhazikiko" },
   "menuLabel_about": { "message": "Zokhudza" },
   "menuLabel_donate": { "message": "Chonde tumizani zopereka" },
-  "menuLabel_disabled": { "message": "Usatheketsa" },
-  "menuLabel_extensionInstalled": { "message": "kukulitsa anaika" },
   "about_author": { "message": "Wolemba" },
   "about_and": { "message": "Ndi" },
   "about_contributors": { "message": "othandizira" },

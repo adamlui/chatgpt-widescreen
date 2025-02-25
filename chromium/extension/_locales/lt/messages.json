@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Svetainės nustatymai" },
   "menuLabel_about": { "message": "Apie" },
   "menuLabel_donate": { "message": "Siųskite auką" },
-  "menuLabel_disabled": { "message": "Neįgalūs" },
-  "menuLabel_extensionInstalled": { "message": "plėtinys įdiegtas" },
   "about_author": { "message": "Autorius" },
   "about_and": { "message": "ir" },
   "about_contributors": { "message": "kontributoriai" },

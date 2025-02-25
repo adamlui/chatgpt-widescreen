@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Majas lapas iestatījumi." },
   "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_donate": { "message": "Lūdzu, nosūtiet ziedojumu" },
-  "menuLabel_disabled": { "message": "Ar īpašām vajadzībām" },
-  "menuLabel_extensionInstalled": { "message": "paplašinājums uzstādīts" },
   "about_author": { "message": "Autors" },
   "about_and": { "message": "un" },
   "about_contributors": { "message": "Numura autori" },

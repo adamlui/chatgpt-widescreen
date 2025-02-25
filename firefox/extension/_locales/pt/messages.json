@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Definições do Site" },
   "menuLabel_about": { "message": "Quem somos" },
   "menuLabel_donate": { "message": "Envie um donativo" },
-  "menuLabel_disabled": { "message": "Desactivado" },
-  "menuLabel_extensionInstalled": { "message": "extensão instalada" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "e" },
   "about_contributors": { "message": "colaboradores" },

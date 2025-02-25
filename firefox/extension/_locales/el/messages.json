@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Ρυθμίσεις ιστότοπου" },
   "menuLabel_about": { "message": "Σχετικά" },
   "menuLabel_donate": { "message": "Στείλτε μια δωρεά" },
-  "menuLabel_disabled": { "message": "Ανενεργή" },
-  "menuLabel_extensionInstalled": { "message": "Η επέκταση εγκαταστάθηκε" },
   "about_author": { "message": "Συντάκτης" },
   "about_and": { "message": "και" },
   "about_contributors": { "message": "συντελεστές" },

@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Umělec Nastavení" },
   "menuLabel_about": { "message": "O" },
   "menuLabel_donate": { "message": "Prosíme o zaslání daru" },
-  "menuLabel_disabled": { "message": "Invalidé" },
-  "menuLabel_extensionInstalled": { "message": "rozšíření nainstalováno" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "a" },
   "about_contributors": { "message": "přispěvatelé" },

@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Setări site " },
   "menuLabel_about": { "message": "Despre" },
   "menuLabel_donate": { "message": "Te rugăm să trimiți o donație" },
-  "menuLabel_disabled": { "message": "Dezactivat" },
-  "menuLabel_extensionInstalled": { "message": "extensie instalată" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "şi" },
   "about_contributors": { "message": "colaboratorilor" },

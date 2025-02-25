@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Ngā tautuhinga pae" },
   "menuLabel_about": { "message": "Mō" },
   "menuLabel_donate": { "message": "Tukua mai he takoha" },
-  "menuLabel_disabled": { "message": "Kua whakawetoa" },
-  "menuLabel_extensionInstalled": { "message": "whakawhānui tāuta" },
   "about_author": { "message": "Kaitito" },
   "about_and": { "message": "he tamāhine ahau" },
   "about_contributors": { "message": "ngā kaihauturu" },

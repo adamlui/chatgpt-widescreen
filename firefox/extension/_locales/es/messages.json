@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Ajustes del sitio" },
   "menuLabel_about": { "message": "Acerca de" },
   "menuLabel_donate": { "message": "Por favor, envíe una donación" },
-  "menuLabel_disabled": { "message": "Deshabilitado" },
-  "menuLabel_extensionInstalled": { "message": "extensión instalada" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "y" },
   "about_contributors": { "message": "colaboradores" },

@@ -17,8 +17,6 @@
   "menuLabel_siteSettings": { "message": "Heimasíða innstillingar" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_donate": { "message": "Send okkum eina gávu" },
-  "menuLabel_disabled": { "message": "Óvirkið" },
-  "menuLabel_extensionInstalled": { "message": "útbygging innstald" },
   "about_author": { "message": "Høvundur" },
   "about_and": { "message": "og" },
   "about_contributors": { "message": "ískoytisfólk" },

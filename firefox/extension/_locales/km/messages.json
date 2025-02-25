@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "ការ កំណត់ តំបន់ បណ្ដាញ" },
   "menuLabel_about": { "message": "អំពី" },
   "menuLabel_donate": { "message": "សូមផ្ញើការបរិច្ចាគ" },
+  "menuLabel_extensionActive": { "message": "ផ្នែក បន្ថែម សកម្ម" },
   "about_author": { "message": "អ្នកបញ្ចូលព័ត៌មាន" },
   "about_and": { "message": "និង" },
   "about_contributors": { "message": "អ្នក​ចូល​រួម​ចំណែក​" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "btnLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
+  "state_disabled": { "message": "បានបិទ" },
   "state_on": { "message": "បើក" },
   "state_off": { "message": "បិទ" }
 }

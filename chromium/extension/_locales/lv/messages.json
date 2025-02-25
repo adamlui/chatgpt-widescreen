@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Majas lapas iestatījumi." },
   "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_donate": { "message": "Lūdzu, nosūtiet ziedojumu" },
+  "menuLabel_extensionActive": { "message": "paplašinājums ir aktīvs" },
   "about_author": { "message": "Autors" },
   "about_and": { "message": "un" },
   "about_contributors": { "message": "Numura autori" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Atjauninināt" },
   "btnLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
+  "state_disabled": { "message": "atcelta" },
   "state_on": { "message": "ieslēgts" },
   "state_off": { "message": "izslēgt" }
 }

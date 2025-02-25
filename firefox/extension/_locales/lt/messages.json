@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Svetainės nustatymai" },
   "menuLabel_about": { "message": "Apie" },
   "menuLabel_donate": { "message": "Siųskite auką" },
+  "menuLabel_extensionActive": { "message": "plėtinys aktyvus" },
   "about_author": { "message": "Autorius" },
   "about_and": { "message": "ir" },
   "about_contributors": { "message": "kontributoriai" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Naujinti" },
   "btnLabel_dismiss": { "message": "Atšaukti" },
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
+  "state_disabled": { "message": "išjungta" },
   "state_on": { "message": "kada" },
   "state_off": { "message": "išj" }
 }

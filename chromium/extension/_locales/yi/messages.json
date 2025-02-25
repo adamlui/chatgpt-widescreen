@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "פּלאַץ סעטטינגס" },
   "menuLabel_about": { "message": "וועגן" },
   "menuLabel_donate": { "message": "ביטע שיקן אַ צושטייַער" },
+  "menuLabel_extensionActive": { "message": "פאַרלענגערונג אַקטיוו" },
   "about_author": { "message": "מחבר" },
   "about_and": { "message": "און" },
   "about_contributors": { "message": "מיטארבעטערס" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "דערהייַנטיקן" },
   "btnLabel_dismiss": { "message": "אָפּזאָגן" },
   "link_viewChanges": { "message": "קוק ענדערונגען" },
+  "state_disabled": { "message": "פאַרקריפּלט" },
   "state_on": { "message": "אויף" },
   "state_off": { "message": "אַוועק" }
 }

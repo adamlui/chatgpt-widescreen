@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Settings tas-Sit" },
   "menuLabel_about": { "message": "Dwar" },
   "menuLabel_donate": { "message": "Jekk jogħġbok ibgħat donazzjoni" },
+  "menuLabel_extensionActive": { "message": "estensjoni attiva" },
   "about_author": { "message": "Awtur" },
   "about_and": { "message": "u" },
   "about_contributors": { "message": "Kontributuri" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Aġġornament" },
   "btnLabel_dismiss": { "message": "Tagħtix kas" },
   "link_viewChanges": { "message": "Ara l-bidliet" },
+  "state_disabled": { "message": "persuni b’diżabilità" },
   "state_on": { "message": "fuq" },
   "state_off": { "message": "mitfi" }
 }

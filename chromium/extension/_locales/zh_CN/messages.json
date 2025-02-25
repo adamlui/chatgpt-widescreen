@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "站点设置" },
   "menuLabel_about": { "message": "关于" },
   "menuLabel_donate": { "message": "请捐款" },
+  "menuLabel_extensionActive": { "message": "扩展活动" },
   "about_author": { "message": "作者" },
   "about_and": { "message": "和" },
   "about_contributors": { "message": "贡献者" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "更新" },
   "btnLabel_dismiss": { "message": "关闭" },
   "link_viewChanges": { "message": "查看更改" },
+  "state_disabled": { "message": "禁用" },
   "state_on": { "message": "开启" },
   "state_off": { "message": "关闭" }
 }

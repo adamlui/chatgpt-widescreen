@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Impostazioni del sito" },
   "menuLabel_about": { "message": "Informazioni generali" },
   "menuLabel_donate": { "message": "Invia una donazione" },
+  "menuLabel_extensionActive": { "message": "Estensione SOAP attiva." },
   "about_author": { "message": "Autore" },
   "about_and": { "message": "e" },
   "about_contributors": { "message": "collaboratori" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Aggiorna" },
   "btnLabel_dismiss": { "message": "Annulla" },
   "link_viewChanges": { "message": "Visualizza le modifiche" },
+  "state_disabled": { "message": "disabled" },
   "state_on": { "message": "il" },
   "state_off": { "message": "spento" }
 }

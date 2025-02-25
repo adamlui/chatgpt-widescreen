@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Ajustes del sitio" },
   "menuLabel_about": { "message": "Acerca de" },
   "menuLabel_donate": { "message": "Por favor, envíe una donación" },
+  "menuLabel_extensionActive": { "message": "La extensión está activa" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "y" },
   "about_contributors": { "message": "colaboradores" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Actualizar" },
   "btnLabel_dismiss": { "message": "Descartar" },
   "link_viewChanges": { "message": "Ver cambios" },
+  "state_disabled": { "message": "deshabilitado" },
   "state_on": { "message": "en" },
   "state_off": { "message": "apagado" }
 }

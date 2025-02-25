@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Siteastellungen" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_donate": { "message": "Schéckt w.e.g. eng Donatioun" },
+  "menuLabel_extensionActive": { "message": "verlängerung aktiv" },
   "about_author": { "message": "Auteur" },
   "about_and": { "message": "a(n)" },
   "about_contributors": { "message": "Matwierkend" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Aktualiséieren" },
   "btnLabel_dismiss": { "message": "Entloossen" },
   "link_viewChanges": { "message": "Ännerungen uweisen" },
+  "state_disabled": { "message": "Deaktivéiert" },
   "state_on": { "message": "un" },
   "state_off": { "message": "aus" }
 }

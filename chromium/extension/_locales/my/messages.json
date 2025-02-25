@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "လုပ်ငန်းခွင် ဆက်တင်များ" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_donate": { "message": "ကျေးဇူးပြု ၍ လှူဒါန်းမှုတစ်ခု ပေးပို့ပါ" },
+  "menuLabel_extensionActive": { "message": "သက်ဝင်နေသော တိုးချဲ့မှု" },
   "about_author": { "message": "ရေးသူ" },
   "about_and": { "message": "Raw Material (Inventory) တွေ ဝယ်မယ့် လုပ်ငန်းမျိုးအတွက်၊" },
   "about_contributors": { "message": "ပါဝင်အားဖြည့်သူများ" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "btnLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" },
+  "state_disabled": { "message": "ပိတ်ထားသည်" },
   "state_on": { "message": "အပေါ်တွင်" },
   "state_off": { "message": "ပိတ်" }
 }

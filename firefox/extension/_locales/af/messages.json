@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Nuwe webwerf-instellings" },
   "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_donate": { "message": "Stuur asseblief 'n donasie" },
+  "menuLabel_extensionActive": { "message": "uitbreiding aktief" },
   "about_author": { "message": "Outeur" },
   "about_and": { "message": "en" },
   "about_contributors": { "message": "medewerkers" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Opdateer" },
   "btnLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" },
+  "state_disabled": { "message": "gedeaktiveer" },
   "state_on": { "message": "op" },
   "state_off": { "message": "af" }
 }

@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "དྲ་ཚིགས་སྒྲིག་བཀོད །" },
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_donate": { "message": "ཁྱོད་ཀྱིས་སྦྱིན་པ་གཏོང་འདོད་དམ །" },
+  "menuLabel_extensionActive": { "message": "ལས་བྱེད་པའི་རིང་ཐུང་།" },
   "about_author": { "message": "Yazar" },
   "about_and": { "message": "ve" },
   "about_contributors": { "message": "གྲོགས་རམ །" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "གསར་བསྒྱུར" },
   "btnLabel_dismiss": { "message": "འདོར་བ།" },
   "link_viewChanges": { "message": "ཐེངས་རྗེས་མའི་བཟོ་བཅོས །" },
+  "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" },
   "state_on": { "message": "སྤར་རྒྱུ" },
   "state_off": { "message": "གསོད" }
 }

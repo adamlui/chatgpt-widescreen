@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Saýt Settings" },
   "menuLabel_about": { "message": "Barada" },
   "menuLabel_donate": { "message": "Bize sowgat iber" },
+  "menuLabel_extensionActive": { "message": "uzynlyk aktiv" },
   "about_author": { "message": "Otomatik gaýşart" },
   "about_and": { "message": "we" },
   "about_contributors": { "message": "öwrenýänler" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Häzirleşdir" },
   "btnLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Ýygnaýyşy görkez" },
+  "state_disabled": { "message": "Mümkin edigili" },
   "state_on": { "message": "% jeminden" },
   "state_off": { "message": "çyk" }
 }

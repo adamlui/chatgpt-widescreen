@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Налады сайта" },
   "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_donate": { "message": "Калі ласка, дашліце ахвяраванне" },
+  "menuLabel_extensionActive": { "message": "пашырэнне актыўнае" },
   "about_author": { "message": "Аўтар" },
   "about_and": { "message": "і " },
   "about_contributors": { "message": "аўтары" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Абноўлена" },
   "btnLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Прагледзець змены" },
+  "state_disabled": { "message": "адключаны" },
   "state_on": { "message": "на" },
   "state_off": { "message": "выкл" }
 }

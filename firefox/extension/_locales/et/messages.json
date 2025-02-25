@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Saidi seaded" },
   "menuLabel_about": { "message": "Info" },
   "menuLabel_donate": { "message": "Saada annetus" },
+  "menuLabel_extensionActive": { "message": "laiendus aktiivne" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "ja" },
   "about_contributors": { "message": "Kaastöötajad" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Uuenda" },
   "btnLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Kuva muudatused" },
+  "state_disabled": { "message": "välja lülitatud" },
   "state_on": { "message": "sisse" },
   "state_off": { "message": "väljas" }
 }

@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Gunearen ezarpenak" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_donate": { "message": "Mesedez, bidali dohaintza" },
+  "menuLabel_extensionActive": { "message": "luzapena aktiboa" },
   "about_author": { "message": "Egilea" },
   "about_and": { "message": "eta" },
   "about_contributors": { "message": "Laguntzaileak" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Eguneratu" },
   "btnLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" },
+  "state_disabled": { "message": "ezgaituta" },
   "state_on": { "message": "sisse" },
   "state_off": { "message": "itzali" }
 }

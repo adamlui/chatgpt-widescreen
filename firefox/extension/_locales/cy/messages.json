@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Gosodiadau Logo Gwefan" },
   "menuLabel_about": { "message": "Gwybodaeth" },
   "menuLabel_donate": { "message": "Anfonwch rodd os gwelwch yn dda" },
+  "menuLabel_extensionActive": { "message": "estyniad ar waith" },
   "about_author": { "message": "Awdur" },
   "about_and": { "message": "a" },
   "about_contributors": { "message": "Cyfranwyr" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Diweddaru" },
   "btnLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" },
+  "state_disabled": { "message": "analluogwyd" },
   "state_on": { "message": "ar" },
   "state_off": { "message": "i ffwrdd" }
 }

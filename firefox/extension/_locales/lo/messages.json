@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "ການຕັ້ງຄ່າເວັບໄຊ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "menuLabel_donate": { "message": "ສະນັ້ນ ໃຫ້ບໍລິຈາກ" },
+  "menuLabel_extensionActive": { "message": "ການຂະຫຍາຍທີ່ໃຊ້ງານ" },
   "about_author": { "message": "ຜູ້ຂຽນ" },
   "about_and": { "message": "ແລະ" },
   "about_contributors": { "message": "ຜູ້ປະກອບສ່ວນ" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "ອັບເດດ" },
   "btnLabel_dismiss": { "message": "ຂ້າມໄປ" },
   "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },
+  "state_disabled": { "message": "ພິການ" },
   "state_on": { "message": "ເປີດ" },
   "state_off": { "message": "ປິດ" }
 }

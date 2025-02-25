@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Reglaj Sit la" },
   "menuLabel_about": { "message": "Apwopo" },
   "menuLabel_donate": { "message": "Tanpri voye yon don/S 'il vous plaî" },
+  "menuLabel_extensionActive": { "message": "ekstansyon aktif/prolongation act" },
   "about_author": { "message": "otè" },
   "about_and": { "message": "epi" },
   "about_contributors": { "message": "kontribitè" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" },
+  "state_disabled": { "message": "dezaktive/andikape/enfim/antrave/moun ki gen mobilite redwi/antravè/enpotan /désactivé/désactivée/impotent /infirme/personnes à mobilité réduite/handicapés/ handicap" },
   "state_on": { "message": "nan dat" },
   "state_off": { "message": "etenn/koupe " }
 }

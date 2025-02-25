@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "අඩවි සැකසුම්" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
   "menuLabel_donate": { "message": "කරුණාකර පරිත් ‍ යාගයක් යවන්න" },
+  "menuLabel_extensionActive": { "message": "දිගුව සක් ‍ රීයයි" },
   "about_author": { "message": "කතෘ" },
   "about_and": { "message": "සහ" },
   "about_contributors": { "message": "දායකයින්" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "යාවත් කාළීන" },
   "btnLabel_dismiss": { "message": "ඉවතලන්න" },
   "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
+  "state_disabled": { "message": "අක්‍රීය කල" },
   "state_on": { "message": "" },
   "state_off": { "message": "ගූගල්" }
 }

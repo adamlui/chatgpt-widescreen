@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Definições do Site" },
   "menuLabel_about": { "message": "Quem somos" },
   "menuLabel_donate": { "message": "Envie um donativo" },
+  "menuLabel_extensionActive": { "message": "Extensão SOAP ativa." },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "e" },
   "about_contributors": { "message": "colaboradores" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Atualizar" },
   "btnLabel_dismiss": { "message": "Ignorar" },
   "link_viewChanges": { "message": "Ver Alterações" },
+  "state_disabled": { "message": "desactivado" },
   "state_on": { "message": "a" },
   "state_off": { "message": "desligar" }
 }

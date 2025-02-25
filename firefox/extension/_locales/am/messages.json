@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "የጣቢያ ቅንብሮች" },
   "menuLabel_about": { "message": "ስለ" },
   "menuLabel_donate": { "message": "እባክዎን ልገሳ ይላኩ" },
+  "menuLabel_extensionActive": { "message": "ቅጥያ ንቁ" },
   "about_author": { "message": "ደራሲ" },
   "about_and": { "message": "እና" },
   "about_contributors": { "message": "አስተዋጽዖ አበርካቾች " },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "አዘምን" },
   "btnLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
+  "state_disabled": { "message": "የተሰናከለ" },
   "state_on": { "message": "በላይ" },
   "state_off": { "message": "አጥፋ" }
 }

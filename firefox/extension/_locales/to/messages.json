@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Fokotuʻutuʻu ʻo e Saití" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "menuLabel_donate": { "message": "Kātaki ʻo ʻave ha foaki" },
+  "menuLabel_extensionActive": { "message": "fakalahi ki he malohi" },
   "about_author": { "message": "Tokotaha Faʻu Tohí" },
   "about_and": { "message": "e" },
   "about_contributors": { "message": "niʻihi ne nau ʻomi e" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "btnLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
+  "state_disabled": { "message": "Tapui" },
   "state_on": { "message": "ʻi he" },
   "state_off": { "message": "mavahe mei he" }
 }

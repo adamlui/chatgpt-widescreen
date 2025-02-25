@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Site Ayarları " },
   "menuLabel_about": { "message": "Hakkımızda" },
   "menuLabel_donate": { "message": "Lütfen bağış gönderin" },
+  "menuLabel_extensionActive": { "message": "eklenti etkin" },
   "about_author": { "message": "Yazar" },
   "about_and": { "message": "ve" },
   "about_contributors": { "message": "katkıda bulunanlar" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Yok say" },
   "link_viewChanges": { "message": "Değişen Dosyalar" },
+  "state_disabled": { "message": "etkinleştirilmemiş" },
   "state_on": { "message": "Açık" },
   "state_off": { "message": "işten çıkmak" }
 }

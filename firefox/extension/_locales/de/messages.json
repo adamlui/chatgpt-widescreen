@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Seiten Einstellungen" },
   "menuLabel_about": { "message": "Über" },
   "menuLabel_donate": { "message": "Bitte spenden Sie" },
+  "menuLabel_extensionActive": { "message": "verlängerung aktiv" },
   "about_author": { "message": "Verfasser" },
   "about_and": { "message": "und" },
   "about_contributors": { "message": "beitragende" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Schließen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" },
+  "state_disabled": { "message": "deaktiviert" },
   "state_on": { "message": "auf, über" },
   "state_off": { "message": "unter, außerhalb" }
 }

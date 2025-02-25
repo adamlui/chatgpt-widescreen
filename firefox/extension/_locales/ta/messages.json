@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "தள அமைப்புகள்" },
   "menuLabel_about": { "message": "பற்றி" },
   "menuLabel_donate": { "message": "நன்கொடை அனுப்பவும்" },
+  "menuLabel_extensionActive": { "message": "நீட்டிப்பு செயலில் உள்ளது" },
   "about_author": { "message": "நூலாசிரியர்" },
   "about_and": { "message": "மற்றும்" },
   "about_contributors": { "message": "பங்களிப்போர்" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "புதுப்பிக்கவும்" },
   "btnLabel_dismiss": { "message": "நிராகரிக்கவும்" },
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
+  "state_disabled": { "message": "முடக்கிப்பட்டுள்ளது" },
   "state_on": { "message": "இயக்கு" },
   "state_off": { "message": "நீக்கு" }
 }

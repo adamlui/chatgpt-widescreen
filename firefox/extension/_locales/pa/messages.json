@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "ਸਾਈਟ ਦੀਆਂ ਸੈਟਿੰਗਾਂ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "menuLabel_donate": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਦਾਨ ਭੇਜੋ" },
+  "menuLabel_extensionActive": { "message": "ਐਕਸਟੈਂਸ਼ਨ ਐਕਟਿਵ" },
   "about_author": { "message": "_ਲੇਖਕ" },
   "about_and": { "message": "ਅਤੇ" },
   "about_contributors": { "message": "ਸਹਿਯੋਗ" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
   "btnLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
   "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
+  "state_disabled": { "message": "ਆਯੋਗ ਹੈ" },
   "state_on": { "message": "ਤੇ" },
   "state_off": { "message": "ਬੰਦ" }
 }

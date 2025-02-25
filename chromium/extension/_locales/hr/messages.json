@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Web-stranica Postavke" },
   "menuLabel_about": { "message": "O nama" },
   "menuLabel_donate": { "message": "Pošaljite donaciju" },
+  "menuLabel_extensionActive": { "message": "Proširenje je aktivno?" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "i" },
   "about_contributors": { "message": "kontributori" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Ažurirana" },
   "btnLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" },
+  "state_disabled": { "message": "onemogućeno" },
   "state_on": { "message": "na" },
   "state_off": { "message": "popusta" }
 }

@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "ސައިޓް ސެޓިންގސް" },
   "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "menuLabel_donate": { "message": "ހަދިޔާ ފޮނުއްވުން އެދެމެވެ" },
+  "menuLabel_extensionActive": { "message": "އެކްސްޓެންޝަން އެކްޓިވް" },
   "about_author": { "message": "ލިޔުންތެރިޔާ" },
   "about_and": { "message": "އަދި" },
   "about_contributors": { "message": "ކޮންޓްރިބިއުޓަރުންނެވެ" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },
   "btnLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
+  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" },
   "state_on": { "message": "މަތީގައި" },
   "state_off": { "message": "އޮފް" }
 }

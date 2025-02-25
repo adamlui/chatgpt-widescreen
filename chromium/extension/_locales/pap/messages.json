@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Sitio di establesimentu" },
   "menuLabel_about": { "message": "About About" },
   "menuLabel_donate": { "message": "Por fabor haci un donacion" },
+  "menuLabel_extensionActive": { "message": "ekspanshon aktivo" },
   "about_author": { "message": "Autor" },
   "about_and": { "message": "i" },
   "about_contributors": { "message": "kontributornan" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Desaprobashon" },
   "link_viewChanges": { "message": "Wak kambio" },
+  "state_disabled": { "message": "desabilidat" },
   "state_on": { "message": "riba" },
   "state_off": { "message": "for di" }
 }

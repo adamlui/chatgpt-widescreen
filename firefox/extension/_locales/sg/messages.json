@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Site Seti Seti" },
   "menuLabel_about": { "message": "About sara" },
   "menuLabel_donate": { "message": "Sara mbeni ye ti mû maboko na zo" },
+  "menuLabel_extensionActive": { "message": "a yeke sara kua na ni" },
   "about_author": { "message": "Author sara" },
   "about_and": { "message": "na" },
   "about_contributors": { "message": "azo so amû mbage ti ala" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },
   "btnLabel_dismiss": { "message": "Dessin ti amo" },
   "link_viewChanges": { "message": "Bingo Bango Change" },
+  "state_disabled": { "message": "disable awe" },
   "state_on": { "message": "na ndö ti" },
   "state_off": { "message": "ti zia lege ni" }
 }

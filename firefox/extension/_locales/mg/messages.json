@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Fandrindran'ny tranonkala" },
   "menuLabel_about": { "message": "Mikasika ny" },
   "menuLabel_donate": { "message": "AZAFADY, alefaso amin'ny" },
+  "menuLabel_extensionActive": { "message": "miasa fanitarana" },
   "about_author": { "message": "Mpanoratra" },
   "about_and": { "message": "sy" },
   "about_contributors": { "message": "Mpandray anjara" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Vaovao farany" },
   "btnLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" },
+  "state_disabled": { "message": "Natsahatra ; Najanona" },
   "state_on": { "message": "amin'ny" },
   "state_off": { "message": "Ajanona" }
 }

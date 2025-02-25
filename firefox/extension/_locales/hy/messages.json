@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Կայքի կարգավորումներ" },
   "menuLabel_about": { "message": "Մանրամասն" },
   "menuLabel_donate": { "message": "Խնդրում ենք նվիրատվություն ուղարկել" },
+  "menuLabel_extensionActive": { "message": "երկարաձգումը ակտիվ է" },
   "about_author": { "message": "Հեղինակ" },
   "about_and": { "message": "և" },
   "about_contributors": { "message": "ներդրողներ" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "btnLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
+  "state_disabled": { "message": "անջատված է" },
   "state_on": { "message": "վրա" },
   "state_off": { "message": "Անջատել" }
 }

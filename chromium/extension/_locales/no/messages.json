@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Nettstedsinnstillinger" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Vennligst send en donasjon" },
+  "menuLabel_extensionActive": { "message": "utvidelse aktiv" },
   "about_author": { "message": "Forfatter" },
   "about_and": { "message": "og" },
   "about_contributors": { "message": "bidragsytere" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Oppdater" },
   "btnLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" },
+  "state_disabled": { "message": "deaktivert" },
   "state_on": { "message": "på" },
   "state_off": { "message": "avslag" }
 }

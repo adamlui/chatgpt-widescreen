@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "ኣቀማምጣ መርበብ ሓበሬታ" },
   "menuLabel_about": { "message": "ብዛዕባ" },
   "menuLabel_donate": { "message": "ብኽብረትካ በጃኻ ውህበት ልኢኽካ" },
+  "menuLabel_extensionActive": { "message": "ንጡፍ ምስፍሕፋሕ" },
   "about_author": { "message": "ደራሲ" },
   "about_and": { "message": "ከምኡ ድማ" },
   "about_contributors": { "message": "<g id=\"581\">ዘርጋሕቲ:</g> " },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "ኣሐድስ" },
   "btnLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" },
+  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" },
   "state_on": { "message": "o" },
   "state_off": { "message": "ዝወጽ" }
 }

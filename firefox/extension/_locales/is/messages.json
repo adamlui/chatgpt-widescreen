@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Vefsíðustillingar" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_donate": { "message": "Vinsamlegast sendu styrk" },
+  "menuLabel_extensionActive": { "message": "viðbót virk" },
   "about_author": { "message": "Author" },
   "about_and": { "message": "og" },
   "about_contributors": { "message": "Meðhöfundar" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Uppfæra" },
   "btnLabel_dismiss": { "message": "Hafna" },
   "link_viewChanges": { "message": "Skoða breytingar" },
+  "state_disabled": { "message": "óvirkt" },
   "state_on": { "message": "á" },
   "state_off": { "message": "af" }
 }

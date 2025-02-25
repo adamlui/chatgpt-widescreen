@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Amasethingi Esayithi" },
   "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_donate": { "message": "Sicela uthumele umnikelo" },
+  "menuLabel_extensionActive": { "message": "isandiso siyasebenza" },
   "about_author": { "message": "Ukhetho" },
   "about_and": { "message": "kanye" },
   "about_contributors": { "message": "abanikeli" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Buyekeza" },
   "btnLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka izinguquko" },
+  "state_disabled": { "message": "Ivaliwe" },
   "state_on": { "message": "ku" },
   "state_off": { "message": "ivaliwe" }
 }

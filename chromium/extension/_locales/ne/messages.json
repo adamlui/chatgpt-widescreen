@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "साइट सेटिङहरू" },
   "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_donate": { "message": "कृपया दान पठाउनुहोस्" },
+  "menuLabel_extensionActive": { "message": "विस्तार सक्रिय" },
   "about_author": { "message": "लेखक" },
   "about_and": { "message": "र" },
   "about_contributors": { "message": "दाताहरू" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "अद्यावधिक" },
   "btnLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
+  "state_disabled": { "message": "अक्षम" },
   "state_on": { "message": "मा" },
   "state_off": { "message": "बन्द" }
 }

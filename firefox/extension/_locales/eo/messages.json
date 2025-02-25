@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Agordo de la retejo" },
   "menuLabel_about": { "message": "Alproksimigas" },
   "menuLabel_donate": { "message": "Sendu al mi donacon" },
+  "menuLabel_extensionActive": { "message": "etendaĵo aktiva" },
   "about_author": { "message": "Aŭtoro" },
   "about_and": { "message": "kaj" },
   "about_contributors": { "message": "Kontribuantoj" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Ĝisdatigi" },
   "btnLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
+  "state_disabled": { "message": "(nekonata)" },
   "state_on": { "message": "el" },
   "state_off": { "message": "@ info/ plain" }
 }

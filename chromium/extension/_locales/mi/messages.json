@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Ngā tautuhinga pae" },
   "menuLabel_about": { "message": "Mō" },
   "menuLabel_donate": { "message": "Tukua mai he takoha" },
+  "menuLabel_extensionActive": { "message": "te whakawhānui i te mahi" },
   "about_author": { "message": "Kaitito" },
   "about_and": { "message": "he tamāhine ahau" },
   "about_contributors": { "message": "ngā kaihauturu" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Whakahou" },
   "btnLabel_dismiss": { "message": "Muku" },
   "link_viewChanges": { "message": "Tirohia ngā panoni" },
+  "state_disabled": { "message": "Kua whakawetoa" },
   "state_on": { "message": "runga" },
   "state_off": { "message": "..e whakaweto ana" }
 }

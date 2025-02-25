@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "समायोजना" },
   "menuLabel_about": { "message": "परिचय" },
   "menuLabel_donate": { "message": "कृपया दान भेजें" },
+  "menuLabel_extensionActive": { "message": "एक्सटेंशन सक्रिय है" },
   "about_author": { "message": "लेखक" },
   "about_and": { "message": "और" },
   "about_contributors": { "message": "योगदानकर्ता" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "अद्यतन करें" },
   "btnLabel_dismiss": { "message": "खारिज करें" },
   "link_viewChanges": { "message": "परिवर्तन देखें" },
+  "state_disabled": { "message": "अक्षम" },
   "state_on": { "message": "ते" },
   "state_off": { "message": "बन्द" }
 }

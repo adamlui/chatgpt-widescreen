@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Dejinta Goobta" },
   "menuLabel_about": { "message": "Jabuuti" },
   "menuLabel_donate": { "message": "Fadlan soo dir deeq" },
+  "menuLabel_extensionActive": { "message": "kordhin firfircoon" },
   "about_author": { "message": "Qoraa" },
   "about_and": { "message": "iyo" },
   "about_contributors": { "message": "deeq-bixiyeyaasha" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Cusboonaysiinta" },
   "btnLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddelada" },
+  "state_disabled": { "message": "La damiyay" },
   "state_on": { "message": "korka" },
   "state_off": { "message": "Dami" }
 }

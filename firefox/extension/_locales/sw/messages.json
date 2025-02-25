@@ -17,6 +17,7 @@
   "menuLabel_siteSettings": { "message": "Mipangilio ya Tovuti" },
   "menuLabel_about": { "message": "Kuhusu" },
   "menuLabel_donate": { "message": "Tafadhali tuma mchango" },
+  "menuLabel_extensionActive": { "message": "kiendelezi kinatumika" },
   "about_author": { "message": "Mwandishi" },
   "about_and": { "message": "na" },
   "about_contributors": { "message": "Wachangiaji" },
@@ -77,6 +78,7 @@
   "btnLabel_update": { "message": "Sasisho" },
   "btnLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" },
+  "state_disabled": { "message": "disabled" },
   "state_on": { "message": "tarehe" },
   "state_off": { "message": "chini vya kuthibitisha matumizi ya dawa za kulevya" }
 }

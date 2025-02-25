@@ -16,13 +16,13 @@ chrome.runtime.onMessage.addListener(async req => {
         const aiTab = aiHomeURLs.some(aiURL => // check if active tab is AI site
             new URL(activeTab.url).hostname == new URL(aiURL).hostname) ? activeTab
                 : await chrome.tabs.create({ url: aiHomeURLs[0] }) // ...if not, open AI site
-        if (activeTab != aiTab) new Promise(resolve => // after AI page loads
-            chrome.tabs.onUpdated.addListener(function loadedListener(tabId, changeInfo) {
-                if (tabId == aiTab.id && changeInfo.status == 'complete') {
+        if (activeTab != aiTab) await new Promise(resolve => // after new tab loads
+            chrome.tabs.onUpdated.addListener(function loadedListener(tabId, info) {
+                if (tabId == aiTab.id && info.status == 'complete') {
                     chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 500)
-        }})).then(() => chrome.tabs.sendMessage(aiTab.id, { action: 'showAbout' }))
-    }
-});
+        }}))
+        chrome.tabs.sendMessage(aiTab.id, { action: 'showAbout' })
+    }});
 
 // Init DATA
 (async () => {

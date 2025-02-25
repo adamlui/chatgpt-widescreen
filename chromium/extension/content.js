@@ -3,7 +3,7 @@
 
 (async () => {
 
-    document.documentElement.setAttribute('chatgpt-widescreen-extension-installed', true) // for userscript auto-disable
+    sessionStorage.chatgptWidescreenExtensionActive = 'true' // for userscript auto-disable
 
     // Import JS resources
     for (const resource of [

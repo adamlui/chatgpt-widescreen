@@ -38,8 +38,6 @@
         return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
     }
 
-    function settingIsEnabled(key) { return config[key] ^ /disabled/i.test(key) }
-
     const sync = {
         fade() {
 
@@ -128,7 +126,7 @@
             entry.div.append(entry.leftElem, entry.label) ; childEntriesDiv.append(entry.div)
             if (ctrlType == 'toggle') { // add track to left, init knob pos
                 entry.leftElem.append(dom.create.elem('span', { class: 'track' }))
-                entry.leftElem.classList.toggle('on', settingIsEnabled(key))
+                entry.leftElem.classList.toggle('on', settings.isEnabled(key))
             } else { // add symbol to left, append status to right
                 entry.leftElem.innerText = settings.controls[key].symbol
                 entry.label.innerText += ctrlStatus ? `— ${ctrlStatus }` : ''
@@ -139,7 +137,7 @@
                     entry.leftElem.classList.toggle('on')
                     settings.save(key, !config[key]) ; sync.configToUI({ updatedKey: key })
                     notify(`${settings.controls[key].label} ${chrome.i18n.getMessage(`state_${
-                        settingIsEnabled(key) ? 'on' : 'off' }`).toUpperCase()}`)
+                        settings.isEnabled(key) ? 'on' : 'off' }`).toUpperCase()}`)
                 }
             }
         })

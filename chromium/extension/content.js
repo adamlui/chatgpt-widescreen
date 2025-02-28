@@ -4,8 +4,10 @@
 (async () => {
 
     // Add WINDOW MSG listener for userscript request to self-disable
-    addEventListener('message', event => event.data.source == 'chatgpt-widescreen-mode.user.js' &&
-        postMessage({ source: 'chatgpt-widescreen/*/extension/content.js' }))
+    addEventListener('message', event => {
+        if (event.origin != location.origin || event.data.source != 'chatgpt-widescreen-mode.user.js') return
+        postMessage({ source: 'chatgpt-widescreen/*/extension/content.js' }, location.origin)
+    })
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(async req => {

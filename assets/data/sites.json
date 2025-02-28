@@ -41,10 +41,10 @@
     "hasSidebar": true,
     "selectors": {
       "btns": {
-        "header": "header", "mic": "button[data-button-voice-input=true]",
+        "mic": "button[data-button-voice-input=true]",
         "newChat": "header a[class*=button]", "send": "[data-button-send]"
       },
-      "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
+      "header": "header", "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
       "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
     },
     "urls": { "homepage": "https://poe.com" }

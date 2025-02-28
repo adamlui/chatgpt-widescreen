@@ -3,7 +3,21 @@
 
 (async () => {
 
-    sessionStorage.chatgptWidescreenExtensionActive = 'true' // for userscript auto-disable
+    // Add WINDOW MSG listener for userscript request to self-disable
+    addEventListener('message', event => event.data.source == 'chatgpt-widescreen-mode.user.js' &&
+        postMessage({ source: 'chatgpt-widescreen/*/extension/content.js' }))
+
+    // Add CHROME MSG listener for background/popup requests to sync modes/settings
+    chrome.runtime.onMessage.addListener(async req => {
+        if (req.action == 'notify')
+            notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
+        else if (req.action == 'alert')
+            modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
+        else if (req.action == 'showAbout') {
+            if (env.site == 'chatgpt') await chatgpt.isLoaded()
+            modals.open('about')
+        } else if (req.action == 'syncConfigToUI') sync.configToUI(req.options)
+    })
 
     // Import JS resources
     for (const resource of [
@@ -35,18 +49,6 @@
         settings.save('wideScreen', true) ; settings.save('isFirstRun', false) }
     settings.siteDisabledKeys = Object.keys(sites).map(site => `${site}Disabled`)
     await settings.load('extensionDisabled', ...settings.siteDisabledKeys, ...sites[env.site].availFeatures)
-
-    // Add CHROME MSG listener for background/popup requests to sync modes/settings
-    chrome.runtime.onMessage.addListener(async req => {
-        if (req.action == 'notify')
-            notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
-        else if (req.action == 'alert')
-            modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
-        else if (req.action == 'showAbout') {
-            if (env.site == 'chatgpt') await chatgpt.isLoaded()
-            modals.open('about')
-        } else if (req.action == 'syncConfigToUI') sync.configToUI(req.options)
-    })
 
     // Define FUNCTIONS
 

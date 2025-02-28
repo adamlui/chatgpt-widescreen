@@ -72,7 +72,7 @@ window.settings = {
             return Promise.all(keys.map(async key => { // resolve promise when all keys load
                 const result = await chrome.storage.local.get(
                     !this.browserwideKeys.includes(key) ? `${this.imports.site}_${key}` : key )
-                window.config[key] = result[`${this.imports.site}_${key}`] ?? result[key]
+                config[key] = result[`${this.imports.site}_${key}`] ?? result[key]
                     ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
         }))
     },
@@ -83,6 +83,6 @@ window.settings = {
         else // save to browser extension storage
             chrome.storage.local.set({
                 [ !this.browserwideKeys.includes(key) ? `${this.imports.site}_${key}` : key ] : val })
-        window.config[key] = val // save to memory
+        config[key] = val // save to memory
     }
 };

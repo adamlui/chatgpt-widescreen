@@ -274,7 +274,8 @@
                   + '{ max-height: 68vh }'
     const hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
                   + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ) // increase top-padding
-    const hfStyle = sites[env.site].selectors.footer + '{ display: none }' // hide footer
+    const hfStyle = `${sites[env.site].selectors.footer}${ // hide footer
+        env.site === 'perplexity' ? `, ${sites[env.site].selectors.btns.help}` : '' } { display: none }`
 
     update.style.tweaks() ; document.head.append(tweaksStyle);
 

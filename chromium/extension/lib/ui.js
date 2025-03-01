@@ -17,7 +17,7 @@ window.ui = {
         else { // calc widths to determine on sites w/ native toggle
             const barWidths = {} ; ['left', 'right'].forEach(side => {
                 const barSelector = sites[site].selectors[`${side === 'left' ? 'side' : 'right'}bar`],
-                    barElem = document.querySelector(barSelector)
+                      barElem = document.querySelector(barSelector)
                 barWidths[side] = barElem ? parseInt(getComputedStyle(barElem).width) : 0
             })
             return barWidths.left < 100 && barWidths.right < 100 // true if both bars skinny/hidden

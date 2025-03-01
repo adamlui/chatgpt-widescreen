@@ -40,7 +40,7 @@ window.tooltip = {
             site == 'perplexity' ? (
                 await chatbar.is.tall() ? -1 : rects.innerPageContainer.right - rects.rightBtn.right -8 )
           : site == 'poe' ? 22 : 6 )
-        const spreadFactor = site == 'perplexity' ? 27 : site == 'poe' ? 27 : 31
+        const spreadFactor = site == 'chatgpt' ? 31 : 27
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                          + ( site == 'chatgpt' && await chatbar.is.tall() ? -2 : 4 )
         this.div.innerText = this.getMsg(`tooltip_${btnType}${

@@ -12,6 +12,7 @@
         "stop": "button[data-testid=stop-button]", "voice": "button[data-testid*=composer-speech-button]"
       },
       "header": "main .sticky:first-of-type", "input": "#prompt-textarea",
+      "rightbar": "div[class*=sidebar]:has([data-testid=screen-threadFlyOut])",
       "sidebar": "div[class*=sidebar]:not(:has([data-testid=screen-threadFlyOut]))",
       "footer": ".min-h-4"
     },

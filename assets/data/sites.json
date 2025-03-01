@@ -18,8 +18,8 @@
   },
   "perplexity": {
     "availFeatures": [
-      "blockSpamDisabled", "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenHeader", "notifDisabled",
-      "ncbDisabled", "tcbDisabled", "wideScreen"
+      "blockSpamDisabled", "btnAnimationsDisabled", "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
+      "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen"
     ],
     "hasSidebar": true,
     "selectors": {

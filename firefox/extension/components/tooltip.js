@@ -34,7 +34,7 @@ window.tooltip = {
     async update(btnType) { // text & position
         const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
         const rects = { rightBtn: (await buttons.getRightBtn()).getBoundingClientRect() }
-        if (site == 'perplexity' && location.path != '/') // store inner page container for ctrAddend math
+        if (site == 'perplexity' && location.pathname != '/') // store inner page container for ctrAddend math
             rects.innerPageContainer = (await chatbar.get()).closest('[class*=threadWidth]').getBoundingClientRect()
         const ctrAddend = rects.rightBtn.width + (
             site == 'perplexity' ? (

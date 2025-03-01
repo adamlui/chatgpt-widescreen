@@ -347,17 +347,26 @@
             env.ui.scheme = displayedScheme ; modals.stylize() ; buttons.update.color() }
     }
 
-    // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
+    // Monitor SIDEBAR to update config.fullWindow for sites w/ native toggle
     if (sites[env.site].selectors.btns.sidebar && sites[env.site].hasSidebar) {
-        const sidebarObserver = new MutationObserver(async () => {
-            await new Promise(resolve => setTimeout(resolve, env.site == 'perplexity' ? 500 : 0))
-            if ((config.fullWindow ^ ui.isFullWin()) && !config.modeSynced) sync.mode('fullWindow')
-        })
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from node observer
-            let obsTarget = document.querySelector(sites[env.site].selectors.sidebar)
-            if (env.site == 'perplexity') obsTarget = obsTarget.parentNode
-            sidebarObserver.observe(obsTarget, { attributes: true })
-        }, 500)
+        const sidebarObserver = new ResizeObserver(() => // sync config.fullWindow ⇆ sidebar width
+            (config.fullWindow ^ ui.isFullWin()) && !config.modeSynced && sync.mode('fullWindow'))
+        observeSidebar()
+        if (env.site == 'chatgpt') new MutationObserver( // re-observeSidebar() on disconnect
+            () => getSidebar() != observeSidebar.target && observeSidebar()
+        ).observe(document.body, { childList: true, subtree: true })
+
+        function getSidebar() {
+            const sidebar = document.querySelector(sites[env.site].selectors.sidebar)
+            return env.site === 'perplexity' ? sidebar?.parentNode : sidebar
+        }
+
+        function observeSidebar() {
+            const sidebar = getSidebar()
+            if (!sidebar || sidebar == observeSidebar.target) return
+            if (observeSidebar.target) sidebarObserver.unobserve(observeSidebar.target)
+            sidebarObserver.observe(sidebar) ; observeSidebar.target = sidebar
+        }
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag

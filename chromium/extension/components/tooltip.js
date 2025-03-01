@@ -33,10 +33,14 @@ window.tooltip = {
 
     async update(btnType) { // text & position
         const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
-        const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
-                        + ( site == 'perplexity' ? ( await chatbar.is.tall() ? -1 : 371 )
-                          : site == 'poe' ? 22 : 6 )
-        const spreadFactor = site == 'perplexity' ? 26.5 : site == 'poe' ? 27 : 31
+        const rects = { rightBtn: (await buttons.getRightBtn()).getBoundingClientRect() }
+        if (site == 'perplexity' && location.path != '/') // store inner page container for ctrAddend math
+            rects.innerPageContainer = (await chatbar.get()).closest('[class*=threadWidth]').getBoundingClientRect()
+        const ctrAddend = rects.rightBtn.width + (
+            site == 'perplexity' ? (
+                await chatbar.is.tall() ? -1 : rects.innerPageContainer.right - rects.rightBtn.right -8 )
+          : site == 'poe' ? 22 : 6 )
+        const spreadFactor = site == 'perplexity' ? 27 : site == 'poe' ? 27 : 31
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
                          + ( site == 'chatgpt' && await chatbar.is.tall() ? -2 : 4 )
         this.div.innerText = this.getMsg(`tooltip_${btnType}${

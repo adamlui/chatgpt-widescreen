@@ -31,7 +31,7 @@
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    ui.import({ site: env.site }) ; env.ui.scheme = ui.getScheme()
+    ui.import({ site: env.site }) ; ui.getScheme().then(scheme => env.ui.scheme = scheme)
 
     // Import DATA
     const { app } = await chrome.storage.local.get('app'),
@@ -347,8 +347,8 @@
         document.documentElement, { attributes: true, attributeFilter: ['class', 'data-color-scheme'] })
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener( // for browser/system scheme pref changes
         'change', () => requestAnimationFrame(handleSchemePrefChange))
-    function handleSchemePrefChange() {
-        const displayedScheme = ui.getScheme()
+    async function handleSchemePrefChange() {
+        const displayedScheme = await ui.getScheme()
         if (env.ui.scheme != displayedScheme) {
             env.ui.scheme = displayedScheme ; modals.stylize() ; buttons.update.color() }
     }

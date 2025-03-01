@@ -56,6 +56,7 @@ export default [
         }
     },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
+    { files: ['**/*.json5'], language: 'json/json5', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },
         rules: {

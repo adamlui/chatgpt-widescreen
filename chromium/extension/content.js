@@ -150,13 +150,13 @@
                             ( config.blockSpamDisabled ? '' : // block spam
                                `div.absolute.w-full:has(svg[data-icon=xmark]), /* homepage spam banners */
                                 div[class*=bottom]:has([data-testid*=login-modal]), /* lower-right login/signup popup */
-                                #credential_picker_container /* upper-right Google signin popup */
+                                #credential_picker_container, /* upper-right Google signin popup */
+                                div[class*=col-span]:has(a[href$="perplexity.ai/comet"]) /* Comet waitlist spam */
                                     { display: none }` )
                           + `.${buttons.class} { transition: none }` // prevent chatbar btn animation on hover-off
                     ) : env.site == 'poe' ? (
                             ( config.blockSpamDisabled ? '' : // block spam
-                               `[class*=NewFeatureCard] /* New Feature cards */
-                                    { display: none }` )
+                               `[class*=NewFeatureCard] { display: none }` )
                     ) : '' )
                   + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
                   + ( config.hiddenHeader ? hhStyle : '' ) // hide header

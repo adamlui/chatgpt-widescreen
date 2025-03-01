@@ -25,7 +25,7 @@
     "selectors": {
       "btns": {
         "attachFile": "button:has(svg[data-icon=paperclip])", "newChat": "div.sticky [class*=ring]",
-        "send": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"], [class*=icon-arrow-right])",
+        "send": "button:has([class*=icon-arrow-right], [class*=icon-arrow-up])",
         "settings": "button:has([d^=\"M256 0c17\"])",
         "sidebar": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
       },

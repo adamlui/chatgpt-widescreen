@@ -14,6 +14,10 @@
       "header": "main .sticky:first-of-type", "input": "#prompt-textarea",
       "rightbar": "div[class*=sidebar]:has([data-testid=screen-threadFlyOut])",
       "sidebar": "div[class*=sidebar]:not(:has([data-testid=screen-threadFlyOut]))",
+      "spam": { "banners": {
+          "homepage": "[class*=bottom-full]:has(button[data-testid=close-button])",
+          "quota": "[class*=\"@lg/thread:bottom\"]:has(button[data-testid=close-button]"
+      }},
       "footer": ".min-h-4"
     },
     "urls": { "homepage": "https://chatgpt.com" }
@@ -30,7 +34,17 @@
         "newChat": "div.sticky [class*=ring]", "send": "button:has([class*=icon-arrow-right], [class*=icon-arrow-up])",
         "settings": "button:has([d^=\"M256 0c17\"])", "sidebar": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
       },
-      "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]", "sidebar": "div.sticky"
+      "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]", "sidebar": "div.sticky",
+      "spam": {
+        "banners": {
+          "homepage": "div.absolute.w-full:has(svg[data-icon=xmark])",
+          "cometWaitlist": "div[class*=col-span]:has(a[href$=\"perplexity.ai/comet\"])"
+        },
+        "popups": {
+          "googleLogin": "#credential_picker_container",
+          "perplexityLogin": "div[class*=bottom]:has([data-testid*=login-modal])" 
+        }
+      }
     },
     "urls": { "homepage": "https://www.perplexity.ai" }
   },
@@ -47,7 +61,8 @@
       },
       "header": "header, div[class*=CanvasHeader_header]",
       "input": "[class*=InputContainer_textArea] textarea, [class*=InputContainer_textArea]::after",
-      "sidebar": "menu[class*=sidebar], aside[class*=sidebar]"
+      "sidebar": "menu[class*=sidebar], aside[class*=sidebar]",
+      "spam": { "cards": { "newFeature": "[class*=NewFeatureCard]" }}
     },
     "urls": { "homepage": "https://poe.com" }
   }

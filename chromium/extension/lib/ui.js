@@ -20,8 +20,6 @@ window.ui = {
                     barElem = document.querySelector(barSelector)
                 barWidths[side] = barElem ? parseInt(getComputedStyle(barElem).width) : 0
             })
-            console.log(barWidths)
-            console.log(barWidths.left < 100 && barWidths.right < 100)
             return barWidths.left < 100 && barWidths.right < 100 // true if both bars skinny/hidden
         }
     }

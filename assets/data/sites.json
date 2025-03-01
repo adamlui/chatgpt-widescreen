@@ -11,7 +11,8 @@
         "send": "button[data-testid=send-button]", "sidebar": "button[data-testid*=sidebar-button]",
         "stop": "button[data-testid=stop-button]", "voice": "button[data-testid*=composer-speech-button]"
       },
-      "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=sidebar]",
+      "header": "main .sticky:first-of-type", "input": "#prompt-textarea",
+      "sidebar": "div[class*=sidebar]:not(:has([data-testid=screen-threadFlyOut]))",
       "footer": ".min-h-4"
     },
     "urls": { "homepage": "https://chatgpt.com" }

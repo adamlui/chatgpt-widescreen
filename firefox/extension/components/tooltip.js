@@ -34,7 +34,7 @@ window.tooltip = {
     async update(btnType) { // text & position
         const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
         const ctrAddend = (await buttons.getRightBtn()).getBoundingClientRect().width
-                        + ( site == 'perplexity' ? ( await chatbar.is.tall() ? -1 : 8 )
+                        + ( site == 'perplexity' ? ( await chatbar.is.tall() ? -1 : 371 )
                           : site == 'poe' ? 22 : 6 )
         const spreadFactor = site == 'perplexity' ? 26.5 : site == 'poe' ? 27 : 31
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend

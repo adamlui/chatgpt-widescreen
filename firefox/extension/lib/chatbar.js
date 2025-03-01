@@ -3,10 +3,10 @@
 window.chatbar = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
-    get() {
+    async get() {
         const site = this.imports.site
         return site == 'chatgpt' ? document.querySelector('[id^=composer]')
-             : document.querySelector(this.imports.sites[site].selectors.input).parentNode.parentNode
+             : (await dom.get.loadedElem(this.imports.sites[site].selectors.input)).parentNode.parentNode
     },
 
     is: {
@@ -16,12 +16,12 @@ window.chatbar = {
                     .backgroundColor == 'rgb(48, 48, 48)'
         },
 
-        tall() { return chatbar.get()?.getBoundingClientRect().height > 60 }
+        async tall() { return (await chatbar.get())?.getBoundingClientRect().height > 60 }
     },
 
-    reset() { // all tweaks for popup master toggle-off
+    async reset() { // all tweaks for popup master toggle-off
         const site = this.imports.site
-        const chatbarDiv = this.get() ; if (!chatbarDiv) return
+        const chatbarDiv = await this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') { // restore chatbar inner width
             const inputArea = chatbarDiv.querySelector(selectors.input)
@@ -31,7 +31,7 @@ window.chatbar = {
             if (attachFileBtn?.getAttribute('left-aligned')) {
                 const sendBtn = chatbarDiv.querySelector(selectors.btns.send) ; if (!sendBtn) return
                 sendBtn.before(attachFileBtn.parentNode) ; attachFileBtn.removeAttribute('left-aligned')
-                if (this.is.tall()) attachFileBtn.style.marginRight = ''
+                if (await this.is.tall()) attachFileBtn.style.marginRight = ''
             }
         } else if (site == 'poe') { // restore Poe Mic button position
             const micBtn = chatbarDiv.querySelector(selectors.btns.mic) ; if (!micBtn) return
@@ -39,14 +39,14 @@ window.chatbar = {
         }
     },
 
-    tweak() { // update ChatGPT chatbar inner width or left-align Perplexity Attach File btn or move Poe Mic btn right
+    async tweak() { // update ChatGPT chatbar inner width or left-align Perplexity Attach File btn or move Poe Mic btn right
         const site = this.imports.site
-        const chatbarDiv = this.get() ; if (!chatbarDiv) return
+        const chatbarDiv = await this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
         if (site == 'chatgpt') { // update chatbar inner width
             const inputArea = chatbarDiv.querySelector(selectors.input) ; if (!inputArea) return
             if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
-            else if (!this.is.tall()) { // narrow it to not clash w/ buttons
+            else if (!await this.is.tall()) { // narrow it to not clash w/ buttons
                 const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
                 const visibleBtnTypes = [...buttons.getTypes.visible(), 'end']
                 visibleBtnTypes.forEach(type => widths[type] = buttons[type]?.getBoundingClientRect().width
@@ -60,7 +60,7 @@ window.chatbar = {
         } else if (site == 'perplexity') { // left-align Attach File button
             const attachFileBtn = chatbarDiv.querySelector(selectors.btns.attachFile) ; if (!attachFileBtn) return
             let newParent = chatbarDiv
-            if (this.is.tall()) { // select new newParent
+            if (await this.is.tall()) { // select new newParent
                 newParent = chatbarDiv.querySelector('div:has(> span > button)') // left button cluster
                 attachFileBtn.style.marginRight = '-10px' // bring Search button closer
             }

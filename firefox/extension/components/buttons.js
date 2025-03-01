@@ -57,7 +57,7 @@ window.buttons = {
     },
 
     async create() {
-        if (this.imports.env.site == 'chatgpt' && this.imports.chatbar.is.tall())
+        if (this.imports.env.site == 'chatgpt' && await this.imports.chatbar.is.tall())
             this.imports.env.hasTallChatbar = true
         if (/chatgpt|perplexity/.test(this.imports.env.site))
             this.rightBtn = await this.getRightBtn() // for rOffset + styles
@@ -140,11 +140,11 @@ window.buttons = {
         this.state.status = 'inserting' ; if (!this.wideScreen) await this.create()
 
         // Init elems
-        const chatbarDiv = this.imports.chatbar.get() ; if (!chatbarDiv) return
+        const chatbarDiv = await this.imports.chatbar.get() ; if (!chatbarDiv) return
         const btnTypesToInsert = this.getTypes.valid()
         const parentToInsertInto = (
             this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
-          : chatbarDiv.lastChild ) // parent of (Perplexity Pro spam toggle or Poe Mic/Send btns)
+          : chatbarDiv.lastChild ) // parent of (Perplexity right btns or Poe Mic/Send btns)
         const elemToInsertBefore = parentToInsertInto[
             this.imports.env.site == 'chatgpt' ? 'lastChild'
           : 'firstChild'] // Perplexity Pro spam toggle or Poe Mic btn
@@ -165,8 +165,8 @@ window.buttons = {
         this.state.status = 'inserted'
     },
 
-    remove() {
-        if (!this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
+    async remove() {
+        if (!await this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
         this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltip.div?.remove()
         this.state.status = 'missing' // ensure next .insert() doesn't return early
         this.state.hasFadedIn = false // ensure next .insert() fades in buttons

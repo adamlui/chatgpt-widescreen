@@ -170,17 +170,17 @@
 
             wideScreen() {
                 wideScreenStyle.innerText = (
-                    env.site == 'chatgpt' ? (
+                    env.site == 'chatgpt' ?
                         '.text-base { max-width: 100% !important }' // widen outer container
-                  ) : env.site == 'perplexity' ? (
-                        `${sites.perplexity.selectors.header} ~ div,` // outer container
-                      + `${sites.perplexity.selectors.header} ~ div > div` // inner container
-                          + '{ max-width: 100% }' // ...widen them
-                      + '.col-span-8 { width: 154% }' // widen inner-left container
-                      + '.col-span-4 { width: 13.5% ; position: absolute ; right: 0 }' // narrow right-bar
-                  ) : env.site == 'poe' ? (
-                        '[class*=ChatMessagesView] { width: 100% !important }' // widen outer container
-                      + '[class^=Message] { max-width: 100% !important }' ) // widen speech bubbles
+                    : env.site == 'perplexity' ?
+                       `${sites.perplexity.selectors.header} ~ div, // outer container
+                        ${sites.perplexity.selectors.header} ~ div > div /* inner container */
+                            { max-width: 100% } /* ...widen them */
+                        .col-span-8 { width: 154% } /* widen inner-left container */
+                        .col-span-4 { width: 13.5% ; position: absolute ; right: 0 }` // narrow right-bar
+                    : env.site == 'poe' ?
+                       `[class*=ChatMessagesView] { width: 100% !important } /* widen outer container */
+                        [class^=Message] { max-width: 100% !important }` // widen speech bubbles
                   : '' )
             }
         }
@@ -267,9 +267,9 @@
 
     // Apply general style TWEAKS
     const tcbStyle = ( // heighten chatbox
-              env.site == 'chatgpt' ? `div[class*=prose]:has(${sites.chatgpt.selectors.input})`
-                                    : sites[env.site].selectors.input )
-                   + '{ max-height: 68vh }'
+        env.site == 'chatgpt' ? `div[class*=prose]:has(${sites.chatgpt.selectors.input})`
+                              : sites[env.site].selectors.input )
+                  + '{ max-height: 68vh }'
     const hhStyle = sites[env.site].selectors.header + '{ display: none !important }' // hide header
                   + ( env.site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ) // increase top-padding
     const hfStyle = sites[env.site].selectors.footer + '{ display: none }' // hide footer

@@ -8,7 +8,7 @@ window.ui = {
         return this.imports.site == 'perplexity' ? rootElem.dataset.colorScheme
             : /light|dark/.test(rootElem.className) && rootElem.className
             || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        },
+    },
 
     isFullWin() {
         const site = this.imports.site, sites = this.imports.sites

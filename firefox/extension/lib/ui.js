@@ -1,4 +1,4 @@
-// Requires site: env.site + sites
+// Requires dom.js + site: env.site + sites
 
 window.ui = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
@@ -18,7 +18,7 @@ window.ui = {
             const barWidths = {} ; ['left', 'right'].forEach(side => {
                 const barSelector = sites[site].selectors[`${side === 'left' ? 'side' : 'right'}bar`],
                       barElem = document.querySelector(barSelector)
-                barWidths[side] = barElem ? parseInt(getComputedStyle(barElem).width) : 0
+                barWidths[side] = barElem ? dom.get.computedWidth(barElem) : 0
             })
             return barWidths.left < 100 && barWidths.right < 100 // true if both bars skinny/hidden
         }

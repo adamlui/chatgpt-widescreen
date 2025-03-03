@@ -324,8 +324,9 @@
 
         // Maintain button visibility on nav
         if (config.extensionDisabled || config[`${env.site}Disabled`]) return
-        else if (!document.getElementById('fullScreen-btn') && chatbar.get() && buttons.state.status != 'inserting') {
-            buttons.state.status = 'missing' ; buttons.insert() }
+        else if (!document.getElementById('fullScreen-btn') && !chatgpt.canvasIsOpen()
+            && chatbar.get() && buttons.state.status != 'inserting'
+        ) { buttons.state.status = 'missing' ; buttons.insert() }
 
         // Maintain button colors + Widescreen button visibility on snowflake chatgpt.com
         if (env.site == 'chatgpt') {
@@ -334,11 +335,8 @@
             const chatbarIsDark = chatbar.is.dark()
             if (chatbarIsDark != isTempChat) { buttons.update.color() ; isTempChat = chatbarIsDark }
 
-            // Add/remove Widescreen button on Canvas mode toggle
-            if (canvasWasOpen ^ chatgpt.canvasIsOpen()) {
-                buttons.remove() ; buttons.create() // again for new h-offsets
-                buttons.insert() ; chatbar.tweak() ; canvasWasOpen = !canvasWasOpen
-            }
+            // Remove buttons on Canvas mode toggle-on
+            if (canvasWasOpen ^ chatgpt.canvasIsOpen()) { buttons.remove() ; canvasWasOpen = !canvasWasOpen }
         }
     }).observe(document[env.site == 'poe' ? 'head' : 'body'], { attributes: true, subtree: true })
 

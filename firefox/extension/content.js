@@ -359,7 +359,7 @@
             (config.fullWindow ^ ui.isFullWin()) && !config.modeSynced && sync.mode('fullWindow'))
         observeSidebars()
         if (env.site == 'chatgpt') new MutationObserver( // re-observeSidebars() on disconnect
-            () => getSidebars().some(bar => !observeSidebars.targets?.includes(bar)) && observeSidebars()
+            () => getSidebars().some(bar => !sidebarObserver.targets?.includes(bar)) && observeSidebars()
         ).observe(document.body, { childList: true, subtree: true })
 
         function getSidebars() {
@@ -372,10 +372,9 @@
 
         function observeSidebars() {
             const sidebars = getSidebars() ; if (!sidebars.length) return
-            if (observeSidebars.targets)
-                observeSidebars.targets.forEach(target => sidebarObserver.unobserve(target))
+            sidebarObserver.targets?.forEach(target => sidebarObserver.unobserve(target))
             sidebars.forEach(sidebar => sidebarObserver.observe(sidebar))
-            observeSidebars.targets = sidebars
+            sidebarObserver.targets = sidebars
         }
     }
 

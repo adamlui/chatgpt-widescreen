@@ -293,7 +293,7 @@
     const wideScreenStyle = dom.create.style(null, { id: 'wideScreen-mode' })
     if (!chatbar.get()) await dom.get.loadedElem(sites[env.site].selectors.input)
     if (env.site == 'chatgpt') // store native chatbar width for Wider Chatbox style
-        chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
+        chatbar.nativeWidth = dom.get.computedWidth(document.querySelector('main form'))
     update.style.wideScreen()
 
     // Create FULL-WINDOW style

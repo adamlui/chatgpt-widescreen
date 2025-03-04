@@ -166,9 +166,8 @@
 
         // Init entry's elems
         const ssEntry = {
-            div: dom.create.elem('div', { class: 'menu-entry' }),
+            div: dom.create.elem('div', { class: 'menu-entry highlight-on-hover' }),
             switchLabelDiv: dom.create.elem('div', {
-                class: 'highlight-on-hover',
                 title: `${getMsg('helptip_run')} ${app.name} on ${sites[site].urls.homepage}`,
                 style: `display: flex ; height: 33px ; align-items: center ; flex-grow: 1 ;
                         margin-left: -2px ; padding-left: 2px /* fill .menu-entry left-padding */` }),
@@ -199,8 +198,8 @@
                     getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
-        ssEntry.faviconDiv.onmouseenter = ssEntry.faviconDiv.onmouseleave = ({ type }) => // swap favicon/open icon
-            ssEntry.faviconDiv.firstChild.replaceWith(type == 'mouseenter' ? ssEntry.openIcon : ssEntry.favicon)
+        ssEntry.faviconDiv.onmouseenter = ssEntry.faviconDiv.onmouseleave = ({ type }) =>
+            ssEntry.faviconDiv.firstChild.replaceWith(ssEntry[type == 'mouseenter' ? 'openIcon' : 'favicon'])
         ssEntry.faviconDiv.onclick = () => { open(`https://${sites[site].urls.homepage}`) ; close() }
     }
 

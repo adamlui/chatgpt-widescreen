@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "フルスクリーンモード" },
   "tooltip_fullScreenOFF": { "message": "フルスクリーンモードを終了する" },
   "tooltip_newChat": { "message": "新しいチャット" },
+  "tooltip_goto": { "message": "次に移動：" },
   "helptip_fullerWins": { "message": "フルウィンドウを有効にするときにもワイドスクリーンを有効にします" },
   "helptip_tallerChatbox": { "message": "チャットボックスを垂直に展開します" },
   "helptip_widerChatbox": { "message": "ワイドスクリーンモードでチャットボックスを水平に展開する" },

@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Sgrìn slàn" },
   "tooltip_fullScreenOFF": { "message": "Fàg an làn - sgrìn" },
   "tooltip_newChat": { "message": "Cabadaich ùr" },
+  "tooltip_goto": { "message": "Rach gu" },
   "helptip_fullerWins": { "message": "Gnìomhaich cuideachd an sgrìn fharsaing nuair a bhios tu a 'gnìomhachadh Full - Window" },
   "helptip_tallerChatbox": { "message": "Leudaich am bogsa - cabadaich gu h - inghearach" },
   "helptip_widerChatbox": { "message": "Leudaich am bogsa - cabadaich gu còmhnard sa mhodh sgrìn fharsaing" },

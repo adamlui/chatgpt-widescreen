@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "全屏模式" },
   "tooltip_fullScreenOFF": { "message": "退出全屏模式" },
   "tooltip_newChat": { "message": "新对话" },
+  "tooltip_goto": { "message": "转到" },
   "helptip_fullerWins": { "message": "激活全窗口时也激活宽屏幕" },
   "helptip_tallerChatbox": { "message": "垂直展开聊天框" },
   "helptip_widerChatbox": { "message": "在宽屏模式下水平展开聊天框" },

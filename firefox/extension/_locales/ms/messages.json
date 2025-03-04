@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Skrin Penuh" },
   "tooltip_fullScreenOFF": { "message": "Keluar Skrin PenuhEncodings menu" },
   "tooltip_newChat": { "message": "Sembang baharu" },
+  "tooltip_goto": { "message": "Dialog soalan" },
   "helptip_fullerWins": { "message": "Aktifkan juga Skrin Lebar apabila mengaktifkan Tetingkap Penuh" },
   "helptip_tallerChatbox": { "message": "Kembangkan kotak sembang secara menegak" },
   "helptip_widerChatbox": { "message": "Kembangkan kotak sembang secara mendatar dalam mod Skrin Lebar" },

@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Shaashad buuxda" },
   "tooltip_fullScreenOFF": { "message": "Ka bax shaashadda oo dhan" },
   "tooltip_newChat": { "message": "Wadahadal cusub" },
+  "tooltip_goto": { "message": "Tag" },
   "helptip_fullerWins": { "message": "Sidoo kale dhaqaajiso Screen Wide marka la dhaqaajinayo Full-Window" },
   "helptip_tallerChatbox": { "message": "Si toos ah u fidi sanduuqa sheekaysiga" },
   "helptip_widerChatbox": { "message": "Ballaarinta sanduuqa sheekaysiga si horizontally in hab Screen Wide" },

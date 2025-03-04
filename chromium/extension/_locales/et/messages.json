@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Täisekraan" },
   "tooltip_fullScreenOFF": { "message": "Välju täisekraanist" },
   "tooltip_newChat": { "message": "Uus vestlus" },
+  "tooltip_goto": { "message": "Minge aadressile" },
   "helptip_fullerWins": { "message": "Aktiveeri laiekraan ka täisakna aktiveerimisel" },
   "helptip_tallerChatbox": { "message": "Laienda vestluskasti vertikaalselt" },
   "helptip_widerChatbox": { "message": "Laiekraanirežiimis laienda vestluskasti horisontaalselt" },

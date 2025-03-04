@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Cel zaslon" },
   "tooltip_fullScreenOFF": { "message": "Izhod iz celozaslonskega načina" },
   "tooltip_newChat": { "message": "Nov klepet" },
+  "tooltip_goto": { "message": "Pojdi na prve slike v zanki" },
   "helptip_fullerWins": { "message": "Prav tako aktivirajte Wide Screen, ko aktivirate Full-Window" },
   "helptip_tallerChatbox": { "message": "Razširi klepetalnico navpično" },
   "helptip_widerChatbox": { "message": "Razširite klepetalnico vodoravno v načinu širokega zaslona" },

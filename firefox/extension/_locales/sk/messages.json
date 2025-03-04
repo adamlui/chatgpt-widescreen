@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Zobraziť na celú obrazovku" },
   "tooltip_fullScreenOFF": { "message": "Ukončiť režim celej obrazovky" },
   "tooltip_newChat": { "message": "Nový chat" },
+  "tooltip_goto": { "message": "Choďte na" },
   "helptip_fullerWins": { "message": "Aktivujte tiež širokú obrazovku pri aktivácii celého okna" },
   "helptip_tallerChatbox": { "message": "Rozbaľte chatovacie pole vertikálne" },
   "helptip_widerChatbox": { "message": "Rozbaľte chatovacie pole vodorovne v režime širokej obrazovky" },

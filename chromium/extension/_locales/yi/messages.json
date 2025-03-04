@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "גאנצע סקרין" },
   "tooltip_fullScreenOFF": { "message": "אַרויסגאַנג פול פאַרשטעלן" },
   "tooltip_newChat": { "message": "נייַ שמועס" },
+  "tooltip_goto": { "message": "גיין צו" },
   "helptip_fullerWins": { "message": "אויך אַקטאַווייט ווידע סקרין ווען אַקטאַווייטינג גאַנץ-פֿענצטער" },
   "helptip_tallerChatbox": { "message": "יקספּאַנד די טשאַטבאָקס ווערטיקלי" },
   "helptip_widerChatbox": { "message": "יקספּאַנד די טשאַטבאָקס כאָריזאַנטאַלי אין ווידע סקרין מאָדע" },

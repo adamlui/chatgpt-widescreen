@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Heilskjár" },
   "tooltip_fullScreenOFF": { "message": "Fara úr heilskjá" },
   "tooltip_newChat": { "message": "Nýtt spjall" },
+  "tooltip_goto": { "message": "Fara til" },
   "helptip_fullerWins": { "message": "Virkjaðu einnig breiðskjá þegar þú virkjar fulla glugga" },
   "helptip_tallerChatbox": { "message": "Stækkaðu spjallboxið lóðrétt" },
   "helptip_widerChatbox": { "message": "Stækkaðu spjallboxið lárétt í víðskjásham" },

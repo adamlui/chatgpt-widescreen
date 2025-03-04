@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "फुलस्क्रीन मोड" },
   "tooltip_fullScreenOFF": { "message": "फुलस्क्रीन से बाहर निकलें" },
   "tooltip_newChat": { "message": "नया चैट" },
+  "tooltip_goto": { "message": "यहाँ जाएँ" },
   "helptip_fullerWins": { "message": "फुल - विंडो एक्टिवेट करते समय वाइड स्क्रीन को भी एक्टिवेट करें" },
   "helptip_tallerChatbox": { "message": "चैटबॉक्स को लंबवत रूप से विस्तारित करें" },
   "helptip_widerChatbox": { "message": "वाइड स्क्रीन मोड में चैटबॉक्स को क्षैतिज रूप से विस्तारित करें" },

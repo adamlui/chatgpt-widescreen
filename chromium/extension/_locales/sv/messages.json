@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Fullskärm" },
   "tooltip_fullScreenOFF": { "message": "Avsluta fullskärmsläge" },
   "tooltip_newChat": { "message": "Ny chatt" },
+  "tooltip_goto": { "message": "Gå till" },
   "helptip_fullerWins": { "message": "Aktivera även bred skärm när du aktiverar Full-Window" },
   "helptip_tallerChatbox": { "message": "Expandera chattrutan vertikalt" },
   "helptip_widerChatbox": { "message": "Expandera chattrutan horisontellt i bredbildsläge" },

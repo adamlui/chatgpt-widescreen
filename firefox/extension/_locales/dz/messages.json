@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "གཟུགས་བརྙན།" },
   "tooltip_fullScreenOFF": { "message": "གསལ་གཞི་གངམ།" },
   "tooltip_newChat": { "message": "ཏ་སེ་གསརཔ་ཅིག་ གསར་བསྐྲུན་འབད།" },
+  "tooltip_goto": { "message": "ད་སོང་" },
   "helptip_fullerWins": { "message": "སྐར་ཁུང་ཕུལཝ་ཅིག་ རྩ་སྒྲིག་འབད་པའི་སྐབས་ སྐར་ཁུང་ཕུལཝ་ཅིག་ རྩ་སྒྲིག་འབད་" },
   "helptip_tallerChatbox": { "message": "སྒྲིག་འཇུག་བྱས་ཚད། ཐེངས་ 3 ལས་ཉུང་བ། ཐོན་རིམ་ 5.7.1 ནང་" },
   "helptip_widerChatbox": { "message": "སྒྲིག་འཇུག་བྱས་ཚད། ཐེངས་ 3 ལས་ཉུང་བ། ཐོན་རིམ་ 5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན། ལོ" },

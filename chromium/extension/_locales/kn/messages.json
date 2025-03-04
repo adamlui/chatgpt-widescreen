@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "ಪೂರ್ಣ ಸ್ಕ್ರೀನ್" },
   "tooltip_fullScreenOFF": { "message": "ಪೂರ್ಣ ಪರದೆಯನ್ನು ನಿರ್ಗಮಿಸಿ" },
   "tooltip_newChat": { "message": "ಹೊಸ ಚಾಟ್" },
+  "tooltip_goto": { "message": "ಗೆ ಹೋಗಿ" },
   "helptip_fullerWins": { "message": "ಪೂರ್ಣ ವಿಂಡೋವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವಾಗ ವೈಡ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸಹ ಸಕ್ರಿಯಗೊಳಿಸಿ" },
   "helptip_tallerChatbox": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ಅನ್ನು ಲಂಬವಾಗಿ ವಿಸ್ತರಿಸಿ" },
   "helptip_widerChatbox": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ಅನ್ನು ಅಡ್ಡಲಾಗಿ ವೈಡ್ ಸ್ಕ್ರೀನ್ ಮೋಡ್ ‌ ನಲ್ಲಿ ವಿಸ್ತರಿಸಿ" },
@@ -79,6 +80,6 @@
   "btnLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
   "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
   "state_disabled": { "message": "à²¸à²à²à³à²¯à²¾à²¤à³à²®à² à²¸à²¹ à²¸à²à²¸à³à²à²¾à²°à² (FPU)" },
-  "state_on": { "message": "--" },
+  "state_on": { "message": "-" },
   "state_off": { "message": "ಆಫ್" }
 }

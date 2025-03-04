@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Visas ekranas" },
   "tooltip_fullScreenOFF": { "message": "Palikti viso ekrano veiksenąEncodings menu" },
   "tooltip_newChat": { "message": "Naujas pokalbis" },
+  "tooltip_goto": { "message": "Pereiti prie" },
   "helptip_fullerWins": { "message": "Taip pat suaktyvinkite platų ekraną, kai suaktyvinate viso lango funkciją" },
   "helptip_tallerChatbox": { "message": "Išplėskite pokalbių dėžutę vertikaliai" },
   "helptip_widerChatbox": { "message": "Išplėskite pokalbių dėžutę horizontaliai plačiaekraniu režimu" },

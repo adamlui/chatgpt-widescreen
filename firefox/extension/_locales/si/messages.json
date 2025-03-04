@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "සම්පූර්ණ තිරය" },
   "tooltip_fullScreenOFF": { "message": "සම්පූර්ණ තිරය" },
   "tooltip_newChat": { "message": "නව කතාබස්" },
+  "tooltip_goto": { "message": "වෙත පිවිසෙන්න" },
   "helptip_fullerWins": { "message": "සම්පූර්ණ කවුළුව සක් ‍ රීය කරන විට පුළුල් තිරය සක් ‍ රීය කරන්න" },
   "helptip_tallerChatbox": { "message": "චැට්බොක්ස් සිරස් අතට පුළුල් කරන්න" },
   "helptip_widerChatbox": { "message": "සංවාද කොටුව තිරස්ව පුළුල් තිර ප් ‍ රකාරයෙන් පුළුල් කරන්න" },

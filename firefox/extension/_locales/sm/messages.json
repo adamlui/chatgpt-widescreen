@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Lau atoa" },
   "tooltip_fullScreenOFF": { "message": "Tuua le lau atoa" },
   "tooltip_newChat": { "message": "Chat fou" },
+  "tooltip_goto": { "message": "Alu i le" },
   "helptip_fullerWins": { "message": "Faʻagaoioia foi le Wide Screen pe a faʻagaoioia le Full-Window" },
   "helptip_tallerChatbox": { "message": "Faʻalauteleina le chatbox vertically" },
   "helptip_widerChatbox": { "message": "Faalauteleina le pusa talatalanoaga faalava i le Wide Screen mode" },

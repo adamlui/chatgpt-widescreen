@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Повний екран" },
   "tooltip_fullScreenOFF": { "message": "Вийти з повноекранного режиму" },
   "tooltip_newChat": { "message": "Новий чат" },
+  "tooltip_goto": { "message": "Перейти до" },
   "helptip_fullerWins": { "message": "Також активуйте Wide Screen при активації Full-Window" },
   "helptip_tallerChatbox": { "message": "Розгорнути чат-бокс вертикально" },
   "helptip_widerChatbox": { "message": "Розгорніть вікно чату по горизонталі в режимі широкого екрана" },

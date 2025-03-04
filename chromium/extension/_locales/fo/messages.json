@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Fult skjal" },
   "tooltip_fullScreenOFF": { "message": "Útgáva fullskránna" },
   "tooltip_newChat": { "message": "Nýtt chat" },
+  "tooltip_goto": { "message": "Far til" },
   "helptip_fullerWins": { "message": "Virka eisini breið skerm, tá ið Full Window verður virkt" },
   "helptip_tallerChatbox": { "message": "At víðka chatboxina vertikalt" },
   "helptip_widerChatbox": { "message": "At víðka chatboxina horisontalt í breiðum skermumynd" },

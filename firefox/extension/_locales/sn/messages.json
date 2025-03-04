@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Chidzitiro chakazara" },
   "tooltip_fullScreenOFF": { "message": "Pinda chidzitiro chakazara" },
   "tooltip_newChat": { "message": "Nezvedu" },
+  "tooltip_goto": { "message": "Enda ku" },
   "helptip_fullerWins": { "message": "Uyewo Activate Wide Screen kana Activating Full-Window" },
   "helptip_tallerChatbox": { "message": "Wedzera chatbox yakatwasuka" },
   "helptip_widerChatbox": { "message": "Kuwedzera chatbox horizontally muna Wide Chinovhara muoti" },

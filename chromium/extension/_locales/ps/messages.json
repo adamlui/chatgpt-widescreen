@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "بشپړه صفحه" },
   "tooltip_fullScreenOFF": { "message": "ټوله پرده بندولEncodings menu" },
   "tooltip_newChat": { "message": "نوی chat" },
+  "tooltip_goto": { "message": "لاړ شئ" },
   "helptip_fullerWins": { "message": "د بشپړ وینډوز د فعالولو پر مهال پراخه سکرین هم فعال کړئ" },
   "helptip_tallerChatbox": { "message": "چیټ باکس په عمودي ډول پراخ کړئ" },
   "helptip_widerChatbox": { "message": "د چټ باکس په افقی ډول د پراخ سکرین حالت کې پراخ کړئ" },

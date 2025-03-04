@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Tela Cheia" },
   "tooltip_fullScreenOFF": { "message": "Sair da Tela Cheia" },
   "tooltip_newChat": { "message": "Novo Chat" },
+  "tooltip_goto": { "message": "Ir para" },
   "helptip_fullerWins": { "message": "Ative também o Wide Screen ao ativar o Full-Window" },
   "helptip_tallerChatbox": { "message": "Expanda a caixa de chat verticalmente" },
   "helptip_widerChatbox": { "message": "Expanda a caixa de chat horizontalmente no modo de ecrã largo" },

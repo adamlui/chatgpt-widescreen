@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Full screen" },
   "tooltip_fullScreenOFF": { "message": "Exit full screen" },
   "tooltip_newChat": { "message": "New chat" },
+  "tooltip_goto": { "message": "Go to" },
   "helptip_fullerWins": { "message": "Also activate Wide Screen when activating Full-Window" },
   "helptip_tallerChatbox": { "message": "Expand the chatbox vertically" },
   "helptip_widerChatbox": { "message": "Expand the chatbox horizontally in Wide Screen mode" },

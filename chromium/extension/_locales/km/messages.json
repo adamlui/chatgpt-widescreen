@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "ពេញអេក្រង់" },
   "tooltip_fullScreenOFF": { "message": "ចេញពីអេក្រង់ពេញ" },
   "tooltip_newChat": { "message": "ការជជែកកំសាន្តថ្មី" },
+  "tooltip_goto": { "message": "ទៅ" },
   "helptip_fullerWins": { "message": "ធ្វើ ឲ្យ អេក្រង់ ទូលាយ សកម្ម ផង ដែរ នៅ ពេល ធ្វើ ឲ្យ បង្អួច ពេញ សកម្ម" },
   "helptip_tallerChatbox": { "message": "ពង្រីក ប្រអប់ ជជែក កំសាន្ត បញ្ឈរ" },
   "helptip_widerChatbox": { "message": "ពង្រីក ប្រអប់ ជជែក កំសាន្ត ផ្ដេក ក្នុង របៀប អេក្រង់ ធំ" },

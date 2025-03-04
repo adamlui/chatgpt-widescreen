@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Full-Screen" },
   "tooltip_fullScreenOFF": { "message": "Oħroġ mill-Full-Screen" },
   "tooltip_newChat": { "message": "Chat ġdida" },
+  "tooltip_goto": { "message": "MUR GĦAL" },
   "helptip_fullerWins": { "message": "Attiva wkoll Wide Screen meta tattiva Full-Window" },
   "helptip_tallerChatbox": { "message": "Espandi ċ-chatbox vertikalment" },
   "helptip_widerChatbox": { "message": "Espandi ċ-chatbox orizzontalment fil-modalità ta' Wide Screen" },

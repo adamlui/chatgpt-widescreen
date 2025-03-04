@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Ful skrin" },
   "tooltip_fullScreenOFF": { "message": "Lusim ful skrin" },
   "tooltip_newChat": { "message": "Nupela chat" },
+  "tooltip_goto": { "message": "Go long" },
   "helptip_fullerWins": { "message": "Na tu, yu ken yusim bikpela piksa taim yu yusim Ful-Windo" },
   "helptip_tallerChatbox": { "message": "Kisim bek dispela bokis long rot bilong rot" },
   "helptip_widerChatbox": { "message": "Long hap bilong en, ol i save yusim bikpela piksa bilong soim ol samting long hap bilong en" },

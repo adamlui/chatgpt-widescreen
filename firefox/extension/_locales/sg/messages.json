@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "A yeke na yâ ti écran ni kue" },
   "tooltip_fullScreenOFF": { "message": "Ti bâ ndo na ndo ti écran ni kue" },
   "tooltip_newChat": { "message": "Ti nouveau chat" },
+  "tooltip_goto": { "message": "Gue nyengir." },
   "helptip_fullerWins": { "message": "A yeke sara nga si mbeni kota écran ayeke sara kua na ni tongana a sara si mbeni kota fenêtre ayeke sara kua na ni" },
   "helptip_tallerChatbox": { "message": "A yeke zi yâ ti boîte ti chat ni na nduzu" },
   "helptip_widerChatbox": { "message": "A yeke kono yâ ti boîte ti lisoro ni na nduzu na yâ ti mode ti écran ti kota ndo" },

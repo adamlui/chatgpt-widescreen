@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Halaman penuh" },
   "tooltip_fullScreenOFF": { "message": "Keluar dari layar penuh" },
   "tooltip_newChat": { "message": "Obrolan baru" },
+  "tooltip_goto": { "message": "Pergi ke" },
   "helptip_fullerWins": { "message": "Aktifkan juga Layar Lebar saat mengaktifkan Jendela Penuh" },
   "helptip_tallerChatbox": { "message": "Perluas kotak obrolan secara vertikal" },
   "helptip_widerChatbox": { "message": "Perluas kotak obrolan secara horizontal dalam mode Layar Lebar" },

@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Цонхны дэлгэц" },
   "tooltip_fullScreenOFF": { "message": "Бүтэн дэлгэцийн горимоос гарах" },
   "tooltip_newChat": { "message": "Шинэ чат" },
+  "tooltip_goto": { "message": "Руу явах" },
   "helptip_fullerWins": { "message": "Бүрэн цонхыг идэвхжүүлэх үед өргөн дэлгэцийг идэвхжүүлдэг" },
   "helptip_tallerChatbox": { "message": "Чатбоксыг босоо дэлгэх" },
   "helptip_widerChatbox": { "message": "Чатбоксыг Өргөн дэлгэцийн горимд хэвтээ дэлгэх" },

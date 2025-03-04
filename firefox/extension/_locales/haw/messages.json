@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Paʻa piha" },
   "tooltip_fullScreenOFF": { "message": "Haʻalele i ka pale piha" },
   "tooltip_newChat": { "message": "Kūkākūkā hou" },
+  "tooltip_goto": { "message": "E hele i ka ‘ao‘ao <x id=\"1\"/><x id=\"2\"/><x id=\"3\"/><x id=\"4\"/>." },
   "helptip_fullerWins": { "message": "E ho'ā i ka Wide Screen i ka wā e ho'ā ana i ka Full-Window" },
   "helptip_tallerChatbox": { "message": "E hoʻonui i ka pahu kamaʻilio me ke kū pololei" },
   "helptip_widerChatbox": { "message": "E hoʻonui i ka pahu kamaʻilio ma ka ʻaoʻao ākea ma ke ʻano Wide Screen" },

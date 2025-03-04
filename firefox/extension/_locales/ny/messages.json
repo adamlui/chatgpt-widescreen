@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Chithunzi Chokwanira" },
   "tooltip_fullScreenOFF": { "message": "Tulukani pazenera lonse" },
   "tooltip_newChat": { "message": "Latsopano macheza" },
+  "tooltip_goto": { "message": "Kupita ku" },
   "helptip_fullerWins": { "message": "Komanso yambitsa Wide Screen pamene yambitsa Full-Window" },
   "helptip_tallerChatbox": { "message": "Kukulitsa chatbox vertically" },
   "helptip_widerChatbox": { "message": "Kukulitsa chatbox yopingasa mu Wide Screen mode" },

@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Mameno efijery" },
   "tooltip_fullScreenOFF": { "message": "Mameno efijery" },
   "tooltip_newChat": { "message": "Tamy_ts chat" },
+  "tooltip_goto": { "message": "Handeha ho any amin'ny" },
   "helptip_fullerWins": { "message": "Mampihetsika ihany koa ny Wide Screen rehefa fampahavitrihana Full-Window" },
   "helptip_tallerChatbox": { "message": "Hanitatra ny chatbox mitsangana" },
   "helptip_widerChatbox": { "message": "Velaro mitsivalana ny chatbox amin'ny fomba mivelatra" },

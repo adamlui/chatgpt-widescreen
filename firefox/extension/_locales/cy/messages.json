@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Sgrin llawn" },
   "tooltip_fullScreenOFF": { "message": "Gadael sgrin llawn" },
   "tooltip_newChat": { "message": "Sgwrs newydd" },
+  "tooltip_goto": { "message": "Mae'n rhaid i mi" },
   "helptip_fullerWins": { "message": "Gweithredu'r Sgrin Lydan hefyd wrth actifadu'r Ffenestr Lawn" },
   "helptip_tallerChatbox": { "message": "Ehangu'r blwch sgwrsio yn fertigol" },
   "helptip_widerChatbox": { "message": "Ehangu'r blwch sgwrsio yn llorweddol yn y modd Sgrin Lydan" },

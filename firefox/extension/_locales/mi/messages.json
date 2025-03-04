@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Mata tonu" },
   "tooltip_fullScreenOFF": { "message": "Puta atu mata tonu" },
   "tooltip_newChat": { "message": "Kōrerorero hou" },
+  "tooltip_goto": { "message": "Haere ki te" },
   "helptip_fullerWins": { "message": "Ka whakahohe hoki i te mata Wide i te wa e whakahohe ana i te Full-Window" },
   "helptip_tallerChatbox": { "message": "Whakapai ake i te pouaka kōrerorero vertically" },
   "helptip_widerChatbox": { "message": "Whakanuia te pouaka kōrerorero maramataka i roto i te aratau mata Wide" },

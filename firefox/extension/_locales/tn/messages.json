@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Sekerini se se tletseng" },
   "tooltip_fullScreenOFF": { "message": "Go tswa mo sekerining ka botlalo" },
   "tooltip_newChat": { "message": "Puisano e ntšhwa" },
+  "tooltip_goto": { "message": "Ya kwa" },
   "helptip_fullerWins": { "message": "Gape o dira gore Sekerini se se Moholo se tsenngwe tirisong fa o dira gore Difensetere tse di Feletseng di ts" },
   "helptip_tallerChatbox": { "message": "Atolosa lebokoso la motlotlo ka go le emisa" },
   "helptip_widerChatbox": { "message": "Atolosa lebokoso la motlotlo ka go le tobetsa ka mokgwa wa Sekerini se se Phara" },

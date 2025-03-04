@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "მთელ ეკრანზე" },
   "tooltip_fullScreenOFF": { "message": "სრული ეკრანიდან გამოსვლა" },
   "tooltip_newChat": { "message": "Ახალი ჩატი" },
+  "tooltip_goto": { "message": "გადასვლა" },
   "helptip_fullerWins": { "message": "Ასევე გაააქტიურეთ ფართო ეკრანი სრულფართობიანი ფანჯრის გააქტიურებისას" },
   "helptip_tallerChatbox": { "message": "Ვერტიკალურად გაშალეთ ჩატბოქსი" },
   "helptip_widerChatbox": { "message": "Ჰორიზონტალურად გაშალეთ ჩატბოქსი ფართო ეკრანის რეჟიმში" },

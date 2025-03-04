@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Cijeli zaslon" },
   "tooltip_fullScreenOFF": { "message": "Izlaz preko cijelog zaslona" },
   "tooltip_newChat": { "message": "Novi chat" },
+  "tooltip_goto": { "message": "Idite na" },
   "helptip_fullerWins": { "message": "Također aktivirajte Wide Screen kada aktivirate Full-Window" },
   "helptip_tallerChatbox": { "message": "Proširite chatbox okomito" },
   "helptip_widerChatbox": { "message": "Proširite chatbox vodoravno u načinu rada širokog zaslona" },

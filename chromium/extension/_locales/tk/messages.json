@@ -34,6 +34,7 @@
   "tooltip_fullScreenON": { "message": "Tam ekran" },
   "tooltip_fullScreenOFF": { "message": "Tam Ekran Gaýd Et" },
   "tooltip_newChat": { "message": "Täze Çat" },
+  "tooltip_goto": { "message": "Geliň, gideliň" },
   "helptip_fullerWins": { "message": "Täze äpişge açylanda, giň ekrany hem açyň" },
   "helptip_tallerChatbox": { "message": "Çat kutusyny vertikal giňelt" },
   "helptip_widerChatbox": { "message": "Çat kutusyny uzyn ekran modunda uzynlaşdyr" },

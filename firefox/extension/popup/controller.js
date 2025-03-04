@@ -199,7 +199,7 @@
                     getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
-        ssEntry.faviconDiv.onmouseenter = ssEntry.faviconDiv.onmouseleave = ({ type }) =>
+        ssEntry.faviconDiv.onmouseenter = ssEntry.faviconDiv.onmouseleave = ({ type }) => // swap favicon/open icon
             ssEntry.faviconDiv.firstChild.replaceWith(type == 'mouseenter' ? ssEntry.openIcon : ssEntry.favicon)
         ssEntry.faviconDiv.onclick = () => { open(`https://${sites[site].urls.homepage}`) ; close() }
     }

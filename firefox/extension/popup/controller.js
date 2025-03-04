@@ -166,21 +166,30 @@
 
         // Init entry's elems
         const ssEntry = {
-            div: dom.create.elem('div', { class: 'menu-entry highlight-on-hover',
-                title: `${getMsg('helptip_run')} ${app.name} on ${sites[site].urls.homepage}` }),
+            div: dom.create.elem('div', { class: 'menu-entry' }),
+            switchLabelDiv: dom.create.elem('div', {
+                class: 'highlight-on-hover',
+                title: `${getMsg('helptip_run')} ${app.name} on ${sites[site].urls.homepage}`,
+                style: `display: flex ; height: 33px ; align-items: center ; flex-grow: 1 ;
+                        margin-left: -2px ; padding-left: 2px /* fill .menu-entry left-padding */` }),
             switch: dom.create.elem('div', { class: 'toggle menu-icon' }),
             track: dom.create.elem('span', { class: 'track' }), label: dom.create.elem('span'),
-            favicon: dom.create.elem('img', {
-                src: sites[site].urls.favicon, width: 15, style: 'position: absolute ; right: 13px' })
+            faviconDiv: dom.create.elem('div', {
+                class: 'highlight-on-hover', title: `${getMsg('tooltip_goto')} https://${sites[site].urls.homepage}`,
+                style: `display: flex ; height: 33px ; align-items: center ;
+                        padding: 0 11.5px ; /* create padded rectangle for .highlight-on-hover */
+                        margin-right: -14px /* fill .menu-entry right-padding */` }),
+            favicon: dom.create.elem('img', { src: sites[site].urls.favicon, width: 15 }),
+            openIcon: icons.create('open', { size: 16, fill: 'white' })
         }
-        ssEntry.label.textContent = sites[site].urls.homepage
-        ssEntry.switch.append(ssEntry.track) ; ssEntry.div.append(ssEntry.switch, ssEntry.label, ssEntry.favicon)
-        ssTogglesDiv.append(ssEntry.div)
+        ssEntry.switch.append(ssEntry.track) ; ssEntry.label.textContent = sites[site].urls.homepage
+        ssEntry.switchLabelDiv.append(ssEntry.switch, ssEntry.label) ; ssEntry.faviconDiv.append(ssEntry.favicon)
+        ssEntry.div.append(ssEntry.switchLabelDiv, ssEntry.faviconDiv) ; ssTogglesDiv.append(ssEntry.div)
         await settings.load(`${site}Disabled`) ; ssEntry.switch.classList.toggle('on', !config[`${site}Disabled`])
         if (env.site == site) env.siteDisabled = config[`${site}Disabled`] // to auto-expand toggles later if true
 
-        // Add listener
-        ssEntry.div.onclick = () => {
+        // Add listeners
+        ssEntry.switchLabelDiv.onclick = () => { // toggle site setting
             env.extensionWasDisabled = extensionIsDisabled()
             ssEntry.switch.classList.toggle('on')
             settings.save(`${site}Disabled`, !config[`${site}Disabled`]) ; sync.configToUI()
@@ -190,6 +199,9 @@
                     getMsg(`state_${ extensionIsDisabled() ? 'off' : 'on' }`).toUpperCase()}`)
             }
         }
+        ssEntry.faviconDiv.onmouseenter = ssEntry.faviconDiv.onmouseleave = ({ type }) =>
+            ssEntry.faviconDiv.firstChild.replaceWith(type == 'mouseenter' ? ssEntry.openIcon : ssEntry.favicon)
+        ssEntry.faviconDiv.onclick = () => { open(`https://${sites[site].urls.homepage}`) ; close() }
     }
 
     // Auto-expand SITE SETTINGS conditionally

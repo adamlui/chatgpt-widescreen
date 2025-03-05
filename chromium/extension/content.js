@@ -30,7 +30,7 @@
     // Init ENV context
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
-    env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
+    env.browser.isPortrait = env.browser.isMobile && (innerWidth < innerHeight)
     ui.import({ site: env.site }) ; ui.getScheme().then(scheme => env.ui.scheme = scheme)
 
     // Import DATA
@@ -377,7 +377,7 @@
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
-    window.addEventListener('resize', () => {
+    addEventListener('resize', () => {
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { // exiting full screen
             sync.mode('fullScreen') ; config.f11 = false }

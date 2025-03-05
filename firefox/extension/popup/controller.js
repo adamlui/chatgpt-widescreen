@@ -174,7 +174,7 @@
             switch: dom.create.elem('div', { class: 'toggle menu-icon' }),
             track: dom.create.elem('span', { class: 'track' }), label: dom.create.elem('span'),
             faviconDiv: dom.create.elem('div', {
-                class: 'highlight-on-hover', title: `${getMsg('tooltip_goto')} https://${sites[site].urls.homepage}`,
+                title: `${getMsg('tooltip_goto')} https://${sites[site].urls.homepage}`,
                 style: `display: flex ; height: 33px ; align-items: center ;
                         padding: 0 11.5px ; /* create padded rectangle for .highlight-on-hover */
                         margin-right: -14px /* fill .menu-entry right-padding */` }),

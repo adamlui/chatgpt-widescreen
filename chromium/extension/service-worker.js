@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(async req => {
     // Init APP data
     const app = {
         version: chrome.runtime.getManifest().version,
-        latestResourceCommitHash: 'e0bb4b5', // for cached app.json + sites.json + icons.questionMark.src
+        latestResourceCommitHash: 'e0bb4b5', // for cached app.json + sites.json5 + icons.questionMark.src
         urls: {},
         chatgptJSver: /v(\d+\.\d+\.\d+)/.exec(await (await fetch(chrome.runtime.getURL('lib/chatgpt.js'))).text())[1]
     }

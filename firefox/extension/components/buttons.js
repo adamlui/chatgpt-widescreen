@@ -136,7 +136,7 @@ window.buttons = {
     },
 
     async insert() {
-        if (this.state.status?.startsWith('insert') || document.getElementById('fullScreen-btn')) return
+        if (this.state.status?.startsWith('insert') || this.fullScreen?.isConnected) return
         this.state.status = 'inserting' ; if (!this.wideScreen) await this.create()
 
         // Init elems
@@ -166,7 +166,7 @@ window.buttons = {
     },
 
     async remove() {
-        if (!await this.imports.chatbar.get() || !document.getElementById('fullScreen-btn')) return
+        if (!await this.imports.chatbar.get() || !this.fullScreen?.isConnected) return
         this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltip.div?.remove()
         this.state.status = 'missing' // ensure next .insert() doesn't return early
         this.state.hasFadedIn = false // ensure next .insert() fades in buttons

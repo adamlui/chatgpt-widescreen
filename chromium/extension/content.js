@@ -324,7 +324,7 @@
 
         // Maintain button visibility on nav
         if (config.extensionDisabled || config[`${env.site}Disabled`]) return
-        else if (!document.getElementById('fullScreen-btn') && !chatgpt.canvasIsOpen()
+        else if (!buttons.fullScreen?.isConnected && !chatgpt.canvasIsOpen()
             && chatbar.get() && buttons.state.status != 'inserting'
         ) { buttons.state.status = 'missing' ; buttons.insert() }
 

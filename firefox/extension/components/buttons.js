@@ -57,18 +57,13 @@ window.buttons = {
     },
 
     async create() {
-        if (this.imports.env.site == 'chatgpt' && await this.imports.chatbar.is.tall())
-            this.imports.env.hasTallChatbar = true
-        if (/chatgpt|perplexity/.test(this.imports.env.site))
-            this.rightBtn = await this.getRightBtn() // for rOffset + styles
+        const site = this.imports.env.site, hasTallChatbar = this.imports.env.ui.hasTallChatbar
+        if (/chatgpt|perplexity/.test(site)) this.rightBtn = await this.getRightBtn() // for rOffset + styles
 
         const validBtnTypes = this.getTypes.valid()
-        const spreadFactor = this.imports.env.site == 'poe' ? 1.1
-                           : this.imports.env.site == 'perplexity' ? -13
-                           : this.imports.env.hasTallChatbar ? 31 : -8.85
-        const rOffset = this.imports.env.site == 'poe' ? -6.5
-                      : this.imports.env.site == 'perplexity' ? -4
-                      : this.imports.env.hasTallChatbar ? ( this.rightBtn.getBoundingClientRect().width +14 ) : -0.25
+        const spreadFactor = site == 'poe' ? 1.1 : site == 'perplexity' ? -13 : hasTallChatbar ? 31 : -8.85
+        const rOffset = site == 'poe' ? -6.5 : site == 'perplexity' ? -4
+                      : hasTallChatbar ? ( this.rightBtn.getBoundingClientRect().width +14 ) : -0.25
         const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'
 
         validBtnTypes.forEach(async (btnType, idx) => {
@@ -76,16 +71,17 @@ window.buttons = {
             btn.id = `${btnType}-btn` // for tooltip.toggle()
             btn.className = this.class // for update.style.tweaks()
             Object.assign(btn.style, {
-                position: this.imports.env.hasTallChatbar ? 'absolute' : 'relative', cursor: 'pointer',
+                position: site == 'chatgpt' && hasTallChatbar ? 'absolute' : 'relative',
+                cursor: 'pointer',
                 right: `${ rOffset + idx * spreadFactor }px`, // position left of prev button
                 transition: transitionStyles, // for tweaksStyle's :hover + .insert()'s fade-in
                     '-webkit-transition': transitionStyles, '-moz-transition': transitionStyles,
                     '-o-transition': transitionStyles, '-ms-transition': transitionStyles
             })
-            if (this.imports.env.hasTallChatbar) btn.style.bottom = '11.85px'
-            else btn.style.top = `${ this.imports.env.site == 'chatgpt' ? -3.25
-                                   : this.imports.env.site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
-            if (/chatgpt|perplexity/.test(this.imports.env.site)) { // assign classes + tweak styles
+            if (site == 'chatgpt' && hasTallChatbar) btn.style.bottom = '11.85px'
+            else btn.style.top = `${ site == 'chatgpt' ? -3.25
+                                   : site == 'poe' ? ( btnType == 'newChat' ? 0.25 : 3 ) : 0 }px`
+            if (/chatgpt|perplexity/.test(site)) { // assign classes + tweak styles
                 btn.classList.add(...(this.rightBtn?.classList || []))
                 Object.assign(btn.style, { // remove dark mode overlay
                     backgroundColor: 'transparent', borderColor: 'transparent' })
@@ -95,7 +91,7 @@ window.buttons = {
             btn.onmouseover = btn.onmouseout = this.imports.tooltip.toggle
             btn.onclick = () => {
                 if (btnType == 'newChat') {
-                    document.querySelector(this.imports.sites[this.imports.env.site].selectors.btns.newChat)?.click()
+                    document.querySelector(this.imports.sites[site].selectors.btns.newChat)?.click()
                     this.imports.tooltip.div.style.opacity = 0
                 } else { // toggle mode
                     this.imports.toggleMode(btnType)

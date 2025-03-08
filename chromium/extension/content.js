@@ -32,6 +32,8 @@
         browser: { isMobile: chatgpt.browser.isMobile() }, site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1], ui: {}}
     env.browser.isPortrait = env.browser.isMobile && (innerWidth < innerHeight)
     ui.import({ site: env.site }) ; ui.getScheme().then(scheme => env.ui.scheme = scheme)
+    if (env.site == 'chatgpt') // store native chatbar width for Wider Chatbox style
+        chatbar.nativeWidth = dom.get.computedWidth(document.querySelector('main form'))
 
     // Import DATA
     const { app } = await chrome.storage.local.get('app'),
@@ -132,7 +134,7 @@
         }
     }
 
-    const tweaksStyle = dom.create.style()
+    const tweaksStyle = dom.create.style() ; env.ui.hasTallChatbar = await chatbar.is.tall()
     buttons.import({ appName: app.name, chatbar, env, sites, toggleMode, tooltip, tweaksStyle })
 
     const update = {
@@ -292,8 +294,6 @@
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style(null, { id: 'wideScreen-mode' })
     if (!chatbar.get()) await dom.get.loadedElem(sites[env.site].selectors.input)
-    if (env.site == 'chatgpt') // store native chatbar width for Wider Chatbox style
-        chatbar.nativeWidth = dom.get.computedWidth(document.querySelector('main form'))
     update.style.wideScreen()
 
     // Create FULL-WINDOW style

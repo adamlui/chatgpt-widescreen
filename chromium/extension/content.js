@@ -379,14 +379,12 @@
     // Monitor PERPLEXITY NAV to update Attach File button alignment on delayed re-appearances
     if (env.site == 'perplexity') {
         let prevPath = location.pathname
-        new MutationObserver(async () => {
-            if (location.pathname != prevPath) {
-                prevPath = location.pathname
-                const attachFileBtn = await dom.get.loadedElem(sites.perplexity.selectors.btns.attachFile),
-                      cwmActive = buttons.fullScreen.isConnected
-                if (attachFileBtn['left-aligned'] ^ cwmActive) chatbar[cwmActive ? 'tweak' : 'reset']()
-            }
-        }).observe(document.body, { childList: true, subtree: true })
+        new MutationObserver(async () => { if (location.pathname != prevPath) {
+            prevPath = location.pathname
+            const attachFileBtn = await dom.get.loadedElem(sites.perplexity.selectors.btns.attachFile),
+                  cwmActive = buttons.fullScreen.isConnected
+            if (attachFileBtn['left-aligned'] ^ cwmActive) chatbar[cwmActive ? 'tweak' : 'reset']()
+        }}).observe(document.body, { childList: true, subtree: true })
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag

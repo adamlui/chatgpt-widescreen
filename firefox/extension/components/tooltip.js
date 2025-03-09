@@ -32,14 +32,14 @@ window.tooltip = {
     },
 
     async update(btnType) { // text & position
-        const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
-        const rects = { rightBtn: (await buttons.getRightBtn()).getBoundingClientRect() }
-        const ctrAddend = rects.rightBtn.width + (
+        const site = this.imports.site
+        const rightBtnRect = (await buttons.getRightBtn()).getBoundingClientRect()
+        const ctrAddend = rightBtnRect.width + (
             site == 'perplexity' ? ( location.pathname == '/' ? -1
-                : innerWidth - rects.rightBtn.right -( innerWidth < 768 ? 11 : 26 ))
+                : innerWidth - rightBtnRect.right -( innerWidth < 768 ? 11 : 26 ))
           : site == 'poe' ? 22 : 6 )
         const spreadFactor = site == 'chatgpt' ? 31 : 27
-        const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+        const iniRoffset = spreadFactor * ( buttons.getTypes.visible().indexOf(btnType) +1 ) + ctrAddend
                          + ( site == 'chatgpt' && await chatbar.is.tall() ? -2 : 4 )
         this.div.innerText = this.getMsg(`tooltip_${btnType}${
             !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')}`)

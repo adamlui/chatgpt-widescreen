@@ -57,7 +57,7 @@
     "hasSidebar": true,
     "selectors": {
       "btns": {
-        "mic": "button[data-button-voice-input=true]",
+        "attachFile": "button[data-button-file-input]", "mic": "button[data-button-voice-input=true]",
         "newChat": "header a[class*=button]", "send": "[data-button-send]"
       },
       "header": "header, div[class*=CanvasHeader_header]",

@@ -1,4 +1,5 @@
-// Requires lib/chatgpt.js + lib/dom.js + appName: app.name + env + sites + toggleMode + tweaksStyle
+// Requires lib/chatgpt.js + lib/dom.js + components/chatbar.js + components/tooltip.js
+//   + appName: app.name + env + sites + toggleMode + tweaksStyle
 
 window.buttons = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },

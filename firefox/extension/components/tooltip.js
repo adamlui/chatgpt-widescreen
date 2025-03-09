@@ -1,4 +1,4 @@
-// Requires lib/dom.js + env.site + msgs: app.msgs (Greasemonkey only) + site: env.site + sites
+// Requires lib/dom.js + components/buttons.js + env.site + msgs: app.msgs (Greasemonkey only) + site: env.site + sites
 
 window.tooltip = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },

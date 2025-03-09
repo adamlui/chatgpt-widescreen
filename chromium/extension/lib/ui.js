@@ -1,4 +1,4 @@
-// Requires dom.js + site: env.site + sites
+// Requires lib/dom.js + site: env.site + sites
 
 window.ui = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },

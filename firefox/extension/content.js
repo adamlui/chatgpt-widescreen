@@ -293,7 +293,6 @@
 
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style(null, { id: 'wideScreen-mode' })
-    if (!chatbar.get()) await dom.get.loadedElem(sites[env.site].selectors.input)
     update.style.wideScreen()
 
     // Create FULL-WINDOW style

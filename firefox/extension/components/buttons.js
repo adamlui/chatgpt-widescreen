@@ -1,4 +1,4 @@
-// Requires lib/chatgpt.js + lib/dom.js + appName: app.name + chatbar + env + sites + toggleMode + tooltip + tweaksStyle
+// Requires lib/chatgpt.js + lib/dom.js + appName: app.name + env + sites + toggleMode + tweaksStyle
 
 window.buttons = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
@@ -88,20 +88,20 @@ window.buttons = {
             }
 
             // Add hover/click listeners
-            btn.onmouseover = btn.onmouseout = this.imports.tooltip.toggle
+            btn.onmouseover = btn.onmouseout = tooltip.toggle
             btn.onclick = () => {
                 if (btnType == 'newChat') {
                     document.querySelector(this.imports.sites[site].selectors.btns.newChat)?.click()
-                    this.imports.tooltip.div.style.opacity = 0
+                    tooltip.div.style.opacity = 0
                 } else { // toggle mode
                     this.imports.toggleMode(btnType)
                     if (btnType == 'fullWindow' // disable right btn tooltips on Perplexity homepage to avoid v-flicker
                             && this.imports.env.site == 'perplexity' && location.pathname == '/') {
-                        this.imports.tooltip.div.style.opacity = 0;
+                        tooltip.div.style.opacity = 0;
                         ['fullWindow', 'fullScreen'].forEach(btnType => {
                             const btn = this[btnType]
                             btn.onmouseover = btn.onmouseout = null
-                            setTimeout(() => btn.onmouseover = btn.onmouseout = this.imports.tooltip.toggle, 300)
+                            setTimeout(() => btn.onmouseover = btn.onmouseout = tooltip.toggle, 300)
                         })
                     }
                 }
@@ -136,7 +136,7 @@ window.buttons = {
         this.state.status = 'inserting' ; if (!this.wideScreen) await this.create()
 
         // Init elems
-        const chatbarDiv = await this.imports.chatbar.get() ; if (!chatbarDiv) return
+        const chatbarDiv = await chatbar.get() ; if (!chatbarDiv) return
         const btnTypesToInsert = this.getTypes.valid()
         const parentToInsertInto = (
             this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv
@@ -156,14 +156,14 @@ window.buttons = {
                     this.state.hasFadedIn = true // ...so disable fade-in on subsequent .insert()s till .remove()
             }
         })
-        elemToInsertBefore.before(this.imports.tooltip.div) // add tooltips
-        setTimeout(() => this.imports.chatbar.tweak(), 1) ; this.update.color()
+        elemToInsertBefore.before(tooltip.div) // add tooltips
+        setTimeout(() => chatbar.tweak(), 1) ; this.update.color()
         this.state.status = 'inserted'
     },
 
     async remove() {
-        if (!await this.imports.chatbar.get() || !this.fullScreen?.isConnected) return
-        this.types.forEach(type => this[type]?.remove()) ; this.imports.tooltip.div?.remove()
+        if (!await chatbar.get() || !this.fullScreen?.isConnected) return
+        this.types.forEach(type => this[type]?.remove()) ; tooltip.div?.remove()
         this.state.status = 'missing' // ensure next .insert() doesn't return early
         this.state.hasFadedIn = false // ensure next .insert() fades in buttons
     },
@@ -172,7 +172,7 @@ window.buttons = {
         color() {
             buttons.color = (
                 buttons.imports.env.site == 'chatgpt' ? (
-                    buttons.imports.chatbar.is.dark() || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
+                    chatbar.is.dark() || buttons.imports.env.ui.scheme == 'dark' ? 'white' : '#202123'
                 ) : buttons.imports.env.site == 'perplexity' ? (
                     buttons.imports.env.ui.scheme == 'dark' ?
                         'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'

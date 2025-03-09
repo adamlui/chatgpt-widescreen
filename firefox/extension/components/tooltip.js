@@ -1,4 +1,4 @@
-// Requires dom.js + env.site + msgs: app.msgs (Greasemonkey only) + site: env.site + sites
+// Requires lib/dom.js + env.site + msgs: app.msgs (Greasemonkey only) + site: env.site + sites
 
 window.tooltip = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
@@ -34,11 +34,9 @@ window.tooltip = {
     async update(btnType) { // text & position
         const site = this.imports.site, visibleBtnTypes = buttons.getTypes.visible()
         const rects = { rightBtn: (await buttons.getRightBtn()).getBoundingClientRect() }
-        if (site == 'perplexity' && location.pathname != '/') // store inner page container for ctrAddend math
-            rects.innerPageContainer = (await chatbar.get()).closest('[class*=threadWidth]').getBoundingClientRect()
         const ctrAddend = rects.rightBtn.width + (
-            site == 'perplexity' ? (
-                await chatbar.is.tall() ? -1 : rects.innerPageContainer.right - rects.rightBtn.right -8 )
+            site == 'perplexity' ? ( location.pathname == '/' ? -1
+                : innerWidth - rects.rightBtn.right -( innerWidth < 768 ? 11 : 26 ))
           : site == 'poe' ? 22 : 6 )
         const spreadFactor = site == 'chatgpt' ? 31 : 27
         const iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend

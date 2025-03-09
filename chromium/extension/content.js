@@ -146,7 +146,8 @@
                     env.site == 'chatgpt' ? ( config.widerChatbox ? ''
                           : `main form { max-width: ${chatbar.nativeWidth}px !important ; margin: auto }`
                     ) : env.site == 'perplexity' && config.wideScreen ?
-                          `div[class*=col-span-8]:has(${sites[env.site].selectors.input}) { width: inherit }`
+                          `@media (min-width: 768px) {
+                              div[class*=col-span-8]:has(${sites[env.site].selectors.input}) { width: 155% }}`
                       : env.site == 'poe' ? ( config.widerChatbox && config.wideScreen ?
                           '[class^=ChatPageMainFooter_footerInner] { width: 98% ; margin-right: 15px }' : ''
                     ) : ''

@@ -1,4 +1,4 @@
-// Requires lib/chatgpt.js + lib/dom.js + components/chatbar.js + components/tooltip.js
+// Requires lib/<chatgpt|dom>.js + components/<chatbar|tooltip>.js
 //   + appName: app.name + env + sites + toggleMode + tweaksStyle
 
 window.buttons = {
@@ -133,11 +133,11 @@ window.buttons = {
     },
 
     async insert() {
-        if (this.state.status?.startsWith('insert') || this.fullScreen?.isConnected) return
-        this.state.status = 'inserting' ; if (!this.wideScreen) await this.create()
+        if (this.state.status == 'inserting' || this.fullScreen?.isConnected) return
+        this.state.status = 'inserting' ; if (!this.fullScreen) await this.create()
 
         // Init elems
-        const chatbarDiv = await chatbar.get() ; if (!chatbarDiv) return
+        const chatbarDiv = await chatbar.get() ; if (!chatbarDiv) return this.state.status = 'missing'
         const btnTypesToInsert = this.getTypes.valid()
         const parentToInsertInto = (
             this.imports.env.site == 'chatgpt' ? chatbarDiv.nextElementSibling || chatbarDiv

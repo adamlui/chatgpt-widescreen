@@ -24,7 +24,7 @@
     // Import JS resources
     for (const resource of [
         'lib/chatbar.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js', 'lib/ui.js',
-        'components/buttons.js', 'components/modals.js', 'components/tooltip.js'
+        'components/buttons.js', 'components/icons.js', 'components/modals.js', 'components/tooltip.js'
     ]) await import(chrome.runtime.getURL(resource))
 
     // Init ENV context

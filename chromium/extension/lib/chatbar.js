@@ -1,4 +1,4 @@
-// Requires lib/dom.js + components/buttons.js + site: env.site + sites
+// Requires lib/dom.js + components/<buttons|icons>.js + site: env.site + sites
 
 window.chatbar = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
@@ -36,13 +36,19 @@ window.chatbar = {
                 })
                 chatbarDiv.querySelector('button').closest('div').style.marginRight = '' // reset gap
             }
-        } else if (site == 'poe') { // restore Poe Mic button position
+        } else if (site == 'poe') { // restore Attach File button icon + Poe Mic button position
+            ['attachFile', 'mic'].forEach(btnType => {
+                const btn = chatbarDiv.querySelector(selectors.btns[btnType]) ; if (!btn) return
+                if (btnType == 'attachFile')
+                    btn.querySelector('svg').replaceWith(buttons.poe.attachFile.icon.cloneNode(true))
+                else /* Mic */ btn.style.marginRight = ''
+            })
             const micBtn = chatbarDiv.querySelector(selectors.btns.mic) ; if (!micBtn) return
             micBtn.style.marginRight = ''
         }
     },
 
-    async tweak() { // update ChatGPT chatbar inner width or left-align Perplexity btns or move Poe Mic btn right
+    async tweak() { // update ChatGPT chatbar inner width or hack Perplexity/Poe buttons
         const site = this.imports.site
         const chatbarDiv = await this.get() ; if (!chatbarDiv) return
         const selectors = this.imports.sites[site].selectors
@@ -72,8 +78,16 @@ window.chatbar = {
                 btn.setAttribute('left-aligned', true) // for this.reset()
             })
             if (chatbarDiv.querySelector('[left-aligned]')) modelSelectorDiv.style.marginRight = '3px' // close gap
-        } else if (site == 'poe') // move Mic btn closer to Send
-            dom.get.loadedElem(selectors.btns.mic, { timeout: 5000 })
+        } else if (site == 'poe') { // replace Attach File btn icon + move Mic btn closer to Send
+            const btnLoadTimeout = 5000
+            dom.get.loadedElem(selectors.btns.attachFile, { timeout: btnLoadTimeout }).then(btn => {
+                if (!btn) return
+                buttons.poe = buttons.poe || { attachFile: { icon: btn.querySelector('svg') }}
+                btn.querySelector('svg').replaceWith(icons.create('paperclip', {
+                    style: 'height: 15px !important ; width: 15px !important' }))
+            })
+            dom.get.loadedElem(selectors.btns.mic, { timeout: btnLoadTimeout })
                 .then(btn => { if (btn) btn.style.marginRight = '-7px' })
+        }
     }
 };

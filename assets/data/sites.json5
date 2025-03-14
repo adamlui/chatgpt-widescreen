@@ -40,7 +40,7 @@
       "spam": {
         "banners": {
           "homepage": "div.absolute.w-full:has(svg[data-icon=xmark])",
-          "cometWaitlist": "div[class*=col-span]:has(a[href$=\"perplexity.ai/comet\"])"
+          "apps": "div[class*=col-span]:has(a[href*=\"perplexity.ai\"])" // like Comet waitlist + Windows app
         },
         "popups": {
           "googleLogin": "#credential_picker_container", // upper-right login popup

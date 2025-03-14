@@ -1,8 +1,9 @@
-h1, p, img, footer, .hidden {
-    opacity: 0 ; transform: translateY(20px) ;
-    transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
-                transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */ }
-.visible { opacity: 1 ; transform: translateY(0) }
+h1, p, img, footer, .hidden { opacity: 0 ; transition: 0.6s cubic-bezier(.165,.84,.44,1) }
+.visible { animation: fade-slide-up 0.6s cubic-bezier(.165,.84,.44,1) forwards }
+@keyframes fade-slide-up {
+    from { transform: translateY(20px) ; opacity: 0 }
+    to { transform: translateY(0) ; opacity: 1 }
+}
 
 body {
     font-family: Arial,sans-serif ; text-align: center ;
@@ -15,7 +16,7 @@ img { max-width: 100% ; height: auto ; margin-bottom: 15px }
 footer { padding-bottom: 50px ; font-weight: bold ; font-size: 22px }
 
 @media (max-width: 768px) {
-    .title-icon { width: 42px ; height: 42px ; position: relative ; top: 7px ; margin-right: 11px }
+    .title-icon { width: 42px ; height: 42px ; position: relative ; top: 22px ; margin-right: 11px }
     h1 { font-size: 32px ; margin-bottom: 20px }
     p { font-size: 18px ; margin-bottom: 15px }
     .main { padding: 16px 10vw 60px }

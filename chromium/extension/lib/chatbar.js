@@ -36,16 +36,13 @@ window.chatbar = {
                 })
                 chatbarDiv.querySelector('button').closest('div').style.marginRight = '' // reset gap
             }
-        } else if (site == 'poe') { // restore Attach File button icon + Poe Mic button position
+        } else if (site == 'poe') // restore Attach File button icon + Poe Mic button position
             ['attachFile', 'mic'].forEach(btnType => {
                 const btn = chatbarDiv.querySelector(selectors.btns[btnType]) ; if (!btn) return
                 if (btnType == 'attachFile')
                     btn.querySelector('svg').replaceWith(buttons.poe.attachFile.icon.cloneNode(true))
                 else /* Mic */ btn.style.marginRight = ''
             })
-            const micBtn = chatbarDiv.querySelector(selectors.btns.mic) ; if (!micBtn) return
-            micBtn.style.marginRight = ''
-        }
     },
 
     async tweak() { // update ChatGPT chatbar inner width or hack Perplexity/Poe buttons
@@ -82,7 +79,7 @@ window.chatbar = {
             const btnLoadTimeout = 5000
             dom.get.loadedElem(selectors.btns.attachFile, { timeout: btnLoadTimeout }).then(btn => {
                 if (!btn) return
-                buttons.poe = buttons.poe || { attachFile: { icon: btn.querySelector('svg') }}
+                buttons.poe = buttons.poe || { attachFile: { icon: btn.querySelector('svg') }} // cache for this.reset()
                 btn.querySelector('svg').replaceWith(icons.create('paperclip', {
                     style: 'height: 15px !important ; width: 15px !important' }))
             })

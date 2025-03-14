@@ -7,8 +7,8 @@ window.ui = {
         const site = this.imports.site,
               rootElem = await dom.get.loadedElem(`html${ site == 'perplexity' ? '[data-color-scheme]' : '' }`)
         return this.imports.site == 'perplexity' ? rootElem.dataset.colorScheme
-            : /light|dark/.test(rootElem.className) && rootElem.className
-            || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : /light|dark/.test(rootElem.className) ? rootElem.className
+            : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     },
 
     isFullWin() {

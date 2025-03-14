@@ -30,7 +30,7 @@
     "hasSidebar": true,
     "selectors": {
       "btns": {
-        "attachFile": "button:has(svg[data-icon=paperclip])", "help": "button:has([data-icon=question])",
+        "attachFile": "button:has([class*=icon-paperclip])", "help": "button:has([data-icon=question])",
         "newChat": "div.sticky [class*=ring]", "search": "button:has(svg[class*=tabler-icon-world])",
         "send": "button:has([class*=icon-arrow-], [class*=icon-git-fork])", // Send w/ up/right arrow or New Thread
         "settings": "button:has([d^=\"M256 0c17\"])",

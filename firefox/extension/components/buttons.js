@@ -62,7 +62,7 @@ window.buttons = {
         if (/chatgpt|perplexity/.test(site)) this.rightBtn = await this.getRightBtn() // for rOffset + styles
 
         const validBtnTypes = this.getTypes.valid()
-        const spreadFactor = site == 'poe' ? 1.1 : site == 'perplexity' ? -13 : hasTallChatbar ? 31 : -8.85
+        const spreadFactor = site == 'poe' ? 1.1 : site == 'perplexity' ? -7 : hasTallChatbar ? 31 : -8.85
         const rOffset = site == 'poe' ? -6.5 : site == 'perplexity' ? -4
                       : hasTallChatbar ? ( this.rightBtn.getBoundingClientRect().width +14 ) : -0.25
         const transitionStyles = 'transform 0.15s ease, opacity 0.5s ease'

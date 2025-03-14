@@ -1,6 +1,6 @@
 importScripts('lib/json5.min.js')
 
-// Launch CHATGPT on install
+// Launch WELCOME PAGE on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install') // to exclude updates
         chrome.tabs.create({ url: 'https://aiwebextensions.com/chatgpt-widescreen/pages/welcome' })

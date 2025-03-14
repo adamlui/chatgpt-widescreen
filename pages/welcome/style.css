@@ -1,0 +1,15 @@
+body {
+    font-family: Arial,sans-serif ; text-align: center ;
+    margin: 0 ; padding: 56px 16.5vw 156px ; background-color: #f9f9f9 }
+.main { max-width: 812px ; margin: 0 auto }
+.title-icon { width: 50px ; height: 50px ; position: relative ; top: 5px ; margin-right: 15px }
+h1 { font-size: 43px ; margin-bottom: 31px }
+p { font-size: 24px ; margin-bottom: 8px }
+img { max-width: 100% ; height: auto }
+
+@media (max-width: 768px) {
+    .title-icon { width: 42px ; height: 42px ; position: relative ; top: 7px ; margin-right: 11px }
+    h1 { font-size: 32px ; margin-bottom: 20px }
+    p { font-size: 18px ; margin-bottom: 15px }
+    body { padding: 16px 10vw 75px }
+}

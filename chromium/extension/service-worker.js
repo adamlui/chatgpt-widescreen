@@ -3,7 +3,7 @@ importScripts('lib/json5.min.js')
 // Launch CHATGPT on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install') // to exclude updates
-        chrome.tabs.create({ url: 'https://chatgpt.com/' })
+        chrome.tabs.create({ url: 'https://aiwebextensions.com/chatgpt-widescreen/pages/welcome' })
 })
 
 // Sync SETTINGS/MODES to activated tabs

@@ -1,3 +1,9 @@
+h1, p, img, footer, .hidden {
+    opacity: 0 ; transform: translateY(20px) ;
+    transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
+                transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */ }
+.visible { opacity: 1 ; transform: translateY(0) }
+
 body {
     font-family: Arial,sans-serif ; text-align: center ;
     margin: 0 ; background-color: #f9f9f9 }

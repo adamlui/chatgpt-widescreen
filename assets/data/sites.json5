@@ -31,7 +31,7 @@
     "selectors": {
       "btns": {
         "attachFile": "button:has([class*=icon-paperclip])", "help": "button:has([data-icon=question])",
-        "newChat": "div.sticky [class*=ring]", "search": "button:has(svg[class*=tabler-icon-world])",
+        "newChat": "div.sticky [class*=ring]", "search": "button:has([class*=tabler-icon-world])",
         "send": "button:has([class*=icon-arrow-], [class*=icon-git-fork])", // Send w/ up/right arrow or New Thread
         "settings": "button:has([d^=\"M256 0c17\"])",
         "sidebar": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"

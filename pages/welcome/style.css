@@ -9,7 +9,7 @@ body {
     margin: 0 ; background-color: #f9f9f9 }
 .main { max-width: 812px ; margin: 0 auto ; padding: 56px 16.5vw 146px }
 .title-icon { width: 50px ; height: 50px ; position: relative ; top: 5px ; margin-right: 15px }
-h1 { font-size: 43px ; margin-bottom: 31px }
+h1 { font-size: 48px ; margin-bottom: 48px }
 p { font-size: 24px ; margin-bottom: 8px }
 img { max-width: 100% ; height: auto }
 footer { padding-bottom: 50px ; font-weight: bold ; font-size: 22px }

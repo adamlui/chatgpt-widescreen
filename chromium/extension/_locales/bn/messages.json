@@ -34,7 +34,7 @@
   "tooltip_fullScreenON": { "message": "পুরো স্ক্রীন জুড়ে" },
   "tooltip_fullScreenOFF": { "message": "ফুল স্ক্রীণ থেকে বেরোওEncodings menu" },
   "tooltip_newChat": { "message": "নতুন চ্যাট" },
-  "tooltip_goto": { "message": "সারি/ কলাম..." },
+  "tooltip_goto": { "message": "সারি/ কলাম" },
   "helptip_fullerWins": { "message": "ফুল-উইন্ডো সক্রিয় করার সময় ওয়াইড স্ক্রিন সক্রিয় করুন" },
   "helptip_tallerChatbox": { "message": "চ্যাটবক্সটি উল্লম্বভাবে প্রসারিত করুন" },
   "helptip_widerChatbox": { "message": "ওয়াইড স্ক্রিন মোডে চ্যাটবক্সটি অনুভূমিকভাবে প্রসারিত করুন" },

@@ -16,7 +16,7 @@
       "sidebar": "div[class*=sidebar]:not(:has([data-testid=screen-threadFlyOut]))",
       "spam": { "banners": {
           "homepage": "[class*=bottom-full]:has(button[data-testid=close-button])",
-          "quota": "[class*=\"@lg/thread:bottom\"]:has(button[data-testid=close-button]"
+          "quota": "[class*=bottom-full]:has(button[data-testid=close-button]"
       }},
       "footer": ".min-h-4"
     },

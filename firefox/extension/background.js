@@ -1,30 +1,4 @@
-importScripts('lib/json5.min.js')
-
-// Launch CHATGPT on install
-chrome.runtime.onInstalled.addListener(details => {
-    if (details.reason == 'install') // to exclude updates
-        chrome.tabs.create({ url: 'https://chatgpt.com/' })
-})
-
-// Sync SETTINGS/MODES to activated tabs
-chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
-
-// Show ABOUT modal on AI site when toolbar button clicked
-const aiHomeURLs = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\*$/, ''))
-chrome.runtime.onMessage.addListener(async req => {
-    if (req.action == 'showAbout') {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        const aiTab = aiHomeURLs.some(aiURL => // check if active tab is AI site
-            new URL(activeTab.url).hostname == new URL(aiURL).hostname) ? activeTab
-                : await chrome.tabs.create({ url: aiHomeURLs[0] }) // ...if not, open AI site
-        if (activeTab != aiTab) await new Promise(resolve => // after new tab loads
-            chrome.tabs.onUpdated.addListener(function loadedListener(tabId, info) {
-                if (tabId == aiTab.id && info.status == 'complete') {
-                    chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 500)
-        }}))
-        chrome.tabs.sendMessage(aiTab.id, { action: 'showAbout' })
-    }});
+importScripts('lib/json5.min.js');
 
 // Init DATA
 (async () => {
@@ -51,3 +25,30 @@ chrome.runtime.onMessage.addListener(async req => {
     chrome.storage.local.set({ sites })
 
 })()
+
+// Launch CHATGPT on install
+chrome.runtime.onInstalled.addListener(details => {
+    if (details.reason == 'install') // to exclude updates
+        chrome.tabs.create({ url: 'https://chatgpt.com/' })
+})
+
+// Sync SETTINGS/MODES to activated tabs
+chrome.tabs.onActivated.addListener(activeInfo =>
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
+
+// Show ABOUT modal on AI site when toolbar button clicked
+const aiHomeURLs = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\*$/, ''))
+chrome.runtime.onMessage.addListener(async req => {
+    if (req.action == 'showAbout') {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        const aiTab = aiHomeURLs.some(aiURL => // check if active tab is AI site
+            new URL(activeTab.url).hostname == new URL(aiURL).hostname) ? activeTab
+                : await chrome.tabs.create({ url: aiHomeURLs[0] }) // ...if not, open AI site
+        if (activeTab != aiTab) await new Promise(resolve => // after new tab loads
+            chrome.tabs.onUpdated.addListener(function loadedListener(tabId, info) {
+                if (tabId == aiTab.id && info.status == 'complete') {
+                    chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 500)
+        }}))
+        chrome.tabs.sendMessage(aiTab.id, { action: 'showAbout' })
+    }
+})

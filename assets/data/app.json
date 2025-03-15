@@ -2,6 +2,7 @@
   "name": "ChatGPT Widescreen", "symbol": "🖥️", "slug": "chatgpt-widescreen",
   "author": { "name": "Adam Lui", "url": "https://github.com/adamlui" },
   "urls": {
+    "assetHost": "https://assets.chatgptwidescreen.com",
     "chatgptJS": "https://chatgpt.js.org",
     "cjsAssetHost": "https://assets.chatgptjs.org",
     "contributors": "https://docs.chatgptwidescreen.com/#-contributors",
@@ -12,7 +13,6 @@
       "payPal": "https://paypal.me/adamlui"
     },
     "gitHub": "https://github.com/adamlui/chatgpt-widescreen",
-    "assetHost": "https://assets.chatgptwidescreen.com",
     "relatedExtensions": "https://aiwebextensions.com",
     "review": {
       "chromeWebStore": "https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews",

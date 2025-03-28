@@ -35,7 +35,7 @@ jobs:
           zip -r ../../extension.zip .
 
       - name: Publish to CWS
-        if: false
+        if: env.VERSION_CHANGED == 'true'
         uses: mobilefirstllc/cws-publish@5e3b5249835f1fac9f7e8c9982fec7a80e1b82a8
         with:
           action: publish

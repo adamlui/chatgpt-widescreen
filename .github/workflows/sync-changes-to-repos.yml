@@ -20,6 +20,7 @@ jobs:
       - name: Checkout adamlui/chatgpt-widescreen
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
           path: adamlui/chatgpt-widescreen
           fetch-depth: 2
 
